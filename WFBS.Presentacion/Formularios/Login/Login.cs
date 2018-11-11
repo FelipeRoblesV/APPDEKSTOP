@@ -13,39 +13,31 @@ namespace WFBS.Presentacion.Formularios.Login
 {
     public partial class Login : Form
     {
-        private Imagenes moduloImagen = new Imagenes();
+        private Imagenes Imagenes = new Imagenes();
         private Cargando preloader;
-        private IniciarSesion moduloIniciarSesion = new IniciarSesion();
+        private IniciarSesion IniciarSesion = new IniciarSesion();
         private Aplicacion aplicacion;
 
         public Login()
         {
             InitializeComponent();
+            IniciarLogin(1);
         }
 
-        public void IniciarAplicacion(int numero)
+        public void IniciarLogin(int numero)
         {
             switch (numero)
             {
                 case 1:
-                    AbrirModulo(moduloIniciarSesion);
-                    AbrirImagen(moduloImagen);
+                 //   AbrirModulo(IniciarSesion);
+                    AbrirImagen(Imagenes);
                     break;
                 case 2:
                     if (preloader == null)
                     {
-                        preloader = new ModuloCargando();
+                        preloader = new Cargando();
                         AbrirModulo(preloader);
                     }
-
-
-                    break;
-
-                case 3:
-                    AbrirModulo(moduloIniciarSesion);
-                    aplicacion.iniciarAplicacion(2);
-                    cambio();
-                    moduloImagen.Activar();
                     break;
             }
 
@@ -54,23 +46,23 @@ namespace WFBS.Presentacion.Formularios.Login
         public void IniciarVerificacion()
         {
             AbrirModulo(preloader);
-            preloader.IniciarVerificacion();
+     //       preloader.IniciarVerificacion();
         }
 
         public void VerificacionCorrecta(string mensaje)
         {
-            preloader.CambiarMensaje(mensaje);
+     //       preloader.CambiarMensaje(mensaje);
         }
         public void VerificacionIncorrecta()
         {
-            AbrirModulo(moduloIniciarSesion);
+            AbrirModulo(IniciarSesion);
 
         }
 
         public void pasarDatos(Aplicacion app)
         {
             aplicacion = app;
-            moduloIniciarSesion.pasarDatos(aplicacion, this);
+            IniciarSesion.pasarDatos(aplicacion, this);
         }
 
         private void AbrirImagen(object formHijo)

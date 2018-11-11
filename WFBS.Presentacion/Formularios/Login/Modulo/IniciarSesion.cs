@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFBS.Presentacion.Formularios.Login.Modulo.Clases;
 using Bunifu.Framework.UI;
-
+using WFBS.Entidades;
+using WFBS.Controlador;
 
 namespace WFBS.Presentacion.Formularios.Login.Modulo
 {
@@ -20,8 +21,8 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private FormularioPrincipal.FormularioPrincipal formulario;
         private BackgroundWorker iniciarSesion, iniciarAplicacion;
         private bool respuesta = false;
-        //private Cl_Usuario usuario;
-        //private daoUsuario dao;
+        private Cl_Usuario usuario;
+        private daoUsuario dao;
         private Aplicacion app;
         private Login login;
         private int numero = 0, numero2 = 0, estado = 0;
@@ -32,6 +33,264 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             txtUsuario.Text = Properties.Settings.Default.RecordarUsuario;
             chkRecuerdame.Checked = Properties.Settings.Default.ChkRecordarUsuario;
         }
+
+        public void pasarDatos(Aplicacion apli, Login login)
+        {
+            this.app = apli;
+            this.login = login;
+        }
+
+        #region INICIAR SESION
+        private void IniciarSesion_background()
+        {
+            if (iniciarSesion == null)
+            {
+                if (usuario == null)
+                {
+                    usuario = new Cl_Usuario();
+                }
+
+                iniciarSesion = new BackgroundWorker();
+                iniciarSesion.WorkerReportsProgress = true;
+                iniciarSesion.DoWork += new DoWorkEventHandler(iniciarSesion_DoWork);
+                iniciarSesion.RunWorkerCompleted += new RunWorkerCompletedEventHandler(iniciarSesion_RunWorkerCompleted);
+                iniciarSesion.ProgressChanged += new ProgressChangedEventHandler(iniciarSesion_ProgressChanged);
+            }
+            if (iniciarSesion.IsBusy == false)
+            {
+
+                iniciarSesion.RunWorkerAsync(usuario);
+            }
+
+        }
+
+        private void iniciarSesion_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            switch (this.numero)
+            {
+                case 1:
+                    login.IniciarVerificacion();
+                    break;
+                case 2:
+                    Exception exception = (Exception)e.UserState;
+                    imagenLogotipo.Visible = false;
+                    lbl_titulo.Visible = false;
+                    lblErrorGeneral.Text = exception.Message;
+                    lblErrorGeneral.Visible = true;
+                    break;
+            }
+        }
+
+        private void iniciarSesion_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            try
+            {
+
+                if (respuesta)
+                {
+                    if (estado == 0)
+                    {
+                        IniciarAplicacion();
+                    }
+                    else if (estado == 1)
+                    {
+                        if (chkRecuerdame.Checked == true)
+                        {
+                            Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
+                            Properties.Settings.Default.ChkRecordarUsuario = true;
+                            Properties.Settings.Default.Save();
+                        }
+                        else
+                        {
+                            Properties.Settings.Default.RecordarUsuario = String.Empty;
+                            Properties.Settings.Default.ChkRecordarUsuario = false;
+                            Properties.Settings.Default.Save();
+                        }
+                        app.iniciarAplicacion(2);
+                    }
+
+                }
+                else
+                {
+                    login.VerificacionIncorrecta();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                lblErrorGeneral.Text = ex.Message;
+            }
+
+        }
+
+        private void iniciarSesion_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker iniciarSesion = sender as BackgroundWorker;
+            Cl_Usuario usuario = (Cl_Usuario)e.Argument;
+
+            try
+            {
+                this.numero = 1;
+                iniciarSesion.ReportProgress(1);
+                usuario.rut = txtUsuario.Text;
+                usuario.password = txtContraseña.Text;
+
+
+                if (dao == null)
+                {
+                    dao = new daoUsuario();
+                }
+                respuesta = dao.Login(usuario);
+
+
+            }
+            catch (Exception ex)
+            {
+                this.numero = 2;
+                iniciarSesion.ReportProgress(2, ex);
+            }
+        }
+
+        #endregion
+
+        #region INICIAR APLICACION
+
+        private void IniciarAplicacion()
+        {
+            if (iniciarAplicacion == null)
+            {
+                iniciarAplicacion = new BackgroundWorker();
+                iniciarAplicacion.WorkerReportsProgress = true;
+                iniciarAplicacion.DoWork += new DoWorkEventHandler(iniciarAplicacion_DoWork);
+                iniciarAplicacion.RunWorkerCompleted += new RunWorkerCompletedEventHandler(iniciarAplicacion_RunWorkerCompleted);
+                iniciarAplicacion.ProgressChanged += new ProgressChangedEventHandler(iniciarAplicacion_ProgressChanged);
+                iniciar = new IniciarAplicacion();
+            }
+            if (iniciarSesion.IsBusy == false)
+            {
+                iniciarAplicacion.RunWorkerAsync(iniciar);
+            }
+
+        }
+
+        private void iniciarAplicacion_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            IniciarAplicacion iniciar = (IniciarAplicacion)e.UserState;
+            login.VerificacionCorrecta(iniciar.mensaje);
+
+            if (formulario == null)
+            {
+                formulario = new FormularioPrincipal.FormularioPrincipal();
+            }
+
+            switch (this.numero2)
+            {
+                case 1:
+                    formulario.DefinirLista(this.numero2, iniciar.listarFuncionario);
+                    break;
+                case 2:
+                    formulario.DefinirLista(this.numero2, iniciar.listarJefeFuncionario);
+                    break;
+                case 3:
+                    formulario.DefinirLista(this.numero2, iniciar.listarPerfil);
+                    break;
+                case 4:
+                    formulario.DefinirLista(this.numero2, iniciar.listarCargo);
+                    break;
+                case 5:
+                    formulario.DefinirAplicacion(1);
+
+                    break;
+            }
+        }
+
+        private void iniciarAplicacion_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            try
+            {
+                if (chkRecuerdame.Checked == true)
+                {
+                    Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
+                    Properties.Settings.Default.ChkRecordarUsuario = true;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.RecordarUsuario = String.Empty;
+                    Properties.Settings.Default.ChkRecordarUsuario = false;
+                    Properties.Settings.Default.Save();
+                }
+                app.iniciarAplicacion(2);
+                this.estado = 1;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void iniciarAplicacion_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+
+                BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
+                IniciarAplicacion iniciar = (IniciarAplicacion)e.Argument;
+                for (int i = 0; i < 6; i++)
+                {
+
+                    switch (i)
+                    {
+                        case 1:
+                            iniciar.mensaje = "Cargando Funcionario";
+                            daoFuncionario daoFun = new daoFuncionario();
+                            iniciar.listarFuncionario = daoFun.listar();
+                            this.numero2 = i;
+                            break;
+
+                        case 2:
+                            iniciar.mensaje = "Cargando Jefe Funcionario";
+                            daoJefeFuncionario daoJefeFuncionario = new daoJefeFuncionario();
+                            iniciar.listarJefeFuncionario = daoJefeFuncionario.listar();
+                            this.numero2 = i;
+                            break;
+                        case 3:
+                            iniciar.mensaje = "Cargando Perfil";
+                            daoPerfil daoPerfil = new daoPerfil();
+                            iniciar.listarPerfil = daoPerfil.listar();
+                            this.numero2 = i;
+                            break;
+                        case 4:
+                            iniciar.mensaje = "Cargando Cargo";
+                            daoCargo daoCargo = new daoCargo();
+                            iniciar.listarCargo = daoCargo.listar();
+                            System.Threading.Thread.Sleep(100);
+                            this.numero2 = i;
+                            break;
+                        case 5:
+                            iniciar.mensaje = "Inicializando Aplicacion";
+                            System.Threading.Thread.Sleep(1000);
+                            this.numero2 = i;
+                            break;
+                    }
+                    IniciarAplicacion.ReportProgress((i + 1), iniciar);
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+
+        #endregion
+
+
 
 
         private void btnRedesSociales_Click(object sender, EventArgs e)
@@ -101,9 +360,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             }
             else if (contador == 3)
             {
-                MostrarLateral();
-                IniciarSesion();
-
+                IniciarSesion_background();
             }
         }
 

@@ -33,9 +33,9 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.Separador = new Bunifu.Framework.UI.BunifuSeparator();
             this.ImagenLogo = new Bunifu.Framework.UI.BunifuImageButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Background = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDescripcion
@@ -88,14 +88,14 @@
             this.ImagenLogo.TabStop = false;
             this.ImagenLogo.Zoom = 10;
             // 
-            // pictureBox1
+            // Background
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1332, 896);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.Background.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Background.Location = new System.Drawing.Point(0, 0);
+            this.Background.Name = "Background";
+            this.Background.Size = new System.Drawing.Size(1332, 896);
+            this.Background.TabIndex = 13;
+            this.Background.TabStop = false;
             // 
             // Imagenes
             // 
@@ -106,12 +106,12 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.Separador);
             this.Controls.Add(this.ImagenLogo);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Background);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Imagenes";
             this.Text = "Imagenes";
             ((System.ComponentModel.ISupportInitialize)(this.ImagenLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Background)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +123,6 @@
         private System.Windows.Forms.Label lblTitulo;
         private Bunifu.Framework.UI.BunifuSeparator Separador;
         private Bunifu.Framework.UI.BunifuImageButton ImagenLogo;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox Background;
     }
 }

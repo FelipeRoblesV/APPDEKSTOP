@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ws.modelo/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="MainWS" targetNamespace="http://ws.modelo/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8084/WFBSWebService/MainWS?xsd=1" namespace="http://ws.modelo/" />
+    </xsd:schema>
+  </types>
+  <message name="Listar_Curso">
+    <part name="parameters" element="tns:Listar_Curso" />
+  </message>
+  <message name="Listar_CursoResponse">
+    <part name="parameters" element="tns:Listar_CursoResponse" />
+  </message>
+  <message name="Recuperar_Persona">
+    <part name="parameters" element="tns:Recuperar_Persona" />
+  </message>
+  <message name="Recuperar_PersonaResponse">
+    <part name="parameters" element="tns:Recuperar_PersonaResponse" />
+  </message>
+  <portType name="MainWS">
+    <operation name="Listar_Curso">
+      <input wsam:Action="http://ws.modelo/MainWS/Listar_CursoRequest" message="tns:Listar_Curso" />
+      <output wsam:Action="http://ws.modelo/MainWS/Listar_CursoResponse" message="tns:Listar_CursoResponse" />
+    </operation>
+    <operation name="Recuperar_Persona">
+      <input wsam:Action="http://ws.modelo/MainWS/Recuperar_PersonaRequest" message="tns:Recuperar_Persona" />
+      <output wsam:Action="http://ws.modelo/MainWS/Recuperar_PersonaResponse" message="tns:Recuperar_PersonaResponse" />
+    </operation>
+  </portType>
+  <binding name="MainWSPortBinding" type="tns:MainWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="Listar_Curso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Recuperar_Persona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MainWS">
+    <port name="MainWSPort" binding="tns:MainWSPortBinding">
+      <soap:address location="http://localhost:8084/WFBSWebService/MainWS" />
+    </port>
+  </service>
+</definitions>

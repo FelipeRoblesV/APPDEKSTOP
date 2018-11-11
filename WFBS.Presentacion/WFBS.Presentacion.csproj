@@ -261,6 +261,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -288,6 +289,18 @@
       <Project>{0b493275-d477-4238-a851-f07d9154addc}</Project>
       <Name>WFBS.Logger</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background-4.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

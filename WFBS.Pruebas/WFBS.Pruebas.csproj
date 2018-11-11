@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WFBS.WebService\WFBS.WebService.csproj">
+      <Project>{54d3bf76-30de-4913-8ef1-6ebe12fc19e7}</Project>
+      <Name>WFBS.WebService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

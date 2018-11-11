@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.modelo/" targetNamespace="http://ws.modelo/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Listar_Curso" type="tns:Listar_Curso" />
+  <xs:element name="Listar_CursoResponse" type="tns:Listar_CursoResponse" />
+  <xs:element name="Recuperar_Persona" type="tns:Recuperar_Persona" />
+  <xs:element name="Recuperar_PersonaResponse" type="tns:Recuperar_PersonaResponse" />
+  <xs:complexType name="Listar_Curso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="p_run" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Listar_CursoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:clCurso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clCurso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="institucion" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="siglas" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Recuperar_Persona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="p_run" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Recuperar_PersonaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:clPersona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="clPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellido" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="dv" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="run" type="xs:string" />
+      <xs:element minOccurs="0" name="sexo" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
