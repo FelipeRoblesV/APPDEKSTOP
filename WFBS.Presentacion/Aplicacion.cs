@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WFBS.Presentacion
 {
-    public partial class Form1 : Form
+    public partial class Aplicacion : Form
     {
-        public Form1()
+        public Aplicacion()
         {
             InitializeComponent();
         }
