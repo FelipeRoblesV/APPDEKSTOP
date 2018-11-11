@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\references\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,10 +55,203 @@
     <Compile Include="Aplicacion.Designer.cs">
       <DependentUpon>Aplicacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\FormularioPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\FormularioPrincipal.Designer.cs">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Alternativas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Alternativas.Designer.cs">
+      <DependentUpon>Alternativas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Cargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Cargo.Designer.cs">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Competencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Competencia.Designer.cs">
+      <DependentUpon>Competencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Evaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Evaluacion.Designer.cs">
+      <DependentUpon>Evaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Funcionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Funcionario.Designer.cs">
+      <DependentUpon>Funcionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\JefeFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\JefeFuncionario.Designer.cs">
+      <DependentUpon>JefeFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Observacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Observacion.Designer.cs">
+      <DependentUpon>Observacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\CargoFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\CargoFuncionario.Designer.cs">
+      <DependentUpon>CargoFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.Designer.cs">
+      <DependentUpon>Estado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Perfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Perfil.Designer.cs">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Preguntas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Preguntas.Designer.cs">
+      <DependentUpon>Preguntas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\ListadoPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\ListadoPrincipal.Designer.cs">
+      <DependentUpon>ListadoPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\ListadoReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\ListadoReporte.Designer.cs">
+      <DependentUpon>ListadoReporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Listado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Listado.Designer.cs">
+      <DependentUpon>Listado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Logotipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Logotipo.Designer.cs">
+      <DependentUpon>Logotipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\Modulo\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\Modulo\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\Modulo\Clases\IniciarAplicacion.cs" />
+    <Compile Include="Formularios\Login\Modulo\Imagenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\Modulo\Imagenes.Designer.cs">
+      <DependentUpon>Imagenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Login\Modulo\IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Login\Modulo\IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventanas\Cerrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Cerrar.Designer.cs">
+      <DependentUpon>Cerrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Eliminar.Designer.cs">
+      <DependentUpon>Eliminar.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Aplicacion.resx">
       <DependentUpon>Aplicacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Cargando.resx">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\ListadoPrincipal.resx">
+      <DependentUpon>ListadoPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\ListadoReporte.resx">
+      <DependentUpon>ListadoReporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Cargando.resx">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Listado.resx">
+      <DependentUpon>Listado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Logotipo.resx">
+      <DependentUpon>Logotipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\Modulo\Cargando.resx">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\Modulo\Imagenes.resx">
+      <DependentUpon>Imagenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Login\Modulo\IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -80,9 +276,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Formularios\FormularioPrincipal\Modulo\" />
-    <Folder Include="Formularios\FormularioPrincipal\Otros\" />
-    <Folder Include="Formularios\Login\Modulo\" />
+    <ProjectReference Include="..\WFBS.Controlador\WFBS.Controlador.csproj">
+      <Project>{042cdaa5-5600-40ad-b575-5c5758635984}</Project>
+      <Name>WFBS.Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WFBS.Entidades\WFBS.Entidades.csproj">
+      <Project>{ad686d3d-5f74-4fbb-91bb-b547279ddc70}</Project>
+      <Name>WFBS.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WFBS.Logger\WFBS.Logger.csproj">
+      <Project>{0b493275-d477-4238-a851-f07d9154addc}</Project>
+      <Name>WFBS.Logger</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
