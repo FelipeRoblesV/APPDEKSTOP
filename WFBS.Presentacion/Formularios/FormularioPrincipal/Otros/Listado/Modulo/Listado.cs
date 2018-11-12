@@ -16,5 +16,20 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
         {
             InitializeComponent();
         }
+
+        public void definirFormulario(DataSet lista)
+        {
+            if (lista != null)
+            {
+                dt_Listar.DataSource = lista.Tables[0];
+            }
+            else
+            {
+                dt_Listar.Visible = false;
+                lblMensaje.Visible = true;
+                
+            }
+
+        }
     }
 }

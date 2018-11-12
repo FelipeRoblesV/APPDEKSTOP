@@ -47,7 +47,9 @@
             this.ClientSize = new System.Drawing.Size(1596, 896);
             this.Controls.Add(this.panelContenido);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(1596, 896);
             this.Name = "Aplicacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicacion";
             this.ResumeLayout(false);
 

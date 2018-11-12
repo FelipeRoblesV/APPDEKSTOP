@@ -28,54 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cargando));
             this.lblMensaje = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.barraProgreso = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panelFooter = new System.Windows.Forms.Panel();
             this.separador_footer = new Bunifu.Framework.UI.BunifuSeparator();
             this.lblVersion = new System.Windows.Forms.Label();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.imagenLogotipo = new Bunifu.Framework.UI.BunifuImageButton();
-            this.lbl_titulo = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.timerPreloader = new System.Windows.Forms.Timer(this.components);
+            this.timerColor = new System.Windows.Forms.Timer(this.components);
+            this.colorTransicion = new Bunifu.Framework.UI.BunifuColorTransition(this.components);
+            this.barraProgreso = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.panelFooter.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imagenLogotipo)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMensaje
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Roboto Light", 15F);
             this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
-            this.lblMensaje.Location = new System.Drawing.Point(12, 383);
+            this.lblMensaje.Location = new System.Drawing.Point(12, 398);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(240, 85);
             this.lblMensaje.TabIndex = 32;
             this.lblMensaje.Text = "Iniciando el formulario";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMensaje.Visible = false;
-            // 
-            // barraProgreso
-            // 
-            this.barraProgreso.animated = true;
-            this.barraProgreso.animationIterval = 1;
-            this.barraProgreso.animationSpeed = 15;
-            this.barraProgreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.barraProgreso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("barraProgreso.BackgroundImage")));
-            this.barraProgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.barraProgreso.ForeColor = System.Drawing.Color.SeaGreen;
-            this.barraProgreso.LabelVisible = false;
-            this.barraProgreso.LineProgressThickness = 8;
-            this.barraProgreso.LineThickness = 5;
-            this.barraProgreso.Location = new System.Drawing.Point(77, 281);
-            this.barraProgreso.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.barraProgreso.MaxValue = 100;
-            this.barraProgreso.Name = "barraProgreso";
-            this.barraProgreso.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(75)))));
-            this.barraProgreso.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(68)))), ((int)(((byte)(91)))));
-            this.barraProgreso.Size = new System.Drawing.Size(93, 93);
-            this.barraProgreso.TabIndex = 31;
-            this.barraProgreso.Value = 30;
-            this.barraProgreso.Visible = false;
             // 
             // panelFooter
             // 
@@ -114,8 +92,6 @@
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.Controls.Add(this.imagenLogotipo);
-            this.panelPrincipal.Controls.Add(this.lbl_titulo);
             this.panelPrincipal.Controls.Add(this.barraProgreso);
             this.panelPrincipal.Controls.Add(this.lblMensaje);
             this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -124,33 +100,47 @@
             this.panelPrincipal.Size = new System.Drawing.Size(264, 827);
             this.panelPrincipal.TabIndex = 34;
             // 
-            // imagenLogotipo
+            // timerPreloader
             // 
-            this.imagenLogotipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.imagenLogotipo.Image = ((System.Drawing.Image)(resources.GetObject("imagenLogotipo.Image")));
-            this.imagenLogotipo.ImageActive = null;
-            this.imagenLogotipo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.imagenLogotipo.Location = new System.Drawing.Point(86, 28);
-            this.imagenLogotipo.Name = "imagenLogotipo";
-            this.imagenLogotipo.Size = new System.Drawing.Size(71, 71);
-            this.imagenLogotipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imagenLogotipo.TabIndex = 60;
-            this.imagenLogotipo.TabStop = false;
-            this.imagenLogotipo.Zoom = 10;
+            this.timerPreloader.Enabled = true;
+            this.timerPreloader.Interval = 1;
+            this.timerPreloader.Tick += new System.EventHandler(this.timerPreloader_Tick);
             // 
-            // lbl_titulo
+            // timerColor
             // 
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Roboto", 15.75F);
-            this.lbl_titulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_titulo.Location = new System.Drawing.Point(67, 102);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(103, 25);
-            this.lbl_titulo.TabIndex = 59;
-            this.lbl_titulo.Text = "Cargando";
+            this.timerColor.Interval = 10;
             // 
-            // CargandoFormulario
+            // colorTransicion
+            // 
+            this.colorTransicion.Color1 = System.Drawing.Color.White;
+            this.colorTransicion.Color2 = System.Drawing.Color.White;
+            this.colorTransicion.ProgessValue = 0;
+            this.colorTransicion.OnValueChange += new System.EventHandler(this.colorTransicion_OnValueChange);
+            // 
+            // barraProgreso
+            // 
+            this.barraProgreso.animated = true;
+            this.barraProgreso.animationIterval = 5;
+            this.barraProgreso.animationSpeed = 15;
+            this.barraProgreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.barraProgreso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("barraProgreso.BackgroundImage")));
+            this.barraProgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.barraProgreso.ForeColor = System.Drawing.Color.SeaGreen;
+            this.barraProgreso.LabelVisible = false;
+            this.barraProgreso.LineProgressThickness = 8;
+            this.barraProgreso.LineThickness = 5;
+            this.barraProgreso.Location = new System.Drawing.Point(85, 296);
+            this.barraProgreso.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.barraProgreso.MaxValue = 100;
+            this.barraProgreso.Name = "barraProgreso";
+            this.barraProgreso.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(50)))), ((int)(((byte)(75)))));
+            this.barraProgreso.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(68)))), ((int)(((byte)(91)))));
+            this.barraProgreso.Size = new System.Drawing.Size(93, 93);
+            this.barraProgreso.TabIndex = 31;
+            this.barraProgreso.Value = 30;
+            this.barraProgreso.Visible = false;
+            // 
+            // Cargando
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,12 +149,10 @@
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelFooter);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CargandoFormulario";
+            this.Name = "Cargando";
             this.Text = "CargandoFormulario";
             this.panelFooter.ResumeLayout(false);
             this.panelPrincipal.ResumeLayout(false);
-            this.panelPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imagenLogotipo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -177,7 +165,8 @@
         private Bunifu.Framework.UI.BunifuSeparator separador_footer;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Panel panelPrincipal;
-        private Bunifu.Framework.UI.BunifuImageButton imagenLogotipo;
-        private Bunifu.Framework.UI.BunifuCustomLabel lbl_titulo;
+        private System.Windows.Forms.Timer timerPreloader;
+        private System.Windows.Forms.Timer timerColor;
+        private Bunifu.Framework.UI.BunifuColorTransition colorTransicion;
     }
 }

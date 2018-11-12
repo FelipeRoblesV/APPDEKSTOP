@@ -16,11 +16,11 @@ namespace WFBS.Presentacion
     {
         private Login login;
         private FormularioPrincipal formularioPrincipal;
-        private int estado = 0;
 
         public Aplicacion()
         {
             InitializeComponent();
+            iniciarAplicacion(1);
         }
 
         public void iniciarAplicacion(int numero)
@@ -28,23 +28,18 @@ namespace WFBS.Presentacion
             switch (numero)
             {
                 case 1:
+                    login = new Login();
                     login.pasarDatos(this);
-                    login.IniciarAplicacion(1);
-                    this.MaximumSize = new Size(1479, 800);
+                    login.IniciarLogin(1);
+                    this.MaximumSize = new Size(1596, 896);
                     AbrirPanel(login);
                     break;
                 case 2:
-                    formularioPrincipal = login.DATOS();
-                    formularioPrincipal.pasarDatos(this, login);
-
+                    formularioPrincipal = login.recuperarDatos();
+                    formularioPrincipal.pasarDatos(this);
                     this.MaximumSize = new Size(0, 0);
-                    this.estado = 1;
                     AbrirPanel(formularioPrincipal);
-                    break;
-                case 3:
-                    login.limpiar();
-                    login.IniciarAplicacion(3);
-                    AbrirPanel(login);
+                    login.IniciarLogin(3);
                     break;
             }
         }
@@ -94,7 +89,6 @@ namespace WFBS.Presentacion
                     this.Location = new Point(lx, ly);
                     break;
                 case 5:
-                    login.cambio();
                     iniciarAplicacion(3);
                     break;
 

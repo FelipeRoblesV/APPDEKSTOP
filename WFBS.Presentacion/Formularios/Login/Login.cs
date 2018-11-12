@@ -24,12 +24,20 @@ namespace WFBS.Presentacion.Formularios.Login
             IniciarLogin(1);
         }
 
+        public void pasarDatos(Aplicacion app)
+        {
+            aplicacion = app;
+            IniciarSesion.pasarDatos(aplicacion, this);
+        }
+
+
         public void IniciarLogin(int numero)
         {
             switch (numero)
             {
                 case 1:
-                 //   AbrirModulo(IniciarSesion);
+
+                    AbrirModulo(IniciarSesion);
                     AbrirImagen(Imagenes);
                     break;
                 case 2:
@@ -39,31 +47,36 @@ namespace WFBS.Presentacion.Formularios.Login
                         AbrirModulo(preloader);
                     }
                     break;
+                case 3:
+                    preloader.Close();
+                    Imagenes.Close();
+                    IniciarSesion.Close();
+
+                    break;
             }
 
         }
 
         public void IniciarVerificacion()
         {
+            preloader = new Cargando();
             AbrirModulo(preloader);
-     //       preloader.IniciarVerificacion();
+            preloader.IniciarVerificacion();
         }
+
+
 
         public void VerificacionCorrecta(string mensaje)
         {
-     //       preloader.CambiarMensaje(mensaje);
+            preloader.CambiarMensaje(mensaje);
         }
         public void VerificacionIncorrecta()
         {
             AbrirModulo(IniciarSesion);
+            preloader.Close();
 
         }
 
-        public void pasarDatos(Aplicacion app)
-        {
-            aplicacion = app;
-            IniciarSesion.pasarDatos(aplicacion, this);
-        }
 
         private void AbrirImagen(object formHijo)
         {
@@ -93,8 +106,21 @@ namespace WFBS.Presentacion.Formularios.Login
 
         private void btn_cerrarFormulario_Click(object sender, EventArgs e)
         {
+                Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
+                cerrar.ventanaCerrarLogin(this);
+                cerrar.ShowDialog();
+            
+
+        }
+
+        public void CerrarFormulario()
+        {
             Application.Exit();
         }
 
+        public FormularioPrincipal.FormularioPrincipal recuperarDatos()
+        {
+            return IniciarSesion.recuperarFormulario();
+        }
     }
 }

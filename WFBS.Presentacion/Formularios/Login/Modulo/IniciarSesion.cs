@@ -25,7 +25,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private daoUsuario dao;
         private Aplicacion app;
         private Login login;
-        private int numero = 0, numero2 = 0, estado = 0;
+        private int numero = 0, numero2 = 0;
 
         public IniciarSesion()
         {
@@ -40,6 +40,11 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             this.login = login;
         }
 
+        public FormularioPrincipal.FormularioPrincipal recuperarFormulario()
+        {
+            return formulario;
+        }
+
         #region INICIAR SESION
         private void IniciarSesion_background()
         {
@@ -49,7 +54,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 {
                     usuario = new Cl_Usuario();
                 }
-
                 iniciarSesion = new BackgroundWorker();
                 iniciarSesion.WorkerReportsProgress = true;
                 iniciarSesion.DoWork += new DoWorkEventHandler(iniciarSesion_DoWork);
@@ -88,12 +92,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
 
                 if (respuesta)
                 {
-                    if (estado == 0)
-                    {
-                        IniciarAplicacion();
-                    }
-                    else if (estado == 1)
-                    {
                         if (chkRecuerdame.Checked == true)
                         {
                             Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
@@ -106,8 +104,10 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                             Properties.Settings.Default.ChkRecordarUsuario = false;
                             Properties.Settings.Default.Save();
                         }
-                        app.iniciarAplicacion(2);
-                    }
+
+
+                    IniciarAplicacion();
+                    
 
                 }
                 else
@@ -186,18 +186,27 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             switch (this.numero2)
             {
                 case 1:
-                    formulario.DefinirLista(this.numero2, iniciar.listarFuncionario);
+                    formulario.DefinirFormulario(this.numero2, iniciar.listarFuncionario);
                     break;
                 case 2:
-                    formulario.DefinirLista(this.numero2, iniciar.listarJefeFuncionario);
+                    formulario.DefinirFormulario(this.numero2, iniciar.listarJefeFuncionario);
                     break;
                 case 3:
-                    formulario.DefinirLista(this.numero2, iniciar.listarPerfil);
+                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
                     break;
                 case 4:
-                    formulario.DefinirLista(this.numero2, iniciar.listarCargo);
+                    formulario.DefinirFormulario(this.numero2, iniciar.listarCargo);
                     break;
                 case 5:
+                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
+                    break;
+                case 6:
+                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
+                    break;
+                case 7:
+                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
+                    break;
+                case 8:
                     formulario.DefinirAplicacion(1);
 
                     break;
@@ -221,7 +230,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                     Properties.Settings.Default.Save();
                 }
                 app.iniciarAplicacion(2);
-                this.estado = 1;
 
             }
             catch (Exception)
@@ -238,7 +246,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
 
                 BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
                 IniciarAplicacion iniciar = (IniciarAplicacion)e.Argument;
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 9; i++)
                 {
 
                     switch (i)
@@ -266,12 +274,27 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                             iniciar.mensaje = "Cargando Cargo";
                             daoCargo daoCargo = new daoCargo();
                             iniciar.listarCargo = daoCargo.listar();
-                            System.Threading.Thread.Sleep(100);
+                            System.Threading.Thread.Sleep(1000);
                             this.numero2 = i;
                             break;
                         case 5:
-                            iniciar.mensaje = "Inicializando Aplicacion";
-                            System.Threading.Thread.Sleep(1000);
+                            iniciar.mensaje = "Cargando Competencia";
+                            System.Threading.Thread.Sleep(2000);
+                            this.numero2 = i;
+                            break;
+                        case 6:
+                            iniciar.mensaje = "Cargando Evaluacion";
+                            System.Threading.Thread.Sleep(2000);
+                            this.numero2 = i;
+                            break;
+                        case 7:
+                            iniciar.mensaje = "Cargando Reporte";
+                            System.Threading.Thread.Sleep(2000);
+                            this.numero2 = i;
+                            break;
+                        case 8:
+                            iniciar.mensaje = "Iniciando Aplicacion";
+                            System.Threading.Thread.Sleep(2000);
                             this.numero2 = i;
                             break;
                     }
@@ -322,6 +345,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 txtUsuario.BorderColorMouseHover = Color.FromArgb(139, 69, 61);
                 txtUsuario.ForeColor = Color.FromArgb(237, 83, 66);
                 lblErrorGeneral.Text = "Faltan Ingresar datos en (Usuario)";
+                lblErrorGeneral.Visible = true;
             }
             else
             {
@@ -331,7 +355,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 txtUsuario.BorderColorFocused = Color.FromArgb(105, 99, 113);
                 txtUsuario.BorderColorMouseHover = Color.FromArgb(105, 99, 113);
                 txtUsuario.ForeColor = Color.FromArgb(206, 210, 217);
-
+                lblErrorGeneral.Visible = false;
             }
 
             if (txtContraseña.Text.Trim() == "")
@@ -342,6 +366,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 txtContraseña.BorderColorMouseHover = Color.FromArgb(139, 69, 61);
                 txtContraseña.ForeColor = Color.FromArgb(237, 83, 66);
                 lblErrorGeneral.Text = "Faltan Ingresar datos en (Contraseña)";
+                lblErrorGeneral.Visible = true;
             }
             else
             {
@@ -351,15 +376,24 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 txtContraseña.BorderColorFocused = Color.FromArgb(105, 99, 113);
                 txtContraseña.BorderColorMouseHover = Color.FromArgb(105, 99, 113);
                 txtContraseña.ForeColor = Color.FromArgb(206, 210, 217);
+                lblErrorGeneral.Visible = false;
             }
 
             if (contador == 1)
             {
                 lblErrorGeneral.Text = "Faltan Ingresar datos en (Usuario, Contraseña)";
+                lblErrorGeneral.Visible = true;
 
             }
             else if (contador == 3)
             {
+                if (chkRecuerdame.Checked == false)
+                {
+                    Properties.Settings.Default.RecordarUsuario = String.Empty;
+                    Properties.Settings.Default.ChkRecordarUsuario = false;
+                }
+
+                lblErrorGeneral.Visible = false;
                 IniciarSesion_background();
             }
         }
