@@ -20,6 +20,7 @@ namespace WFBS.Presentacion.Formularios.Login
 
         public Login()
         {
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
             IniciarLogin(1);
         }

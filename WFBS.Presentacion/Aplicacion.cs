@@ -19,6 +19,7 @@ namespace WFBS.Presentacion
 
         public Aplicacion()
         {
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
             iniciarAplicacion(1);
         }

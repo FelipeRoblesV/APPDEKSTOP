@@ -34,8 +34,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dt_Listar = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.lblMensaje = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.dt_Listar = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Listar)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +51,19 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(30, 5, 30, 30);
             this.panel1.Size = new System.Drawing.Size(1496, 619);
             this.panel1.TabIndex = 0;
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.Font = new System.Drawing.Font("Roboto Light", 25F);
+            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
+            this.lblMensaje.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblMensaje.Location = new System.Drawing.Point(426, 251);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(643, 116);
+            this.lblMensaje.TabIndex = 37;
+            this.lblMensaje.Text = "No se encuentran datos.";
+            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMensaje.Visible = false;
             // 
             // dt_Listar
             // 
@@ -108,19 +121,6 @@
             this.dt_Listar.Size = new System.Drawing.Size(1436, 584);
             this.dt_Listar.StandardTab = true;
             this.dt_Listar.TabIndex = 2;
-            // 
-            // lblMensaje
-            // 
-            this.lblMensaje.Font = new System.Drawing.Font("Roboto Light", 25F);
-            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
-            this.lblMensaje.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblMensaje.Location = new System.Drawing.Point(461, 192);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(643, 116);
-            this.lblMensaje.TabIndex = 37;
-            this.lblMensaje.Text = "No se encuentran datos.";
-            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMensaje.Visible = false;
             // 
             // Listado
             // 

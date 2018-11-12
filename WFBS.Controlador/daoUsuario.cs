@@ -45,7 +45,6 @@ namespace WFBS.Controlador
             }
             catch (Exception)
             {
-
                 throw new Exception("Credenciales Incorrectas.");
 
             }

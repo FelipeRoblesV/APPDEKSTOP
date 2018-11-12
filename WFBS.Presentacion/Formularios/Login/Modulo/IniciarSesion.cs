@@ -29,6 +29,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
 
         public IniciarSesion()
         {
+            SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
             txtUsuario.Text = Properties.Settings.Default.RecordarUsuario;
             chkRecuerdame.Checked = Properties.Settings.Default.ChkRecordarUsuario;
@@ -92,22 +93,22 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
 
                 if (respuesta)
                 {
-                        if (chkRecuerdame.Checked == true)
-                        {
-                            Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
-                            Properties.Settings.Default.ChkRecordarUsuario = true;
-                            Properties.Settings.Default.Save();
-                        }
-                        else
-                        {
-                            Properties.Settings.Default.RecordarUsuario = String.Empty;
-                            Properties.Settings.Default.ChkRecordarUsuario = false;
-                            Properties.Settings.Default.Save();
-                        }
+                    if (chkRecuerdame.Checked == true)
+                    {
+                        Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
+                        Properties.Settings.Default.ChkRecordarUsuario = true;
+                        Properties.Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.RecordarUsuario = String.Empty;
+                        Properties.Settings.Default.ChkRecordarUsuario = false;
+                        Properties.Settings.Default.Save();
+                    }
 
 
                     IniciarAplicacion();
-                    
+
 
                 }
                 else
@@ -186,30 +187,83 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             switch (this.numero2)
             {
                 case 1:
-                    formulario.DefinirFormulario(this.numero2, iniciar.listarFuncionario);
+                    try
+                    {
+                        DataSet lista = iniciar.listarFuncionario;
+                        formulario.DefinirFormulario(this.numero2, lista, true);
+                    }
+                    catch (Exception)
+                    {
+                        DataSet lista = null;
+                        formulario.DefinirFormulario(this.numero2, lista, false);
+                    }
                     break;
                 case 2:
-                    formulario.DefinirFormulario(this.numero2, iniciar.listarJefeFuncionario);
+                    try
+                    {
+                        DataSet lista = iniciar.listarJefeFuncionario;
+                        formulario.DefinirFormulario(this.numero2, lista, true);
+                    }
+                    catch (Exception)
+                    {
+                        DataSet lista = null;
+                        formulario.DefinirFormulario(this.numero2, lista, false);
+                    }
                     break;
                 case 3:
-                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
+                    try
+                    {
+                        DataSet lista = iniciar.listarPerfil;
+                        formulario.DefinirFormulario(this.numero2, lista, true);
+                    }
+                    catch (Exception)
+                    {
+                        DataSet lista = null;
+                        formulario.DefinirFormulario(this.numero2, lista, false);
+                    }
                     break;
                 case 4:
-                    formulario.DefinirFormulario(this.numero2, iniciar.listarCargo);
+                    try
+                    {
+                        DataSet lista = iniciar.listarCargo;
+                        formulario.DefinirFormulario(this.numero2, lista, true);
+                    }
+                    catch (Exception)
+                    {
+                        DataSet lista = null;
+                        formulario.DefinirFormulario(this.numero2, lista, false);
+                    }
                     break;
                 case 5:
-                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
+                    try
+                    {
+                        DataSet lista = iniciar.listarPerfil;
+                        formulario.DefinirFormulario(this.numero2, lista, true);
+                    }
+                    catch (Exception)
+                    {
+                        DataSet lista = null;
+                        formulario.DefinirFormulario(this.numero2, lista, false);
+                    }
                     break;
                 case 6:
-                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
+                    try
+                    {
+                        DataSet lista = iniciar.listarPerfil;
+                        formulario.DefinirFormulario(this.numero2, lista, true);
+                    }
+                    catch (Exception)
+                    {
+                        DataSet lista = null;
+                        formulario.DefinirFormulario(this.numero2, lista, false);
+                    }
                     break;
-                case 7:
-                    formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
-                    break;
-                case 8:
-                    formulario.DefinirAplicacion(1);
-
-                    break;
+                    //case 7:
+                    //    //formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
+                    //    break;
+                    case 8:
+                       formulario.DefinirAplicacion(1);
+                        break;
             }
         }
 
@@ -248,7 +302,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 IniciarAplicacion iniciar = (IniciarAplicacion)e.Argument;
                 for (int i = 0; i < 9; i++)
                 {
-
                     switch (i)
                     {
                         case 1:
@@ -274,27 +327,27 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                             iniciar.mensaje = "Cargando Cargo";
                             daoCargo daoCargo = new daoCargo();
                             iniciar.listarCargo = daoCargo.listar();
-                            System.Threading.Thread.Sleep(1000);
+                             System.Threading.Thread.Sleep(1000);
                             this.numero2 = i;
                             break;
                         case 5:
                             iniciar.mensaje = "Cargando Competencia";
-                            System.Threading.Thread.Sleep(2000);
+                               System.Threading.Thread.Sleep(2000);
                             this.numero2 = i;
                             break;
                         case 6:
                             iniciar.mensaje = "Cargando Evaluacion";
-                            System.Threading.Thread.Sleep(2000);
+                               System.Threading.Thread.Sleep(2000);
                             this.numero2 = i;
                             break;
                         case 7:
                             iniciar.mensaje = "Cargando Reporte";
-                            System.Threading.Thread.Sleep(2000);
+                               System.Threading.Thread.Sleep(2000);
                             this.numero2 = i;
                             break;
                         case 8:
                             iniciar.mensaje = "Iniciando Aplicacion";
-                            System.Threading.Thread.Sleep(2000);
+                                System.Threading.Thread.Sleep(2000);
                             this.numero2 = i;
                             break;
                     }
@@ -323,7 +376,8 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             if (btn.Name == btnFacebook.Name)
             {
                 System.Diagnostics.Process.Start("www.facebook.cl");
-            }else if (btn.Name == btnTwitter.Name)
+            }
+            else if (btn.Name == btnTwitter.Name)
             {
                 System.Diagnostics.Process.Start("www.twitter.com");
             }
@@ -391,6 +445,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 {
                     Properties.Settings.Default.RecordarUsuario = String.Empty;
                     Properties.Settings.Default.ChkRecordarUsuario = false;
+                    Properties.Settings.Default.Save();
                 }
 
                 lblErrorGeneral.Visible = false;

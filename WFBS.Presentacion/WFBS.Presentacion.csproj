@@ -61,6 +61,8 @@
     <Compile Include="Formularios\FormularioPrincipal\Cargando.Designer.cs">
       <DependentUpon>Cargando.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Clases\CargarFormulario.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Clases\CargarListaSubFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +357,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Evaluacion-Active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogotipoFondo-2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

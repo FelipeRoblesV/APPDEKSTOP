@@ -50,7 +50,7 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelContenido = new System.Windows.Forms.Panel();
             this.panelMenuDatagrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -85,7 +85,7 @@
             this.panelMenuDatagrid.Location = new System.Drawing.Point(0, 0);
             this.panelMenuDatagrid.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.panelMenuDatagrid.Name = "panelMenuDatagrid";
-            this.panelMenuDatagrid.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panelMenuDatagrid.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
             this.panelMenuDatagrid.Size = new System.Drawing.Size(1496, 30);
             this.panelMenuDatagrid.TabIndex = 9;
             this.panelMenuDatagrid.Visible = false;
@@ -109,7 +109,7 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Left;
             this.label5.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(440, 5);
+            this.label5.Location = new System.Drawing.Point(450, 5);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 25);
             this.label5.TabIndex = 14;
@@ -121,7 +121,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Left;
             this.label4.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(421, 5);
+            this.label4.Location = new System.Drawing.Point(431, 5);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(19, 25);
             this.label4.TabIndex = 13;
@@ -133,7 +133,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Left;
             this.label3.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(220, 5);
+            this.label3.Location = new System.Drawing.Point(230, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(201, 25);
             this.label3.TabIndex = 12;
@@ -145,7 +145,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Left;
             this.label2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(201, 5);
+            this.label2.Location = new System.Drawing.Point(211, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(19, 25);
             this.label2.TabIndex = 11;
@@ -157,7 +157,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(0, 5);
+            this.label1.Location = new System.Drawing.Point(10, 5);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 25);
             this.label1.TabIndex = 10;
@@ -168,7 +168,7 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 5);
+            this.pictureBox3.Location = new System.Drawing.Point(10, 5);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
@@ -181,7 +181,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 5);
+            this.pictureBox2.Location = new System.Drawing.Point(10, 5);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
@@ -232,7 +232,7 @@
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEliminar.Location = new System.Drawing.Point(0, 5);
+            this.btnEliminar.Location = new System.Drawing.Point(10, 5);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
@@ -245,7 +245,7 @@
             // 
             this.btnModificar.BackColor = System.Drawing.Color.Yellow;
             this.btnModificar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnModificar.Location = new System.Drawing.Point(0, 5);
+            this.btnModificar.Location = new System.Drawing.Point(10, 5);
             this.btnModificar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
@@ -258,7 +258,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 5);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
@@ -278,7 +278,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 30);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 10, 25, 10);
+            this.panel1.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
             this.panel1.Size = new System.Drawing.Size(1496, 52);
             this.panel1.TabIndex = 10;
             // 
@@ -287,7 +287,7 @@
             this.lblError.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblError.Font = new System.Drawing.Font("Roboto Light", 11.25F);
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblError.Location = new System.Drawing.Point(906, 10);
+            this.lblError.Location = new System.Drawing.Point(901, 10);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(291, 32);
             this.lblError.TabIndex = 7;
@@ -306,7 +306,7 @@
             this.txtBuscar.Font = new System.Drawing.Font("Roboto Light", 9.75F);
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(210)))), ((int)(((byte)(217)))));
             this.txtBuscar.isPassword = false;
-            this.txtBuscar.Location = new System.Drawing.Point(1197, 10);
+            this.txtBuscar.Location = new System.Drawing.Point(1192, 10);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(274, 32);
@@ -318,9 +318,9 @@
             this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(290, 10);
+            this.lblDescripcion.Location = new System.Drawing.Point(279, 10);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(497, 32);
+            this.lblDescripcion.Size = new System.Drawing.Size(567, 32);
             this.lblDescripcion.TabIndex = 5;
             this.lblDescripcion.Text = "Descripcion del Formulario";
             this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -332,7 +332,7 @@
             this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(280, 10);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(269, 10);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
@@ -345,34 +345,35 @@
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblTitulo.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblTitulo.Location = new System.Drawing.Point(0, 10);
+            this.lblTitulo.Location = new System.Drawing.Point(30, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(280, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(239, 32);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Titulo del Formulario";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel2
+            // panelContenido
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 82);
-            this.panel2.Margin = new System.Windows.Forms.Padding(30);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(30, 5, 30, 30);
-            this.panel2.Size = new System.Drawing.Size(1496, 649);
-            this.panel2.TabIndex = 11;
+            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(0, 82);
+            this.panelContenido.Margin = new System.Windows.Forms.Padding(30);
+            this.panelContenido.Name = "panelContenido";
+            this.panelContenido.Padding = new System.Windows.Forms.Padding(30, 5, 30, 30);
+            this.panelContenido.Size = new System.Drawing.Size(1496, 649);
+            this.panelContenido.TabIndex = 11;
             // 
             // ListadoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1496, 731);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenuDatagrid);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListadoPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListadoPrincipal";
             this.panelMenuDatagrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
@@ -406,7 +407,7 @@
         private System.Windows.Forms.Label lblDescripcion;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelContenido;
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

@@ -133,9 +133,9 @@ namespace WFBS.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Dashboard_Active1 {
+        internal static System.Drawing.Bitmap Dashboard_Active {
             get {
-                object obj = ResourceManager.GetObject("Dashboard_Active1", resourceCulture);
+                object obj = ResourceManager.GetObject("Dashboard_Active", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -155,7 +155,7 @@ namespace WFBS.Presentacion.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Evaluacion_Active {
             get {
-                object obj = ResourceManager.GetObject("Evaluacion-Active", resourceCulture);
+                object obj = ResourceManager.GetObject("Evaluacion_Active", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -196,6 +196,16 @@ namespace WFBS.Presentacion.Properties {
         internal static System.Drawing.Bitmap Instagram {
             get {
                 object obj = ResourceManager.GetObject("Instagram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LogotipoFondo_2 {
+            get {
+                object obj = ResourceManager.GetObject("LogotipoFondo-2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
