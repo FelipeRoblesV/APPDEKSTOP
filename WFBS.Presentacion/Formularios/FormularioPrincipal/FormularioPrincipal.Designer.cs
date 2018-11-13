@@ -32,19 +32,9 @@
             BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.panelSuperior = new System.Windows.Forms.Panel();
-            this.btnMinimizarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnRestaurarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnMaximizarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btn_cerrarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelLateralMini = new System.Windows.Forms.Panel();
-            this.btnReporte = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnEvaluacion = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCompetencia = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnPerfil = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnFuncionario = new Bunifu.Framework.UI.BunifuImageButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.btnDashboard = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelSeleccionMini = new System.Windows.Forms.Panel();
             this.SidePanelReporteMini = new System.Windows.Forms.Panel();
             this.SidePanelEvaluacionMini = new System.Windows.Forms.Panel();
@@ -54,12 +44,16 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.SidePanelDashboardMini = new System.Windows.Forms.Panel();
             this.panelSubMenu = new System.Windows.Forms.Panel();
-            this.btnAyuda = new Bunifu.Framework.UI.BunifuImageButton();
-            this.btnCerrarSesion = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelSubMenuOculto = new System.Windows.Forms.Panel();
             this.btnAccion2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAccion1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelMenuDatagrid = new System.Windows.Forms.Panel();
+            this.paneFooter = new System.Windows.Forms.Panel();
+            this.PanelContenedor = new System.Windows.Forms.Panel();
+            this.PanelCRUD = new System.Windows.Forms.Panel();
+            this.MoverFormulario = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.Animacion = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRefrescar = new System.Windows.Forms.PictureBox();
@@ -68,31 +62,30 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.paneFooter = new System.Windows.Forms.Panel();
-            this.PanelContenedor = new System.Windows.Forms.Panel();
-            this.PanelCRUD = new System.Windows.Forms.Panel();
-            this.MoverFormulario = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Animacion = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.btnAyuda = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnCerrarSesion = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnReporte = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnEvaluacion = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnCompetencia = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnPerfil = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnFuncionario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnDashboard = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnRestaurarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMaximizarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btn_cerrarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnMinimizarFormulario = new Bunifu.Framework.UI.BunifuImageButton();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelSuperior.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarFormulario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarFormulario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarFormulario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarFormulario)).BeginInit();
             this.panelLateralMini.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEvaluacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCompetencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPerfil)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFuncionario)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).BeginInit();
             this.panelSeleccionMini.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAyuda)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             this.panelSubMenuOculto.SuspendLayout();
             this.panelMenuDatagrid.SuspendLayout();
+            this.paneFooter.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescar)).BeginInit();
@@ -101,12 +94,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAyuda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEvaluacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCompetencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPerfil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFuncionario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarFormulario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarFormulario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarFormulario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarFormulario)).BeginInit();
             this.SuspendLayout();
             // 
             // panelSuperior
             // 
             this.panelSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.panelSuperior.Controls.Add(this.label1);
             this.panelSuperior.Controls.Add(this.btnMinimizarFormulario);
             this.panelSuperior.Controls.Add(this.btnRestaurarFormulario);
             this.panelSuperior.Controls.Add(this.btnMaximizarFormulario);
@@ -115,70 +120,9 @@
             this.panelSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuperior.Location = new System.Drawing.Point(0, 0);
             this.panelSuperior.Name = "panelSuperior";
-            this.panelSuperior.Padding = new System.Windows.Forms.Padding(2);
-            this.panelSuperior.Size = new System.Drawing.Size(1596, 26);
+            this.panelSuperior.Padding = new System.Windows.Forms.Padding(3);
+            this.panelSuperior.Size = new System.Drawing.Size(1596, 31);
             this.panelSuperior.TabIndex = 5;
-            // 
-            // btnMinimizarFormulario
-            // 
-            this.btnMinimizarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnMinimizarFormulario, BunifuAnimatorNS.DecorationType.None);
-            this.btnMinimizarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimizarFormulario.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizarFormulario.Image")));
-            this.btnMinimizarFormulario.ImageActive = null;
-            this.btnMinimizarFormulario.Location = new System.Drawing.Point(1494, 2);
-            this.btnMinimizarFormulario.Name = "btnMinimizarFormulario";
-            this.btnMinimizarFormulario.Size = new System.Drawing.Size(25, 22);
-            this.btnMinimizarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizarFormulario.TabIndex = 4;
-            this.btnMinimizarFormulario.TabStop = false;
-            this.btnMinimizarFormulario.Zoom = 0;
-            // 
-            // btnRestaurarFormulario
-            // 
-            this.btnRestaurarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnRestaurarFormulario, BunifuAnimatorNS.DecorationType.None);
-            this.btnRestaurarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRestaurarFormulario.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarFormulario.Image")));
-            this.btnRestaurarFormulario.ImageActive = null;
-            this.btnRestaurarFormulario.Location = new System.Drawing.Point(1519, 2);
-            this.btnRestaurarFormulario.Name = "btnRestaurarFormulario";
-            this.btnRestaurarFormulario.Size = new System.Drawing.Size(25, 22);
-            this.btnRestaurarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRestaurarFormulario.TabIndex = 3;
-            this.btnRestaurarFormulario.TabStop = false;
-            this.btnRestaurarFormulario.Visible = false;
-            this.btnRestaurarFormulario.Zoom = 0;
-            // 
-            // btnMaximizarFormulario
-            // 
-            this.btnMaximizarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnMaximizarFormulario, BunifuAnimatorNS.DecorationType.None);
-            this.btnMaximizarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximizarFormulario.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizarFormulario.Image")));
-            this.btnMaximizarFormulario.ImageActive = null;
-            this.btnMaximizarFormulario.Location = new System.Drawing.Point(1544, 2);
-            this.btnMaximizarFormulario.Name = "btnMaximizarFormulario";
-            this.btnMaximizarFormulario.Size = new System.Drawing.Size(25, 22);
-            this.btnMaximizarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMaximizarFormulario.TabIndex = 2;
-            this.btnMaximizarFormulario.TabStop = false;
-            this.btnMaximizarFormulario.Zoom = 0;
-            // 
-            // btn_cerrarFormulario
-            // 
-            this.btn_cerrarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btn_cerrarFormulario, BunifuAnimatorNS.DecorationType.None);
-            this.btn_cerrarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_cerrarFormulario.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrarFormulario.Image")));
-            this.btn_cerrarFormulario.ImageActive = null;
-            this.btn_cerrarFormulario.Location = new System.Drawing.Point(1569, 2);
-            this.btn_cerrarFormulario.Name = "btn_cerrarFormulario";
-            this.btn_cerrarFormulario.Size = new System.Drawing.Size(25, 22);
-            this.btn_cerrarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_cerrarFormulario.TabIndex = 1;
-            this.btn_cerrarFormulario.TabStop = false;
-            this.btn_cerrarFormulario.Zoom = 0;
             // 
             // panelLateralMini
             // 
@@ -193,91 +137,11 @@
             this.panelLateralMini.Controls.Add(this.panelSeleccionMini);
             this.Animacion.SetDecoration(this.panelLateralMini, BunifuAnimatorNS.DecorationType.None);
             this.panelLateralMini.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLateralMini.Location = new System.Drawing.Point(0, 26);
+            this.panelLateralMini.Location = new System.Drawing.Point(0, 31);
             this.panelLateralMini.Name = "panelLateralMini";
             this.panelLateralMini.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.panelLateralMini.Size = new System.Drawing.Size(100, 870);
+            this.panelLateralMini.Size = new System.Drawing.Size(100, 865);
             this.panelLateralMini.TabIndex = 6;
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnReporte, BunifuAnimatorNS.DecorationType.None);
-            this.btnReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporte.Image = global::WFBS.Presentacion.Properties.Resources.Reporte;
-            this.btnReporte.ImageActive = null;
-            this.btnReporte.Location = new System.Drawing.Point(9, 466);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(91, 91);
-            this.btnReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnReporte.TabIndex = 12;
-            this.btnReporte.TabStop = false;
-            this.btnReporte.Zoom = 0;
-            this.btnReporte.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnEvaluacion
-            // 
-            this.btnEvaluacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnEvaluacion, BunifuAnimatorNS.DecorationType.None);
-            this.btnEvaluacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEvaluacion.Image = global::WFBS.Presentacion.Properties.Resources.Evaluacion;
-            this.btnEvaluacion.ImageActive = null;
-            this.btnEvaluacion.Location = new System.Drawing.Point(9, 375);
-            this.btnEvaluacion.Name = "btnEvaluacion";
-            this.btnEvaluacion.Size = new System.Drawing.Size(91, 91);
-            this.btnEvaluacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnEvaluacion.TabIndex = 11;
-            this.btnEvaluacion.TabStop = false;
-            this.btnEvaluacion.Zoom = 0;
-            this.btnEvaluacion.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnCompetencia
-            // 
-            this.btnCompetencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnCompetencia, BunifuAnimatorNS.DecorationType.None);
-            this.btnCompetencia.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCompetencia.Image = global::WFBS.Presentacion.Properties.Resources.Competencia;
-            this.btnCompetencia.ImageActive = null;
-            this.btnCompetencia.Location = new System.Drawing.Point(9, 284);
-            this.btnCompetencia.Name = "btnCompetencia";
-            this.btnCompetencia.Size = new System.Drawing.Size(91, 91);
-            this.btnCompetencia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCompetencia.TabIndex = 10;
-            this.btnCompetencia.TabStop = false;
-            this.btnCompetencia.Zoom = 0;
-            this.btnCompetencia.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnPerfil
-            // 
-            this.btnPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnPerfil, BunifuAnimatorNS.DecorationType.None);
-            this.btnPerfil.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPerfil.Image = global::WFBS.Presentacion.Properties.Resources.Perfil;
-            this.btnPerfil.ImageActive = null;
-            this.btnPerfil.Location = new System.Drawing.Point(9, 193);
-            this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(91, 91);
-            this.btnPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnPerfil.TabIndex = 7;
-            this.btnPerfil.TabStop = false;
-            this.btnPerfil.Zoom = 0;
-            this.btnPerfil.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
-            // btnFuncionario
-            // 
-            this.btnFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnFuncionario, BunifuAnimatorNS.DecorationType.None);
-            this.btnFuncionario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFuncionario.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
-            this.btnFuncionario.ImageActive = null;
-            this.btnFuncionario.Location = new System.Drawing.Point(9, 102);
-            this.btnFuncionario.Name = "btnFuncionario";
-            this.btnFuncionario.Size = new System.Drawing.Size(91, 91);
-            this.btnFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnFuncionario.TabIndex = 6;
-            this.btnFuncionario.TabStop = false;
-            this.btnFuncionario.Zoom = 0;
-            this.btnFuncionario.Click += new System.EventHandler(this.btnMenu_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -308,22 +172,6 @@
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
             // 
-            // btnDashboard
-            // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.btnDashboard, BunifuAnimatorNS.DecorationType.None);
-            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnDashboard.Image = global::WFBS.Presentacion.Properties.Resources.Dashboard;
-            this.btnDashboard.ImageActive = null;
-            this.btnDashboard.Location = new System.Drawing.Point(9, 1);
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.Size = new System.Drawing.Size(91, 91);
-            this.btnDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnDashboard.TabIndex = 2;
-            this.btnDashboard.TabStop = false;
-            this.btnDashboard.Zoom = 0;
-            this.btnDashboard.Click += new System.EventHandler(this.btnMenu_Click);
-            // 
             // panelSeleccionMini
             // 
             this.panelSeleccionMini.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
@@ -339,7 +187,7 @@
             this.panelSeleccionMini.Location = new System.Drawing.Point(0, 1);
             this.panelSeleccionMini.Name = "panelSeleccionMini";
             this.panelSeleccionMini.Padding = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.panelSeleccionMini.Size = new System.Drawing.Size(9, 869);
+            this.panelSeleccionMini.Size = new System.Drawing.Size(9, 864);
             this.panelSeleccionMini.TabIndex = 1;
             // 
             // SidePanelReporteMini
@@ -420,43 +268,11 @@
             this.panelSubMenu.Controls.Add(this.btnCerrarSesion);
             this.Animacion.SetDecoration(this.panelSubMenu, BunifuAnimatorNS.DecorationType.None);
             this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenu.Location = new System.Drawing.Point(100, 26);
+            this.panelSubMenu.Location = new System.Drawing.Point(100, 31);
             this.panelSubMenu.Name = "panelSubMenu";
             this.panelSubMenu.Padding = new System.Windows.Forms.Padding(5);
             this.panelSubMenu.Size = new System.Drawing.Size(1496, 35);
             this.panelSubMenu.TabIndex = 7;
-            // 
-            // btnAyuda
-            // 
-            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
-            this.Animacion.SetDecoration(this.btnAyuda, BunifuAnimatorNS.DecorationType.None);
-            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnAyuda.Image = ((System.Drawing.Image)(resources.GetObject("btnAyuda.Image")));
-            this.btnAyuda.ImageActive = null;
-            this.btnAyuda.Location = new System.Drawing.Point(1421, 5);
-            this.btnAyuda.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.btnAyuda.Name = "btnAyuda";
-            this.btnAyuda.Size = new System.Drawing.Size(35, 25);
-            this.btnAyuda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAyuda.TabIndex = 1;
-            this.btnAyuda.TabStop = false;
-            this.btnAyuda.Zoom = 0;
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
-            this.Animacion.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
-            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageActive = null;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(1456, 5);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(35, 25);
-            this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnCerrarSesion.TabIndex = 0;
-            this.btnCerrarSesion.TabStop = false;
-            this.btnCerrarSesion.Zoom = 0;
             // 
             // panelSubMenuOculto
             // 
@@ -465,7 +281,7 @@
             this.panelSubMenuOculto.Controls.Add(this.btnAccion1);
             this.Animacion.SetDecoration(this.panelSubMenuOculto, BunifuAnimatorNS.DecorationType.None);
             this.panelSubMenuOculto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuOculto.Location = new System.Drawing.Point(100, 61);
+            this.panelSubMenuOculto.Location = new System.Drawing.Point(100, 66);
             this.panelSubMenuOculto.Name = "panelSubMenuOculto";
             this.panelSubMenuOculto.Padding = new System.Windows.Forms.Padding(0, 1, 1, 0);
             this.panelSubMenuOculto.Size = new System.Drawing.Size(1496, 54);
@@ -571,6 +387,84 @@
             this.panelMenuDatagrid.Size = new System.Drawing.Size(1496, 30);
             this.panelMenuDatagrid.TabIndex = 9;
             this.panelMenuDatagrid.Visible = false;
+            // 
+            // paneFooter
+            // 
+            this.paneFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.paneFooter.Controls.Add(this.label6);
+            this.paneFooter.Controls.Add(this.label7);
+            this.Animacion.SetDecoration(this.paneFooter, BunifuAnimatorNS.DecorationType.None);
+            this.paneFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.paneFooter.Location = new System.Drawing.Point(100, 879);
+            this.paneFooter.Name = "paneFooter";
+            this.paneFooter.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.paneFooter.Size = new System.Drawing.Size(1496, 17);
+            this.paneFooter.TabIndex = 15;
+            // 
+            // PanelContenedor
+            // 
+            this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.PanelContenedor.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Animacion.SetDecoration(this.PanelContenedor, BunifuAnimatorNS.DecorationType.None);
+            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenedor.Location = new System.Drawing.Point(335, 30);
+            this.PanelContenedor.Name = "PanelContenedor";
+            this.PanelContenedor.Size = new System.Drawing.Size(1161, 729);
+            this.PanelContenedor.TabIndex = 17;
+            // 
+            // PanelCRUD
+            // 
+            this.PanelCRUD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.Animacion.SetDecoration(this.PanelCRUD, BunifuAnimatorNS.DecorationType.None);
+            this.PanelCRUD.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PanelCRUD.Location = new System.Drawing.Point(0, 30);
+            this.PanelCRUD.Name = "PanelCRUD";
+            this.PanelCRUD.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.PanelCRUD.Size = new System.Drawing.Size(335, 729);
+            this.PanelCRUD.TabIndex = 16;
+            this.PanelCRUD.Visible = false;
+            // 
+            // MoverFormulario
+            // 
+            this.MoverFormulario.Fixed = true;
+            this.MoverFormulario.Horizontal = true;
+            this.MoverFormulario.TargetControl = this.panelSuperior;
+            this.MoverFormulario.Vertical = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.PanelContenedor);
+            this.panel2.Controls.Add(this.PanelCRUD);
+            this.panel2.Controls.Add(this.panelMenuDatagrid);
+            this.Animacion.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(100, 120);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1496, 759);
+            this.panel2.TabIndex = 18;
+            // 
+            // Animacion
+            // 
+            this.Animacion.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
+            this.Animacion.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.Animacion.DefaultAnimation = animation1;
+            this.Animacion.Interval = 5;
+            this.Animacion.TimeStep = 0.6F;
             // 
             // pictureBox3
             // 
@@ -680,80 +574,241 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // paneFooter
+            // btnAyuda
             // 
-            this.paneFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
-            this.Animacion.SetDecoration(this.paneFooter, BunifuAnimatorNS.DecorationType.None);
-            this.paneFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.paneFooter.Location = new System.Drawing.Point(100, 876);
-            this.paneFooter.Name = "paneFooter";
-            this.paneFooter.Size = new System.Drawing.Size(1496, 20);
-            this.paneFooter.TabIndex = 15;
+            this.btnAyuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
+            this.Animacion.SetDecoration(this.btnAyuda, BunifuAnimatorNS.DecorationType.None);
+            this.btnAyuda.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnAyuda.Image = global::WFBS.Presentacion.Properties.Resources.Ayuda;
+            this.btnAyuda.ImageActive = null;
+            this.btnAyuda.Location = new System.Drawing.Point(1421, 5);
+            this.btnAyuda.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.btnAyuda.Name = "btnAyuda";
+            this.btnAyuda.Size = new System.Drawing.Size(35, 25);
+            this.btnAyuda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAyuda.TabIndex = 1;
+            this.btnAyuda.TabStop = false;
+            this.btnAyuda.Zoom = 0;
             // 
-            // PanelContenedor
+            // btnCerrarSesion
             // 
-            this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
-            this.PanelContenedor.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Animacion.SetDecoration(this.PanelContenedor, BunifuAnimatorNS.DecorationType.None);
-            this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContenedor.Location = new System.Drawing.Point(335, 30);
-            this.PanelContenedor.Name = "PanelContenedor";
-            this.PanelContenedor.Size = new System.Drawing.Size(1161, 731);
-            this.PanelContenedor.TabIndex = 17;
+            this.btnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
+            this.Animacion.SetDecoration(this.btnCerrarSesion, BunifuAnimatorNS.DecorationType.None);
+            this.btnCerrarSesion.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCerrarSesion.Image = global::WFBS.Presentacion.Properties.Resources.CerrarSesion;
+            this.btnCerrarSesion.ImageActive = null;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(1456, 5);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(35, 25);
+            this.btnCerrarSesion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrarSesion.TabIndex = 0;
+            this.btnCerrarSesion.TabStop = false;
+            this.btnCerrarSesion.Zoom = 0;
             // 
-            // PanelCRUD
+            // btnReporte
             // 
-            this.PanelCRUD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
-            this.Animacion.SetDecoration(this.PanelCRUD, BunifuAnimatorNS.DecorationType.None);
-            this.PanelCRUD.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PanelCRUD.Location = new System.Drawing.Point(0, 30);
-            this.PanelCRUD.Name = "PanelCRUD";
-            this.PanelCRUD.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.PanelCRUD.Size = new System.Drawing.Size(335, 731);
-            this.PanelCRUD.TabIndex = 16;
-            this.PanelCRUD.Visible = false;
+            this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnReporte, BunifuAnimatorNS.DecorationType.None);
+            this.btnReporte.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporte.Image = global::WFBS.Presentacion.Properties.Resources.Reporte;
+            this.btnReporte.ImageActive = null;
+            this.btnReporte.Location = new System.Drawing.Point(9, 466);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(91, 91);
+            this.btnReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnReporte.TabIndex = 12;
+            this.btnReporte.TabStop = false;
+            this.btnReporte.Zoom = 0;
+            this.btnReporte.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // MoverFormulario
+            // btnEvaluacion
             // 
-            this.MoverFormulario.Fixed = true;
-            this.MoverFormulario.Horizontal = true;
-            this.MoverFormulario.TargetControl = this.panelSuperior;
-            this.MoverFormulario.Vertical = true;
+            this.btnEvaluacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnEvaluacion, BunifuAnimatorNS.DecorationType.None);
+            this.btnEvaluacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEvaluacion.Image = global::WFBS.Presentacion.Properties.Resources.Evaluacion;
+            this.btnEvaluacion.ImageActive = null;
+            this.btnEvaluacion.Location = new System.Drawing.Point(9, 375);
+            this.btnEvaluacion.Name = "btnEvaluacion";
+            this.btnEvaluacion.Size = new System.Drawing.Size(91, 91);
+            this.btnEvaluacion.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnEvaluacion.TabIndex = 11;
+            this.btnEvaluacion.TabStop = false;
+            this.btnEvaluacion.Zoom = 0;
+            this.btnEvaluacion.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // panel2
+            // btnCompetencia
             // 
-            this.panel2.Controls.Add(this.PanelContenedor);
-            this.panel2.Controls.Add(this.PanelCRUD);
-            this.panel2.Controls.Add(this.panelMenuDatagrid);
-            this.Animacion.SetDecoration(this.panel2, BunifuAnimatorNS.DecorationType.None);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(100, 115);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1496, 761);
-            this.panel2.TabIndex = 18;
+            this.btnCompetencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnCompetencia, BunifuAnimatorNS.DecorationType.None);
+            this.btnCompetencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCompetencia.Image = global::WFBS.Presentacion.Properties.Resources.Competencia;
+            this.btnCompetencia.ImageActive = null;
+            this.btnCompetencia.Location = new System.Drawing.Point(9, 284);
+            this.btnCompetencia.Name = "btnCompetencia";
+            this.btnCompetencia.Size = new System.Drawing.Size(91, 91);
+            this.btnCompetencia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCompetencia.TabIndex = 10;
+            this.btnCompetencia.TabStop = false;
+            this.btnCompetencia.Zoom = 0;
+            this.btnCompetencia.Click += new System.EventHandler(this.btnMenu_Click);
             // 
-            // Animacion
+            // btnPerfil
             // 
-            this.Animacion.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
-            this.Animacion.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 1;
-            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 2F;
-            animation1.TransparencyCoeff = 0F;
-            this.Animacion.DefaultAnimation = animation1;
-            this.Animacion.Interval = 5;
-            this.Animacion.TimeStep = 0.6F;
+            this.btnPerfil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnPerfil, BunifuAnimatorNS.DecorationType.None);
+            this.btnPerfil.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPerfil.Image = global::WFBS.Presentacion.Properties.Resources.Perfil;
+            this.btnPerfil.ImageActive = null;
+            this.btnPerfil.Location = new System.Drawing.Point(9, 193);
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Size = new System.Drawing.Size(91, 91);
+            this.btnPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnPerfil.TabIndex = 7;
+            this.btnPerfil.TabStop = false;
+            this.btnPerfil.Zoom = 0;
+            this.btnPerfil.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnFuncionario
+            // 
+            this.btnFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnFuncionario, BunifuAnimatorNS.DecorationType.None);
+            this.btnFuncionario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFuncionario.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
+            this.btnFuncionario.ImageActive = null;
+            this.btnFuncionario.Location = new System.Drawing.Point(9, 102);
+            this.btnFuncionario.Name = "btnFuncionario";
+            this.btnFuncionario.Size = new System.Drawing.Size(91, 91);
+            this.btnFuncionario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnFuncionario.TabIndex = 6;
+            this.btnFuncionario.TabStop = false;
+            this.btnFuncionario.Zoom = 0;
+            this.btnFuncionario.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnDashboard
+            // 
+            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnDashboard, BunifuAnimatorNS.DecorationType.None);
+            this.btnDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnDashboard.Image = global::WFBS.Presentacion.Properties.Resources.Dashboard;
+            this.btnDashboard.ImageActive = null;
+            this.btnDashboard.Location = new System.Drawing.Point(9, 1);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(91, 91);
+            this.btnDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnDashboard.TabIndex = 2;
+            this.btnDashboard.TabStop = false;
+            this.btnDashboard.Zoom = 0;
+            this.btnDashboard.Click += new System.EventHandler(this.btnMenu_Click);
+            // 
+            // btnRestaurarFormulario
+            // 
+            this.btnRestaurarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnRestaurarFormulario, BunifuAnimatorNS.DecorationType.None);
+            this.btnRestaurarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRestaurarFormulario.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurarFormulario.Image")));
+            this.btnRestaurarFormulario.ImageActive = null;
+            this.btnRestaurarFormulario.Location = new System.Drawing.Point(1518, 3);
+            this.btnRestaurarFormulario.Name = "btnRestaurarFormulario";
+            this.btnRestaurarFormulario.Size = new System.Drawing.Size(25, 25);
+            this.btnRestaurarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRestaurarFormulario.TabIndex = 3;
+            this.btnRestaurarFormulario.TabStop = false;
+            this.btnRestaurarFormulario.Visible = false;
+            this.btnRestaurarFormulario.Zoom = 0;
+            this.btnRestaurarFormulario.Click += new System.EventHandler(this.btnControles_Click);
+            // 
+            // btnMaximizarFormulario
+            // 
+            this.btnMaximizarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnMaximizarFormulario, BunifuAnimatorNS.DecorationType.None);
+            this.btnMaximizarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximizarFormulario.Image = global::WFBS.Presentacion.Properties.Resources.MaximeFP;
+            this.btnMaximizarFormulario.ImageActive = null;
+            this.btnMaximizarFormulario.Location = new System.Drawing.Point(1543, 3);
+            this.btnMaximizarFormulario.Name = "btnMaximizarFormulario";
+            this.btnMaximizarFormulario.Size = new System.Drawing.Size(25, 25);
+            this.btnMaximizarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMaximizarFormulario.TabIndex = 2;
+            this.btnMaximizarFormulario.TabStop = false;
+            this.btnMaximizarFormulario.Zoom = 0;
+            this.btnMaximizarFormulario.Click += new System.EventHandler(this.btnControles_Click);
+            // 
+            // btn_cerrarFormulario
+            // 
+            this.btn_cerrarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btn_cerrarFormulario, BunifuAnimatorNS.DecorationType.None);
+            this.btn_cerrarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_cerrarFormulario.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrarFormulario.Image")));
+            this.btn_cerrarFormulario.ImageActive = null;
+            this.btn_cerrarFormulario.Location = new System.Drawing.Point(1568, 3);
+            this.btn_cerrarFormulario.Name = "btn_cerrarFormulario";
+            this.btn_cerrarFormulario.Padding = new System.Windows.Forms.Padding(1);
+            this.btn_cerrarFormulario.Size = new System.Drawing.Size(25, 25);
+            this.btn_cerrarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btn_cerrarFormulario.TabIndex = 1;
+            this.btn_cerrarFormulario.TabStop = false;
+            this.btn_cerrarFormulario.Zoom = 0;
+            this.btn_cerrarFormulario.Click += new System.EventHandler(this.btnControles_Click);
+            // 
+            // btnMinimizarFormulario
+            // 
+            this.btnMinimizarFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(27)))), ((int)(((byte)(39)))));
+            this.Animacion.SetDecoration(this.btnMinimizarFormulario, BunifuAnimatorNS.DecorationType.None);
+            this.btnMinimizarFormulario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimizarFormulario.Image = global::WFBS.Presentacion.Properties.Resources.MinimizeFP;
+            this.btnMinimizarFormulario.ImageActive = null;
+            this.btnMinimizarFormulario.Location = new System.Drawing.Point(1493, 3);
+            this.btnMinimizarFormulario.Name = "btnMinimizarFormulario";
+            this.btnMinimizarFormulario.Size = new System.Drawing.Size(25, 25);
+            this.btnMinimizarFormulario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizarFormulario.TabIndex = 4;
+            this.btnMinimizarFormulario.TabStop = false;
+            this.btnMinimizarFormulario.Zoom = 0;
+            this.btnMinimizarFormulario.Click += new System.EventHandler(this.btnControles_Click);
+            // 
+            // label7
+            // 
+            this.Animacion.SetDecoration(this.label7, BunifuAnimatorNS.DecorationType.None);
+            this.label7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label7.Font = new System.Drawing.Font("Roboto Light", 8.25F);
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(1333, 0);
+            this.label7.Margin = new System.Windows.Forms.Padding(0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(143, 17);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Creado por RAGE DESING";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.Animacion.SetDecoration(this.label6, BunifuAnimatorNS.DecorationType.None);
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.Font = new System.Drawing.Font("Roboto Light", 8.25F);
+            this.label6.ForeColor = System.Drawing.SystemColors.Control;
+            this.label6.Location = new System.Drawing.Point(20, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(213, 17);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "© 2018, Todos los derechos reservados";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.Animacion.SetDecoration(this.label1, BunifuAnimatorNS.DecorationType.None);
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label1.Font = new System.Drawing.Font("Roboto", 12.25F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "WFBS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormularioPrincipal
             // 
@@ -771,24 +826,14 @@
             this.Name = "FormularioPrincipal";
             this.Text = "FormularioPrincipal";
             this.panelSuperior.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarFormulario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarFormulario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarFormulario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarFormulario)).EndInit();
             this.panelLateralMini.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEvaluacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCompetencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnPerfil)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnFuncionario)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).EndInit();
             this.panelSeleccionMini.ResumeLayout(false);
             this.panelSubMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnAyuda)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             this.panelSubMenuOculto.ResumeLayout(false);
             this.panelMenuDatagrid.ResumeLayout(false);
+            this.paneFooter.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescar)).EndInit();
@@ -797,7 +842,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnAyuda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEvaluacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCompetencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPerfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFuncionario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDashboard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarFormulario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMaximizarFormulario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_cerrarFormulario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarFormulario)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -805,7 +861,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelSuperior;
-        private Bunifu.Framework.UI.BunifuImageButton btnMinimizarFormulario;
         private Bunifu.Framework.UI.BunifuImageButton btnRestaurarFormulario;
         private Bunifu.Framework.UI.BunifuImageButton btnMaximizarFormulario;
         private Bunifu.Framework.UI.BunifuImageButton btn_cerrarFormulario;
@@ -847,5 +902,9 @@
         private Bunifu.Framework.UI.BunifuDragControl MoverFormulario;
         private System.Windows.Forms.Panel panel2;
         private BunifuAnimatorNS.BunifuTransition Animacion;
+        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuImageButton btnMinimizarFormulario;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

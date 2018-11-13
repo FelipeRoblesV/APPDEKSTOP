@@ -63,6 +63,16 @@ namespace WFBS.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ayuda {
+            get {
+                object obj = ResourceManager.GetObject("Ayuda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Background_1 {
             get {
                 object obj = ResourceManager.GetObject("Background_1", resourceCulture);
@@ -96,6 +106,36 @@ namespace WFBS.Presentacion.Properties {
         internal static System.Drawing.Bitmap Background_4 {
             get {
                 object obj = ResourceManager.GetObject("Background_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CerrarFP {
+            get {
+                object obj = ResourceManager.GetObject("CerrarFP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CerrarFP1 {
+            get {
+                object obj = ResourceManager.GetObject("CerrarFP1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CerrarSesion {
+            get {
+                object obj = ResourceManager.GetObject("CerrarSesion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -205,7 +245,7 @@ namespace WFBS.Presentacion.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap LogotipoFondo_2 {
             get {
-                object obj = ResourceManager.GetObject("LogotipoFondo-2", resourceCulture);
+                object obj = ResourceManager.GetObject("LogotipoFondo_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -226,6 +266,26 @@ namespace WFBS.Presentacion.Properties {
         internal static System.Drawing.Bitmap logotipoWallpaper {
             get {
                 object obj = ResourceManager.GetObject("logotipoWallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MaximeFP {
+            get {
+                object obj = ResourceManager.GetObject("MaximeFP", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MinimizeFP {
+            get {
+                object obj = ResourceManager.GetObject("MinimizeFP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -266,6 +326,16 @@ namespace WFBS.Presentacion.Properties {
         internal static System.Drawing.Bitmap Reporte_Active {
             get {
                 object obj = ResourceManager.GetObject("Reporte_Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RestoreFP {
+            get {
+                object obj = ResourceManager.GetObject("RestoreFP", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

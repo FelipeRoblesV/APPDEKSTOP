@@ -19,9 +19,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
     {
         private Modulo.Listado listaFuncionario, listaJefeFuncionario, listaPerfil, listaCargo, listaCompetencia,listarCompetenciaFinal, listarObservacion, listaEvaluacion, listaReporte;
         private BackgroundWorker IniciarSubFormulario_Background;
-        private Cl_Perfil perfil;
         private CargarListaSubFormulario SubFormularioInicia;
-        private int numero = 0, idPerfilCOMP = 0;
+        private double numero = 0;
+        private int idPerfilCOMP = 0;
 
         public ListadoPrincipal()
         {
@@ -29,13 +29,25 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             InitializeComponent();
         }
 
-        public void DefinirFormulario(int numero, DataSet listar,bool estado)
+        private void DefinirModulo(double numero)
+        {
+            switch (numero)
+            {
+                case 1:
+                    lblTitulo.Text = "Funcionario";
+                    break;
+            }
+        }
+
+        public void DefinirFormulario(double numero, DataSet listar,bool estado)
         {
             switch (numero)
             {
                 case 1:
                     listaFuncionario = new Modulo.Listado();
                     listaFuncionario.definirFormulario(numero, listar, estado);
+                    this.numero = numero;
+                    DefinirModulo(numero);
                     AbrirFormulario(listaFuncionario);
                     break;
                 case 2:
@@ -112,12 +124,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             try
             {
                 DataSet lista = iniciar.lista;
-                listarCompetenciaFinal.definirSubFormulario(1, lista, true);
+                listarCompetenciaFinal.definirFormulario(1, lista, true);
             }
             catch (Exception)
             {
                 DataSet lista = null;
-                listarCompetenciaFinal.definirSubFormulario(1, lista, false);
+                listarCompetenciaFinal.definirFormulario(1, lista, false);
             }
 
 
@@ -161,7 +173,159 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         }
 
 
+        private void txtBuscar_OnValueChanged(object sender, EventArgs e)
+        {
 
+            switch (this.numero)
+            {
+                case 1:
+                    int numeroInterno = 0;
+                    foreach (DataGridViewRow row in listaFuncionario.dt_Listar.Rows)
+                    {
+                        string resultadoRut = row.Cells[0].Value.ToString().ToLower();
+                        string resultadorut2 = (row.Cells[0].Value.ToString().ToLower()).Replace("-","");
+                        string resultadorut3 = (row.Cells[0].Value.ToString().ToLower()).Remove(resultadoRut.Length - 2);
+                        string resultadoNombre = row.Cells[1].Value.ToString().ToLower();
+                        string resultadoApellido = row.Cells[2].Value.ToString().ToLower();
+                        string resultadoSexo = row.Cells[3].Value.ToString().ToLower();
+                        string resultadoRutJefe = row.Cells[7].Value.ToString().ToLower();
+                        string resultadoNombreJefe = row.Cells[8].Value.ToString().ToLower();
+                        string resultadoPerfil = row.Cells[9].Value.ToString().ToLower();
+
+
+                        string texto = txtBuscar.Text.ToLower();
+
+                        if (resultadoNombre == texto)
+                        {
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = true;
+                            lblError.Text = "Nombre del Funcionario.";
+                            lblError.Visible = true;
+                            numeroInterno = 1;
+                        }                    
+                        else if (resultadoRut == texto || resultadorut2 == texto || resultadorut3 == texto)
+                        {
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = true;
+                            lblError.Text = "Rut Del Funcionario";
+                            lblError.Visible = true;
+                            numeroInterno = 1;
+                        }
+                        else if (resultadoApellido == texto)
+                        {
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = true;
+                            lblError.Text = "Apellido del Funcionario.";
+                            lblError.Visible = true;
+                            numeroInterno = 1;
+                        }
+                        else if (resultadoSexo == texto)
+                        {
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = true;
+                            lblError.Text = "Sexo del Funcionario.";
+                            lblError.Visible = true;
+                            numeroInterno = 1;
+                        }
+                        else if (resultadoRutJefe == texto)
+                        {
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = true;
+                            lblError.Text = "rut del jefe de perfil";
+                            lblError.Visible = true;
+                            numeroInterno = 1;
+                        }
+                        else if (resultadoNombreJefe == texto)
+                        {
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = true;
+                            lblError.Text = "Nombre del Jefe de Perfil";
+                            lblError.Visible = true;
+                            numeroInterno = 1;
+                        }
+                        else if (resultadoPerfil == texto)
+                        {
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = true;
+                            lblError.Text = "Perfil del funcionario";
+                            lblError.Visible = true;
+                            numeroInterno = 1;
+                        }
+                        else
+                        {
+                            row.DataGridView.CurrentCell = null;
+                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                            cm.SuspendBinding();
+                            row.Visible = false;
+                            if (numeroInterno == 0)
+                            {
+                                lblError.Text = "No hay Resultados de busqueda.";
+                            }
+                            lblError.Visible = true;
+                        }
+                    }
+                    break;
+
+            }
+        }
+
+            private void txtBuscar_KeyDown(object sender, KeyEventArgs e)
+            {
+                KeyEventArgs key = e as KeyEventArgs;
+
+
+                if (key.KeyCode == Keys.Enter)
+                {
+
+                    switch (this.numero)
+                    {
+                        case 1:
+                            foreach (DataGridViewRow row in listaFuncionario.dt_Listar.Rows)
+                            {
+                                txtBuscar.Text = String.Empty;
+                                CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                                cm.SuspendBinding();
+                                row.Visible = true;
+                                lblError.Visible = false;
+                            }
+                            break;
+                    }
+
+
+                }
+
+            if (key.KeyCode == Keys.Back)
+            {
+                switch (this.numero)
+                {
+                    case 1:
+                        if (txtBuscar.Text.Trim().Count() <2)
+                        {
+                            foreach (DataGridViewRow row in listaFuncionario.dt_Listar.Rows)
+                            {
+                                txtBuscar.Text = String.Empty;
+                                CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                                cm.SuspendBinding();
+                                row.Visible = true;
+                                lblError.Visible = false;
+                            }
+                        }
+                        break;
+                }
+            }
+
+            }
+
+        
+
+        #region ABRIR FORMULARIO
         private void AbrirFormulario(object formHijo)
         {
             if (this.panelContenido.Controls.Count > 0)
@@ -174,5 +338,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             this.panelContenido.Tag = fh;
             fh.Show();
         }
+        #endregion
     }
 }

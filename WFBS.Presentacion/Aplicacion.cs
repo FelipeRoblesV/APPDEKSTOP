@@ -83,9 +83,10 @@ namespace WFBS.Presentacion
                     sw = this.Size.Width;
                     sh = this.Size.Height;
                     this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                    this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                    this.Location = Screen.PrimaryScreen.WorkingArea.Location;x
                     break;
                 case 4:
+                    this.WindowState = FormWindowState.Normal;
                     this.Size = new Size(sw, sh);
                     this.Location = new Point(lx, ly);
                     break;

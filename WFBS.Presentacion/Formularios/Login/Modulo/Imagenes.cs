@@ -15,7 +15,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
     {
         private BackgroundWorker CargarAplicacion;
         private int numero = 0;
-        private IniciarSesion inicio;
         private int numeroLocal = 0;
         private int estado = 0;
 

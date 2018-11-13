@@ -79,6 +79,24 @@ namespace WFBS.Presentacion.Formularios.Login
         }
 
 
+        #region CONTROL DEL FORMULARIO
+        private void btnControles_Click(object sender, EventArgs e)
+        {
+
+            Bunifu.Framework.UI.BunifuImageButton btn = sender as Bunifu.Framework.UI.BunifuImageButton;
+
+            if (btn.Name == btnCerrarFormulario.Name)
+            {
+                aplicacion.Controles(1);
+            }
+            if (btn.Name == btnMinimizarFormulario.Name)
+            {
+                aplicacion.Controles(2);
+            }
+        }
+        #endregion
+
+
         private void AbrirImagen(object formHijo)
         {
             if (this.panelImagen.Controls.Count > 0)

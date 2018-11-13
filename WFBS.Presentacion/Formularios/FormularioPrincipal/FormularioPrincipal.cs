@@ -476,7 +476,44 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
 
 
+        #region CONTROL DEL FORMULARIO
+        private void btnControles_Click(object sender, EventArgs e)
+        {
 
+            Bunifu.Framework.UI.BunifuImageButton btn = sender as Bunifu.Framework.UI.BunifuImageButton;
+
+            if (btn.Name == btn_cerrarFormulario.Name)
+            {
+                app.Controles(1);
+            }
+            if (btn.Name == btnMinimizarFormulario.Name)
+            {
+                app.Controles(2);
+            }
+
+            if (btn.Name == btnMaximizarFormulario.Name)
+            {
+                app.Controles(3);
+                btnMaximizarFormulario.Visible = false;
+                btnRestaurarFormulario.Visible = true;
+
+            }
+            if (btn.Name == btnRestaurarFormulario.Name)
+            {
+                btnMaximizarFormulario.Visible = true;
+                btnRestaurarFormulario.Visible = false;
+                app.Controles(4);
+            }
+            if (btn.Name == btnCerrarSesion.Name)
+            {
+
+                //FALTA MENSAJE DE SOLICITUD SALIR
+                app.Controles(5);
+            }
+
+
+        }
+        #endregion
 
 
 

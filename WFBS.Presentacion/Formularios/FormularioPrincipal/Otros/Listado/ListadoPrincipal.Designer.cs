@@ -312,6 +312,8 @@
             this.txtBuscar.Size = new System.Drawing.Size(274, 32);
             this.txtBuscar.TabIndex = 6;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBuscar.OnValueChanged += new System.EventHandler(this.txtBuscar_OnValueChanged);
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
             // lblDescripcion
             // 

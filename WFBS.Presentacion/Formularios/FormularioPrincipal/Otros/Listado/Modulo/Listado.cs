@@ -13,7 +13,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
 {
     public partial class Listado : Form
     {
-        private int numero = 0;
+        private double numero = 0;
 
         public Listado()
         {
@@ -21,32 +21,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
             InitializeComponent();
         }
 
-
-        public void definirSubFormulario(int numero, DataSet lista, bool estado)
-        {
-            switch (numero)
-            {
-                case 1:
-                    if (estado == true)
-                    {
-                        dt_Listar.DataSource = lista.Tables[0];
-                    }
-                    else
-                    {
-                        dt_Listar.Visible = false;
-                        lblMensaje.Visible = true;
-
-                    }
-                    break;
-            }
-        }
-
-
-
-
-
-
-        public void definirFormulario(int numero, DataSet lista, bool estado)
+        public void definirFormulario(double numero, DataSet lista, bool estado)
         {
 
             switch (numero)
@@ -55,6 +30,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     if (estado == true)
                     {
                         dt_Listar.DataSource = lista.Tables[0];
+                        dt_Listar.DoubleBuffered = true;
                     }
                     else
                     {
@@ -119,6 +95,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
 
                     }
 
+                    break;
+                case 5.1:
+                    if (estado == true)
+                    {
+                        dt_Listar.DataSource = lista.Tables[0];
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
+                    }
                     break;
                 case 6:
                     if (estado == true)

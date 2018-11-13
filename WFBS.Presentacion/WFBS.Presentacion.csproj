@@ -361,5 +361,53 @@
   <ItemGroup>
     <None Include="Resources\LogotipoFondo-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarVentanaFP2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarFP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaxiFP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestoreFP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MiniFp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarFP2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarFP3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MaximeFP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestoreFP1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MinimizeFP.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarSesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ayuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FullScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FullScreen_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FullScreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CerrarFP4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
