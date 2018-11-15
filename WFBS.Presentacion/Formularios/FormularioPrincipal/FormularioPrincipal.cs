@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Ayuda;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal
@@ -22,7 +23,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         private Aplicacion app;
         private Dashboard dashboard;
         private Logotipo logo = new Logotipo();
-        private int numero = 0;
+        private int numero = 0, estadoMR = 0;
         private double numero2 = 0;
         private int estadoDashboard = 0, estadoFuncionario = 0, estadoPerfil = 0, estadoCompetencia = 0, estadoEvaluacion = 0, estadoReporte = 0;
         #endregion
@@ -167,6 +168,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             estadoEvaluacion = 0;
             estadoReporte = 0;
         }
+
+
 
         private void IniciarProcemiento(int numero)
         {
@@ -477,14 +480,73 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
 
         #region CONTROL DEL FORMULARIO
+
+        private void btnSubControles_Click(object sender, EventArgs e)
+        {
+            BunifuImageButton btn = sender as BunifuImageButton;
+
+            if(btn.Name == btnCerrarSesion.Name)
+            {
+                Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
+                cerrar.ventanaCerrarSesion(app);
+                cerrar.ShowDialog();
+
+            }
+
+            if (btn.Name == btnAyuda.Name)
+            {
+                Ayuda ayuda = new Ayuda();
+                ayuda.ShowDialog();
+            }
+
+            if (btn.Name == btnFullScreen.Name)
+            {
+                btnFullScreen.Visible = false;
+                btnRestaurarFullScreen.Visible = true;
+
+                if (btnRestaurarFormulario.Visible == true)
+                {
+                    btnRestaurarFormulario.Visible = false;
+                    estadoMR = 1;
+                }else if (btnMaximizarFormulario.Visible == true){
+                    btnMaximizarFormulario.Visible = false;
+                    estadoMR = 2;
+                }
+
+
+                app.Controles(6);
+            }
+
+            if (btn.Name == btnRestaurarFullScreen.Name)
+            {
+                btnRestaurarFullScreen.Visible = false;
+                btnFullScreen.Visible = true;
+                if(estadoMR == 1)
+                {
+                    btnRestaurarFormulario.Visible = true;
+                }else if (estadoMR == 2)
+                {
+                    btnMaximizarFormulario.Visible = true;
+                }
+                estadoMR = 0;
+                
+                
+                app.Controles(7);
+
+            }
+
+        }
+
         private void btnControles_Click(object sender, EventArgs e)
         {
 
-            Bunifu.Framework.UI.BunifuImageButton btn = sender as Bunifu.Framework.UI.BunifuImageButton;
+            BunifuImageButton btn = sender as BunifuImageButton;
 
             if (btn.Name == btn_cerrarFormulario.Name)
             {
-                app.Controles(1);
+                Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
+                cerrar.ventanaCerrarFormularioPrincipal(this);
+                cerrar.ShowDialog();
             }
             if (btn.Name == btnMinimizarFormulario.Name)
             {
@@ -497,6 +559,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 btnMaximizarFormulario.Visible = false;
                 btnRestaurarFormulario.Visible = true;
 
+
             }
             if (btn.Name == btnRestaurarFormulario.Name)
             {
@@ -504,16 +567,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 btnRestaurarFormulario.Visible = false;
                 app.Controles(4);
             }
-            if (btn.Name == btnCerrarSesion.Name)
-            {
-
-                //FALTA MENSAJE DE SOLICITUD SALIR
-                app.Controles(5);
-            }
 
 
         }
         #endregion
+
+
+        public void CerrarFormulario()
+        {
+            Application.Exit();
+        }
 
 
 
@@ -522,6 +585,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
         private void AbrirFormulario(object formHijo)
         {
+            this.PanelContenedor.Visible = false;
             if (this.PanelContenedor.Controls.Count > 0)
                 this.PanelContenedor.Controls.RemoveAt(0);
             Form fh = formHijo as Form;
@@ -531,6 +595,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             this.PanelContenedor.Controls.Add(fh);
             this.PanelContenedor.Tag = fh;
             fh.Show();
+            this.PanelContenedor.Visible = true;
         }
 
 

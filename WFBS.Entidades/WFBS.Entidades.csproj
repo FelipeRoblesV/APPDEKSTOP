@@ -47,10 +47,8 @@
     <Compile Include="Cl_Funcionario.cs" />
     <Compile Include="Cl_Jefe_Funcionario.cs" />
     <Compile Include="Cl_JefePerfil.cs" />
-    <Compile Include="Cl_Nivel.cs" />
     <Compile Include="Cl_Observacion.cs" />
     <Compile Include="Cl_Perfil.cs" />
-    <Compile Include="Cl_Periodo.cs" />
     <Compile Include="Cl_Pregunta.cs" />
     <Compile Include="Cl_Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

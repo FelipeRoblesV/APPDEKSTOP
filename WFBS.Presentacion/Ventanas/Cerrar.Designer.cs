@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btn_Accion1 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btn_Accion2 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btn_Accion1 = new Bunifu.Framework.UI.BunifuThinButton2();
             this.lblMensaje = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
@@ -52,9 +52,9 @@
             // 
             // bunifuImageButton1
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuImageButton1.BackColor = System.Drawing.SystemColors.Control;
             this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.Image = global::WFBS.Presentacion.Properties.Resources.CerrarFP;
             this.bunifuImageButton1.ImageActive = null;
             this.bunifuImageButton1.Location = new System.Drawing.Point(341, 1);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
@@ -75,33 +75,6 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
             this.panel2.Size = new System.Drawing.Size(367, 42);
             this.panel2.TabIndex = 1;
-            // 
-            // btn_Accion1
-            // 
-            this.btn_Accion1.ActiveBorderThickness = 1;
-            this.btn_Accion1.ActiveCornerRadius = 20;
-            this.btn_Accion1.ActiveFillColor = System.Drawing.Color.SeaGreen;
-            this.btn_Accion1.ActiveForecolor = System.Drawing.Color.White;
-            this.btn_Accion1.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btn_Accion1.BackColor = System.Drawing.SystemColors.Control;
-            this.btn_Accion1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Accion1.BackgroundImage")));
-            this.btn_Accion1.ButtonText = "ThinButton";
-            this.btn_Accion1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Accion1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_Accion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Accion1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btn_Accion1.IdleBorderThickness = 1;
-            this.btn_Accion1.IdleCornerRadius = 20;
-            this.btn_Accion1.IdleFillColor = System.Drawing.Color.White;
-            this.btn_Accion1.IdleForecolor = System.Drawing.Color.SeaGreen;
-            this.btn_Accion1.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btn_Accion1.Location = new System.Drawing.Point(30, 0);
-            this.btn_Accion1.Margin = new System.Windows.Forms.Padding(5);
-            this.btn_Accion1.Name = "btn_Accion1";
-            this.btn_Accion1.Size = new System.Drawing.Size(144, 42);
-            this.btn_Accion1.TabIndex = 0;
-            this.btn_Accion1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_Accion1.Click += new System.EventHandler(this.btnAccion_click);
             // 
             // btn_Accion2
             // 
@@ -129,6 +102,33 @@
             this.btn_Accion2.TabIndex = 1;
             this.btn_Accion2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Accion2.Click += new System.EventHandler(this.btnAccion_click);
+            // 
+            // btn_Accion1
+            // 
+            this.btn_Accion1.ActiveBorderThickness = 1;
+            this.btn_Accion1.ActiveCornerRadius = 20;
+            this.btn_Accion1.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btn_Accion1.ActiveForecolor = System.Drawing.Color.White;
+            this.btn_Accion1.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btn_Accion1.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_Accion1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Accion1.BackgroundImage")));
+            this.btn_Accion1.ButtonText = "ThinButton";
+            this.btn_Accion1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Accion1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_Accion1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Accion1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btn_Accion1.IdleBorderThickness = 1;
+            this.btn_Accion1.IdleCornerRadius = 20;
+            this.btn_Accion1.IdleFillColor = System.Drawing.Color.White;
+            this.btn_Accion1.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btn_Accion1.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btn_Accion1.Location = new System.Drawing.Point(30, 0);
+            this.btn_Accion1.Margin = new System.Windows.Forms.Padding(5);
+            this.btn_Accion1.Name = "btn_Accion1";
+            this.btn_Accion1.Size = new System.Drawing.Size(144, 42);
+            this.btn_Accion1.TabIndex = 0;
+            this.btn_Accion1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_Accion1.Click += new System.EventHandler(this.btnAccion_click);
             // 
             // lblMensaje
             // 

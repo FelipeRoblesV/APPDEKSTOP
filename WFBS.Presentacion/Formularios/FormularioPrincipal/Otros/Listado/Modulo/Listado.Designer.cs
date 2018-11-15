@@ -120,7 +120,7 @@
             this.dt_Listar.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dt_Listar.Size = new System.Drawing.Size(1436, 584);
             this.dt_Listar.StandardTab = true;
-            this.dt_Listar.TabIndex = 2;
+            this.dt_Listar.TabIndex = 38;
             // 
             // Listado
             // 
@@ -140,7 +140,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        public Bunifu.Framework.UI.BunifuCustomDataGrid dt_Listar;
         private Bunifu.Framework.UI.BunifuCustomLabel lblMensaje;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid dt_Listar;
     }
 }

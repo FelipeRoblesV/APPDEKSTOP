@@ -30,6 +30,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     if (estado == true)
                     {
                         dt_Listar.DataSource = lista.Tables[0];
+                        dt_Listar.DataSource = lista.Tables[0];
+                        dt_Listar.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dt_Listar.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dt_Listar.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dt_Listar.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dt_Listar.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
+                        dt_Listar.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
                         dt_Listar.DoubleBuffered = true;
                     }
                     else
@@ -38,7 +45,19 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         lblMensaje.Visible = true;
 
                     }
+                    break;
+                case 1.1:
+                    if (estado == true)
+                    {
+                        dt_Listar.DataSource = lista.Tables[0];
+                   //     dt_Listar.double = true;
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
 
+                    }
                     break;
 
                 case 2:
@@ -52,7 +71,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         lblMensaje.Visible = true;
 
                     }
+                    break;
+                case 2.1:
+                    if (estado == true)
+                    {
+                        dt_Listar.DataSource = lista.Tables[0];
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
 
+                    }
                     break;
                 case 3:
                     if (estado == true)
@@ -65,7 +95,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         lblMensaje.Visible = true;
 
                     }
-
                     break;
                 case 4:
                     if (estado == true)
@@ -107,6 +136,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         lblMensaje.Visible = true;
                     }
                     break;
+                case 5.2:
+                    if (estado == true)
+                    {
+                        dt_Listar.DataSource = lista.Tables[0];
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
+                    }
+                    break;
                 case 6:
                     if (estado == true)
                     {
@@ -120,7 +160,33 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     }
 
                     break;
-                case 7:
+                case 6.1:
+                    if (estado == true)
+                    {
+                        dt_Listar.DataSource = lista.Tables[0];
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
+
+                    }
+
+                    break;
+                case 6.2:
+                    if (estado == true)
+                    {
+                        dt_Listar.DataSource = lista.Tables[0];
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
+
+                    }
+
+                    break;
+                case 6.3:
                     if (estado == true)
                     {
                         dt_Listar.DataSource = lista.Tables[0];

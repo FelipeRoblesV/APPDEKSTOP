@@ -29,6 +29,10 @@ namespace WFBS.Presentacion
             switch (numero)
             {
                 case 1:
+                    if (formularioPrincipal != null)
+                    {
+                        formularioPrincipal.Close();
+                    }
                     login = new Login();
                     login.pasarDatos(this);
                     login.IniciarLogin(1);
@@ -83,15 +87,32 @@ namespace WFBS.Presentacion
                     sw = this.Size.Width;
                     sh = this.Size.Height;
                     this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                    this.Location = Screen.PrimaryScreen.WorkingArea.Location;x
+                    this.Location = Screen.PrimaryScreen.WorkingArea.Location;
+                    this.MinimumSize = new Size(Screen.PrimaryScreen.WorkingArea.Size.Width, Screen.PrimaryScreen.WorkingArea.Size.Height);
+                    this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Size.Width, Screen.PrimaryScreen.WorkingArea.Size.Height);
                     break;
                 case 4:
+                    this.MinimumSize = new Size(1596, 896);
+                    this.MaximumSize = new Size(0, 0);
+                    this.Size = new Size(sw, sh);
+                    this.Location = new Point(lx, ly);
+
+                    break;
+                case 5:
+                    iniciarAplicacion(2);
+                    break;
+                case 6:
+                    lx = this.Location.X;
+                    ly = this.Location.Y;
+                    sw = this.Size.Width;
+                    sh = this.Size.Height;
+                    this.WindowState = FormWindowState.Maximized;
+
+                    break;
+                case 7:
                     this.WindowState = FormWindowState.Normal;
                     this.Size = new Size(sw, sh);
                     this.Location = new Point(lx, ly);
-                    break;
-                case 5:
-                    iniciarAplicacion(3);
                     break;
 
             }

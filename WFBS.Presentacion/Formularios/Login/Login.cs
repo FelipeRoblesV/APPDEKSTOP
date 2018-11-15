@@ -87,7 +87,9 @@ namespace WFBS.Presentacion.Formularios.Login
 
             if (btn.Name == btnCerrarFormulario.Name)
             {
-                aplicacion.Controles(1);
+                Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
+                cerrar.ventanaCerrarLogin(this);
+                cerrar.ShowDialog();
             }
             if (btn.Name == btnMinimizarFormulario.Name)
             {
@@ -122,16 +124,6 @@ namespace WFBS.Presentacion.Formularios.Login
             this.panelModulo.Tag = fh;
             fh.Show();
         }
-
-        private void btn_cerrarFormulario_Click(object sender, EventArgs e)
-        {
-                Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
-                cerrar.ventanaCerrarLogin(this);
-                cerrar.ShowDialog();
-            
-
-        }
-
         public void CerrarFormulario()
         {
             Application.Exit();

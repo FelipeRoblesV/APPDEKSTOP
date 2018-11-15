@@ -96,9 +96,9 @@
             this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Right;
             this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1369, 5);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(1394, 5);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(127, 25);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(102, 25);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 15;
             this.bunifuImageButton1.TabStop = false;
@@ -285,8 +285,8 @@
             // lblError
             // 
             this.lblError.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblError.Font = new System.Drawing.Font("Roboto Light", 11.25F);
-            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblError.Font = new System.Drawing.Font("Roboto Light", 14.25F);
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblError.Location = new System.Drawing.Point(901, 10);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(291, 32);
@@ -298,7 +298,7 @@
             // txtBuscar
             // 
             this.txtBuscar.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
+            this.txtBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.txtBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
             this.txtBuscar.BorderThickness = 3;
             this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -318,9 +318,9 @@
             // lblDescripcion
             // 
             this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 16.25F);
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(279, 10);
+            this.lblDescripcion.Location = new System.Drawing.Point(314, 10);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(567, 32);
             this.lblDescripcion.TabIndex = 5;
@@ -334,7 +334,7 @@
             this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(269, 10);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(304, 10);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
@@ -345,11 +345,11 @@
             // lblTitulo
             // 
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblTitulo.Location = new System.Drawing.Point(30, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(239, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(274, 32);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Titulo del Formulario";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -361,7 +361,6 @@
             this.panelContenido.Location = new System.Drawing.Point(0, 82);
             this.panelContenido.Margin = new System.Windows.Forms.Padding(30);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Padding = new System.Windows.Forms.Padding(30, 5, 30, 30);
             this.panelContenido.Size = new System.Drawing.Size(1496, 649);
             this.panelContenido.TabIndex = 11;
             // 

@@ -7,7 +7,7 @@
     <ProjectGuid>{10C72BAB-32CC-4EB2-B37B-F263BB14159F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WFBS.Presentacion</RootNamespace>
-    <AssemblyName>WFBS.Presentacion</AssemblyName>
+    <AssemblyName>WFBS Desktop</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>WFBS%2813%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
@@ -141,6 +144,12 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Preguntas.Designer.cs">
       <DependentUpon>Preguntas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Ayuda\Ayuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Ayuda\Ayuda.Designer.cs">
+      <DependentUpon>Ayuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Otros\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Ayuda\Ayuda.resx">
+      <DependentUpon>Ayuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -408,6 +420,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\CerrarFP4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullscreen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fullscreen%281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FullScreen %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FullScreen_active1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,22 +11,29 @@ namespace WFBS.Entidades
         public int id { get; set; }
         public string nombre { get; set; }
         public char estado { get; set; }
+        public DateTime fecha_inicio { get; set; }
+        public int dias { get; set; }
+        public int ponderacion_evaluacion { get; set; }
+        public int ponderacion_autoevaluacion { get; set; }
+        public DateTime fecha_termino { get; set; }
         public Cl_Perfil perfil { get; set; }
-        public Cl_Periodo periodo { get; set; }
 
-        public Cl_Cuestionario(int id, string nombre, char estado, Cl_Perfil perfil, Cl_Periodo periodo)
+        public Cl_Cuestionario(int id, string nombre, char estado, DateTime fecha_inicio, int dias, int ponderacion_evaluacion, int ponderacion_autoevaluacion, DateTime fecha_termino, Cl_Perfil perfil)
         {
             this.id = id;
             this.nombre = nombre;
             this.estado = estado;
+            this.fecha_inicio = fecha_inicio;
+            this.dias = dias;
+            this.ponderacion_evaluacion = ponderacion_evaluacion;
+            this.ponderacion_autoevaluacion = ponderacion_autoevaluacion;
+            this.fecha_termino = fecha_termino;
             this.perfil = perfil;
-            this.periodo = periodo;
         }
 
         public Cl_Cuestionario()
         {
             perfil = new Cl_Perfil();
-            periodo = new Cl_Periodo();
         }
     }
 }
