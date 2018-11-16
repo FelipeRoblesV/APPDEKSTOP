@@ -108,6 +108,12 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\JefeFuncionario.Designer.cs">
       <DependentUpon>JefeFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Modulos Adicionales\CargoFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Modulos Adicionales\CargoFuncionario.Designer.cs">
+      <DependentUpon>CargoFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Observacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,12 +125,6 @@
     </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Cargando.Designer.cs">
       <DependentUpon>Cargando.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\FormularioPrincipal\Modulo\CargoFuncionario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormularioPrincipal\Modulo\CargoFuncionario.Designer.cs">
-      <DependentUpon>CargoFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.cs">
       <SubType>Form</SubType>
@@ -233,6 +233,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Alternativas.resx">
+      <DependentUpon>Alternativas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Cargo.resx">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Competencia.resx">
+      <DependentUpon>Competencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Evaluacion.resx">
+      <DependentUpon>Evaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Funcionario.resx">
+      <DependentUpon>Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\JefeFuncionario.resx">
+      <DependentUpon>JefeFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Modulos Adicionales\CargoFuncionario.resx">
+      <DependentUpon>CargoFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Observacion.resx">
+      <DependentUpon>Observacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Cargando.resx">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.resx">
+      <DependentUpon>Estado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Perfil.resx">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Preguntas.resx">
+      <DependentUpon>Preguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Ayuda\Ayuda.resx">
       <DependentUpon>Ayuda.cs</DependentUpon>
@@ -434,7 +470,10 @@
     <None Include="Resources\FullScreen_active1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cara-triste.png" />
+    <None Include="Resources\cara-sonriendo.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

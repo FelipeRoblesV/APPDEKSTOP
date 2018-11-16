@@ -183,6 +183,26 @@ namespace WFBS.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap estado_correcto {
+            get {
+                object obj = ResourceManager.GetObject("estado_correcto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap estado_incorrecto {
+            get {
+                object obj = ResourceManager.GetObject("estado_incorrecto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Evaluacion {
             get {
                 object obj = ResourceManager.GetObject("Evaluacion", resourceCulture);

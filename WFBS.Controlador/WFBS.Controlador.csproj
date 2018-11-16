@@ -46,11 +46,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto.cs" />
+    <Compile Include="daoAlternativa.cs" />
     <Compile Include="daoCargo.cs" />
     <Compile Include="daoCompetencia.cs" />
+    <Compile Include="daoCuestionario.cs" />
     <Compile Include="daoFuncionario.cs" />
     <Compile Include="daoJefeFuncionario.cs" />
+    <Compile Include="daoObservacion.cs" />
     <Compile Include="daoPerfil.cs" />
+    <Compile Include="daoPreguntas.cs" />
     <Compile Include="daoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

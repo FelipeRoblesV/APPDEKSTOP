@@ -29,13 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoPrincipal));
-            this.panelMenuDatagrid = new System.Windows.Forms.Panel();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panelMapaDeSitio = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lblMapaSitio_4 = new System.Windows.Forms.Label();
+            this.lblSeparacionMapa_3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblMapaSitio_3 = new System.Windows.Forms.Label();
+            this.lblSeparacionMapa_2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblMapaSitio_2 = new System.Windows.Forms.Label();
+            this.lblSeparacionMapa_1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblMapaSitio_1 = new System.Windows.Forms.Label();
+            this.btnRegresar = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnRefrescar = new System.Windows.Forms.PictureBox();
@@ -51,8 +57,12 @@
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panelContenido = new System.Windows.Forms.Panel();
-            this.panelMenuDatagrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            this.panelMapaDeSitio.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescar)).BeginInit();
@@ -64,105 +74,167 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelMenuDatagrid
+            // panelMapaDeSitio
             // 
-            this.panelMenuDatagrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
-            this.panelMenuDatagrid.Controls.Add(this.bunifuImageButton1);
-            this.panelMenuDatagrid.Controls.Add(this.label5);
-            this.panelMenuDatagrid.Controls.Add(this.label4);
-            this.panelMenuDatagrid.Controls.Add(this.label3);
-            this.panelMenuDatagrid.Controls.Add(this.label2);
-            this.panelMenuDatagrid.Controls.Add(this.label1);
-            this.panelMenuDatagrid.Controls.Add(this.pictureBox3);
-            this.panelMenuDatagrid.Controls.Add(this.pictureBox2);
-            this.panelMenuDatagrid.Controls.Add(this.btnRefrescar);
-            this.panelMenuDatagrid.Controls.Add(this.btnCerrar);
-            this.panelMenuDatagrid.Controls.Add(this.btnAgregar);
-            this.panelMenuDatagrid.Controls.Add(this.btnEliminar);
-            this.panelMenuDatagrid.Controls.Add(this.btnModificar);
-            this.panelMenuDatagrid.Controls.Add(this.pictureBox1);
-            this.panelMenuDatagrid.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenuDatagrid.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuDatagrid.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.panelMenuDatagrid.Name = "panelMenuDatagrid";
-            this.panelMenuDatagrid.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
-            this.panelMenuDatagrid.Size = new System.Drawing.Size(1496, 30);
-            this.panelMenuDatagrid.TabIndex = 9;
-            this.panelMenuDatagrid.Visible = false;
+            this.panelMapaDeSitio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(50)))), ((int)(((byte)(73)))));
+            this.panelMapaDeSitio.Controls.Add(this.panel5);
+            this.panelMapaDeSitio.Controls.Add(this.panel4);
+            this.panelMapaDeSitio.Controls.Add(this.panel3);
+            this.panelMapaDeSitio.Controls.Add(this.panel2);
+            this.panelMapaDeSitio.Controls.Add(this.btnRegresar);
+            this.panelMapaDeSitio.Controls.Add(this.pictureBox3);
+            this.panelMapaDeSitio.Controls.Add(this.pictureBox2);
+            this.panelMapaDeSitio.Controls.Add(this.btnRefrescar);
+            this.panelMapaDeSitio.Controls.Add(this.btnCerrar);
+            this.panelMapaDeSitio.Controls.Add(this.btnAgregar);
+            this.panelMapaDeSitio.Controls.Add(this.btnEliminar);
+            this.panelMapaDeSitio.Controls.Add(this.btnModificar);
+            this.panelMapaDeSitio.Controls.Add(this.pictureBox1);
+            this.panelMapaDeSitio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMapaDeSitio.Location = new System.Drawing.Point(0, 0);
+            this.panelMapaDeSitio.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.panelMapaDeSitio.Name = "panelMapaDeSitio";
+            this.panelMapaDeSitio.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
+            this.panelMapaDeSitio.Size = new System.Drawing.Size(1496, 30);
+            this.panelMapaDeSitio.TabIndex = 9;
+            this.panelMapaDeSitio.Visible = false;
             // 
-            // bunifuImageButton1
+            // panel5
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(1394, 5);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(102, 25);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 15;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.panel5.Controls.Add(this.lblMapaSitio_4);
+            this.panel5.Controls.Add(this.lblSeparacionMapa_3);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel5.Location = new System.Drawing.Point(770, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(276, 25);
+            this.panel5.TabIndex = 22;
             // 
-            // label5
+            // lblMapaSitio_4
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(450, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 25);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Titulo del Formulario";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMapaSitio_4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMapaSitio_4.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblMapaSitio_4.Location = new System.Drawing.Point(19, 0);
+            this.lblMapaSitio_4.Name = "lblMapaSitio_4";
+            this.lblMapaSitio_4.Size = new System.Drawing.Size(231, 25);
+            this.lblMapaSitio_4.TabIndex = 20;
+            this.lblMapaSitio_4.Text = "Titulo del Formulario";
+            this.lblMapaSitio_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lblSeparacionMapa_3
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label4.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(431, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(19, 25);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "\\";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSeparacionMapa_3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSeparacionMapa_3.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblSeparacionMapa_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblSeparacionMapa_3.Location = new System.Drawing.Point(0, 0);
+            this.lblSeparacionMapa_3.Name = "lblSeparacionMapa_3";
+            this.lblSeparacionMapa_3.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacionMapa_3.TabIndex = 19;
+            this.lblSeparacionMapa_3.Text = "\\";
+            this.lblSeparacionMapa_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // panel4
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label3.Location = new System.Drawing.Point(230, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(201, 25);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Titulo del Formulario";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.panel4.Controls.Add(this.lblMapaSitio_3);
+            this.panel4.Controls.Add(this.lblSeparacionMapa_2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(494, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(276, 25);
+            this.panel4.TabIndex = 21;
             // 
-            // label2
+            // lblMapaSitio_3
             // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(211, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(19, 25);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "\\";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMapaSitio_3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMapaSitio_3.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblMapaSitio_3.Location = new System.Drawing.Point(19, 0);
+            this.lblMapaSitio_3.Name = "lblMapaSitio_3";
+            this.lblMapaSitio_3.Size = new System.Drawing.Size(231, 25);
+            this.lblMapaSitio_3.TabIndex = 20;
+            this.lblMapaSitio_3.Text = "Titulo del Formulario";
+            this.lblMapaSitio_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // lblSeparacionMapa_2
             // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(10, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(201, 25);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Titulo del Formulario";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSeparacionMapa_2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSeparacionMapa_2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblSeparacionMapa_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblSeparacionMapa_2.Location = new System.Drawing.Point(0, 0);
+            this.lblSeparacionMapa_2.Name = "lblSeparacionMapa_2";
+            this.lblSeparacionMapa_2.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacionMapa_2.TabIndex = 19;
+            this.lblSeparacionMapa_2.Text = "\\";
+            this.lblSeparacionMapa_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.lblMapaSitio_2);
+            this.panel3.Controls.Add(this.lblSeparacionMapa_1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(210, 5);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(284, 25);
+            this.panel3.TabIndex = 20;
+            // 
+            // lblMapaSitio_2
+            // 
+            this.lblMapaSitio_2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMapaSitio_2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblMapaSitio_2.Location = new System.Drawing.Point(19, 0);
+            this.lblMapaSitio_2.Name = "lblMapaSitio_2";
+            this.lblMapaSitio_2.Size = new System.Drawing.Size(262, 25);
+            this.lblMapaSitio_2.TabIndex = 18;
+            this.lblMapaSitio_2.Text = "Titulo del Formulario";
+            this.lblMapaSitio_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSeparacionMapa_1
+            // 
+            this.lblSeparacionMapa_1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSeparacionMapa_1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblSeparacionMapa_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblSeparacionMapa_1.Location = new System.Drawing.Point(0, 0);
+            this.lblSeparacionMapa_1.Name = "lblSeparacionMapa_1";
+            this.lblSeparacionMapa_1.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacionMapa_1.TabIndex = 17;
+            this.lblSeparacionMapa_1.Text = "\\";
+            this.lblSeparacionMapa_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblMapaSitio_1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(10, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 25);
+            this.panel2.TabIndex = 19;
+            // 
+            // lblMapaSitio_1
+            // 
+            this.lblMapaSitio_1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMapaSitio_1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblMapaSitio_1.Location = new System.Drawing.Point(0, 0);
+            this.lblMapaSitio_1.Name = "lblMapaSitio_1";
+            this.lblMapaSitio_1.Size = new System.Drawing.Size(201, 25);
+            this.lblMapaSitio_1.TabIndex = 11;
+            this.lblMapaSitio_1.Text = "Titulo del Formulario";
+            this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.ImageActive = null;
+            this.btnRegresar.Location = new System.Drawing.Point(1394, 5);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(102, 25);
+            this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRegresar.TabIndex = 15;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Zoom = 10;
             // 
             // pictureBox3
             // 
@@ -320,7 +392,7 @@
             this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 16.25F);
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(314, 10);
+            this.lblDescripcion.Location = new System.Drawing.Point(439, 10);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(567, 32);
             this.lblDescripcion.TabIndex = 5;
@@ -334,7 +406,7 @@
             this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(304, 10);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(429, 10);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
@@ -349,14 +421,14 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblTitulo.Location = new System.Drawing.Point(30, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(274, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(399, 32);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Titulo del Formulario";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panelContenido
             // 
-            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
+            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenido.Location = new System.Drawing.Point(0, 82);
             this.panelContenido.Margin = new System.Windows.Forms.Padding(30);
@@ -371,13 +443,17 @@
             this.ClientSize = new System.Drawing.Size(1496, 731);
             this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panelMenuDatagrid);
+            this.Controls.Add(this.panelMapaDeSitio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListadoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListadoPrincipal";
-            this.panelMenuDatagrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            this.panelMapaDeSitio.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescar)).EndInit();
@@ -393,7 +469,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panelMenuDatagrid;
+        private System.Windows.Forms.Panel panelMapaDeSitio;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox btnRefrescar;
@@ -409,11 +485,17 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel panelContenido;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private Bunifu.Framework.UI.BunifuImageButton btnRegresar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblMapaSitio_3;
+        private System.Windows.Forms.Label lblSeparacionMapa_2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label lblMapaSitio_2;
+        private System.Windows.Forms.Label lblSeparacionMapa_1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblMapaSitio_1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblMapaSitio_4;
+        private System.Windows.Forms.Label lblSeparacionMapa_3;
     }
 }

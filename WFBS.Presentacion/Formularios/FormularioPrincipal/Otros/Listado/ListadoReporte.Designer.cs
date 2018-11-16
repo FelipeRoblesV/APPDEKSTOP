@@ -61,7 +61,7 @@
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelContenido = new System.Windows.Forms.Panel();
             this.panelMenuDatagrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -340,7 +340,7 @@
             this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(290, 10);
+            this.lblDescripcion.Location = new System.Drawing.Point(507, 10);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(497, 32);
             this.lblDescripcion.TabIndex = 5;
@@ -354,7 +354,7 @@
             this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(280, 10);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(497, 10);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
@@ -369,7 +369,7 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblTitulo.Location = new System.Drawing.Point(0, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(280, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(497, 32);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Titulo del Formulario";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -527,21 +527,21 @@
             this.pictureBox11.TabIndex = 3;
             this.pictureBox11.TabStop = false;
             // 
-            // panel3
+            // panelContenido
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 112);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1496, 619);
-            this.panel3.TabIndex = 13;
+            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(0, 112);
+            this.panelContenido.Name = "panelContenido";
+            this.panelContenido.Size = new System.Drawing.Size(1496, 619);
+            this.panelContenido.TabIndex = 13;
             // 
             // ListadoReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1496, 731);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelContenido);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelMenuDatagrid);
@@ -608,6 +608,6 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panelContenido;
     }
 }

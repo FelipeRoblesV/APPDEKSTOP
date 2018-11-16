@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros
+namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Modulos_Adicionales
 {
     public partial class CargoFuncionario : Form
     {
