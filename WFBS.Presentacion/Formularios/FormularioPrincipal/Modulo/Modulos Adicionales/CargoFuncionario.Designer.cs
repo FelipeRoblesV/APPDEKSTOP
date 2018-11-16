@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargoFuncionario));
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblNombreFormulario = new System.Windows.Forms.Label();
             this.lbCARGOOUT = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnAgregar = new Bunifu.Framework.UI.BunifuImageButton();
             this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnAgregar = new Bunifu.Framework.UI.BunifuImageButton();
             this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTitulo
@@ -85,7 +84,7 @@
             "EJEMPLO 9"});
             this.lbCARGOOUT.Location = new System.Drawing.Point(12, 30);
             this.lbCARGOOUT.Name = "lbCARGOOUT";
-            this.lbCARGOOUT.Size = new System.Drawing.Size(310, 342);
+            this.lbCARGOOUT.Size = new System.Drawing.Size(310, 324);
             this.lbCARGOOUT.TabIndex = 52;
             // 
             // listBox1
@@ -107,36 +106,36 @@
             "EJEMPLO 7",
             "EJEMPLO 8",
             "EJEMPLO 9"});
-            this.listBox1.Location = new System.Drawing.Point(12, 411);
+            this.listBox1.Location = new System.Drawing.Point(12, 393);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(310, 306);
+            this.listBox1.Size = new System.Drawing.Size(310, 324);
             this.listBox1.TabIndex = 53;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(118)))), ((int)(((byte)(122)))));
-            this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.ImageActive = null;
-            this.btnAgregar.Location = new System.Drawing.Point(105, 378);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(30, 30);
-            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnAgregar.TabIndex = 54;
-            this.btnAgregar.TabStop = false;
-            this.btnAgregar.Zoom = 10;
             // 
             // bunifuImageButton1
             // 
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(118)))), ((int)(((byte)(122)))));
-            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.bunifuImageButton1.Image = global::WFBS.Presentacion.Properties.Resources.flecha_hacia_arriba;
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(190, 378);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(175, 360);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(30, 30);
+            this.bunifuImageButton1.Size = new System.Drawing.Size(25, 25);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bunifuImageButton1.TabIndex = 55;
             this.bunifuImageButton1.TabStop = false;
             this.bunifuImageButton1.Zoom = 10;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.btnAgregar.Image = global::WFBS.Presentacion.Properties.Resources.flecha_hacia_abajo;
+            this.btnAgregar.ImageActive = null;
+            this.btnAgregar.Location = new System.Drawing.Point(116, 360);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(25, 25);
+            this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnAgregar.TabIndex = 54;
+            this.btnAgregar.TabStop = false;
+            this.btnAgregar.Zoom = 10;
             // 
             // CargoFuncionario
             // 
@@ -153,8 +152,8 @@
             this.Name = "CargoFuncionario";
             this.Text = "CargoFuncionario";
             this.panelTitulo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregar)).EndInit();
             this.ResumeLayout(false);
 
         }

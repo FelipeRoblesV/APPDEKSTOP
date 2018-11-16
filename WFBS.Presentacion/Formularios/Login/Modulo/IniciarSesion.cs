@@ -183,7 +183,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             {
                 formulario = new FormularioPrincipal.FormularioPrincipal();
             }
-
             switch (this.numero2)
             {
                 case 1.11:
@@ -258,7 +257,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                         formulario.DefinirFormulario(this.numero2, lista, false);
                     }
                     break;
-                    case 5:
+                case 5:
                     try
                     {
                         DataSet lista = iniciar.listarReporte;
@@ -271,8 +270,8 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                     }
                     break;
                 case 6:
-                       formulario.DefinirAplicacion(0);
-                        break;
+                    formulario.DefinirAplicacion(0);
+                    break;
             }
         }
 
@@ -306,7 +305,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         {
             try
             {
-
                 BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
                 IniciarAplicacion iniciar = (IniciarAplicacion)e.Argument;
                 for (int i = 0; i < 9; i++)
@@ -314,8 +312,6 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                     switch (i)
                     {
                         case 1:
-
-
                             iniciar.mensaje = "Cargando Funcionario";
                             daoFuncionario daoFun = new daoFuncionario();
                             iniciar.listarFuncionario = daoFun.listar();
@@ -357,13 +353,14 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                             daoPerfil daoReporte = new daoPerfil();
                             iniciar.listarReporte = daoReporte.listar();
                             this.numero2 = 5;
+                            System.Threading.Thread.Sleep(2000);
                             break;
                         case 8:
                             iniciar.mensaje = "Iniciando Aplicacion";
                             this.numero2 = 6;
                             break;
                     }
-                    IniciarAplicacion.ReportProgress((i + 1), iniciar);
+                    IniciarAplicacion.ReportProgress(i, iniciar);
 
                 }
             }

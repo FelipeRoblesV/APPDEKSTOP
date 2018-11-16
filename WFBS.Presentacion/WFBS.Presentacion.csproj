@@ -472,6 +472,18 @@
   <ItemGroup>
     <None Include="Resources\cara-triste.png" />
     <None Include="Resources\cara-sonriendo.png" />
+    <None Include="Resources\1485481179-20_78631.png" />
+    <None Include="Resources\1485481269-37_78645.png" />
+    <None Include="Resources\flat-style-circle-add_icon-icons.com_66944.png" />
+    <None Include="Resources\flat-style-circle-edit_icon-icons.com_66939.png" />
+    <None Include="Resources\flat-style-circle-remove_icon-icons.com_66948.png" />
+    <None Include="Resources\flat-style-circle-save_icon-icons.com_66942.png" />
+    <None Include="Resources\circle-edit-line_icon-icons.com_66940.png" />
+    <None Include="Resources\flat-style-circle-block_icon-icons.com_66946.png" />
+    <None Include="Resources\flat-style-circle-undo_icon-icons.com_66949.png" />
+    <None Include="Resources\refresh_arrows_14418.png" />
+    <None Include="Resources\flecha-hacia-abajo.png" />
+    <None Include="Resources\flecha-hacia-arriba.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
   <ItemGroup />
