@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoPrincipal));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblError = new System.Windows.Forms.Label();
+            this.txtBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            this.panelContenido = new System.Windows.Forms.Panel();
             this.panelMapaDeSitio = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lblMapaSitio_4 = new System.Windows.Forms.Label();
@@ -50,13 +57,8 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblError = new System.Windows.Forms.Label();
-            this.txtBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.panelContenido = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.panelMapaDeSitio.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -71,8 +73,105 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
+            this.panel1.Controls.Add(this.lblError);
+            this.panel1.Controls.Add(this.txtBuscar);
+            this.panel1.Controls.Add(this.lblDescripcion);
+            this.panel1.Controls.Add(this.bunifuSeparator1);
+            this.panel1.Controls.Add(this.lblTitulo);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
+            this.panel1.Size = new System.Drawing.Size(1496, 52);
+            this.panel1.TabIndex = 10;
+            // 
+            // lblError
+            // 
+            this.lblError.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblError.Font = new System.Drawing.Font("Roboto Light", 14.25F);
+            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblError.Location = new System.Drawing.Point(901, 10);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(291, 32);
+            this.lblError.TabIndex = 7;
+            this.lblError.Text = "Descripcion del Formulario";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblError.Visible = false;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
+            this.txtBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.txtBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
+            this.txtBuscar.BorderThickness = 3;
+            this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.txtBuscar.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(210)))), ((int)(((byte)(217)))));
+            this.txtBuscar.isPassword = false;
+            this.txtBuscar.Location = new System.Drawing.Point(1192, 10);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(274, 32);
+            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBuscar.OnValueChanged += new System.EventHandler(this.txtBuscar_OnValueChanged);
+            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 16.25F);
+            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblDescripcion.Location = new System.Drawing.Point(439, 10);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(567, 32);
+            this.lblDescripcion.TabIndex = 5;
+            this.lblDescripcion.Text = "Descripcion del Formulario";
+            this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.bunifuSeparator1.LineThickness = 1;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(429, 10);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
+            this.bunifuSeparator1.TabIndex = 4;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = true;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblTitulo.Location = new System.Drawing.Point(30, 10);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(399, 32);
+            this.lblTitulo.TabIndex = 2;
+            this.lblTitulo.Text = "Titulo del Formulario";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panelContenido
+            // 
+            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(0, 0);
+            this.panelContenido.Margin = new System.Windows.Forms.Padding(30);
+            this.panelContenido.Name = "panelContenido";
+            this.panelContenido.Size = new System.Drawing.Size(1496, 649);
+            this.panelContenido.TabIndex = 11;
             // 
             // panelMapaDeSitio
             // 
@@ -91,12 +190,12 @@
             this.panelMapaDeSitio.Controls.Add(this.btnModificar);
             this.panelMapaDeSitio.Controls.Add(this.pictureBox1);
             this.panelMapaDeSitio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMapaDeSitio.Location = new System.Drawing.Point(0, 0);
+            this.panelMapaDeSitio.Location = new System.Drawing.Point(0, 52);
             this.panelMapaDeSitio.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.panelMapaDeSitio.Name = "panelMapaDeSitio";
             this.panelMapaDeSitio.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
             this.panelMapaDeSitio.Size = new System.Drawing.Size(1496, 30);
-            this.panelMapaDeSitio.TabIndex = 9;
+            this.panelMapaDeSitio.TabIndex = 12;
             this.panelMapaDeSitio.Visible = false;
             // 
             // panel5
@@ -104,9 +203,9 @@
             this.panel5.Controls.Add(this.lblMapaSitio_4);
             this.panel5.Controls.Add(this.lblSeparacionMapa_3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(770, 5);
+            this.panel5.Location = new System.Drawing.Point(429, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(276, 25);
+            this.panel5.Size = new System.Drawing.Size(162, 25);
             this.panel5.TabIndex = 22;
             // 
             // lblMapaSitio_4
@@ -116,9 +215,9 @@
             this.lblMapaSitio_4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_4.Location = new System.Drawing.Point(19, 0);
             this.lblMapaSitio_4.Name = "lblMapaSitio_4";
-            this.lblMapaSitio_4.Size = new System.Drawing.Size(231, 25);
+            this.lblMapaSitio_4.Size = new System.Drawing.Size(135, 25);
             this.lblMapaSitio_4.TabIndex = 20;
-            this.lblMapaSitio_4.Text = "Titulo del Formulario";
+            this.lblMapaSitio_4.Text = "Alternativa";
             this.lblMapaSitio_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSeparacionMapa_3
@@ -138,9 +237,9 @@
             this.panel4.Controls.Add(this.lblMapaSitio_3);
             this.panel4.Controls.Add(this.lblSeparacionMapa_2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(494, 5);
+            this.panel4.Location = new System.Drawing.Point(265, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(276, 25);
+            this.panel4.Size = new System.Drawing.Size(164, 25);
             this.panel4.TabIndex = 21;
             // 
             // lblMapaSitio_3
@@ -150,9 +249,9 @@
             this.lblMapaSitio_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_3.Location = new System.Drawing.Point(19, 0);
             this.lblMapaSitio_3.Name = "lblMapaSitio_3";
-            this.lblMapaSitio_3.Size = new System.Drawing.Size(231, 25);
+            this.lblMapaSitio_3.Size = new System.Drawing.Size(145, 25);
             this.lblMapaSitio_3.TabIndex = 20;
-            this.lblMapaSitio_3.Text = "Titulo del Formulario";
+            this.lblMapaSitio_3.Text = "Observacion";
             this.lblMapaSitio_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSeparacionMapa_2
@@ -172,9 +271,9 @@
             this.panel3.Controls.Add(this.lblMapaSitio_2);
             this.panel3.Controls.Add(this.lblSeparacionMapa_1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(210, 5);
+            this.panel3.Location = new System.Drawing.Point(99, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(284, 25);
+            this.panel3.Size = new System.Drawing.Size(166, 25);
             this.panel3.TabIndex = 20;
             // 
             // lblMapaSitio_2
@@ -184,9 +283,9 @@
             this.lblMapaSitio_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_2.Location = new System.Drawing.Point(19, 0);
             this.lblMapaSitio_2.Name = "lblMapaSitio_2";
-            this.lblMapaSitio_2.Size = new System.Drawing.Size(262, 25);
+            this.lblMapaSitio_2.Size = new System.Drawing.Size(152, 25);
             this.lblMapaSitio_2.TabIndex = 18;
-            this.lblMapaSitio_2.Text = "Titulo del Formulario";
+            this.lblMapaSitio_2.Text = "Competencia";
             this.lblMapaSitio_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblSeparacionMapa_1
@@ -207,7 +306,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(10, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 25);
+            this.panel2.Size = new System.Drawing.Size(89, 25);
             this.panel2.TabIndex = 19;
             // 
             // lblMapaSitio_1
@@ -217,9 +316,9 @@
             this.lblMapaSitio_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_1.Location = new System.Drawing.Point(0, 0);
             this.lblMapaSitio_1.Name = "lblMapaSitio_1";
-            this.lblMapaSitio_1.Size = new System.Drawing.Size(201, 25);
+            this.lblMapaSitio_1.Size = new System.Drawing.Size(91, 25);
             this.lblMapaSitio_1.TabIndex = 11;
-            this.lblMapaSitio_1.Text = "Titulo del Formulario";
+            this.lblMapaSitio_1.Text = "Perfil";
             this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnRegresar
@@ -339,115 +438,28 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // panel1
+            // panel6
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
-            this.panel1.Controls.Add(this.lblError);
-            this.panel1.Controls.Add(this.txtBuscar);
-            this.panel1.Controls.Add(this.lblDescripcion);
-            this.panel1.Controls.Add(this.bunifuSeparator1);
-            this.panel1.Controls.Add(this.lblTitulo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(30, 10, 30, 10);
-            this.panel1.Size = new System.Drawing.Size(1496, 52);
-            this.panel1.TabIndex = 10;
-            // 
-            // lblError
-            // 
-            this.lblError.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblError.Font = new System.Drawing.Font("Roboto Light", 14.25F);
-            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblError.Location = new System.Drawing.Point(901, 10);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(291, 32);
-            this.lblError.TabIndex = 7;
-            this.lblError.Text = "Descripcion del Formulario";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblError.Visible = false;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderThickness = 3;
-            this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtBuscar.Font = new System.Drawing.Font("Roboto Light", 9.75F);
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(210)))), ((int)(((byte)(217)))));
-            this.txtBuscar.isPassword = false;
-            this.txtBuscar.Location = new System.Drawing.Point(1192, 10);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(274, 32);
-            this.txtBuscar.TabIndex = 6;
-            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBuscar.OnValueChanged += new System.EventHandler(this.txtBuscar_OnValueChanged);
-            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 16.25F);
-            this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(439, 10);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(567, 32);
-            this.lblDescripcion.TabIndex = 5;
-            this.lblDescripcion.Text = "Descripcion del Formulario";
-            this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // bunifuSeparator1
-            // 
-            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(429, 10);
-            this.bunifuSeparator1.Name = "bunifuSeparator1";
-            this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
-            this.bunifuSeparator1.TabIndex = 4;
-            this.bunifuSeparator1.Transparency = 255;
-            this.bunifuSeparator1.Vertical = true;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblTitulo.Location = new System.Drawing.Point(30, 10);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(399, 32);
-            this.lblTitulo.TabIndex = 2;
-            this.lblTitulo.Text = "Titulo del Formulario";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panelContenido
-            // 
-            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
-            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(0, 82);
-            this.panelContenido.Margin = new System.Windows.Forms.Padding(30);
-            this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1496, 649);
-            this.panelContenido.TabIndex = 11;
+            this.panel6.Controls.Add(this.panelContenido);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 82);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1496, 649);
+            this.panel6.TabIndex = 13;
             // 
             // ListadoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1496, 731);
-            this.Controls.Add(this.panelContenido);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panelMapaDeSitio);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListadoPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListadoPrincipal";
+            this.panel1.ResumeLayout(false);
             this.panelMapaDeSitio.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -462,22 +474,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelMapaDeSitio;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox btnRefrescar;
-        private System.Windows.Forms.PictureBox btnCerrar;
-        private System.Windows.Forms.PictureBox btnAgregar;
-        private System.Windows.Forms.PictureBox btnEliminar;
-        private System.Windows.Forms.PictureBox btnModificar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblError;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtBuscar;
@@ -485,7 +487,10 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Panel panelContenido;
-        private Bunifu.Framework.UI.BunifuImageButton btnRegresar;
+        private System.Windows.Forms.Panel panelMapaDeSitio;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lblMapaSitio_4;
+        private System.Windows.Forms.Label lblSeparacionMapa_3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblMapaSitio_3;
         private System.Windows.Forms.Label lblSeparacionMapa_2;
@@ -494,8 +499,15 @@
         private System.Windows.Forms.Label lblSeparacionMapa_1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblMapaSitio_1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lblMapaSitio_4;
-        private System.Windows.Forms.Label lblSeparacionMapa_3;
+        private Bunifu.Framework.UI.BunifuImageButton btnRegresar;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnRefrescar;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.PictureBox btnAgregar;
+        private System.Windows.Forms.PictureBox btnEliminar;
+        private System.Windows.Forms.PictureBox btnModificar;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel6;
     }
 }

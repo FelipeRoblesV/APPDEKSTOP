@@ -12,23 +12,27 @@ using WFBS.Controlador;
 using WFBS.Entidades;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Clases;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo;
+using WFBS.WebService;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 {
     public partial class ListadoPrincipal : Form
     {
-        private Modulo.Listado listaFuncionario,listaFuncionario_Cursos;
+        private Modulo.Listado listaFuncionario, listaFuncionario_Cursos;
         private Modulo.Listado listaJefeFuncionario, listaJefeFuncionario_Cursos;
         private Modulo.Listado listaPerfil;
         private Modulo.Listado listaCargo;
         private Modulo.Listado listaCompetencia_Perfil, listaCompetencia, listaCompetencia_Observacion;
         private Modulo.Listado listaEvaluacion_Perfil, listarEvaluacion, listaEvaluacion_Pregunta, listaEvaluacion_Alternativa;
 
+        private Cargando cargarFormulario;
+
+
         private BackgroundWorker iniciarSubFormulario;
         private CargarListaSubFormulario SubFormularioInicia;
 
         private double numero = 0, numero2 = 0;
-        private int idComp = 0, idEva = 0;
+        private int idComp = 0, idEva = 0, rutFun = 0;
 
         public FormularioPrincipal Formulario;
 
@@ -43,10 +47,24 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             InitializeComponent();
         }
 
-        public void RestablecerNumero (double numero)
+        public void RestablecerNumero(double numero)
         {
             switch (numero)
             {
+                case 1.11:
+                    MessageBox.Show(this.numero.ToString());
+                    InicializarMapaSitio();
+                    this.numero = numero;
+                    this.numero2 = 0;
+                    AbrirFormulario(listaFuncionario);
+                    break;
+                case 1.21:
+                    MessageBox.Show(this.numero.ToString());
+                    InicializarMapaSitio();
+                    this.numero = numero;
+                    this.numero2 = 0;
+                    AbrirFormulario(listaJefeFuncionario);
+                    break;
                 case 3:
                     MessageBox.Show(this.numero.ToString());
                     InicializarMapaSitio();
@@ -63,7 +81,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     break;
             }
 
-            
+
         }
 
         public bool isActive()
@@ -138,7 +156,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
         }
 
-        private void DefinirMapaDeSitio( double numero)
+        private void DefinirMapaDeSitio(double numero)
         {
             switch (numero)
             {
@@ -255,7 +273,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     InicializarMapaSitio();
                     lblTitulo.Text = "Formulario PERFIL(COMPETENCIA)";
                     lblDescripcion.Text = "Seleccione el perfil de la competencia";
-                    
+
                     break;
                 case 3.1:
                     lblTitulo.Text = "Formulario COMPETENCIA(COMPETENCIA)";
@@ -296,18 +314,21 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     listaFuncionario.definirFormulario(numero, listar, estado);
                     listaFuncionario.dt_Listar.DoubleClick += new System.EventHandler(dt_Listar_DoubleClick);
                     DefinirModulo(numero);
-                    
+
                     AbrirFormulario(listaFuncionario);
                     break;
                 case 1.12:
+                    CargarFormulario(2, String.Empty);
+                    this.numero2 = numero;
                     listaFuncionario_Cursos = new Modulo.Listado();
                     listaFuncionario_Cursos.definirFormulario(numero, listar, estado);
+                    Formulario.GenerarControlesSubFormulario(1.12);
                     AbrirFormulario(listaFuncionario_Cursos);
-                    this.numero2 = numero;
 
                     break;
                 case 1.21:
                     InicializarListados();
+                    this.numero2 = 0;
                     listaJefeFuncionario = new Modulo.Listado();
                     listaJefeFuncionario.definirFormulario(numero, listar, estado);
                     listaJefeFuncionario.dt_Listar.DoubleClick += new System.EventHandler(dt_Listar_DoubleClick);
@@ -316,12 +337,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     this.numero = numero;
                     break;
                 case 1.22:
-                    InicializarListados();
+                    CargarFormulario(2, String.Empty);
+                    this.numero2 = numero;
                     listaJefeFuncionario_Cursos = new Modulo.Listado();
                     listaJefeFuncionario_Cursos.definirFormulario(numero, listar, estado);
                     DefinirModulo(numero);
                     AbrirFormulario(listaJefeFuncionario_Cursos);
-                    this.numero2 = numero;
                     break;
                 case 2.11:
                     InicializarListados();
@@ -350,6 +371,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
                     break;
                 case 3.1:
+                    CargarFormulario(2, String.Empty);
                     this.numero2 = numero;
                     listaCompetencia = new Modulo.Listado();
                     listaCompetencia.definirFormulario(numero, listar, estado);
@@ -359,13 +381,14 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     DefinirModulo(numero);
                     break;
                 case 3.2:
+                    CargarFormulario(2, String.Empty);
                     this.numero2 = numero;
                     listaCompetencia_Observacion = new Modulo.Listado();
                     listaCompetencia_Observacion.definirFormulario(numero, listar, estado);
                     DefinirModulo(numero);
                     Formulario.GenerarControlesSubFormulario(3.2);
                     AbrirFormulario(listaCompetencia_Observacion);
-                    
+
                     break;
                 case 4:
                     InicializarListados();
@@ -376,9 +399,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     listaEvaluacion_Perfil.dt_Listar.DoubleClick += new System.EventHandler(dt_Listar_DoubleClick);
                     DefinirModulo(numero);
                     AbrirFormulario(listaEvaluacion_Perfil);
-                    
+
                     break;
                 case 4.1:
+                    CargarFormulario(2, String.Empty);
                     listarEvaluacion = new Modulo.Listado();
                     listarEvaluacion.definirFormulario(numero, listar, estado);
                     listarEvaluacion.dt_Listar.DoubleClick += new System.EventHandler(dt_Listar_DoubleClick);
@@ -388,6 +412,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     this.numero2 = numero;
                     break;
                 case 4.2:
+                    CargarFormulario(2, String.Empty);
                     listaEvaluacion_Pregunta = new Modulo.Listado();
                     listaEvaluacion_Pregunta.definirFormulario(numero, listar, estado);
                     listaEvaluacion_Pregunta.dt_Listar.DoubleClick += new System.EventHandler(dt_Listar_DoubleClick);
@@ -397,6 +422,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     this.numero2 = numero;
                     break;
                 case 4.3:
+                    CargarFormulario(2, String.Empty);
                     listaEvaluacion_Alternativa = new Modulo.Listado();
                     listaEvaluacion_Alternativa.definirFormulario(numero, listar, estado);
                     DefinirModulo(numero);
@@ -421,20 +447,27 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             switch (this.numero)
             {
                 case 1.11:
-                    if (btn.SelectedRows.Count.Equals(1))
+                    switch (this.numero2)
                     {
-             //           id = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
-                        MessageBox.Show("1 FUNCIONARIO");
-                    }
-                    else
-                    {
-                        MessageBox.Show("2 FUNCIONARIO");
+                        case 0:
+                            if (btn.SelectedRows.Count.Equals(1))
+                            {
+                                String rut = (btn.CurrentRow.Cells[0].Value.ToString().Replace("-", "").Trim());
+                                int run = int.Parse(rut.Substring(0, rut.Length - 1));
+                                rutFun = run;
+                                IniciarSubFormulario();
+                            }
+                            else
+                            {
+                                MessageBox.Show("2 FUNCIONARIO");
+                            }
+                            break;
                     }
                     break;
                 case 1.21:
                     if (btn.SelectedRows.Count.Equals(1))
                     {
-                    //    id = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
+                        //    id = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
                         MessageBox.Show("1 JEFE");
                     }
                     else
@@ -514,8 +547,22 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             break;
                     }
                     break;
-    
-                  
+
+
+            }
+        }
+        public void CargarFormulario(int estado, String mensaje)
+        {
+            switch (estado)
+            {
+                case 1:
+                    cargarFormulario = new Cargando();
+                    cargarFormulario.CambiarMensaje(mensaje);
+                    AbrirFormulario(cargarFormulario);
+                    break;
+                case 2:
+                    cargarFormulario.CerrarFormulario();
+                    break;
             }
         }
 
@@ -524,51 +571,129 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         {
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
             CargarListaSubFormulario iniciar = (CargarListaSubFormulario)e.Argument;
-
             switch (this.numero)
             {
+
+                case 1.11:
+                    switch (this.numero2)
+                    {
+                        case 0:
+                            iniciar.mensaje = "Verificando cursos realizados.";
+                            IniciarAplicacion.ReportProgress(1, iniciar);
+                            try
+                            {
+                                daoWebService daoWebService = new daoWebService();
+                                Cl_Persona per = new Cl_Persona();
+                                per.run = iniciar.id.ToString();
+                                List<Cl_Curso> lista = daoWebService.listarCursos(per);
+                                DataTable dt = ConvertToDataTable(lista);
+                                DataSet ds = new DataSet();
+                                ds.Tables.Add(dt);
+                                iniciar.lista = ds;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                            catch (Exception)
+                            {
+
+                                iniciar.lista = null;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+
+                            break;
+                    }
+                    break;
                 case 3:
 
                     switch (this.numero2)
                     {
                         case 0:
                             iniciar.mensaje = "Cargando Competencia";
-                            daoCompetencia daoCompetencia = new daoCompetencia();
-                            iniciar.lista = daoCompetencia.Listar(iniciar.id);
                             IniciarAplicacion.ReportProgress(1, iniciar);
+                            try
+                            {
+                                daoCompetencia daoCompetencia = new daoCompetencia();
+                                iniciar.lista = daoCompetencia.Listar(iniciar.id);
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                            catch (Exception)
+                            {
+
+                                iniciar.lista = null;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+     
                             break;
                         case 3.1:
                             iniciar.mensaje = "Cargando Observacion";
-                            daoObservacion daoObservacion = new daoObservacion();
-                            iniciar.lista = daoObservacion.Listar(iniciar.id);
-                            IniciarAplicacion.ReportProgress(2, iniciar);
-                            break;
+                            IniciarAplicacion.ReportProgress(1, iniciar);
+                            try
+                            {
+                                daoObservacion daoObservacion = new daoObservacion();
+                                iniciar.lista = daoObservacion.Listar(iniciar.id);
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                            catch (Exception)
+                            {
 
+                                iniciar.lista = null;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+
+                            break;
                     }
                     break;
-                            
-             
-
                 case 4:
                     switch (this.numero2)
                     {
                         case 0:
                             iniciar.mensaje = "Cargando Evaluacion";
-                            daoCuestionario daoCuestionario = new daoCuestionario();
-                            iniciar.lista = daoCuestionario.Listar(iniciar.id);
-                            IniciarAplicacion.ReportProgress(3, iniciar);
+                            IniciarAplicacion.ReportProgress(1, iniciar);
+                            try
+                            {
+                                daoCuestionario daoCuestionario = new daoCuestionario();
+                                iniciar.lista = daoCuestionario.Listar(iniciar.id);
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                            catch (Exception)
+                            {
+
+                                iniciar.lista = null;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                           
                             break;
                         case 4.1:
                             iniciar.mensaje = "Cargando Preguntas";
-                            daoPreguntas daoPreguntas = new daoPreguntas();
-                            iniciar.lista = daoPreguntas.Listar(iniciar.id);
-                            IniciarAplicacion.ReportProgress(4, iniciar);
+                            IniciarAplicacion.ReportProgress(1, iniciar);
+                            try
+                            {
+                                daoPreguntas daoPreguntas = new daoPreguntas();
+                                iniciar.lista = daoPreguntas.Listar(iniciar.id);
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                            catch (Exception)
+                            {
+
+                                iniciar.lista = null;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+
                             break;
                         case 4.2:
                             iniciar.mensaje = "Cargando Alternativas";
-                            daoAlternativa daoAlternativa = new daoAlternativa();
-                            iniciar.lista = daoAlternativa.Listar(iniciar.id);
-                            IniciarAplicacion.ReportProgress(5, iniciar);
+                            IniciarAplicacion.ReportProgress(1, iniciar);
+                            try
+                            {
+                                daoAlternativa daoAlternativa = new daoAlternativa();
+                                iniciar.lista = daoAlternativa.Listar(iniciar.id);
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                            catch (Exception)
+                            {
+
+                                iniciar.lista = null;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
                             break;
 
                     }
@@ -580,93 +705,127 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
 
         }
-
-
         private void IniciarSubFormulario_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             CargarListaSubFormulario iniciar = (CargarListaSubFormulario)e.UserState;
+            int porcentaje = e.ProgressPercentage;
 
-            switch (this.numero)
+            switch (porcentaje)
             {
-                case 3:
-                    switch (this.numero2)
+                case 1:
+                    CargarFormulario(1,iniciar.mensaje);
+                    break;
+                case 2:
+                    switch (this.numero)
                     {
-                        case 0:
+                        case 1.11:
+                            switch (this.numero2)
+                            {
+                                case 0:
+                                    try
+                                    {
+                                        DataSet lista = iniciar.lista;
+                                        if (lista != null)
+                                        {
+                                            this.DefinirFormulario(1.12, lista, true);
+
+                                            this.numero2 = 1.12;
+                                        }
+                                        else
+                                        {
+                                            mensajeFuncionarioSinCursos();
+                                        }
+
+
+                                    }
+                                    catch (Exception)
+                                    {
+                                        mensajeFuncionarioSinCursos();
+                                    }
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            switch (this.numero2)
+                            {
+                                case 0:
+                                    try
+                                    {
+                                        DataSet lista = iniciar.lista;
+                                        this.DefinirFormulario(3.1, lista, true);
+                                        this.numero2 = 3.1;
+
+                                    }
+                                    catch (Exception)
+                                    {
+                                        DataSet lista = null;
+                                        this.DefinirFormulario(3.1, lista, false);
+                                        this.numero2 = 3.1;
+                                    }
+                                    break;
+                                case 3.1:
+                                    try
+                                    {
+                                        DataSet lista = iniciar.lista;
+                                        this.DefinirFormulario(3.2, lista, true);
+                                    }
+                                    catch (Exception)
+                                    {
+                                        DataSet lista = null;
+                                        this.DefinirFormulario(3.2, lista, false);
+                                    }
+                                    break;
+                            }
+
+                            break;
+                        case 4:
                             try
                             {
                                 DataSet lista = iniciar.lista;
-                                this.DefinirFormulario(3.1, lista, true);
-                                this.numero2 = 3.1;
-
+                                this.DefinirFormulario(4.1, lista, true);
+                                this.numero2 = 4.1;
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                this.DefinirFormulario(3.1, lista, false);
-                                this.numero2 = 3.1;
+                                this.DefinirFormulario(4.1, lista, false);
+                                this.numero2 = 4.1;
                             }
                             break;
-                        case 3.1:
+                        case 4.1:
                             try
                             {
                                 DataSet lista = iniciar.lista;
-                                this.DefinirFormulario(3.2, lista, true);
+                                this.DefinirFormulario(4.2, lista, true);
+                                this.numero2 = 4.2;
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                this.DefinirFormulario(3.2, lista, false);
+                                this.DefinirFormulario(4.2, lista, false);
+                                this.numero2 = 4.2;
+                            }
+                            break;
+                        case 4.2:
+                            try
+                            {
+                                listaEvaluacion_Alternativa = new Modulo.Listado();
+                                DataSet lista = iniciar.lista;
+                                this.DefinirFormulario(4.3, lista, true);
+
+                                this.numero2 = 4.3;
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                this.DefinirFormulario(4.3, lista, false);
+                                this.numero2 = 4.3;
                             }
                             break;
                     }
-   
                     break;
-                case 4:
-                    try
-                    {
-                        DataSet lista = iniciar.lista;
-                        this.DefinirFormulario(4.1, lista, true);
-                        this.numero2 = 4.1;
-                    }
-                    catch (Exception)
-                    {
-                        DataSet lista = null;
-                        this.DefinirFormulario(4.1, lista, false);
-                        this.numero2 = 4.1;
-                    }
-                    break;
-                case 4.1:
-                    try
-                    {
-                        DataSet lista = iniciar.lista;
-                        this.DefinirFormulario(4.2, lista, true);
-                        this.numero2 = 4.2;
-                    }
-                    catch (Exception)
-                    {
-                        DataSet lista = null;
-                        this.DefinirFormulario(4.2, lista, false);
-                        this.numero2 = 4.2;
-                    }
-                    break;
-                case 4.2:
-                    try
-                    {
-                        listaEvaluacion_Alternativa = new Modulo.Listado();
-                        DataSet lista = iniciar.lista;
-                        this.DefinirFormulario(4.3, lista, true);
-
-                        this.numero2 = 4.3;
-                    }
-                    catch (Exception)
-                    {
-                        DataSet lista = null;
-                        this.DefinirFormulario(4.3, lista, false);
-                        this.numero2 = 4.3;
-                    }
-                    break;
+                        
             }
-
 
             //    listarCompetenciaFinal = new Modulo.Listado();
         }
@@ -688,8 +847,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             }
             if (iniciarSubFormulario.IsBusy == false)
             {
-
-                if(numero == 3)
+                if (numero == 1.11)
+                {
+                    SubFormularioInicia.id = rutFun;
+                }
+                if (numero == 3)
                 {
                     SubFormularioInicia.id = idComp;
                 }
@@ -707,6 +869,38 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
 
         #endregion
+
+        private DataTable ConvertToDataTable<T>(IList<T> data)
+        {
+            PropertyDescriptorCollection propiedades = TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+
+            foreach (PropertyDescriptor prop in propiedades)
+            {
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in propiedades)
+                {
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                }
+                table.Rows.Add(row);
+            }
+            return table;
+
+        }
+
+        public void mensajeFuncionarioSinCursos()
+        {
+            AbrirFormulario(listaFuncionario);
+            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+            mensaje.mensajeCursosFuncionario();
+            mensaje.ShowDialog();
+        }
+
+
 
         #region BUSCAR | FILTRAR FORMULARIO
         private void txtBuscar_OnValueChanged(object sender, EventArgs e)

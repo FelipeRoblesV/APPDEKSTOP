@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WFBS.Controlador\WFBS.Controlador.csproj">
+      <Project>{042CDAA5-5600-40AD-B575-5C5758635984}</Project>
+      <Name>WFBS.Controlador</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WFBS.WebService\WFBS.WebService.csproj">
       <Project>{54d3bf76-30de-4913-8ef1-6ebe12fc19e7}</Project>
       <Name>WFBS.WebService</Name>

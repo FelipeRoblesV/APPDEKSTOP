@@ -49,6 +49,7 @@ namespace WFBS.WebService
                     curso2.nombre = item.nombre;
                     curso2.sigla = item.siglas;
                     curso2.instituto = item.institucion;
+                    curso2.fecha = item.fecha;
                     listar.Add(curso2);
                 }
                 return listar;
@@ -58,6 +59,23 @@ namespace WFBS.WebService
             {
 
                 throw new Exception("Funcionario no tiene a cursado ningun curso.");
+            }
+        }
+
+        public bool ValidarCursos(Cl_Persona per)
+        {
+            try
+            {
+                webService.MainWSClient WS = new webService.MainWSClient();
+                bool respuesta = WS.Validar_Cursos(per.run);
+                return respuesta;
+
+
+            }
+            catch (Exception)
+            {
+
+                return false;
             }
         }
 

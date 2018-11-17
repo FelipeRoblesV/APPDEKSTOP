@@ -25,7 +25,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private daoUsuario dao;
         private Aplicacion app;
         private Login login;
-        private double numero = 0, numero2 = 0;
+        private double numero = 0;
 
         public IniciarSesion()
         {
@@ -177,99 +177,91 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private void iniciarAplicacion_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             IniciarAplicacion iniciar = (IniciarAplicacion)e.UserState;
-            login.VerificacionCorrecta(iniciar.mensaje);
+            
 
-            if (formulario == null)
+            int numero = e.ProgressPercentage;
+
+            switch (numero)
             {
-                formulario = new FormularioPrincipal.FormularioPrincipal();
-            }
-            switch (this.numero2)
-            {
-                case 1.11:
+                case 1:
+                    login.VerificacionCorrecta(iniciar.mensaje);
+                    break;
+                case 2:
+                    if (formulario == null)
+                    {
+                        formulario = new FormularioPrincipal.FormularioPrincipal();
+                    }
                     try
                     {
                         DataSet lista = iniciar.listarFuncionario;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(1.11, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(1.11, lista, false);
                     }
-                    break;
-                case 1.21:
                     try
                     {
                         DataSet lista = iniciar.listarJefeFuncionario;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(1.21, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(1.21, lista, false);
                     }
-                    break;
-                case 2.11:
                     try
                     {
                         DataSet lista = iniciar.listarPerfil;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(2.11, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(2.11, lista, false);
                     }
-                    break;
-                case 2.21:
                     try
                     {
                         DataSet lista = iniciar.listarCargo;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(2.21, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(2.21, lista, false);
                     }
-                    break;
-                case 3:
                     try
                     {
                         DataSet lista = iniciar.listarCompetencia;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(3, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(3, lista, false);
                     }
-                    break;
-                case 4:
                     try
                     {
                         DataSet lista = iniciar.listarEvaluacion;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(4, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(4, lista, false);
                     }
-                    break;
-                case 5:
                     try
                     {
                         DataSet lista = iniciar.listarReporte;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(5, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(5, lista, false);
                     }
-                    break;
-                case 6:
+
                     formulario.DefinirAplicacion(0);
                     break;
             }
@@ -283,16 +275,17 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 {
                     Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
                     Properties.Settings.Default.ChkRecordarUsuario = true;
+                    Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
                     Properties.Settings.Default.Save();
                 }
                 else
                 {
                     Properties.Settings.Default.RecordarUsuario = String.Empty;
                     Properties.Settings.Default.ChkRecordarUsuario = false;
+                    Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
                     Properties.Settings.Default.Save();
                 }
                 app.iniciarAplicacion(2);
-
             }
             catch (Exception)
             {
@@ -307,62 +300,27 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             {
                 BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
                 IniciarAplicacion iniciar = (IniciarAplicacion)e.Argument;
-                for (int i = 0; i < 9; i++)
-                {
-                    switch (i)
-                    {
-                        case 1:
-                            iniciar.mensaje = "Cargando Funcionario";
-                            daoFuncionario daoFun = new daoFuncionario();
-                            iniciar.listarFuncionario = daoFun.listar();
-                            this.numero2 = 1.11;
-                            break;
 
-                        case 2:
-                            iniciar.mensaje = "Cargando Jefe Funcionario";
-                            daoJefeFuncionario daoJefeFuncionario = new daoJefeFuncionario();
-                            iniciar.listarJefeFuncionario = daoJefeFuncionario.listar();
-                            this.numero2 = 1.21;
-                            break;
-                        case 3:
-                            iniciar.mensaje = "Cargando Perfil";
-                            daoPerfil daoPerfil = new daoPerfil();
-                            iniciar.listarPerfil = daoPerfil.listar();
-                            this.numero2 = 2.11;
-                            break;
-                        case 4:
-                            iniciar.mensaje = "Cargando Cargo";
-                            daoCargo daoCargo = new daoCargo();
-                            iniciar.listarCargo = daoCargo.listar();
-                            this.numero2 = 2.21;
-                            break;
-                        case 5:
-                            iniciar.mensaje = "Cargando Competencia";
-                            daoPerfil daoCompetencia = new daoPerfil();
-                            iniciar.listarCompetencia = daoCompetencia.listar();
-                            this.numero2 = 3;
-                            break;
-                        case 6:
-                            iniciar.mensaje = "Cargando Evaluacion";
-                            daoPerfil daoEvaluacion = new daoPerfil();
-                            iniciar.listarEvaluacion = daoEvaluacion.listar();
-                            this.numero2 = 4;
-                            break;
-                        case 7:
-                            iniciar.mensaje = "Cargando Reporte";
-                            daoPerfil daoReporte = new daoPerfil();
-                            iniciar.listarReporte = daoReporte.listar();
-                            this.numero2 = 5;
-                            System.Threading.Thread.Sleep(2000);
-                            break;
-                        case 8:
-                            iniciar.mensaje = "Iniciando Aplicacion";
-                            this.numero2 = 6;
-                            break;
-                    }
-                    IniciarAplicacion.ReportProgress(i, iniciar);
 
-                }
+                iniciar.mensaje = "Iniciando Aplicacion";
+                IniciarAplicacion.ReportProgress(1, iniciar);
+                daoFuncionario daoFun = new daoFuncionario();
+                daoJefeFuncionario daoJefeFuncionario = new daoJefeFuncionario();
+                daoPerfil daoPerfil = new daoPerfil();
+                daoCargo daoCargo = new daoCargo();
+                daoCompetencia daoCompetencia = new daoCompetencia();
+                daoCuestionario daoEvaluacion = new daoCuestionario();
+                daoPerfil daoReporte = new daoPerfil();
+
+
+                iniciar.listarFuncionario = daoFun.listar();
+                iniciar.listarJefeFuncionario = daoJefeFuncionario.listar();
+                iniciar.listarPerfil = daoPerfil.listar();
+                iniciar.listarCargo = daoCargo.listar();
+                iniciar.listarCompetencia = daoCompetencia.ListarPerfil();
+                iniciar.listarEvaluacion = daoEvaluacion.ListarPerfil();
+                iniciar.listarReporte = daoReporte.listar();
+                IniciarAplicacion.ReportProgress(2, iniciar);
             }
             catch (Exception)
             {

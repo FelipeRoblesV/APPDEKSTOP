@@ -64,6 +64,7 @@
     <Compile Include="Formularios\FormularioPrincipal\Cargando.Designer.cs">
       <DependentUpon>Cargando.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Clases\CargarDashboard.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarListaSubFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\FormularioPrincipal.cs">
@@ -225,6 +226,12 @@
     <Compile Include="Ventanas\Eliminar.Designer.cs">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ventanas\Mensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Aplicacion.resx">
       <DependentUpon>Aplicacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -316,6 +323,9 @@
     <EmbeddedResource Include="Ventanas\Cerrar.resx">
       <DependentUpon>Cerrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -341,6 +351,10 @@
     <ProjectReference Include="..\WFBS.Logger\WFBS.Logger.csproj">
       <Project>{0b493275-d477-4238-a851-f07d9154addc}</Project>
       <Name>WFBS.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WFBS.WebService\WFBS.WebService.csproj">
+      <Project>{54d3bf76-30de-4913-8ef1-6ebe12fc19e7}</Project>
+      <Name>WFBS.WebService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -484,6 +498,7 @@
     <None Include="Resources\refresh_arrows_14418.png" />
     <None Include="Resources\flecha-hacia-abajo.png" />
     <None Include="Resources\flecha-hacia-arriba.png" />
+    <None Include="Resources\WFBS%2814%29.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
   <ItemGroup />

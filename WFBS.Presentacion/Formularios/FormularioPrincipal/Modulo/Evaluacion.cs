@@ -21,7 +21,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void AgregarFuncionario()
         {
             dtpFechaInicio.MinDate = DateTime.Today;
-            lblTituloFormulario.Text = "Agregar Funcionario";
+            lblNombreFormulario.Text = "Agregar Funcionario";
             tbPonderacion.Value = 70;
         }
 

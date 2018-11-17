@@ -74,6 +74,9 @@
     <None Include="Connected Services\webService\WFBS.WebService.webService.Recuperar_PersonaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\webService\WFBS.WebService.webService.Validar_CursosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\webService\" />

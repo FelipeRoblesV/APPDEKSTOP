@@ -117,10 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Actualizacion_Formulario.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="IniciarDashboard.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>205, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_Accion1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAS4AAAAqCAYAAAANprbhAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKzSURBVHhe7d3NS1RhGIbx/qJ2bdq1alWbgiBaVAsJCoxg
+        IiKiRUQh4bgYITIM+jAxGZkgkaGYwqGYsBIJJ0H7HEEtGsKF1OKJ+50zJ4eZXKW+D1w/uEDwY3njOXN4
+        z456vW5ERJ5iuIjIXQwXEbmL4SIidzFcROQuhouI3LXhcC19W7HRqaKdyV+3o/cu2t4bJ21nzyEiov+e
+        9kU7c+rhVRuqjNvX5cWOu6T+OVwTM5PhD2UKWRufLdurz++sVl82ANgM2hftzJO5il14nAv7owHrtE9t
+        w6WVO1fosxMjV2xl9UfyJwFga/1cWw0D1jV82eYXP7XsVMtwabQODGZsbKaU/CoAbK/JhTd2+M55q36Z
+        7zxc+k+L0QIQG11C6v5X23DpnpYuDwEgRtnn963/2fDf4dKnh7oRxj0tALFa+/3LDt4+a9Mfq43h0p17
+        3QQDgJjdejlm14qDjeHScxP6CBIAYlZd+hA+QAzDte9mty18ryXfAoA46XJxV++RxnDt7jsWnpkAgNjp
+        KfswXPoCADxguAC4w3ABcIfhAuAOwwXAHYYLgDsMFwB3GC4A7jBcANxJh0uP0OtRegCIXTpcOtKG8+QB
+        eJAOl8501vGoABAzHQahQyHCcOVKD8LpggAQMx0tryPmw3DpEPr9A6e5zwUgat35Hnv0ttQYLtX79K71
+        l0eSbwNAXPR+V72cWnuVDpfOnddbNKZrc8mPAUAc9D4MXRU2326dDpfSIfQ6jJ7TUAHEQqN1fOiSlWYr
+        6Va1DJcqv38dznQeeJFPfg0AtofehaH/tNaPlmobLqXLRr1JQyunu/i8tgzAVtEx8rqflSlkw4t8mpeH
+        6+s4XM20cvrocU+uKzz0RUS02ekdGLoJPzpV7LhLasPhIiKKMYaLiNzFcBGRuxguInIXw0VEzqrbHygt
+        TAqgQJeEAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

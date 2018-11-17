@@ -890,6 +890,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioPrincipal";
             this.Text = "FormularioPrincipal";
+            this.Shown += new System.EventHandler(this.FormularioPrincipal_Shown);
             this.panelSuperior.ResumeLayout(false);
             this.panelLateralMini.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

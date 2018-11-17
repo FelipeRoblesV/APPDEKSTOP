@@ -34,6 +34,7 @@ namespace WFBS.Presentacion.Ventanas
         }
 
 
+
         public void ventanaCerrarFormularioPrincipal(Formularios.FormularioPrincipal.FormularioPrincipal Formulario)
         {
             this.formularioPrincipal = Formulario;

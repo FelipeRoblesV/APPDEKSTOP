@@ -27,7 +27,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     listarReporte_Perfil = new Modulo.Listado();
                     listarReporte_Perfil.definirFormularioReporte(1, listar, estado);
                     AbrirFormulario(listarReporte_Perfil);
-                    MessageBox.Show("asdas");
                     break;
             }
         }

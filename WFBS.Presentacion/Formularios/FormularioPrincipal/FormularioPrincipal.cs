@@ -26,28 +26,43 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         private Logotipo logo = new Logotipo();
         private int estadoMR = 0;
         private double numero = 0, numero2 = 0;
-        private int estadoDashboard = 0, estadoFuncionario = 0, estadoPerfil = 0, estadoCompetencia = 0, estadoEvaluacion = 0, estadoReporte = 0;
+        private int estadoDashboard = 0, estadoFuncionario = 0, estadoPerfil = 0, estadoCompetencia = 0, estadoEvaluacion = 0, estadoReporte = 0, estadoCRUD = 0;
         #endregion
 
         public FormularioPrincipal()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
+            AbrirFormulario(logo);
         }
-        #region INICIALIZAR FORMULARIO
-        private void InicializarToolTip()
-        {
-            ToolTip tt = new ToolTip();
-            tt.InitialDelay = 0;
-            tt.SetToolTip(this.btnDashboard, "DASHBOARD");
-            tt.SetToolTip(this.btnFuncionario, "FUNCIONARIO");
-            tt.SetToolTip(this.btnPerfil, "PERFIL");
-            tt.SetToolTip(this.btnCompetencia, "COMPETENCIA");
-            tt.SetToolTip(this.btnEvaluacion, "EVALUACION");
-            tt.SetToolTip(this.btnReporte, "REPORTE");
 
-            tt.SetToolTip(this.btnAyuda, "AYUDA");
-            tt.SetToolTip(this.btnCerrarSesion, "CERRAR SESION");
+        public void CargandoFormulario(string mensaje)
+        {
+            Cargando cargar = new Cargando();
+            cargar.CambiarMensaje(mensaje);
+            AbrirFormulario(cargar);
+        }
+
+        #region INICIALIZAR FORMULARIO
+        private void InicializarToolTip(int numero)
+        {
+            switch (numero)
+            {
+                case 0:
+                    ToolTip tt = new ToolTip();
+                    tt.InitialDelay = 0;
+                    tt.SetToolTip(this.btnDashboard, "DASHBOARD");
+                    tt.SetToolTip(this.btnFuncionario, "FUNCIONARIO");
+                    tt.SetToolTip(this.btnPerfil, "PERFIL");
+                    tt.SetToolTip(this.btnCompetencia, "COMPETENCIA");
+                    tt.SetToolTip(this.btnEvaluacion, "EVALUACION");
+                    tt.SetToolTip(this.btnReporte, "REPORTE");
+
+                    tt.SetToolTip(this.btnAyuda, "AYUDA");
+                    tt.SetToolTip(this.btnCerrarSesion, "CERRAR SESION");
+                    break;
+            }
+
         }
 
         private void InicializarBotones()
@@ -115,37 +130,37 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
             if (btn.Name == btnDashboard.Name)
             {
-                if(estadoDashboard == 0)
+                if(estadoDashboard == 0 && estadoCRUD == 0)
                 {
-                    IniciarProcemiento(0);
+                    IniciarDashboard();
                 }
 
 
             }
-            if (btn.Name == btnFuncionario.Name)
+            if (btn.Name == btnFuncionario.Name )
             {
-                if (estadoFuncionario == 0)
+                if (estadoFuncionario == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(1);
                 }
             }
             if (btn.Name == btnPerfil.Name)
             {
-                if (estadoPerfil == 0)
+                if (estadoPerfil == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(2);
                 }
             }
             if (btn.Name == btnCompetencia.Name)
             {
-                if (estadoCompetencia == 0)
+                if (estadoCompetencia == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(3);
                 }
             }
             if (btn.Name == btnEvaluacion.Name)
             {
-                if (estadoEvaluacion == 0)
+                if (estadoEvaluacion == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(4);
                 }
@@ -153,7 +168,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             }
             if (btn.Name == btnReporte.Name)
             {
-                if (estadoReporte == 0)
+                if (estadoReporte == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(5);
                 }
@@ -171,26 +186,31 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         }
 
 
+        public void IniciarDashboard()
+        {
+            inicializarEstado();
+            InicializarBotones();
+            OcultarMenu();
+            InicializarSideMenu();
+            PanelCRUD.Visible = false;
+            panelMenuDatagrid.Visible = false;
+            this.btnDashboard.Image = Properties.Resources.Dashboard_Active;
+            this.SidePanelDashboardMini.BackColor = Color.FromArgb(125, 62, 55);
+            dashboard.IniciarAplicacion();
+        }
+
+        public void TerminarDashboard()
+        {
+            AbrirFormulario(dashboard);
+            estadoDashboard = 1;
+            this.numero = 0;
+        }
+
 
         private void IniciarProcemiento(double numero)
         {
             switch (numero)
             {
-                case 0:
-                    inicializarEstado();
-                    InicializarBotones();
-                    OcultarMenu();
-                    InicializarSideMenu();
-                    PanelCRUD.Visible = false;
-                    panelMenuDatagrid.Visible = false;
-                    this.btnDashboard.Image = Properties.Resources.Dashboard_Active;
-                    this.SidePanelDashboardMini.BackColor = Color.FromArgb(125, 62, 55);
-
-                    AbrirFormulario(dashboard);
-                    estadoDashboard = 1;
-                    
-                    this.numero = numero;
-                    break;
                 case 1:
                     inicializarEstado();
                     InicializarBotones();
@@ -300,6 +320,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             }
         }
 
+        private void FormularioPrincipal_Shown(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnMenuOculto_Click(object sender, EventArgs e)
         {
@@ -308,28 +332,44 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             switch (this.numero)
             {
                 case 1:
-                    if (btn.Name == btnAccion1.Name)
+                    if (btn.Name == btnAccion1.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = false;
                         btnAccion2.Enabled = true;
                         PanelCRUD.Visible = false;
-                        AbrirFormulario(ListarFuncionario);
+                        if (ListarFuncionario.isActive())
+                        {
+                            ListarFuncionario.RestablecerNumero(1.11);
+                            AbrirFormulario(ListarFuncionario);
+                        }
+                        else
+                        {
+                            AbrirFormulario(ListarFuncionario);
+                        }
                         GenerarControlesSubFormulario(1.11);
 
                     }
-                    if (btn.Name == btnAccion2.Name)
+                    if (btn.Name == btnAccion2.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = true;
                         btnAccion2.Enabled = false;
                         PanelCRUD.Visible = false;
 
-
-                        AbrirFormulario(ListarJefeFuncionario);
+                        if (ListarJefeFuncionario.isActive())
+                        {
+                            ListarJefeFuncionario.RestablecerNumero(1.21);
+                            AbrirFormulario(ListarJefeFuncionario);
+                        }
+                        else
+                        {
+                            AbrirFormulario(ListarJefeFuncionario);
+                        }
+                 
                         GenerarControlesSubFormulario(1.21);
                     }
                     break;
                 case 2:
-                    if (btn.Name == btnAccion1.Name)
+                    if (btn.Name == btnAccion1.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = false;
                         btnAccion2.Enabled = true;
@@ -337,7 +377,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         AbrirFormulario(ListarPerfil);
                         GenerarControlesSubFormulario(2.11);
                     }
-                    if (btn.Name == btnAccion2.Name)
+                    if (btn.Name == btnAccion2.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = true;
                         btnAccion2.Enabled = false;
@@ -355,15 +395,19 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             {
                 case 1.11:
                     InicializarSubMenu();
-                    InicializarBotones();
-                    OcultarMenu();
                     panelSubMenuOculto.Visible = true;
                     numero2 = numero;
+                    break;
+                case 1.12:
+                    panelMenuDatagrid.Visible = false;
                     break;
                 case 1.21:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
                     numero2 = numero;
+                    break;
+                case 1.22:
+                    panelMenuDatagrid.Visible = false;
                     break;
                 case 2.11:
                     InicializarSubMenu();
@@ -426,6 +470,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             {
                 case 0:
                     dashboard = new Dashboard();
+                    dashboard.pasarDatos(this);
                     break;
             }
         }
@@ -507,12 +552,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 1.11:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR Funcionario");
-                        //if (ModuloFuncionario == null)
-                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //ModuloFuncionario.InicializarAgregarFuncionario();
-                        //AbrirModulo(ModuloFuncionario);
+                        if (estadoCRUD == 0)
+                        {
+                            Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
+                            //   moduloFuncionario.InicializarAgregarFuncionario();
+                            AbrirModulo(moduloFuncionario);
+                            PanelCRUD.Visible = true;
+                            estadoCRUD = 1;
+                        }
+
                     }
 
 

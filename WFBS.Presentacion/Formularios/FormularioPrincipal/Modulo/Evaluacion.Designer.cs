@@ -46,7 +46,10 @@
             this.lblErrorNombre = new System.Windows.Forms.Label();
             this.lblFechaError = new System.Windows.Forms.Label();
             this.lblDiasHabilesError = new System.Windows.Forms.Label();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.lblNombreFormulario = new System.Windows.Forms.Label();
             this.panelBotones.SuspendLayout();
+            this.panelTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -54,7 +57,7 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblNombre.Location = new System.Drawing.Point(9, 9);
+            this.lblNombre.Location = new System.Drawing.Point(9, 32);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(134, 15);
             this.lblNombre.TabIndex = 6;
@@ -70,7 +73,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
             this.txtNombre.isPassword = false;
-            this.txtNombre.Location = new System.Drawing.Point(12, 29);
+            this.txtNombre.Location = new System.Drawing.Point(12, 52);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(307, 23);
@@ -163,7 +166,7 @@
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(12, 81);
+            this.lblFechaInicio.Location = new System.Drawing.Point(12, 104);
             this.lblFechaInicio.Name = "lblFechaInicio";
             this.lblFechaInicio.Size = new System.Drawing.Size(112, 15);
             this.lblFechaInicio.TabIndex = 44;
@@ -175,7 +178,7 @@
             this.dtpFechaInicio.CalendarForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtpFechaInicio.CalendarMonthBackground = System.Drawing.Color.Blue;
             this.dtpFechaInicio.CalendarTitleBackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(12, 99);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(12, 122);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(305, 20);
             this.dtpFechaInicio.TabIndex = 45;
@@ -185,7 +188,7 @@
             this.lblDiasHabiles.AutoSize = true;
             this.lblDiasHabiles.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiasHabiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDiasHabiles.Location = new System.Drawing.Point(9, 146);
+            this.lblDiasHabiles.Location = new System.Drawing.Point(9, 169);
             this.lblDiasHabiles.Name = "lblDiasHabiles";
             this.lblDiasHabiles.Size = new System.Drawing.Size(91, 15);
             this.lblDiasHabiles.TabIndex = 47;
@@ -201,7 +204,7 @@
             this.txtDiasHabiles.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiasHabiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
             this.txtDiasHabiles.isPassword = false;
-            this.txtDiasHabiles.Location = new System.Drawing.Point(13, 166);
+            this.txtDiasHabiles.Location = new System.Drawing.Point(13, 189);
             this.txtDiasHabiles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDiasHabiles.Name = "txtDiasHabiles";
             this.txtDiasHabiles.Size = new System.Drawing.Size(304, 23);
@@ -214,7 +217,7 @@
             this.tbPonderacion.BackgroudColor = System.Drawing.Color.DarkGray;
             this.tbPonderacion.BorderRadius = 0;
             this.tbPonderacion.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(46)))));
-            this.tbPonderacion.Location = new System.Drawing.Point(12, 237);
+            this.tbPonderacion.Location = new System.Drawing.Point(12, 260);
             this.tbPonderacion.MaximumValue = 100;
             this.tbPonderacion.Name = "tbPonderacion";
             this.tbPonderacion.Size = new System.Drawing.Size(305, 30);
@@ -228,7 +231,7 @@
             this.lblAuto.AutoSize = true;
             this.lblAuto.Font = new System.Drawing.Font("Roboto", 6F);
             this.lblAuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblAuto.Location = new System.Drawing.Point(13, 285);
+            this.lblAuto.Location = new System.Drawing.Point(13, 308);
             this.lblAuto.Name = "lblAuto";
             this.lblAuto.Size = new System.Drawing.Size(74, 10);
             this.lblAuto.TabIndex = 115;
@@ -239,7 +242,7 @@
             this.lblPonderacionAuto.AutoSize = true;
             this.lblPonderacionAuto.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPonderacionAuto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblPonderacionAuto.Location = new System.Drawing.Point(15, 270);
+            this.lblPonderacionAuto.Location = new System.Drawing.Point(15, 293);
             this.lblPonderacionAuto.Name = "lblPonderacionAuto";
             this.lblPonderacionAuto.Size = new System.Drawing.Size(38, 15);
             this.lblPonderacionAuto.TabIndex = 114;
@@ -250,7 +253,7 @@
             this.lblEva.AutoSize = true;
             this.lblEva.Font = new System.Drawing.Font("Roboto", 6F);
             this.lblEva.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblEva.Location = new System.Drawing.Point(264, 285);
+            this.lblEva.Location = new System.Drawing.Point(264, 308);
             this.lblEva.Name = "lblEva";
             this.lblEva.Size = new System.Drawing.Size(53, 10);
             this.lblEva.TabIndex = 117;
@@ -261,7 +264,7 @@
             this.lblPonderacionEvaluacion.AutoSize = true;
             this.lblPonderacionEvaluacion.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPonderacionEvaluacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblPonderacionEvaluacion.Location = new System.Drawing.Point(281, 270);
+            this.lblPonderacionEvaluacion.Location = new System.Drawing.Point(281, 293);
             this.lblPonderacionEvaluacion.Name = "lblPonderacionEvaluacion";
             this.lblPonderacionEvaluacion.Size = new System.Drawing.Size(38, 15);
             this.lblPonderacionEvaluacion.TabIndex = 116;
@@ -272,7 +275,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label1.Location = new System.Drawing.Point(12, 219);
+            this.label1.Location = new System.Drawing.Point(12, 242);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 15);
             this.label1.TabIndex = 119;
@@ -283,7 +286,7 @@
             this.lblErrorNombre.AutoSize = true;
             this.lblErrorNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.lblErrorNombre.Location = new System.Drawing.Point(15, 57);
+            this.lblErrorNombre.Location = new System.Drawing.Point(15, 80);
             this.lblErrorNombre.Name = "lblErrorNombre";
             this.lblErrorNombre.Size = new System.Drawing.Size(258, 15);
             this.lblErrorNombre.TabIndex = 120;
@@ -295,7 +298,7 @@
             this.lblFechaError.AutoSize = true;
             this.lblFechaError.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.lblFechaError.Location = new System.Drawing.Point(12, 122);
+            this.lblFechaError.Location = new System.Drawing.Point(12, 145);
             this.lblFechaError.Name = "lblFechaError";
             this.lblFechaError.Size = new System.Drawing.Size(258, 15);
             this.lblFechaError.TabIndex = 121;
@@ -307,12 +310,36 @@
             this.lblDiasHabilesError.AutoSize = true;
             this.lblDiasHabilesError.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDiasHabilesError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.lblDiasHabilesError.Location = new System.Drawing.Point(12, 194);
+            this.lblDiasHabilesError.Location = new System.Drawing.Point(12, 217);
             this.lblDiasHabilesError.Name = "lblDiasHabilesError";
             this.lblDiasHabilesError.Size = new System.Drawing.Size(258, 15);
             this.lblDiasHabilesError.TabIndex = 122;
             this.lblDiasHabilesError.Text = "Texto de error para el nombre del funcionario";
             this.lblDiasHabilesError.Visible = false;
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
+            this.panelTitulo.Controls.Add(this.lblNombreFormulario);
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.panelTitulo.Size = new System.Drawing.Size(334, 24);
+            this.panelTitulo.TabIndex = 123;
+            // 
+            // lblNombreFormulario
+            // 
+            this.lblNombreFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
+            this.lblNombreFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNombreFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblNombreFormulario.Location = new System.Drawing.Point(30, 0);
+            this.lblNombreFormulario.Name = "lblNombreFormulario";
+            this.lblNombreFormulario.Size = new System.Drawing.Size(304, 24);
+            this.lblNombreFormulario.TabIndex = 45;
+            this.lblNombreFormulario.Text = "Nombre Evaluacion";
+            this.lblNombreFormulario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Evaluacion
             // 
@@ -320,6 +347,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(334, 729);
+            this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.lblDiasHabilesError);
             this.Controls.Add(this.lblFechaError);
             this.Controls.Add(this.lblErrorNombre);
@@ -340,6 +368,7 @@
             this.Name = "Evaluacion";
             this.Text = "Evaluacion";
             this.panelBotones.ResumeLayout(false);
+            this.panelTitulo.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +394,7 @@
         private System.Windows.Forms.Label lblErrorNombre;
         private System.Windows.Forms.Label lblFechaError;
         private System.Windows.Forms.Label lblDiasHabilesError;
+        private System.Windows.Forms.Panel panelTitulo;
+        private System.Windows.Forms.Label lblNombreFormulario;
     }
 }

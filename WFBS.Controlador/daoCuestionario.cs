@@ -10,6 +10,22 @@ namespace WFBS.Controlador
 {
    public class daoCuestionario
     {
+        public DataSet ListarPerfil()
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "Select * from VIEW_LISTAR_PERFIL_EVALUACION";
+                resultado = conn.EjecutarSqlListar(sql);
+
+                return resultado;
+            }
+            catch (Exception)
+            {
+                throw new Exception("No hay datos para listar");
+            }
+        }
         public DataSet Listar(int id)
         {
             DataSet resultado = new DataSet();
