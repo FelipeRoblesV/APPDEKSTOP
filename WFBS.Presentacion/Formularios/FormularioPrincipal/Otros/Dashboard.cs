@@ -78,6 +78,25 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros
                     lblTotalAlternativa.Text = iniciar.totalAlternativas.ToString();
                     lblTotalCompetencia.Text = iniciar.totalCompetencia.ToString();
                     lblTotalEvaluacion.Text = iniciar.totalEvaluacion.ToString();
+                    if(iniciar.listaDashboard != null)
+                    {
+                        if(iniciar.listaDashboard.Tables[0].Rows.Count >= 1)
+                        {
+                            dt_Listar.DataSource = iniciar.listaDashboard.Tables[0];
+                            dt_Listar.Visible = true;
+
+                        }
+                        else
+                        {
+                            dt_Listar.Visible = false;
+                            lblMensaje.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
+                    }
                     lblUsuario.Text = Properties.Settings.Default.UsuarioConectado;
                     break;
             }

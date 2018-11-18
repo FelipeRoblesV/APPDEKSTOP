@@ -22,15 +22,23 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
             InitializeComponent();
         }
 
-        public void definirFormularioReporte(double numero, DataSet lista, bool estado)
+        public void definirReporte(int numero, DataSet lista, bool estado)
         {
             switch (numero)
             {
-                case 1:
+                case 2:
                     if (estado == true)
                     {
-                        dt_Listar.DataSource = lista.Tables[0];
-                        //     dt_Listar.double = true;
+                        if (lista.Tables[0].Rows.Count >= 1)
+                        {
+                            dt_Listar.DataSource = lista.Tables[0];
+                        }
+                        else
+                        {
+                            dt_Listar.Visible = false;
+                            lblMensaje.Visible = true;
+
+                        }
                     }
                     else
                     {
@@ -38,9 +46,59 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         lblMensaje.Visible = true;
 
                     }
+
+
+                    break;
+                case 1:
+                    if (estado == true)
+                    {
+                        if (lista.Tables[0].Rows.Count >= 1)
+                        {
+                            dt_Listar.DataSource = lista.Tables[0];
+                        }
+                        else
+                        {
+                            dt_Listar.Visible = false;
+                            lblMensaje.Visible = true;
+
+                        }
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
+
+                    }
+
+
+                    break;
+                case 3:
+                    if (estado == true)
+                    {
+                        if (lista.Tables[0].Rows.Count >= 1)
+                        {
+                            dt_Listar.DataSource = lista.Tables[0];
+                        }
+                        else
+                        {
+                            dt_Listar.Visible = false;
+                            lblMensaje.Visible = true;
+
+                        }
+                    }
+                    else
+                    {
+                        dt_Listar.Visible = false;
+                        lblMensaje.Visible = true;
+
+                    }
+
+
                     break;
             }
         }
+
+
             public void definirFormulario(double numero, DataSet lista, bool estado)
         {
 

@@ -30,22 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoReporte));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblError = new System.Windows.Forms.Label();
-            this.txtBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.panelContenido = new System.Windows.Forms.Panel();
             this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.bunifuImageButton4 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.panelMapaSitio = new System.Windows.Forms.Panel();
+            this.btnRegresar = new Bunifu.Framework.UI.BunifuImageButton();
+            this.lblMapaSitio_3 = new System.Windows.Forms.Label();
+            this.lblSeparacion_2 = new System.Windows.Forms.Label();
+            this.lblMapaSitio_2 = new System.Windows.Forms.Label();
+            this.lblSeparacion_1 = new System.Windows.Forms.Label();
+            this.lblMapaSitio_1 = new System.Windows.Forms.Label();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
@@ -54,26 +59,9 @@
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.panelContenido = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -82,13 +70,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            this.panelMapaSitio.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
-            this.panel1.Controls.Add(this.lblError);
-            this.panel1.Controls.Add(this.txtBuscar);
             this.panel1.Controls.Add(this.lblDescripcion);
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.lblTitulo);
@@ -99,37 +95,6 @@
             this.panel1.Size = new System.Drawing.Size(1496, 52);
             this.panel1.TabIndex = 11;
             // 
-            // lblError
-            // 
-            this.lblError.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lblError.Font = new System.Drawing.Font("Roboto Light", 11.25F);
-            this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.lblError.Location = new System.Drawing.Point(906, 10);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(291, 32);
-            this.lblError.TabIndex = 7;
-            this.lblError.Text = "Descripcion del Formulario";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblError.Visible = false;
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderThickness = 3;
-            this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtBuscar.Font = new System.Drawing.Font("Roboto Light", 9.75F);
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(210)))), ((int)(((byte)(217)))));
-            this.txtBuscar.isPassword = false;
-            this.txtBuscar.Location = new System.Drawing.Point(1197, 10);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(274, 32);
-            this.txtBuscar.TabIndex = 6;
-            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // lblDescripcion
             // 
             this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
@@ -137,7 +102,7 @@
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblDescripcion.Location = new System.Drawing.Point(507, 10);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(497, 32);
+            this.lblDescripcion.Size = new System.Drawing.Size(759, 32);
             this.lblDescripcion.TabIndex = 5;
             this.lblDescripcion.Text = "Descripcion del Formulario";
             this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -191,101 +156,6 @@
             this.panel2.TabIndex = 12;
             this.panel2.Visible = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
-            this.panel3.Controls.Add(this.bunifuImageButton4);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label7);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.pictureBox12);
-            this.panel3.Controls.Add(this.pictureBox13);
-            this.panel3.Controls.Add(this.pictureBox14);
-            this.panel3.Controls.Add(this.pictureBox15);
-            this.panel3.Controls.Add(this.pictureBox16);
-            this.panel3.Controls.Add(this.pictureBox17);
-            this.panel3.Controls.Add(this.pictureBox18);
-            this.panel3.Controls.Add(this.pictureBox19);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 52);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(1496, 30);
-            this.panel3.TabIndex = 14;
-            this.panel3.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(440, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(201, 25);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Titulo del Formulario";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label7.Location = new System.Drawing.Point(421, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 25);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "\\";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label8.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label8.Location = new System.Drawing.Point(220, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(201, 25);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Titulo del Formulario";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label9
-            // 
-            this.label9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label9.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label9.Location = new System.Drawing.Point(201, 5);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(19, 25);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "\\";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label10.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label10.Location = new System.Drawing.Point(0, 5);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(201, 25);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Titulo del Formulario";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelContenido
-            // 
-            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
-            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenido.Location = new System.Drawing.Point(0, 82);
-            this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1496, 594);
-            this.panelContenido.TabIndex = 15;
-            // 
             // bunifuFlatButton2
             // 
             this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
@@ -320,6 +190,19 @@
             this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox4.Location = new System.Drawing.Point(271, 5);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox4.Size = new System.Drawing.Size(0, 45);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 9;
+            this.pictureBox4.TabStop = false;
             // 
             // bunifuFlatButton1
             // 
@@ -356,19 +239,195 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bunifuImageButton4
+            // pictureBox5
             // 
-            this.bunifuImageButton4.BackColor = System.Drawing.Color.SeaGreen;
-            this.bunifuImageButton4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuImageButton4.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton4.Image")));
-            this.bunifuImageButton4.ImageActive = null;
-            this.bunifuImageButton4.Location = new System.Drawing.Point(1369, 5);
-            this.bunifuImageButton4.Name = "bunifuImageButton4";
-            this.bunifuImageButton4.Size = new System.Drawing.Size(127, 25);
-            this.bunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton4.TabIndex = 15;
-            this.bunifuImageButton4.TabStop = false;
-            this.bunifuImageButton4.Zoom = 10;
+            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox5.Location = new System.Drawing.Point(30, 5);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox5.Size = new System.Drawing.Size(0, 45);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 8;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Yellow;
+            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox6.Location = new System.Drawing.Point(1491, 5);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox6.Size = new System.Drawing.Size(0, 45);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 7;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox7.Location = new System.Drawing.Point(1491, 5);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox7.Size = new System.Drawing.Size(0, 45);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 6;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.pictureBox8.Location = new System.Drawing.Point(-32768, 5);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox8.Size = new System.Drawing.Size(0, 25);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 2;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox9.Location = new System.Drawing.Point(30, 5);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox9.Size = new System.Drawing.Size(0, 45);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 5;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.BackColor = System.Drawing.Color.Yellow;
+            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox10.Location = new System.Drawing.Point(30, 5);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox10.Size = new System.Drawing.Size(0, 45);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 4;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox11.Location = new System.Drawing.Point(30, 5);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.pictureBox11.Size = new System.Drawing.Size(0, 45);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox11.TabIndex = 3;
+            this.pictureBox11.TabStop = false;
+            // 
+            // panelMapaSitio
+            // 
+            this.panelMapaSitio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.panelMapaSitio.Controls.Add(this.btnRegresar);
+            this.panelMapaSitio.Controls.Add(this.lblMapaSitio_3);
+            this.panelMapaSitio.Controls.Add(this.lblSeparacion_2);
+            this.panelMapaSitio.Controls.Add(this.lblMapaSitio_2);
+            this.panelMapaSitio.Controls.Add(this.lblSeparacion_1);
+            this.panelMapaSitio.Controls.Add(this.lblMapaSitio_1);
+            this.panelMapaSitio.Controls.Add(this.pictureBox12);
+            this.panelMapaSitio.Controls.Add(this.pictureBox13);
+            this.panelMapaSitio.Controls.Add(this.pictureBox14);
+            this.panelMapaSitio.Controls.Add(this.pictureBox15);
+            this.panelMapaSitio.Controls.Add(this.pictureBox16);
+            this.panelMapaSitio.Controls.Add(this.pictureBox17);
+            this.panelMapaSitio.Controls.Add(this.pictureBox18);
+            this.panelMapaSitio.Controls.Add(this.pictureBox19);
+            this.panelMapaSitio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMapaSitio.Location = new System.Drawing.Point(0, 52);
+            this.panelMapaSitio.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
+            this.panelMapaSitio.Name = "panelMapaSitio";
+            this.panelMapaSitio.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.panelMapaSitio.Size = new System.Drawing.Size(1496, 30);
+            this.panelMapaSitio.TabIndex = 14;
+            this.panelMapaSitio.Visible = false;
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.ImageActive = null;
+            this.btnRegresar.Location = new System.Drawing.Point(1369, 5);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(127, 25);
+            this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRegresar.TabIndex = 15;
+            this.btnRegresar.TabStop = false;
+            this.btnRegresar.Zoom = 10;
+            // 
+            // lblMapaSitio_3
+            // 
+            this.lblMapaSitio_3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMapaSitio_3.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblMapaSitio_3.Location = new System.Drawing.Point(440, 5);
+            this.lblMapaSitio_3.Name = "lblMapaSitio_3";
+            this.lblMapaSitio_3.Size = new System.Drawing.Size(201, 25);
+            this.lblMapaSitio_3.TabIndex = 14;
+            this.lblMapaSitio_3.Text = "Titulo del Formulario";
+            this.lblMapaSitio_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSeparacion_2
+            // 
+            this.lblSeparacion_2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSeparacion_2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblSeparacion_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblSeparacion_2.Location = new System.Drawing.Point(421, 5);
+            this.lblSeparacion_2.Name = "lblSeparacion_2";
+            this.lblSeparacion_2.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacion_2.TabIndex = 13;
+            this.lblSeparacion_2.Text = "\\";
+            this.lblSeparacion_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMapaSitio_2
+            // 
+            this.lblMapaSitio_2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMapaSitio_2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblMapaSitio_2.Location = new System.Drawing.Point(220, 5);
+            this.lblMapaSitio_2.Name = "lblMapaSitio_2";
+            this.lblMapaSitio_2.Size = new System.Drawing.Size(201, 25);
+            this.lblMapaSitio_2.TabIndex = 12;
+            this.lblMapaSitio_2.Text = "Titulo del Formulario";
+            this.lblMapaSitio_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSeparacion_1
+            // 
+            this.lblSeparacion_1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblSeparacion_1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblSeparacion_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblSeparacion_1.Location = new System.Drawing.Point(201, 5);
+            this.lblSeparacion_1.Name = "lblSeparacion_1";
+            this.lblSeparacion_1.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacion_1.TabIndex = 11;
+            this.lblSeparacion_1.Text = "\\";
+            this.lblSeparacion_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblMapaSitio_1
+            // 
+            this.lblMapaSitio_1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblMapaSitio_1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblMapaSitio_1.Location = new System.Drawing.Point(0, 5);
+            this.lblMapaSitio_1.Name = "lblMapaSitio_1";
+            this.lblMapaSitio_1.Size = new System.Drawing.Size(201, 25);
+            this.lblMapaSitio_1.TabIndex = 10;
+            this.lblMapaSitio_1.Text = "Titulo del Formulario";
+            this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox12
             // 
@@ -473,108 +532,15 @@
             this.pictureBox19.TabIndex = 3;
             this.pictureBox19.TabStop = false;
             // 
-            // pictureBox4
+            // panelContenido
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox4.Location = new System.Drawing.Point(271, 5);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox4.Size = new System.Drawing.Size(0, 45);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 9;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pictureBox5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox5.Location = new System.Drawing.Point(30, 5);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox5.Size = new System.Drawing.Size(0, 45);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 8;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox6.Location = new System.Drawing.Point(1491, 5);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox6.Size = new System.Drawing.Size(0, 45);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 7;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox7.Location = new System.Drawing.Point(1491, 5);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox7.Size = new System.Drawing.Size(0, 45);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.pictureBox8.Location = new System.Drawing.Point(-32768, 5);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox8.Size = new System.Drawing.Size(0, 25);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 2;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox9.Location = new System.Drawing.Point(30, 5);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox9.Size = new System.Drawing.Size(0, 45);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 5;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox10.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox10.Location = new System.Drawing.Point(30, 5);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox10.Size = new System.Drawing.Size(0, 45);
-            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox10.TabIndex = 4;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.pictureBox11.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox11.Location = new System.Drawing.Point(30, 5);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox11.Size = new System.Drawing.Size(0, 45);
-            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox11.TabIndex = 3;
-            this.pictureBox11.TabStop = false;
+            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
+            this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenido.Location = new System.Drawing.Point(0, 82);
+            this.panelContenido.Name = "panelContenido";
+            this.panelContenido.Size = new System.Drawing.Size(1496, 594);
+            this.panelContenido.TabIndex = 15;
+            this.panelContenido.DoubleClick += new System.EventHandler(this.panelContenido_DoubleClick);
             // 
             // ListadoReporte
             // 
@@ -582,7 +548,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1496, 731);
             this.Controls.Add(this.panelContenido);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panelMapaSitio);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -590,16 +556,6 @@
             this.Text = "ListadoReporte";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -608,14 +564,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            this.panelMapaSitio.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblError;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtBuscar;
         private System.Windows.Forms.Label lblDescripcion;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label lblTitulo;
@@ -628,13 +592,13 @@
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.Panel panel3;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panelMapaSitio;
+        private Bunifu.Framework.UI.BunifuImageButton btnRegresar;
+        private System.Windows.Forms.Label lblMapaSitio_3;
+        private System.Windows.Forms.Label lblSeparacion_2;
+        private System.Windows.Forms.Label lblMapaSitio_2;
+        private System.Windows.Forms.Label lblSeparacion_1;
+        private System.Windows.Forms.Label lblMapaSitio_1;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;

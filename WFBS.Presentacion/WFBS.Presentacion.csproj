@@ -67,6 +67,7 @@
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarDashboard.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarListaSubFormulario.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Clases\CargarReporte.cs" />
     <Compile Include="Formularios\FormularioPrincipal\FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
