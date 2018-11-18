@@ -39,6 +39,12 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\references\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -182,6 +188,12 @@
     <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Listado.Designer.cs">
       <DependentUpon>Listado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\ListadoR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\ListadoR.Designer.cs">
+      <DependentUpon>ListadoR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Otros\Logotipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +308,9 @@
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Listado.resx">
       <DependentUpon>Listado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\ListadoR.resx">
+      <DependentUpon>ListadoR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Logotipo.resx">
       <DependentUpon>Logotipo.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +342,7 @@
     <EmbeddedResource Include="Ventanas\Mensaje.resx">
       <DependentUpon>Mensaje.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

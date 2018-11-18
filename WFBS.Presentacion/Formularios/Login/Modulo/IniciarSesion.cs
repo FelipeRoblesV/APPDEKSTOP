@@ -310,7 +310,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 daoCargo daoCargo = new daoCargo();
                 daoCompetencia daoCompetencia = new daoCompetencia();
                 daoCuestionario daoEvaluacion = new daoCuestionario();
-                daoPerfil daoReporte = new daoPerfil();
+                daoReporte daoReporte = new daoReporte();
 
 
                 iniciar.listarFuncionario = daoFun.listar();
@@ -319,7 +319,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 iniciar.listarCargo = daoCargo.listar();
                 iniciar.listarCompetencia = daoCompetencia.ListarPerfil();
                 iniciar.listarEvaluacion = daoEvaluacion.ListarPerfil();
-                iniciar.listarReporte = daoReporte.listar();
+                iniciar.listarReporte = daoReporte.listarPerfil();
                 IniciarAplicacion.ReportProgress(2, iniciar);
             }
             catch (Exception)

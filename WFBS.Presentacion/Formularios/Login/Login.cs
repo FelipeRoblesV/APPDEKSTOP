@@ -49,9 +49,11 @@ namespace WFBS.Presentacion.Formularios.Login
                     }
                     break;
                 case 3:
-                    preloader.Close();
-                    Imagenes.Close();
-                    IniciarSesion.Close();
+                    preloader.Dispose();
+                    Imagenes.cambiarEstado();
+                    Imagenes.Cerrar();
+                    IniciarSesion.Dispose();
+                    this.Dispose();
 
                     break;
             }

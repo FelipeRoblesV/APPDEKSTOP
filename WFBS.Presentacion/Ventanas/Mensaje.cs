@@ -31,6 +31,12 @@ namespace WFBS.Presentacion.Ventanas
             lblMensaje.Text = "Funcionario no tiene cursos realizados";
             btn_Accion1.ButtonText = "Salir";
         }
+
+        public void cambiarMensaje(string mensaje)
+        {
+            lblMensaje.Text = mensaje;
+            btn_Accion1.ButtonText = "Salir";
+        }
     }
 
 

@@ -288,6 +288,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     panelMenuDatagrid.Visible = false;
                     this.btnReporte.Image = Properties.Resources.Reporte_Active;
                     this.SidePanelReporteMini.BackColor = Color.FromArgb(125, 62, 55);
+                    if (ListadoReporte.isActive())
+                    {
+                        ListadoReporte.RestablecerNumero(1);
+                    }
                     AbrirFormulario(ListadoReporte);
                     estadoReporte = 1;
                     this.numero = numero;
@@ -512,7 +516,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     break;
                 case 5:
                     ListadoReporte = new ListadoReporte();
-                     ListadoReporte.DefinirFormulario(numero, lista,estado);
+                     ListadoReporte.DefinirFormulario(1, lista,estado);
                     break;
             }
         }

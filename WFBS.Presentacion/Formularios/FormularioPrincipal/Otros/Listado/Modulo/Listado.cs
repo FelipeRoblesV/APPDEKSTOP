@@ -26,12 +26,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
         {
             switch (numero)
             {
-                case 2:
+                case 1:
                     if (estado == true)
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
                         }
                         else
                         {
@@ -49,12 +50,21 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
 
 
                     break;
-                case 1:
+                case 2:
                     if (estado == true)
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
-                            dt_Listar.DataSource = lista.Tables[0];
+                            try
+                            {
+                                dt_Listar.DataSource = lista.Tables[0];
+                                dt_Listar.Columns[0].Visible = false;
+                            }
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show(ex.Message);
+                            }  
                         }
                         else
                         {
