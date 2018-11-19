@@ -10,14 +10,14 @@ namespace WFBS.WebService
     public class daoWebService
     {
 
-        public Cl_Persona RecuperarPersona(Cl_Persona per)
+        public Cl_Persona RecuperarPersona(string run)
         {
             try
             {
                 webService.MainWSClient WS = new webService.MainWSClient();
                 webService.clPersona persona = new webService.clPersona();
                 Cl_Persona personaFinal = new Cl_Persona();
-                persona = WS.Recuperar_Persona(per.run);
+                persona = WS.Recuperar_Persona(run);
                 personaFinal.run = persona.run;
                 personaFinal.dv = Convert.ToChar(persona.dv);
                 personaFinal.nombre = persona.nombre;

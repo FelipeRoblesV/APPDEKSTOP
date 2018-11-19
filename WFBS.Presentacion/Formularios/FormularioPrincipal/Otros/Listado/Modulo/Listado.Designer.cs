@@ -42,7 +42,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(126)))), ((int)(((byte)(152)))));
             this.panel1.Controls.Add(this.lblMensaje);
             this.panel1.Controls.Add(this.dt_Listar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;

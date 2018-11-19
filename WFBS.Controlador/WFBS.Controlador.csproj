@@ -58,6 +58,7 @@
     <Compile Include="daoPreguntas.cs" />
     <Compile Include="daoReporte.cs" />
     <Compile Include="daoUsuario.cs" />
+    <Compile Include="daoUtilidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -140,6 +140,18 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.Designer.cs">
       <DependentUpon>Estado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.Designer.cs">
+      <DependentUpon>Controles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +295,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.resx">
       <DependentUpon>Estado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Cargando.resx">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.resx">
+      <DependentUpon>Controles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>
@@ -516,6 +534,9 @@
     <None Include="Resources\flecha-hacia-abajo.png" />
     <None Include="Resources\flecha-hacia-arriba.png" />
     <None Include="Resources\WFBS%2814%29.png" />
+    <None Include="Resources\icons8-búsqueda-32.png" />
+    <None Include="Resources\icons8-búsqueda-32%281%29.png" />
+    <None Include="Resources\icons8-búsqueda-32%285%29.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
   <ItemGroup />

@@ -5,9 +5,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Ayuda;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado;
@@ -19,6 +22,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
 
         #region DEFINIR PARAMETROS
+        private bool respuesta = false;
         private ListadoPrincipal ListarFuncionario, ListarJefeFuncionario, ListarPerfil, ListarCargo,ListarCompetencia, ListarEvaluacion;
         private ListadoReporte ListadoReporte;
         private Aplicacion app;
@@ -34,6 +38,33 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
             AbrirFormulario(logo);
+        }
+
+        public bool recibirMensajeFuncionario()
+        {
+            Ventanas.Cerrar ventana = new Ventanas.Cerrar();
+            ventana.iniciarFormulario(4);
+            ventana.PasarDatos(this);
+            ventana.ShowDialog();
+            return respuesta;
+        }
+
+        public void IngresarRespuesta(bool resp)
+        {
+            this.respuesta = resp;
+        }
+
+        public bool estadoActualCrud()
+        {
+            bool resultado = false;
+            if(estadoCRUD == 0)
+            {
+                resultado= false;
+            }else
+            {
+                resultado= true;
+            }
+            return resultado;
         }
 
         public void CargandoFormulario(string mensaje)
@@ -143,12 +174,20 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 {
                     IniciarProcemiento(1);
                 }
+                else
+                {
+                    SystemSounds.Hand.Play();
+                }
             }
             if (btn.Name == btnPerfil.Name)
             {
                 if (estadoPerfil == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(2);
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
                 }
             }
             if (btn.Name == btnCompetencia.Name)
@@ -157,12 +196,20 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 {
                     IniciarProcemiento(3);
                 }
+                else
+                {
+                    SystemSounds.Hand.Play();
+                }
             }
             if (btn.Name == btnEvaluacion.Name)
             {
                 if (estadoEvaluacion == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(4);
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
                 }
 
             }
@@ -171,6 +218,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 if (estadoReporte == 0 && estadoCRUD == 0)
                 {
                     IniciarProcemiento(5);
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
                 }
 
             }
@@ -353,6 +404,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         GenerarControlesSubFormulario(1.11);
 
                     }
+    
                     if (btn.Name == btnAccion2.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = true;
@@ -371,6 +423,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                  
                         GenerarControlesSubFormulario(1.21);
                     }
+    
                     break;
                 case 2:
                     if (btn.Name == btnAccion1.Name && estadoCRUD == 0)
@@ -381,6 +434,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         AbrirFormulario(ListarPerfil);
                         GenerarControlesSubFormulario(2.11);
                     }
+                    else
+                    {
+                        SystemSounds.Hand.Play();
+                    }
                     if (btn.Name == btnAccion2.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = true;
@@ -389,6 +446,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         AbrirFormulario(ListarCargo);
                         GenerarControlesSubFormulario(2.22);
                     }
+
                     break;
             }
         }
@@ -559,12 +617,25 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         if (estadoCRUD == 0)
                         {
                             Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
-                            //   moduloFuncionario.InicializarAgregarFuncionario();
+                            btnAgregar.BackColor = Color.FromArgb(35, 42, 55);
+                            moduloFuncionario.IniciarFormulario(1);
+                            moduloFuncionario.PasarDatos(this);
                             AbrirModulo(moduloFuncionario);
                             PanelCRUD.Visible = true;
                             estadoCRUD = 1;
                         }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
 
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        Estado estado = new Estado();
+                        estado.estado(true, 1);
+                        AbrirModulo(estado);
+                        PanelCRUD.Visible = true;
                     }
 
 
@@ -649,8 +720,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
             if(btn.Name == btnCerrarSesion.Name)
             {
+
+                SystemSounds.Exclamation.Play();
+                
                 Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
-                cerrar.ventanaCerrarSesion(app);
+               
+                cerrar.PasarDatos(app);
+                cerrar.iniciarFormulario(3);
                 cerrar.ShowDialog();
 
             }
@@ -707,7 +783,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             if (btn.Name == btn_cerrarFormulario.Name)
             {
                 Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
-                cerrar.ventanaCerrarFormularioPrincipal(this);
+                cerrar.iniciarFormulario(2);
                 cerrar.ShowDialog();
             }
             if (btn.Name == btnMinimizarFormulario.Name)
@@ -741,6 +817,39 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         }
 
 
+
+        public void CargarFromularioCRUD()
+        {
+            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+            AbrirModulo(load);
+
+        }
+
+        public bool estadoFinalCrud(int numero, bool resp, Funcionario fun)
+        {
+                  Estado ventanaEstado = new Estado();
+                   ventanaEstado.estado(resp, 1);
+                    AbrirModulo(ventanaEstado);
+                    PanelCRUD.Visible = true;
+            if (resp)
+                    {
+                       
+                        System.Threading.Thread.Sleep(6000);
+                        fun.Close();
+                        PanelCRUD.Visible = false;
+                        estadoCRUD = 0;
+
+                        return true;
+
+                    }
+                    else
+            { 
+                        System.Threading.Thread.Sleep(6000);
+                        AbrirModulo(fun);
+                        return false;
+
+                    }
+        }
 
         #region METODOS ABRIR FORMULARIO
 

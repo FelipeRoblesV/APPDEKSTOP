@@ -403,6 +403,36 @@ namespace WFBS.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_búsqueda_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-búsqueda-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_búsqueda_32_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-búsqueda-32(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_búsqueda_32_5_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-búsqueda-32(5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Instagram {
             get {
                 object obj = ResourceManager.GetObject("Instagram", resourceCulture);

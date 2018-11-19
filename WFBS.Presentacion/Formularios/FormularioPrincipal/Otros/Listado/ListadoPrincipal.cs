@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -443,7 +444,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         private void dt_Listar_DoubleClick(object sender, EventArgs e)
         {
             BunifuCustomDataGrid btn = sender as BunifuCustomDataGrid;
-
+            if (Formulario.estadoActualCrud() == false)
+            {
             switch (this.numero)
             {
                 case 1.11:
@@ -459,7 +461,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             else
                             {
-                                MessageBox.Show("2 FUNCIONARIO");
+                                    SystemSounds.Hand.Play();
                             }
                             break;
                     }
@@ -472,8 +474,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     }
                     else
                     {
-                        MessageBox.Show("2 JEFE");
-                    }
+                            SystemSounds.Hand.Play();
+                        }
                     break;
                 case 3:
 
@@ -488,8 +490,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             else
                             {
-                                MessageBox.Show("2 PERFILCOMP");
-                            }
+                                    SystemSounds.Hand.Play();
+                                }
                             break;
                         case 3.1:
                             if (btn.SelectedRows.Count.Equals(1))
@@ -500,8 +502,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             else
                             {
-                                MessageBox.Show("2 COMPETENCIA");
-                            }
+                                    SystemSounds.Hand.Play();
+                                }
                             break;
                     }
 
@@ -518,8 +520,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             else
                             {
-                                MessageBox.Show("2 EVALUACION");
-                            }
+                                    SystemSounds.Hand.Play();
+                                }
                             break;
                         case 4.1:
                             if (btn.SelectedRows.Count.Equals(1))
@@ -530,8 +532,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             else
                             {
-                                MessageBox.Show("2 PREGUNTAS");
-                            }
+                                    SystemSounds.Hand.Play();
+                                }
                             break;
                         case 4.2:
                             if (btn.SelectedRows.Count.Equals(1))
@@ -542,13 +544,14 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             else
                             {
-                                MessageBox.Show("2 ALTERNATIVAS");
-                            }
+                                    SystemSounds.Hand.Play();
+                                }
                             break;
                     }
                     break;
 
 
+            }
             }
         }
         public void CargarFormulario(int estado, String mensaje)

@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace WFBS.Controlador
 {
-    public class daoPerfil
+    public class daoUtilidad
     {
-
-        public DataSet listar()
+        public DataSet LlenarComboboxPrincipal()
         {
             DataSet resultado = new DataSet();
             try
             {
                 Contexto conn = new Contexto();
-                String sql = "Select * from VIEW_LISTAR_PERFIL";
+                String sql = "Select * from VIEW_RECUPERAR_PERFIL";
                 resultado = conn.EjecutarSqlListar(sql);
 
 

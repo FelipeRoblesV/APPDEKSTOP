@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -298,7 +298,7 @@
             // 
             // panelSubMenuOculto
             // 
-            this.panelSubMenuOculto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
+            this.panelSubMenuOculto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(64)))), ((int)(((byte)(94)))));
             this.panelSubMenuOculto.Controls.Add(this.btnAccion2);
             this.panelSubMenuOculto.Controls.Add(this.btnAccion1);
             this.Animacion.SetDecoration(this.panelSubMenuOculto, BunifuAnimatorNS.DecorationType.None);
@@ -312,14 +312,14 @@
             // 
             // btnAccion2
             // 
-            this.btnAccion2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
-            this.btnAccion2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
+            this.btnAccion2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
+            this.btnAccion2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(64)))), ((int)(((byte)(94)))));
             this.btnAccion2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAccion2.BorderRadius = 0;
             this.btnAccion2.ButtonText = "ACCION 2";
             this.btnAccion2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Animacion.SetDecoration(this.btnAccion2, BunifuAnimatorNS.DecorationType.None);
-            this.btnAccion2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnAccion2.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.btnAccion2.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAccion2.Enabled = false;
             this.btnAccion2.Iconcolor = System.Drawing.Color.Transparent;
@@ -337,8 +337,8 @@
             this.btnAccion2.Location = new System.Drawing.Point(226, 1);
             this.btnAccion2.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnAccion2.Name = "btnAccion2";
-            this.btnAccion2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
-            this.btnAccion2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnAccion2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(64)))), ((int)(((byte)(94)))));
+            this.btnAccion2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.btnAccion2.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAccion2.selected = false;
             this.btnAccion2.Size = new System.Drawing.Size(223, 53);
@@ -352,14 +352,14 @@
             // 
             // btnAccion1
             // 
-            this.btnAccion1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
-            this.btnAccion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
+            this.btnAccion1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
+            this.btnAccion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(64)))), ((int)(((byte)(94)))));
             this.btnAccion1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAccion1.BorderRadius = 0;
             this.btnAccion1.ButtonText = "ACCION 1";
             this.btnAccion1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Animacion.SetDecoration(this.btnAccion1, BunifuAnimatorNS.DecorationType.None);
-            this.btnAccion1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnAccion1.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.btnAccion1.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAccion1.Enabled = false;
             this.btnAccion1.Iconcolor = System.Drawing.Color.Transparent;
@@ -377,8 +377,8 @@
             this.btnAccion1.Location = new System.Drawing.Point(0, 1);
             this.btnAccion1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.btnAccion1.Name = "btnAccion1";
-            this.btnAccion1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(34)))), ((int)(((byte)(50)))));
-            this.btnAccion1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnAccion1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(64)))), ((int)(((byte)(94)))));
+            this.btnAccion1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.btnAccion1.OnHoverTextColor = System.Drawing.Color.White;
             this.btnAccion1.selected = false;
             this.btnAccion1.Size = new System.Drawing.Size(226, 53);
@@ -392,7 +392,7 @@
             // 
             // panelMenuDatagrid
             // 
-            this.panelMenuDatagrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.panelMenuDatagrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.panelMenuDatagrid.Controls.Add(this.btnSubAccion2);
             this.panelMenuDatagrid.Controls.Add(this.btnSubAccion1);
             this.panelMenuDatagrid.Controls.Add(this.btnRefrescar);
@@ -452,7 +452,7 @@
             // 
             // PanelContenedor
             // 
-            this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(79)))), ((int)(((byte)(95)))));
+            this.PanelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
             this.PanelContenedor.Cursor = System.Windows.Forms.Cursors.Default;
             this.Animacion.SetDecoration(this.PanelContenedor, BunifuAnimatorNS.DecorationType.None);
             this.PanelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -506,22 +506,22 @@
             // 
             this.Animacion.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.Animacion.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 1;
-            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation1.RotateCoeff = 0F;
-            animation1.RotateLimit = 0F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 2F;
-            animation1.TransparencyCoeff = 0F;
-            this.Animacion.DefaultAnimation = animation1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 1;
+            animation2.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 2F;
+            animation2.TransparencyCoeff = 0F;
+            this.Animacion.DefaultAnimation = animation2;
             this.Animacion.Interval = 5;
             this.Animacion.TimeStep = 0.6F;
             // 
@@ -540,7 +540,7 @@
             // 
             // btnSubAccion2
             // 
-            this.btnSubAccion2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnSubAccion2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnSubAccion2, BunifuAnimatorNS.DecorationType.None);
             this.btnSubAccion2.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSubAccion2.Image = global::WFBS.Presentacion.Properties.Resources.circle_edit_line_icon_icons_com_66940;
@@ -556,7 +556,7 @@
             // 
             // btnSubAccion1
             // 
-            this.btnSubAccion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnSubAccion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnSubAccion1, BunifuAnimatorNS.DecorationType.None);
             this.btnSubAccion1.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSubAccion1.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_save_icon_icons_com_66942;
@@ -572,7 +572,7 @@
             // 
             // btnRefrescar
             // 
-            this.btnRefrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnRefrescar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnRefrescar, BunifuAnimatorNS.DecorationType.None);
             this.btnRefrescar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnRefrescar.Image = global::WFBS.Presentacion.Properties.Resources.refresh_arrows_14418;
@@ -586,7 +586,7 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnCerrar, BunifuAnimatorNS.DecorationType.None);
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_block_icon_icons_com_66946;
@@ -600,7 +600,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnEliminar, BunifuAnimatorNS.DecorationType.None);
             this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnEliminar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_remove_icon_icons_com_66948;
@@ -615,7 +615,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnModificar, BunifuAnimatorNS.DecorationType.None);
             this.btnModificar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnModificar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_edit_icon_icons_com_66939;
@@ -630,7 +630,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnAgregar, BunifuAnimatorNS.DecorationType.None);
             this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAgregar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_add_icon_icons_com_66944;

@@ -32,6 +32,7 @@ namespace WFBS.Presentacion.Ventanas
             btn_Accion1.ButtonText = "Salir";
         }
 
+
         public void cambiarMensaje(string mensaje)
         {
             lblMensaje.Text = mensaje;

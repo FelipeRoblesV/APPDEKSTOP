@@ -47,7 +47,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(1);
-            this.panel1.Size = new System.Drawing.Size(367, 27);
+            this.panel1.Size = new System.Drawing.Size(352, 27);
             this.panel1.TabIndex = 0;
             // 
             // bunifuImageButton1
@@ -56,7 +56,7 @@
             this.bunifuImageButton1.Dock = System.Windows.Forms.DockStyle.Right;
             this.bunifuImageButton1.Image = global::WFBS.Presentacion.Properties.Resources.CerrarFP;
             this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(341, 1);
+            this.bunifuImageButton1.Location = new System.Drawing.Point(326, 1);
             this.bunifuImageButton1.Name = "bunifuImageButton1";
             this.bunifuImageButton1.Size = new System.Drawing.Size(25, 25);
             this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -70,10 +70,10 @@
             this.panel2.Controls.Add(this.btn_Accion2);
             this.panel2.Controls.Add(this.btn_Accion1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 135);
+            this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(30, 0, 30, 0);
-            this.panel2.Size = new System.Drawing.Size(367, 42);
+            this.panel2.Size = new System.Drawing.Size(352, 42);
             this.panel2.TabIndex = 1;
             // 
             // btn_Accion2
@@ -95,7 +95,7 @@
             this.btn_Accion2.IdleFillColor = System.Drawing.Color.White;
             this.btn_Accion2.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btn_Accion2.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btn_Accion2.Location = new System.Drawing.Point(193, 0);
+            this.btn_Accion2.Location = new System.Drawing.Point(178, 0);
             this.btn_Accion2.Margin = new System.Windows.Forms.Padding(5);
             this.btn_Accion2.Name = "btn_Accion2";
             this.btn_Accion2.Size = new System.Drawing.Size(144, 42);
@@ -133,10 +133,10 @@
             // lblMensaje
             // 
             this.lblMensaje.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.25F);
+            this.lblMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lblMensaje.Location = new System.Drawing.Point(0, 27);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(367, 108);
+            this.lblMensaje.Size = new System.Drawing.Size(352, 68);
             this.lblMensaje.TabIndex = 2;
             this.lblMensaje.Text = "label1";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -145,7 +145,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(367, 177);
+            this.ClientSize = new System.Drawing.Size(352, 137);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -153,6 +153,7 @@
             this.Name = "Cerrar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cerrar";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cerrar_FormClosing);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.panel2.ResumeLayout(false);

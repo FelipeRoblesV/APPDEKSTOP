@@ -71,7 +71,7 @@
             this.barraProgreso.animated = true;
             this.barraProgreso.animationIterval = 5;
             this.barraProgreso.animationSpeed = 15;
-            this.barraProgreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.barraProgreso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
             this.barraProgreso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("barraProgreso.BackgroundImage")));
             this.barraProgreso.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
             this.barraProgreso.ForeColor = System.Drawing.Color.SeaGreen;
@@ -87,13 +87,12 @@
             this.barraProgreso.Size = new System.Drawing.Size(159, 159);
             this.barraProgreso.TabIndex = 36;
             this.barraProgreso.Value = 30;
-            this.barraProgreso.Visible = false;
             // 
             // Cargando
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
             this.ClientSize = new System.Drawing.Size(334, 729);
             this.Controls.Add(this.barraProgreso);
             this.Controls.Add(this.lblMensaje);
