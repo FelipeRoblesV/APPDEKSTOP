@@ -27,6 +27,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros
         }
         public void IniciarAplicacion()
         {
+            
             CargarDashboard cargar = new CargarDashboard();
             IniciarDashboard.RunWorkerAsync(cargar);
         }

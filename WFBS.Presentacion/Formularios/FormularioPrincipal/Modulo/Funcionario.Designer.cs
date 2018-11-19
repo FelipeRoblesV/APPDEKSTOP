@@ -73,6 +73,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 46;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblNombreFormulario
             // 
@@ -211,13 +212,10 @@
             this.IniciarProceso.WorkerReportsProgress = true;
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
-            this.IniciarProceso.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.IniciarProceso_RunWorkerCompleted);
             // 
             // IniciarEstado
             // 
             this.IniciarEstado.WorkerReportsProgress = true;
-            this.IniciarEstado.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarEstado_DoWork);
-            this.IniciarEstado.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarEstado_ProgressChanged);
             // 
             // Funcionario
             // 

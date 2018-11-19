@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFBS.Controlador;
 using WFBS.Entidades;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Clases;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros;
 using WFBS.WebService;
 
@@ -17,6 +19,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 {
     public partial class Funcionario : Form
     {
+        private double numeroFormulario = 1.11;
+
         private Otros.Funcionario.Controles controles;
         private FormularioPrincipal formulario;
         private int numero = 0;
@@ -26,8 +30,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             InitializeComponent();
 
         }
-
-        private bool respuesta;
 
         public void PasarDatos(FormularioPrincipal form)
         {
@@ -250,27 +252,32 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         private void IniciarProceso_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
-            Cl_Funcionario iniciar = (Cl_Funcionario)e.Argument;
-
+            Cl_Funcionario funcionario = (Cl_Funcionario)e.Argument;
+            bool respuesta = false;
+            CargarFuncionario iniciar = new CargarFuncionario();
             switch (this.numero)
             {
                 case 1:
-                    IniciarAplicacion.ReportProgress(1);
+                    iniciar.Mensaje = "Agregando Funcionario";
+                    IniciarAplicacion.ReportProgress(1, iniciar);
 
                     try
                     {
+                        funcionario.run = int.Parse(txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Substring(0, txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Length - 1));
+                        funcionario.dv = txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Substring(txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Length -1, 1);
                         daoFuncionario dao = new daoFuncionario();
+                        iniciar.respuesta = dao.Agregar(funcionario);
+     
 
-                        iniciar.run = int.Parse(txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Substring(0, txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Length - 1));
-                        iniciar.dv = txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Substring(txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Length -1, 1);
-                        bool respuesta =dao.Agregar(iniciar);
-                        IniciarAplicacion.ReportProgress(2,respuesta);
+                        IniciarAplicacion.ReportProgress(2, iniciar);
+                        System.Threading.Thread.Sleep(2500);
+                        IniciarAplicacion.ReportProgress(3, iniciar);
+
                     }
                     catch (Exception)
                     {
-
-                        throw;
                     }
+
                     break;
             }
         }
@@ -278,40 +285,52 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         private void IniciarProceso_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int porcentaje = e.ProgressPercentage;
-
-            switch (porcentaje)
+           
+            switch (this.numero)
             {
                 case 1:
-                    formulario.CargarFromularioCRUD();
+                    CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+                           
+                            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+                            load.CambiarMensaje(iniciar.Mensaje);
+                            formulario.AbrirModuloExterno(load);
+                            break;
+                        case 2:
+                            Estado estado = new Estado();
+                            estado.estado(iniciar.respuesta, 1);
+                            formulario.AbrirModuloExterno(estado);
+                            break;
+                        case 3:
+                            if (iniciar.respuesta)
+                            {
+                                formulario.recargarListados(1.111);
+                                formulario.TerminarProceso(1.11);
+                            }
+                            else
+                            {
+
+                                formulario.AbrirModuloExterno(this);
+
+                            }
+                            break;
 
 
+
+
+                    }
                     break;
-                case 2:
-                    bool resp = (bool)e.UserState;
-                    respuesta = resp;
-                    break;
+                    }
             }
-        }
+        
 
-        private void IniciarEstado_DoWork(object sender, DoWorkEventArgs e)
+
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-            BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
-            bool iniciar = (bool)e.Argument;
-            IniciarAplicacion.ReportProgress(1, iniciar);
-
-
-
-        }
-
-        private void IniciarEstado_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            bool iniciar = (bool)e.UserState;
-            formulario.estadoFinalCrud(1, iniciar, this);
-        }
-
-        private void IniciarProceso_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            IniciarEstado.RunWorkerAsync(respuesta);
+            formulario.TerminarProceso(numeroFormulario);
         }
     }
 }

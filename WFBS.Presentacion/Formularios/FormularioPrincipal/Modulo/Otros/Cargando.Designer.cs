@@ -47,7 +47,6 @@
             this.lblMensaje.TabIndex = 35;
             this.lblMensaje.Text = "Iniciando el formulario";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMensaje.Visible = false;
             // 
             // timerPreloader
             // 

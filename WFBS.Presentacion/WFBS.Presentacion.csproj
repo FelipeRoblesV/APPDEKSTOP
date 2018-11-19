@@ -74,6 +74,7 @@
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarListaSubFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarReporte.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Clases\RecargarFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +93,15 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Cargo.Designer.cs">
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarAlternativa.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarCargo.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarCompetencia.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarEvaluacion.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarFuncionario.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarJefeFuncionario.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarObservacion.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarPerfil.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarPregunta.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Competencia.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,6 +9,9 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFBS.Controlador;
+using WFBS.Entidades;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Clases;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros;
@@ -23,13 +26,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
         #region DEFINIR PARAMETROS
         private bool respuesta = false;
-        private ListadoPrincipal ListarFuncionario, ListarJefeFuncionario, ListarPerfil, ListarCargo,ListarCompetencia, ListarEvaluacion;
+
+        private Modulo.Funcionario modulofuncionario;
+
+        private ListadoPrincipal ListarFuncionario, ListarJefeFuncionario, ListarPerfil, ListarCargo, ListarCompetencia, ListarEvaluacion;
         private ListadoReporte ListadoReporte;
         private Aplicacion app;
         private Dashboard dashboard;
         private Logotipo logo = new Logotipo();
         private int estadoMR = 0;
-        private double numero = 0, numero2 = 0;
+        private double numero = 0, numero2 = 0, numeroCRUD = 0;
         private int estadoDashboard = 0, estadoFuncionario = 0, estadoPerfil = 0, estadoCompetencia = 0, estadoEvaluacion = 0, estadoReporte = 0, estadoCRUD = 0;
         #endregion
 
@@ -57,12 +63,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         public bool estadoActualCrud()
         {
             bool resultado = false;
-            if(estadoCRUD == 0)
+            if (estadoCRUD == 0)
             {
-                resultado= false;
-            }else
+                resultado = false;
+            }
+            else
             {
-                resultado= true;
+                resultado = true;
             }
             return resultado;
         }
@@ -161,14 +168,14 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
             if (btn.Name == btnDashboard.Name)
             {
-                if(estadoDashboard == 0 && estadoCRUD == 0)
+                if (estadoDashboard == 0 && estadoCRUD == 0)
                 {
                     IniciarDashboard();
                 }
 
 
             }
-            if (btn.Name == btnFuncionario.Name )
+            if (btn.Name == btnFuncionario.Name)
             {
                 if (estadoFuncionario == 0 && estadoCRUD == 0)
                 {
@@ -247,6 +254,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             panelMenuDatagrid.Visible = false;
             this.btnDashboard.Image = Properties.Resources.Dashboard_Active;
             this.SidePanelDashboardMini.BackColor = Color.FromArgb(125, 62, 55);
+            estadoCRUD = 1;
             dashboard.IniciarAplicacion();
         }
 
@@ -254,6 +262,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         {
             AbrirFormulario(dashboard);
             estadoDashboard = 1;
+            estadoCRUD = 0;
             this.numero = 0;
         }
 
@@ -262,6 +271,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         {
             switch (numero)
             {
+                case 0:
+                    inicializarEstado();
+                    InicializarBotones();
+                    OcultarMenu();
+                    InicializarSideMenu();
+                    PanelCRUD.Visible = false;
+                    panelMenuDatagrid.Visible = false;
+                    AbrirFormulario(logo);
+                    break;
                 case 1:
                     inicializarEstado();
                     InicializarBotones();
@@ -274,7 +292,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     GenerarControlesPrincipales(numero);
                     AbrirFormulario(logo);
                     estadoFuncionario = 1;
-                    
+
                     this.numero = numero;
                     break;
                 case 2:
@@ -306,7 +324,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     {
                         ListarCompetencia.RestablecerNumero(numero);
                     }
-                   
+
                     AbrirFormulario(ListarCompetencia);
 
                     estadoCompetencia = 1;
@@ -326,7 +344,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     {
                         ListarEvaluacion.RestablecerNumero(numero);
                     }
-                   AbrirFormulario(ListarEvaluacion);
+                    AbrirFormulario(ListarEvaluacion);
                     estadoEvaluacion = 1;
                     this.numero = numero;
                     break;
@@ -404,7 +422,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         GenerarControlesSubFormulario(1.11);
 
                     }
-    
+
                     if (btn.Name == btnAccion2.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = true;
@@ -420,10 +438,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         {
                             AbrirFormulario(ListarJefeFuncionario);
                         }
-                 
+
                         GenerarControlesSubFormulario(1.21);
                     }
-    
+
                     break;
                 case 2:
                     if (btn.Name == btnAccion1.Name && estadoCRUD == 0)
@@ -537,63 +555,225 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             }
         }
 
+        public void ActualizarFormulario(double numero, DataSet lista, bool estado)
+        {
+            switch (numero)
+            {
+                case 1.11:
+                    ListarFuncionario.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 1.21:
+                    ListarJefeFuncionario.ActualizarFormulario(numero, lista, estado);
+                    break;
+            }
+        }
+
+        private void RecargarFormulario_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            numeroCRUD = 0;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            IniciarProcemiento(0);
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            switch (this.numero)
+            {
+
+                case 1:
+                    switch (this.numero2)
+                    {
+                        case 1.11:
+                            recargarListados(this.numero2);
+                            break;
+                    }
+
+                    break;
+            }
+        }
+
         public void DefinirFormulario(double numero, DataSet lista, bool estado)
         {
             switch (numero)
             {
                 case 1.11:
                     ListarFuncionario = new ListadoPrincipal();
-                    ListarFuncionario.DefinirFormulario(numero,lista,estado);
+                    ListarFuncionario.DefinirFormulario(numero, lista, estado);
                     ListarFuncionario.PasarDatos(this);
                     break;
-               case 1.21:
+                case 1.21:
                     ListarJefeFuncionario = new ListadoPrincipal();
-                    ListarJefeFuncionario.DefinirFormulario(numero, lista,estado);
+                    ListarJefeFuncionario.DefinirFormulario(numero, lista, estado);
                     ListarJefeFuncionario.PasarDatos(this);
                     break;
-               case 2.11:
+                case 2.11:
                     ListarPerfil = new ListadoPrincipal();
-                    ListarPerfil.DefinirFormulario(numero, lista,estado);
+                    ListarPerfil.DefinirFormulario(numero, lista, estado);
                     ListarPerfil.PasarDatos(this);
                     break;
-               case 2.21:
-                         ListarCargo = new ListadoPrincipal();
-                        ListarCargo.DefinirFormulario(numero, lista,estado);
+                case 2.21:
+                    ListarCargo = new ListadoPrincipal();
+                    ListarCargo.DefinirFormulario(numero, lista, estado);
                     ListarCargo.PasarDatos(this);
                     break;
                 case 3:
                     ListarCompetencia = new ListadoPrincipal();
-                    ListarCompetencia.DefinirFormulario(numero, lista,estado);
+                    ListarCompetencia.DefinirFormulario(numero, lista, estado);
                     ListarCompetencia.PasarDatos(this);
 
                     break;
                 case 4:
                     ListarEvaluacion = new ListadoPrincipal();
-                    ListarEvaluacion.DefinirFormulario(numero, lista,estado);
+                    ListarEvaluacion.DefinirFormulario(numero, lista, estado);
                     ListarEvaluacion.PasarDatos(this);
                     break;
                 case 5:
                     ListadoReporte = new ListadoReporte();
-                     ListadoReporte.DefinirFormulario(1, lista,estado);
+                    ListadoReporte.DefinirFormulario(1, lista, estado);
                     break;
             }
         }
-        private void Agregar()
+
+
+
+        private void RecargarFormulario_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            switch (this.numero2)
+            RecargarFormulario iniciar = (RecargarFormulario)e.UserState;
+            int porcentaje = e.ProgressPercentage;
+
+            switch (numeroCRUD)
             {
-
-                        case 4.1:
-                    Modulo.Evaluacion evaluacion = new Modulo.Evaluacion();
-                    evaluacion.AgregarFuncionario();
-                    AbrirModulo(evaluacion);
-                    PanelCRUD.Visible = true;
-
+                case 1.11:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarFuncionario;
+                                ActualizarFormulario(1.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.11, lista, false);
+                            }
                             break;
 
+                        case 3:
+                            AbrirFormulario(ListarFuncionario);
+                            break;
+                    }
+                    break;
+                case 1.111:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarFuncionario;
+                                ActualizarFormulario(1.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.11, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(2.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(2.11, lista, false);
+                            }
+                            break;
+
+
+                    }
+                    break;
+            }
+
+            }
+        
+
+
+        private void RecargarFormulario_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
+                RecargarFormulario inicio = (RecargarFormulario)e.Argument;
+                daoFuncionario dao = new daoFuncionario();
+                daoPerfil daoPerfil = new daoPerfil();
+
+                switch (inicio.numero)
+                {
+                    case 1.11:
+                        inicio.mensaje = "Actualizando Funcionario";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarFuncionario = dao.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        IniciarAplicacion.ReportProgress(3);
+                        break;
+                    case 1.111:
+
+                        inicio.listarFuncionario = dao.listar();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = dao.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        break;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
         #endregion
+
+        public void recargarListados(double numero)
+        {
+            RecargarFormulario iniciar = new RecargarFormulario();
+            switch (numero)
+            {
+                case 1.11:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 1.111:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+            }
+        }
+        public void TerminarProceso(double numero)
+        {
+            switch (numero)
+            {
+                case 1.11:
+                    modulofuncionario.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+            }
+        }
+
+
         #region ACCION DE LOS BOTONES PARA EL SUBFORMULARIO
 
         private void btnAccionSubMenu_Click(object sender, EventArgs e)
@@ -623,6 +803,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             AbrirModulo(moduloFuncionario);
                             PanelCRUD.Visible = true;
                             estadoCRUD = 1;
+                            this.modulofuncionario = moduloFuncionario;
                         }
                         else
                         {
@@ -633,7 +814,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     if (btn.Name == btnModificar.Name)
                     {
                         Estado estado = new Estado();
-                        estado.estado(true, 1);
+                        //  estado.estado(true, 1);
                         AbrirModulo(estado);
                         PanelCRUD.Visible = true;
                     }
@@ -676,7 +857,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     if (btn.Name == btnAgregar.Name)
                     {
                         MessageBox.Show("AGREGAR EVALUACION");
-                        Agregar();
                         btnAgregar.BackColor = Color.FromArgb(49, 60, 77);
 
                     }
@@ -718,13 +898,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         {
             BunifuImageButton btn = sender as BunifuImageButton;
 
-            if(btn.Name == btnCerrarSesion.Name)
+            if (btn.Name == btnCerrarSesion.Name)
             {
 
                 SystemSounds.Exclamation.Play();
-                
+
                 Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
-               
+
                 cerrar.PasarDatos(app);
                 cerrar.iniciarFormulario(3);
                 cerrar.ShowDialog();
@@ -746,7 +926,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 {
                     btnRestaurarFormulario.Visible = false;
                     estadoMR = 1;
-                }else if (btnMaximizarFormulario.Visible == true){
+                }
+                else if (btnMaximizarFormulario.Visible == true)
+                {
                     btnMaximizarFormulario.Visible = false;
                     estadoMR = 2;
                 }
@@ -759,16 +941,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             {
                 btnRestaurarFullScreen.Visible = false;
                 btnFullScreen.Visible = true;
-                if(estadoMR == 1)
+                if (estadoMR == 1)
                 {
                     btnRestaurarFormulario.Visible = true;
-                }else if (estadoMR == 2)
+                }
+                else if (estadoMR == 2)
                 {
                     btnMaximizarFormulario.Visible = true;
                 }
                 estadoMR = 0;
-                
-                
+
+
                 app.Controles(7);
 
             }
@@ -817,38 +1000,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         }
 
 
-
-        public void CargarFromularioCRUD()
+        public void AbrirModuloExterno(object formHijo)
         {
-            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
-            AbrirModulo(load);
-
-        }
-
-        public bool estadoFinalCrud(int numero, bool resp, Funcionario fun)
-        {
-                  Estado ventanaEstado = new Estado();
-                   ventanaEstado.estado(resp, 1);
-                    AbrirModulo(ventanaEstado);
-                    PanelCRUD.Visible = true;
-            if (resp)
-                    {
-                       
-                        System.Threading.Thread.Sleep(6000);
-                        fun.Close();
-                        PanelCRUD.Visible = false;
-                        estadoCRUD = 0;
-
-                        return true;
-
-                    }
-                    else
-            { 
-                        System.Threading.Thread.Sleep(6000);
-                        AbrirModulo(fun);
-                        return false;
-
-                    }
+            AbrirModulo(formHijo);
         }
 
         #region METODOS ABRIR FORMULARIO

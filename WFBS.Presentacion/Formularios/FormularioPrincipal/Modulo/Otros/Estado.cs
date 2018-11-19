@@ -12,7 +12,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros
 {
     public partial class Estado : Form
     {
-
         public Estado()
         {
             InitializeComponent();
@@ -49,6 +48,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros
                     panelEstado.BackColor = Color.FromArgb(237, 83, 66);
                     lblMensaje.Text = "No se modifico correctamente.";
                     imagenEstado.Image = Properties.Resources.estado_incorrecto;
+
                     break;
             }
         }

@@ -57,6 +57,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
             fun.apellido = txtApellido.Text;
             fun.correo = txtCorreo.Text;
             fun.telefono = int.Parse(txtTelefono.Text);
+            if (rbHombre.Checked)
+            {
+                fun.sexo = '1';
+            }else if (rbMujer.Checked)
+            {
+                fun.sexo = '0';
+            }
             fun.perfil.id = int.Parse(cbPerfil.SelectedValue.ToString());
             fun.fechaNacimiento = dtpFechaNacimiento.Value;
             fun.usuario.password = txtCorreo.Text;

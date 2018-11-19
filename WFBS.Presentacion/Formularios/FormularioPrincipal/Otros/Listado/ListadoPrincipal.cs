@@ -303,6 +303,19 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     break;
             }
         }
+
+        public void ActualizarFormulario(double numero, DataSet listar, bool estado)
+        {
+            switch (numero)
+            {
+                case 1.11:
+                    listaFuncionario.definirFormulario(numero, listar, estado);
+                    break;
+                case 1.21:
+                    listaJefeFuncionario.definirFormulario(numero, listar, estado);
+                    break;
+            }
+            }
         public void DefinirFormulario(double numero, DataSet listar, bool estado)
         {
             switch (numero)

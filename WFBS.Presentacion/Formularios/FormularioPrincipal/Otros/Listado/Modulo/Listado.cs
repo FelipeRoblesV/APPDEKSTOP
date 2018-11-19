@@ -121,6 +121,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         {
                             this.numero = numero;
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                             dt_Listar.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
