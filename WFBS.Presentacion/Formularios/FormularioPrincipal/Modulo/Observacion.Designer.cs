@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Observacion));
             this.panelBotones = new System.Windows.Forms.Panel();
             this.btnLimpiar = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAccion = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -39,6 +40,7 @@
             this.chkRecuerdame = new Bunifu.Framework.UI.BunifuCheckbox();
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.panelBotones.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -224,12 +226,23 @@
             this.label1.Text = "Texto de error para el nombre del funcionario";
             this.label1.Visible = false;
             // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label16.Location = new System.Drawing.Point(15, 574);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(307, 82);
+            this.label16.TabIndex = 147;
+            this.label16.Text = resources.GetString("label16.Text");
+            // 
             // Observacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(334, 729);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lblRecuerdame);
@@ -261,5 +274,6 @@
         private Bunifu.Framework.UI.BunifuCheckbox chkRecuerdame;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label16;
     }
 }

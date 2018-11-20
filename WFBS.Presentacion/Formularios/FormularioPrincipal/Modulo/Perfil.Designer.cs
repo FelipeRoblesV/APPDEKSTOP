@@ -51,11 +51,11 @@
             // lblErrorNombre
             // 
             this.lblErrorNombre.AutoSize = true;
-            this.lblErrorNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
+            this.lblErrorNombre.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
             this.lblErrorNombre.Location = new System.Drawing.Point(12, 59);
             this.lblErrorNombre.Name = "lblErrorNombre";
-            this.lblErrorNombre.Size = new System.Drawing.Size(258, 15);
+            this.lblErrorNombre.Size = new System.Drawing.Size(249, 14);
             this.lblErrorNombre.TabIndex = 128;
             this.lblErrorNombre.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorNombre.Visible = false;
@@ -63,11 +63,11 @@
             // lblErrorAbreviacion
             // 
             this.lblErrorAbreviacion.AutoSize = true;
-            this.lblErrorAbreviacion.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
+            this.lblErrorAbreviacion.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
             this.lblErrorAbreviacion.Location = new System.Drawing.Point(9, 133);
             this.lblErrorAbreviacion.Name = "lblErrorAbreviacion";
-            this.lblErrorAbreviacion.Size = new System.Drawing.Size(258, 15);
+            this.lblErrorAbreviacion.Size = new System.Drawing.Size(249, 14);
             this.lblErrorAbreviacion.TabIndex = 127;
             this.lblErrorAbreviacion.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorAbreviacion.Visible = false;

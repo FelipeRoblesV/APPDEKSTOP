@@ -28,146 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelTitulo = new System.Windows.Forms.Panel();
-            this.lblNombreFormulario = new System.Windows.Forms.Label();
-            this.panelBotones = new System.Windows.Forms.Panel();
-            this.btnLimpiar = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnAccion = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lblErrorNombre = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtCompetencia = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblErrorSiglas = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtSiglas = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblErrorDescripcion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.cbxNotaMinia = new System.Windows.Forms.ComboBox();
             this.lblNotaIndividal = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbxNotaMaxima = new System.Windows.Forms.ComboBox();
+            this.lblErrorNotaMinima = new System.Windows.Forms.Label();
+            this.lblErrorNotaMaxima = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cbxNotaEsperada = new System.Windows.Forms.ComboBox();
+            this.lblErrorNotaEsperada = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.panelTitulo = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.PictureBox();
+            this.lblNombreFormulario = new System.Windows.Forms.Label();
+            this.panelBotones = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnAccion = new System.Windows.Forms.Button();
+            this.PanelContenido = new System.Windows.Forms.Panel();
+            this.numNotaEsperada = new System.Windows.Forms.NumericUpDown();
+            this.numNotaMaxima = new System.Windows.Forms.NumericUpDown();
+            this.numNotaMinima = new System.Windows.Forms.NumericUpDown();
+            this.txtSiglas = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panelTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
+            this.PanelContenido.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaEsperada)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaMaxima)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaMinima)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelTitulo
-            // 
-            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
-            this.panelTitulo.Controls.Add(this.lblNombreFormulario);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
-            this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.panelTitulo.Size = new System.Drawing.Size(334, 24);
-            this.panelTitulo.TabIndex = 50;
-            // 
-            // lblNombreFormulario
-            // 
-            this.lblNombreFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
-            this.lblNombreFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNombreFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblNombreFormulario.Location = new System.Drawing.Point(30, 0);
-            this.lblNombreFormulario.Name = "lblNombreFormulario";
-            this.lblNombreFormulario.Size = new System.Drawing.Size(304, 24);
-            this.lblNombreFormulario.TabIndex = 45;
-            this.lblNombreFormulario.Text = "Nombre Evaluacion";
-            this.lblNombreFormulario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panelBotones
-            // 
-            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(42)))), ((int)(((byte)(55)))));
-            this.panelBotones.Controls.Add(this.btnLimpiar);
-            this.panelBotones.Controls.Add(this.btnAccion);
-            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotones.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelBotones.Location = new System.Drawing.Point(0, 696);
-            this.panelBotones.Name = "panelBotones";
-            this.panelBotones.Size = new System.Drawing.Size(334, 33);
-            this.panelBotones.TabIndex = 51;
-            this.panelBotones.Visible = false;
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnLimpiar.BorderRadius = 0;
-            this.btnLimpiar.ButtonText = "Limpiar";
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.DisabledColor = System.Drawing.Color.Gray;
-            this.btnLimpiar.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnLimpiar.Iconimage = null;
-            this.btnLimpiar.Iconimage_right = null;
-            this.btnLimpiar.Iconimage_right_Selected = null;
-            this.btnLimpiar.Iconimage_Selected = null;
-            this.btnLimpiar.IconMarginLeft = 0;
-            this.btnLimpiar.IconMarginRight = 0;
-            this.btnLimpiar.IconRightVisible = true;
-            this.btnLimpiar.IconRightZoom = 0D;
-            this.btnLimpiar.IconVisible = true;
-            this.btnLimpiar.IconZoom = 90D;
-            this.btnLimpiar.IsTab = false;
-            this.btnLimpiar.Location = new System.Drawing.Point(179, 6);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnLimpiar.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnLimpiar.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnLimpiar.selected = false;
-            this.btnLimpiar.Size = new System.Drawing.Size(142, 23);
-            this.btnLimpiar.TabIndex = 1;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnLimpiar.Textcolor = System.Drawing.Color.White;
-            this.btnLimpiar.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnAccion
-            // 
-            this.btnAccion.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnAccion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAccion.BorderRadius = 0;
-            this.btnAccion.ButtonText = "Accion";
-            this.btnAccion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAccion.DisabledColor = System.Drawing.Color.Gray;
-            this.btnAccion.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnAccion.Iconimage = null;
-            this.btnAccion.Iconimage_right = null;
-            this.btnAccion.Iconimage_right_Selected = null;
-            this.btnAccion.Iconimage_Selected = null;
-            this.btnAccion.IconMarginLeft = 0;
-            this.btnAccion.IconMarginRight = 0;
-            this.btnAccion.IconRightVisible = true;
-            this.btnAccion.IconRightZoom = 0D;
-            this.btnAccion.IconVisible = true;
-            this.btnAccion.IconZoom = 90D;
-            this.btnAccion.IsTab = false;
-            this.btnAccion.Location = new System.Drawing.Point(12, 6);
-            this.btnAccion.Name = "btnAccion";
-            this.btnAccion.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnAccion.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.btnAccion.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnAccion.selected = false;
-            this.btnAccion.Size = new System.Drawing.Size(147, 23);
-            this.btnAccion.TabIndex = 0;
-            this.btnAccion.Text = "Accion";
-            this.btnAccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAccion.Textcolor = System.Drawing.Color.White;
-            this.btnAccion.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // lblErrorNombre
             // 
             this.lblErrorNombre.AutoSize = true;
-            this.lblErrorNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.lblErrorNombre.Location = new System.Drawing.Point(15, 85);
+            this.lblErrorNombre.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
+            this.lblErrorNombre.Location = new System.Drawing.Point(12, 57);
             this.lblErrorNombre.Name = "lblErrorNombre";
-            this.lblErrorNombre.Size = new System.Drawing.Size(258, 15);
+            this.lblErrorNombre.Size = new System.Drawing.Size(249, 14);
             this.lblErrorNombre.TabIndex = 123;
             this.lblErrorNombre.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorNombre.Visible = false;
@@ -177,205 +87,412 @@
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblNombre.Location = new System.Drawing.Point(9, 37);
+            this.lblNombre.Location = new System.Drawing.Point(11, 9);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(149, 15);
             this.lblNombre.TabIndex = 122;
             this.lblNombre.Text = "Nombre Competencia";
             // 
-            // txtCompetencia
+            // lblErrorSiglas
             // 
-            this.txtCompetencia.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtCompetencia.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
-            this.txtCompetencia.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtCompetencia.BorderThickness = 3;
-            this.txtCompetencia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCompetencia.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompetencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.txtCompetencia.isPassword = false;
-            this.txtCompetencia.Location = new System.Drawing.Point(12, 57);
-            this.txtCompetencia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtCompetencia.Name = "txtCompetencia";
-            this.txtCompetencia.Size = new System.Drawing.Size(307, 23);
-            this.txtCompetencia.TabIndex = 121;
-            this.txtCompetencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.label1.Location = new System.Drawing.Point(21, 161);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(258, 15);
-            this.label1.TabIndex = 126;
-            this.label1.Text = "Texto de error para el nombre del funcionario";
-            this.label1.Visible = false;
+            this.lblErrorSiglas.AutoSize = true;
+            this.lblErrorSiglas.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorSiglas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
+            this.lblErrorSiglas.Location = new System.Drawing.Point(16, 137);
+            this.lblErrorSiglas.Name = "lblErrorSiglas";
+            this.lblErrorSiglas.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorSiglas.TabIndex = 126;
+            this.lblErrorSiglas.Text = "Texto de error para el nombre del funcionario";
+            this.lblErrorSiglas.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label2.Location = new System.Drawing.Point(15, 113);
+            this.label2.Location = new System.Drawing.Point(12, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(138, 15);
             this.label2.TabIndex = 125;
             this.label2.Text = "Siglas Competencia";
             // 
-            // txtSiglas
+            // lblErrorDescripcion
             // 
-            this.txtSiglas.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtSiglas.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
-            this.txtSiglas.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtSiglas.BorderThickness = 3;
-            this.txtSiglas.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtSiglas.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSiglas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.txtSiglas.isPassword = false;
-            this.txtSiglas.Location = new System.Drawing.Point(16, 133);
-            this.txtSiglas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtSiglas.Name = "txtSiglas";
-            this.txtSiglas.Size = new System.Drawing.Size(307, 23);
-            this.txtSiglas.TabIndex = 124;
-            this.txtSiglas.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.label3.Location = new System.Drawing.Point(21, 306);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 15);
-            this.label3.TabIndex = 129;
-            this.label3.Text = "Texto de error para el nombre del funcionario";
-            this.label3.Visible = false;
+            this.lblErrorDescripcion.AutoSize = true;
+            this.lblErrorDescripcion.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
+            this.lblErrorDescripcion.Location = new System.Drawing.Point(12, 281);
+            this.lblErrorDescripcion.Name = "lblErrorDescripcion";
+            this.lblErrorDescripcion.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorDescripcion.TabIndex = 129;
+            this.lblErrorDescripcion.Text = "Texto de error para el nombre del funcionario";
+            this.lblErrorDescripcion.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(15, 187);
+            this.label4.Location = new System.Drawing.Point(12, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(177, 15);
             this.label4.TabIndex = 128;
             this.label4.Text = "Descripcion Competencia";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.txtDescripcion.BorderColor = System.Drawing.Color.Green;
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(18, 205);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(309, 98);
-            this.txtDescripcion.TabIndex = 130;
-            // 
-            // cbxNotaMinia
-            // 
-            this.cbxNotaMinia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.cbxNotaMinia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxNotaMinia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.cbxNotaMinia.FormattingEnabled = true;
-            this.cbxNotaMinia.Location = new System.Drawing.Point(14, 363);
-            this.cbxNotaMinia.Name = "cbxNotaMinia";
-            this.cbxNotaMinia.Size = new System.Drawing.Size(309, 21);
-            this.cbxNotaMinia.TabIndex = 132;
             // 
             // lblNotaIndividal
             // 
             this.lblNotaIndividal.AutoSize = true;
             this.lblNotaIndividal.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotaIndividal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblNotaIndividal.Location = new System.Drawing.Point(11, 345);
+            this.lblNotaIndividal.Location = new System.Drawing.Point(10, 307);
             this.lblNotaIndividal.Name = "lblNotaIndividal";
             this.lblNotaIndividal.Size = new System.Drawing.Size(180, 15);
             this.lblNotaIndividal.TabIndex = 131;
             this.lblNotaIndividal.Text = "Nota minima Competencia";
             // 
-            // label5
+            // lblErrorNotaMinima
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.label5.Location = new System.Drawing.Point(15, 387);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(258, 15);
-            this.label5.TabIndex = 133;
-            this.label5.Text = "Texto de error para el nombre del funcionario";
-            this.label5.Visible = false;
+            this.lblErrorNotaMinima.AutoSize = true;
+            this.lblErrorNotaMinima.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorNotaMinima.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
+            this.lblErrorNotaMinima.Location = new System.Drawing.Point(12, 349);
+            this.lblErrorNotaMinima.Name = "lblErrorNotaMinima";
+            this.lblErrorNotaMinima.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorNotaMinima.TabIndex = 133;
+            this.lblErrorNotaMinima.Text = "Texto de error para el nombre del funcionario";
+            this.lblErrorNotaMinima.Visible = false;
             // 
-            // label6
+            // lblErrorNotaMaxima
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.label6.Location = new System.Drawing.Point(13, 452);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(258, 15);
-            this.label6.TabIndex = 136;
-            this.label6.Text = "Texto de error para el nombre del funcionario";
-            this.label6.Visible = false;
-            // 
-            // cbxNotaMaxima
-            // 
-            this.cbxNotaMaxima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.cbxNotaMaxima.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxNotaMaxima.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.cbxNotaMaxima.FormattingEnabled = true;
-            this.cbxNotaMaxima.Location = new System.Drawing.Point(12, 428);
-            this.cbxNotaMaxima.Name = "cbxNotaMaxima";
-            this.cbxNotaMaxima.Size = new System.Drawing.Size(309, 21);
-            this.cbxNotaMaxima.TabIndex = 135;
+            this.lblErrorNotaMaxima.AutoSize = true;
+            this.lblErrorNotaMaxima.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorNotaMaxima.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
+            this.lblErrorNotaMaxima.Location = new System.Drawing.Point(11, 416);
+            this.lblErrorNotaMaxima.Name = "lblErrorNotaMaxima";
+            this.lblErrorNotaMaxima.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorNotaMaxima.TabIndex = 136;
+            this.lblErrorNotaMaxima.Text = "Texto de error para el nombre del funcionario";
+            this.lblErrorNotaMaxima.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label7.Location = new System.Drawing.Point(9, 410);
+            this.label7.Location = new System.Drawing.Point(12, 374);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(184, 15);
             this.label7.TabIndex = 134;
             this.label7.Text = "Nota maxima Competencia";
             // 
-            // label8
+            // lblErrorNotaEsperada
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
-            this.label8.Location = new System.Drawing.Point(13, 513);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(258, 15);
-            this.label8.TabIndex = 139;
-            this.label8.Text = "Texto de error para el nombre del funcionario";
-            this.label8.Visible = false;
-            // 
-            // cbxNotaEsperada
-            // 
-            this.cbxNotaEsperada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.cbxNotaEsperada.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbxNotaEsperada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.cbxNotaEsperada.FormattingEnabled = true;
-            this.cbxNotaEsperada.Location = new System.Drawing.Point(12, 489);
-            this.cbxNotaEsperada.Name = "cbxNotaEsperada";
-            this.cbxNotaEsperada.Size = new System.Drawing.Size(309, 21);
-            this.cbxNotaEsperada.TabIndex = 138;
+            this.lblErrorNotaEsperada.AutoSize = true;
+            this.lblErrorNotaEsperada.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorNotaEsperada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
+            this.lblErrorNotaEsperada.Location = new System.Drawing.Point(11, 488);
+            this.lblErrorNotaEsperada.Name = "lblErrorNotaEsperada";
+            this.lblErrorNotaEsperada.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorNotaEsperada.TabIndex = 139;
+            this.lblErrorNotaEsperada.Text = "Texto de error para el nombre del funcionario";
+            this.lblErrorNotaEsperada.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label9.Location = new System.Drawing.Point(9, 471);
+            this.label9.Location = new System.Drawing.Point(9, 446);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(198, 15);
             this.label9.TabIndex = 137;
             this.label9.Text = "Nota Esperada Competencia ";
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.panelTitulo.Controls.Add(this.btnCerrar);
+            this.panelTitulo.Controls.Add(this.lblNombreFormulario);
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Padding = new System.Windows.Forms.Padding(45, 1, 1, 1);
+            this.panelTitulo.Size = new System.Drawing.Size(334, 25);
+            this.panelTitulo.TabIndex = 140;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_block_icon_icons_com_66946;
+            this.btnCerrar.Location = new System.Drawing.Point(303, 1);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Size = new System.Drawing.Size(30, 23);
+            this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnCerrar.TabIndex = 46;
+            this.btnCerrar.TabStop = false;
+            // 
+            // lblNombreFormulario
+            // 
+            this.lblNombreFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.lblNombreFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombreFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblNombreFormulario.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.lblNombreFormulario.Location = new System.Drawing.Point(45, 1);
+            this.lblNombreFormulario.Name = "lblNombreFormulario";
+            this.lblNombreFormulario.Size = new System.Drawing.Size(288, 23);
+            this.lblNombreFormulario.TabIndex = 45;
+            this.lblNombreFormulario.Text = "Nombre Evaluacion";
+            this.lblNombreFormulario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.panelBotones.Controls.Add(this.btnLimpiar);
+            this.panelBotones.Controls.Add(this.btnAccion);
+            this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBotones.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelBotones.Location = new System.Drawing.Point(0, 677);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(334, 52);
+            this.panelBotones.TabIndex = 141;
+            this.panelBotones.Visible = false;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.Location = new System.Drawing.Point(223, 6);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(82, 40);
+            this.btnLimpiar.TabIndex = 135;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
+            // btnAccion
+            // 
+            this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
+            this.btnAccion.FlatAppearance.BorderSize = 0;
+            this.btnAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAccion.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAccion.ForeColor = System.Drawing.Color.White;
+            this.btnAccion.Location = new System.Drawing.Point(21, 6);
+            this.btnAccion.Name = "btnAccion";
+            this.btnAccion.Size = new System.Drawing.Size(196, 40);
+            this.btnAccion.TabIndex = 134;
+            this.btnAccion.Text = "Accion";
+            this.btnAccion.UseVisualStyleBackColor = false;
+            // 
+            // PanelContenido
+            // 
+            this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.PanelContenido.Controls.Add(this.numNotaEsperada);
+            this.PanelContenido.Controls.Add(this.numNotaMaxima);
+            this.PanelContenido.Controls.Add(this.numNotaMinima);
+            this.PanelContenido.Controls.Add(this.txtSiglas);
+            this.PanelContenido.Controls.Add(this.txtNombre);
+            this.PanelContenido.Controls.Add(this.txtDescripcion);
+            this.PanelContenido.Controls.Add(this.panel1);
+            this.PanelContenido.Controls.Add(this.lblNombre);
+            this.PanelContenido.Controls.Add(this.lblErrorNombre);
+            this.PanelContenido.Controls.Add(this.lblErrorNotaEsperada);
+            this.PanelContenido.Controls.Add(this.label2);
+            this.PanelContenido.Controls.Add(this.label9);
+            this.PanelContenido.Controls.Add(this.lblErrorSiglas);
+            this.PanelContenido.Controls.Add(this.lblErrorNotaMaxima);
+            this.PanelContenido.Controls.Add(this.label4);
+            this.PanelContenido.Controls.Add(this.lblErrorDescripcion);
+            this.PanelContenido.Controls.Add(this.label7);
+            this.PanelContenido.Controls.Add(this.lblErrorNotaMinima);
+            this.PanelContenido.Controls.Add(this.lblNotaIndividal);
+            this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContenido.Location = new System.Drawing.Point(0, 25);
+            this.PanelContenido.Name = "PanelContenido";
+            this.PanelContenido.Size = new System.Drawing.Size(334, 652);
+            this.PanelContenido.TabIndex = 142;
+            // 
+            // numNotaEsperada
+            // 
+            this.numNotaEsperada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.numNotaEsperada.DecimalPlaces = 1;
+            this.numNotaEsperada.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numNotaEsperada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.numNotaEsperada.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numNotaEsperada.Location = new System.Drawing.Point(12, 462);
+            this.numNotaEsperada.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numNotaEsperada.Name = "numNotaEsperada";
+            this.numNotaEsperada.ReadOnly = true;
+            this.numNotaEsperada.Size = new System.Drawing.Size(312, 23);
+            this.numNotaEsperada.TabIndex = 163;
+            // 
+            // numNotaMaxima
+            // 
+            this.numNotaMaxima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.numNotaMaxima.DecimalPlaces = 1;
+            this.numNotaMaxima.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numNotaMaxima.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.numNotaMaxima.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numNotaMaxima.Location = new System.Drawing.Point(13, 390);
+            this.numNotaMaxima.Maximum = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.numNotaMaxima.Name = "numNotaMaxima";
+            this.numNotaMaxima.ReadOnly = true;
+            this.numNotaMaxima.Size = new System.Drawing.Size(311, 23);
+            this.numNotaMaxima.TabIndex = 162;
+            this.numNotaMaxima.ValueChanged += new System.EventHandler(this.numNotaMaxima_ValueChanged);
+            // 
+            // numNotaMinima
+            // 
+            this.numNotaMinima.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.numNotaMinima.DecimalPlaces = 1;
+            this.numNotaMinima.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numNotaMinima.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.numNotaMinima.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numNotaMinima.Location = new System.Drawing.Point(13, 325);
+            this.numNotaMinima.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numNotaMinima.Name = "numNotaMinima";
+            this.numNotaMinima.Size = new System.Drawing.Size(311, 23);
+            this.numNotaMinima.TabIndex = 161;
+            this.numNotaMinima.ValueChanged += new System.EventHandler(this.numNotaMinima_ValueChanged);
+            // 
+            // txtSiglas
+            // 
+            this.txtSiglas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtSiglas.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtSiglas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtSiglas.Location = new System.Drawing.Point(15, 107);
+            this.txtSiglas.MaxLength = 60;
+            this.txtSiglas.Name = "txtSiglas";
+            this.txtSiglas.Size = new System.Drawing.Size(309, 23);
+            this.txtSiglas.TabIndex = 157;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtNombre.Location = new System.Drawing.Point(12, 27);
+            this.txtNombre.MaxLength = 60;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(312, 23);
+            this.txtNombre.TabIndex = 156;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.AutoWordSelection = true;
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 191);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(312, 87);
+            this.txtDescripcion.TabIndex = 144;
+            this.txtDescripcion.Text = "";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(12, 528);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(312, 118);
+            this.panel1.TabIndex = 140;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Roboto Light", 8F);
+            this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label15.Location = new System.Drawing.Point(16, 98);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(277, 16);
+            this.label15.TabIndex = 145;
+            this.label15.Text = "Es el puntaje maximo posible a sacar como promedio.";
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Roboto Light", 8F);
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label14.Location = new System.Drawing.Point(16, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(277, 23);
+            this.label14.TabIndex = 144;
+            this.label14.Text = "Es el puntaje esperado como promedio.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label13.Location = new System.Drawing.Point(16, 84);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 14);
+            this.label13.TabIndex = 143;
+            this.label13.Text = "NOTA MAXIMA:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label12.Location = new System.Drawing.Point(16, 47);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 14);
+            this.label12.TabIndex = 142;
+            this.label12.Text = "NOTA ESPERADA:";
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Roboto Light", 8F);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label11.Location = new System.Drawing.Point(16, 24);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(277, 23);
+            this.label11.TabIndex = 141;
+            this.label11.Text = "Es el puntaje minimo que puede sacar como promedio.";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label10.Location = new System.Drawing.Point(16, 10);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 14);
+            this.label10.TabIndex = 138;
+            this.label10.Text = "NOTA MINIMA:";
             // 
             // Competencia
             // 
@@ -383,60 +500,58 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(60)))), ((int)(((byte)(77)))));
             this.ClientSize = new System.Drawing.Size(334, 729);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.cbxNotaEsperada);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.cbxNotaMaxima);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbxNotaMinia);
-            this.Controls.Add(this.lblNotaIndividal);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSiglas);
-            this.Controls.Add(this.lblErrorNombre);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtCompetencia);
+            this.Controls.Add(this.PanelContenido);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Competencia";
             this.Text = "Competencia";
             this.panelTitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.panelBotones.ResumeLayout(false);
+            this.PanelContenido.ResumeLayout(false);
+            this.PanelContenido.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaEsperada)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaMaxima)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaMinima)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelTitulo;
-        private System.Windows.Forms.Label lblNombreFormulario;
-        private System.Windows.Forms.Panel panelBotones;
-        private Bunifu.Framework.UI.BunifuFlatButton btnLimpiar;
-        private Bunifu.Framework.UI.BunifuFlatButton btnAccion;
         private System.Windows.Forms.Label lblErrorNombre;
         private System.Windows.Forms.Label lblNombre;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtCompetencia;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblErrorSiglas;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtSiglas;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblErrorDescripcion;
         private System.Windows.Forms.Label label4;
-        private WindowsFormsControlLibrary1.BunifuCustomTextbox txtDescripcion;
-        private System.Windows.Forms.ComboBox cbxNotaMinia;
         private System.Windows.Forms.Label lblNotaIndividal;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbxNotaMaxima;
+        private System.Windows.Forms.Label lblErrorNotaMinima;
+        private System.Windows.Forms.Label lblErrorNotaMaxima;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbxNotaEsperada;
+        private System.Windows.Forms.Label lblErrorNotaEsperada;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panelTitulo;
+        private System.Windows.Forms.PictureBox btnCerrar;
+        private System.Windows.Forms.Label lblNombreFormulario;
+        private System.Windows.Forms.Panel panelBotones;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnAccion;
+        private System.Windows.Forms.Panel PanelContenido;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RichTextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtSiglas;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.NumericUpDown numNotaMinima;
+        private System.Windows.Forms.NumericUpDown numNotaEsperada;
+        private System.Windows.Forms.NumericUpDown numNotaMaxima;
     }
 }
