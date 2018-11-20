@@ -35,13 +35,13 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAccion = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtAbreviacion = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblAbreviacion = new System.Windows.Forms.Label();
             this.lblErrorNombre = new System.Windows.Forms.Label();
             this.lblErrorAbreviacion = new System.Windows.Forms.Label();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
-            this.txtAbreviacion = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -145,11 +145,33 @@
             this.PanelContenido.Size = new System.Drawing.Size(334, 652);
             this.PanelContenido.TabIndex = 132;
             // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtNombre.Location = new System.Drawing.Point(12, 29);
+            this.txtNombre.MaxLength = 60;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(307, 23);
+            this.txtNombre.TabIndex = 158;
+            // 
+            // txtAbreviacion
+            // 
+            this.txtAbreviacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtAbreviacion.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtAbreviacion.Location = new System.Drawing.Point(14, 103);
+            this.txtAbreviacion.MaxLength = 60;
+            this.txtAbreviacion.Name = "txtAbreviacion";
+            this.txtAbreviacion.Size = new System.Drawing.Size(305, 23);
+            this.txtAbreviacion.TabIndex = 157;
+            // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(102)))));
             this.lblNombre.Location = new System.Drawing.Point(12, 11);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(123, 15);
@@ -160,7 +182,7 @@
             // 
             this.lblAbreviacion.AutoSize = true;
             this.lblAbreviacion.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(102)))));
             this.lblAbreviacion.Location = new System.Drawing.Point(11, 85);
             this.lblAbreviacion.Name = "lblAbreviacion";
             this.lblAbreviacion.Size = new System.Drawing.Size(150, 15);
@@ -196,28 +218,6 @@
             this.IniciarProceso.WorkerReportsProgress = true;
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
-            // 
-            // txtAbreviacion
-            // 
-            this.txtAbreviacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.txtAbreviacion.Font = new System.Drawing.Font("Roboto Light", 9.75F);
-            this.txtAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.txtAbreviacion.Location = new System.Drawing.Point(14, 103);
-            this.txtAbreviacion.MaxLength = 60;
-            this.txtAbreviacion.Name = "txtAbreviacion";
-            this.txtAbreviacion.Size = new System.Drawing.Size(305, 23);
-            this.txtAbreviacion.TabIndex = 157;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.txtNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F);
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.txtNombre.Location = new System.Drawing.Point(12, 29);
-            this.txtNombre.MaxLength = 60;
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(307, 23);
-            this.txtNombre.TabIndex = 158;
             // 
             // Cargo
             // 

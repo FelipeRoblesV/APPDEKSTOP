@@ -18,7 +18,7 @@ namespace WFBS.Pruebas
 
             obs.competencia.id = 36;
             obs.mensaje = "asdasd";
-            obs.is_nivel_alto = true;
+
 
             bool resp =dao.Agregar(obs);
 

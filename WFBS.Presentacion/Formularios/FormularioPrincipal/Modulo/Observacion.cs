@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WFBS.Controlador;
 using WFBS.Entidades;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Clases;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 {
@@ -68,14 +69,29 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void llenarFormulario(Cl_Observacion obs)
         {
             txtMensaje.Text = obs.mensaje;
-            chkNivel.Checked = obs.is_nivel_alto;
+            if (obs.is_nivel_alto == '1')
+            {
+                chkNivel.Checked = true;
+            }
+            else if (obs.is_nivel_alto == '0')
+            {
+                chkNivel.Checked = false;
+            }
         }
 
         public Cl_Observacion recuperarDatos()
         {
             Cl_Observacion obs = new Cl_Observacion();
             obs.mensaje = txtMensaje.Text;
-            obs.is_nivel_alto = chkNivel.Checked;
+         
+            if(chkNivel.Checked)
+            {
+                obs.is_nivel_alto = '1';
+            }
+            else 
+            {
+                obs.is_nivel_alto ='0';
+            }
             obs.id = this.id;
 
             return obs;
@@ -153,7 +169,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     try
                     {
                         daoObservacion dao = new daoObservacion();
-                        iniciar.respuesta = dao.Agregar(perfil);
+                 //       iniciar.respuesta = dao.Agregar(perfil);
 
                         IniciarAplicacion.ReportProgress(2, iniciar);
                         System.Threading.Thread.Sleep(2500);
@@ -172,7 +188,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     try
                     {
                         daoPerfil dao = new daoPerfil();
-                        iniciar.respuesta = dao.Modificar(perfil);
+                   //     iniciar.respuesta = dao.Modificar(perfil);
                         IniciarAplicacion.ReportProgress(2, iniciar);
                         System.Threading.Thread.Sleep(2500);
                         IniciarAplicacion.ReportProgress(3, iniciar);
@@ -186,5 +202,80 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             }
         }
 
+        private void IniciarProceso_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            int porcentaje = e.ProgressPercentage;
+
+            switch (this.numero)
+            {
+                case 1:
+                    CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+
+                            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+                            load.CambiarMensaje(iniciar.Mensaje);
+                            formulario.AbrirModuloExterno(load);
+                            break;
+                        case 2:
+                            Estado estado = new Estado();
+                            estado.estado(iniciar.respuesta, 1);
+                            formulario.AbrirModuloExterno(estado);
+                            break;
+                        case 3:
+                            if (iniciar.respuesta)
+                            {
+                                formulario.recargarListados(3.211);
+                                formulario.TerminarProceso(3.21);
+                            }
+                            else
+                            {
+
+                                formulario.AbrirModuloExterno(this);
+
+                            }
+                            break;
+                    }
+                    break;
+                case 2:
+                    CargarFuncionario iniciar2 = (CargarFuncionario)e.UserState;
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+
+                            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+                            load.CambiarMensaje(iniciar2.Mensaje);
+                            formulario.AbrirModuloExterno(load);
+                            break;
+                        case 2:
+                            Estado estado = new Estado();
+                            estado.estado(iniciar2.respuesta, 2);
+                            formulario.AbrirModuloExterno(estado);
+                            break;
+                        case 3:
+                            if (iniciar2.respuesta)
+                            {
+                                formulario.recargarListados(3.211);
+                                formulario.TerminarProceso(3.21);
+                            }
+                            else
+                            {
+
+                                formulario.AbrirModuloExterno(this);
+
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            formulario.TerminarProceso(numeroFormulario);
+        }
     }
 }

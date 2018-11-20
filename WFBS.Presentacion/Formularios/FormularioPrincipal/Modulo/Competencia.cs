@@ -314,8 +314,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         case 3:
                             if (iniciar2.respuesta)
                             {
-                                formulario.recargarListados(3.211);
-                                formulario.TerminarProceso(3.21);
+                                formulario.recargarListados(3.111);
+                                formulario.TerminarProceso(3.11);
                             }
                             else
                             {
@@ -327,6 +327,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     }
                     break;
             }
+        }
+
+
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            formulario.TerminarProceso(numeroFormulario);
         }
     }
 }

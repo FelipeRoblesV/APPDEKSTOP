@@ -68,7 +68,7 @@
             this.lblRecuerdame.Font = new System.Drawing.Font("Roboto Medium", 11.75F, System.Drawing.FontStyle.Bold);
             this.lblRecuerdame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblRecuerdame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblRecuerdame.Location = new System.Drawing.Point(44, 235);
+            this.lblRecuerdame.Location = new System.Drawing.Point(44, 223);
             this.lblRecuerdame.Name = "lblRecuerdame";
             this.lblRecuerdame.Size = new System.Drawing.Size(128, 19);
             this.lblRecuerdame.TabIndex = 66;
@@ -81,7 +81,7 @@
             this.chkNivel.Checked = false;
             this.chkNivel.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
             this.chkNivel.ForeColor = System.Drawing.Color.White;
-            this.chkNivel.Location = new System.Drawing.Point(15, 234);
+            this.chkNivel.Location = new System.Drawing.Point(15, 222);
             this.chkNivel.Name = "chkNivel";
             this.chkNivel.Size = new System.Drawing.Size(20, 20);
             this.chkNivel.TabIndex = 65;
@@ -229,6 +229,7 @@
             // IniciarProceso
             // 
             this.IniciarProceso.WorkerReportsProgress = true;
+            this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             // 
             // Observacion
             // 
