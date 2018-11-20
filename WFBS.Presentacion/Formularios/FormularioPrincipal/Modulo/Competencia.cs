@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFBS.Controlador;
 using WFBS.Entidades;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Clases;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 {
@@ -33,6 +36,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void PasarDatos(Cl_Competencia comp)
         {
             this.competencia = comp;
+        }
+
+
+        public void limpiarFormulario()
+        {
+            txtNombre.Text = String.Empty;
+            txtSiglas.Text = String.Empty;
+            txtDescripcion.Text = String.Empty;
+            numNotaEsperada.Value = 0;
+            numNotaMaxima.Value = 0;
+            numNotaMinima.Value = 0;
+
         }
 
 
@@ -143,7 +158,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
         private void numNotaMinima_ValueChanged(object sender, EventArgs e)
         {
-            if(numNotaMinima.Value != 0)
+            if (numNotaMinima.Value != 0)
             {
                 numNotaEsperada.Minimum = numNotaMinima.Value;
                 numNotaMaxima.Minimum = numNotaMinima.Value;
@@ -159,8 +174,159 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                 numNotaEsperada.Maximum = numNotaMaxima.Value;
             }
         }
+
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiarFormulario();
+        }
+
+
+        private void btnAccion_Click(object sender, EventArgs e)
+        {
+            switch (this.numero)
+            {
+                case 1:
+
+                    if (ValidarFormulario())
+                    {
+                        if (IniciarProceso.IsBusy == false)
+                        {
+                            IniciarProceso.RunWorkerAsync(recuperarDatos());
+                        }
+                    }
+                    break;
+                case 2:
+
+                    if (ValidarFormulario())
+                    {
+                        if (IniciarProceso.IsBusy == false)
+                        {
+                            IniciarProceso.RunWorkerAsync(recuperarDatos());
+                        }
+                    }
+                    break;
+            }
+        }
+
+        private void IniciarProceso_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
+            Cl_Competencia competencia = (Cl_Competencia)e.Argument;
+            CargarFuncionario iniciar = new CargarFuncionario();
+            switch (this.numero)
+            {
+                case 1:
+                    iniciar.Mensaje = "Agregando Competencia";
+                    IniciarAplicacion.ReportProgress(1, iniciar);
+
+                    try
+                    {
+                        daoCompetencia dao = new daoCompetencia();
+                        iniciar.respuesta = dao.Agregar(competencia);
+
+
+                        IniciarAplicacion.ReportProgress(2, iniciar);
+                        System.Threading.Thread.Sleep(2500);
+                        IniciarAplicacion.ReportProgress(3, iniciar);
+
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    break;
+                case 2:
+                    iniciar.Mensaje = "Modificando Competencia";
+                    IniciarAplicacion.ReportProgress(1, iniciar);
+
+                    try
+                    {
+                        daoCompetencia dao = new daoCompetencia();
+                        iniciar.respuesta = dao.Modificar(competencia);
+                        IniciarAplicacion.ReportProgress(2, iniciar);
+                        System.Threading.Thread.Sleep(2500);
+                        IniciarAplicacion.ReportProgress(3, iniciar);
+
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    break;
+            }
+        }
+
+
+        private void IniciarProceso_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            int porcentaje = e.ProgressPercentage;
+
+            switch (this.numero)
+            {
+                case 1:
+                    CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+
+                            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+                            load.CambiarMensaje(iniciar.Mensaje);
+                            formulario.AbrirModuloExterno(load);
+                            break;
+                        case 2:
+                            Estado estado = new Estado();
+                            estado.estado(iniciar.respuesta, 1);
+                            formulario.AbrirModuloExterno(estado);
+                            break;
+                        case 3:
+                            if (iniciar.respuesta)
+                            {
+                                formulario.recargarListados(3.111);
+                                formulario.TerminarProceso(3.11);
+                            }
+                            else
+                            {
+
+                                formulario.AbrirModuloExterno(this);
+
+                            }
+                            break;
+                    }
+                    break;
+                case 2:
+                    CargarFuncionario iniciar2 = (CargarFuncionario)e.UserState;
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+
+                            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+                            load.CambiarMensaje(iniciar2.Mensaje);
+                            formulario.AbrirModuloExterno(load);
+                            break;
+                        case 2:
+                            Estado estado = new Estado();
+                            estado.estado(iniciar2.respuesta, 2);
+                            formulario.AbrirModuloExterno(estado);
+                            break;
+                        case 3:
+                            if (iniciar2.respuesta)
+                            {
+                                formulario.recargarListados(3.211);
+                                formulario.TerminarProceso(3.21);
+                            }
+                            else
+                            {
+
+                                formulario.AbrirModuloExterno(this);
+
+                            }
+                            break;
+                    }
+                    break;
+            }
+        }
     }
-
-
-
 }

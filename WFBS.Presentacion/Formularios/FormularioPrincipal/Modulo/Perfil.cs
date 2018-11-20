@@ -178,7 +178,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
                     break;
                 case 2:
-                    iniciar.Mensaje = "Modificando Funcionario";
+                    iniciar.Mensaje = "Modificando Perfil";
                     IniciarAplicacion.ReportProgress(1, iniciar);
 
                     try

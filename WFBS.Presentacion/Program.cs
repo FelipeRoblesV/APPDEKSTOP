@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo;
 
 namespace WFBS.Presentacion
 {
@@ -19,7 +18,7 @@ namespace WFBS.Presentacion
             Application.SetCompatibleTextRenderingDefault(false);
 
             
-            Application.Run(new Competencia());
+            Application.Run(new Aplicacion());
         }
     }
 }

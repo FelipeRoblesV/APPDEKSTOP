@@ -60,6 +60,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -389,7 +390,7 @@
             this.txtSiglas.Font = new System.Drawing.Font("Roboto Light", 9.75F);
             this.txtSiglas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtSiglas.Location = new System.Drawing.Point(15, 107);
-            this.txtSiglas.MaxLength = 60;
+            this.txtSiglas.MaxLength = 5;
             this.txtSiglas.Name = "txtSiglas";
             this.txtSiglas.Size = new System.Drawing.Size(309, 23);
             this.txtSiglas.TabIndex = 157;
@@ -400,7 +401,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F);
             this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtNombre.Location = new System.Drawing.Point(12, 27);
-            this.txtNombre.MaxLength = 60;
+            this.txtNombre.MaxLength = 50;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(312, 23);
             this.txtNombre.TabIndex = 156;
@@ -411,6 +412,7 @@
             this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
             this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtDescripcion.Location = new System.Drawing.Point(12, 191);
+            this.txtDescripcion.MaxLength = 300;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(312, 87);
             this.txtDescripcion.TabIndex = 144;
@@ -494,6 +496,10 @@
             this.label10.TabIndex = 138;
             this.label10.Text = "NOTA MINIMA:";
             // 
+            // IniciarProceso
+            // 
+            this.IniciarProceso.WorkerReportsProgress = true;
+            // 
             // Competencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,5 +559,6 @@
         private System.Windows.Forms.NumericUpDown numNotaMinima;
         private System.Windows.Forms.NumericUpDown numNotaEsperada;
         private System.Windows.Forms.NumericUpDown numNotaMaxima;
+        private System.ComponentModel.BackgroundWorker IniciarProceso;
     }
 }

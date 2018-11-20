@@ -16,7 +16,7 @@ namespace WFBS.Entidades
 
 
 
-        public Cl_Competencia()
+        public Cl_Perfil()
         {
         }
     }

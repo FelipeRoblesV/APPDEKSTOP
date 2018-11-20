@@ -13,15 +13,14 @@ namespace WFBS.Pruebas
     {
         static void Main(string[] args)
         {
-            daoPerfil dao = new daoPerfil();
+            daoObservacion dao = new daoObservacion();
+            Cl_Observacion obs = new Cl_Observacion();
 
-            Cl_Perfil per = new Cl_Perfil();
-            per.id = 0;
-            per.nombre = "test";
-            per.abreviacion = "ho";
+            obs.competencia.id = 36;
+            obs.mensaje = "asdasd";
+            obs.is_nivel_alto = true;
 
-           bool resp =
-                dao.Modificar(per);
+            bool resp =dao.Agregar(obs);
 
 
             //string holi = "1234567";

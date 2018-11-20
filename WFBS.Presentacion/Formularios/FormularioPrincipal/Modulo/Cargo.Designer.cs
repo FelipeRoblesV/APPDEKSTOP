@@ -36,12 +36,12 @@
             this.btnAccion = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblAbreviacion = new System.Windows.Forms.Label();
             this.lblErrorNombre = new System.Windows.Forms.Label();
-            this.txtAbreviacion = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.lblErrorAbreviacion = new System.Windows.Forms.Label();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
+            this.txtAbreviacion = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -133,11 +133,11 @@
             // PanelContenido
             // 
             this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.PanelContenido.Controls.Add(this.lblNombre);
             this.PanelContenido.Controls.Add(this.txtNombre);
+            this.PanelContenido.Controls.Add(this.txtAbreviacion);
+            this.PanelContenido.Controls.Add(this.lblNombre);
             this.PanelContenido.Controls.Add(this.lblAbreviacion);
             this.PanelContenido.Controls.Add(this.lblErrorNombre);
-            this.PanelContenido.Controls.Add(this.txtAbreviacion);
             this.PanelContenido.Controls.Add(this.lblErrorAbreviacion);
             this.PanelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContenido.Location = new System.Drawing.Point(0, 25);
@@ -156,23 +156,6 @@
             this.lblNombre.TabIndex = 123;
             this.lblNombre.Text = "Nombre del Perfil";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtNombre.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
-            this.txtNombre.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtNombre.BorderThickness = 3;
-            this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.txtNombre.isPassword = false;
-            this.txtNombre.Location = new System.Drawing.Point(13, 31);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(307, 23);
-            this.txtNombre.TabIndex = 124;
-            this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // lblAbreviacion
             // 
             this.lblAbreviacion.AutoSize = true;
@@ -189,36 +172,19 @@
             this.lblErrorNombre.AutoSize = true;
             this.lblErrorNombre.Font = new System.Drawing.Font("Roboto", 9F);
             this.lblErrorNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
-            this.lblErrorNombre.Location = new System.Drawing.Point(12, 59);
+            this.lblErrorNombre.Location = new System.Drawing.Point(12, 55);
             this.lblErrorNombre.Name = "lblErrorNombre";
             this.lblErrorNombre.Size = new System.Drawing.Size(249, 14);
             this.lblErrorNombre.TabIndex = 128;
             this.lblErrorNombre.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorNombre.Visible = false;
             // 
-            // txtAbreviacion
-            // 
-            this.txtAbreviacion.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtAbreviacion.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
-            this.txtAbreviacion.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtAbreviacion.BorderThickness = 3;
-            this.txtAbreviacion.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtAbreviacion.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.txtAbreviacion.isPassword = false;
-            this.txtAbreviacion.Location = new System.Drawing.Point(12, 105);
-            this.txtAbreviacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtAbreviacion.Name = "txtAbreviacion";
-            this.txtAbreviacion.Size = new System.Drawing.Size(307, 23);
-            this.txtAbreviacion.TabIndex = 126;
-            this.txtAbreviacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
             // lblErrorAbreviacion
             // 
             this.lblErrorAbreviacion.AutoSize = true;
             this.lblErrorAbreviacion.Font = new System.Drawing.Font("Roboto", 9F);
             this.lblErrorAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
-            this.lblErrorAbreviacion.Location = new System.Drawing.Point(9, 133);
+            this.lblErrorAbreviacion.Location = new System.Drawing.Point(12, 129);
             this.lblErrorAbreviacion.Name = "lblErrorAbreviacion";
             this.lblErrorAbreviacion.Size = new System.Drawing.Size(249, 14);
             this.lblErrorAbreviacion.TabIndex = 127;
@@ -230,6 +196,28 @@
             this.IniciarProceso.WorkerReportsProgress = true;
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
+            // 
+            // txtAbreviacion
+            // 
+            this.txtAbreviacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtAbreviacion.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtAbreviacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtAbreviacion.Location = new System.Drawing.Point(14, 103);
+            this.txtAbreviacion.MaxLength = 60;
+            this.txtAbreviacion.Name = "txtAbreviacion";
+            this.txtAbreviacion.Size = new System.Drawing.Size(305, 23);
+            this.txtAbreviacion.TabIndex = 157;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtNombre.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtNombre.Location = new System.Drawing.Point(12, 29);
+            this.txtNombre.MaxLength = 60;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(307, 23);
+            this.txtNombre.TabIndex = 158;
             // 
             // Cargo
             // 
@@ -262,11 +250,11 @@
         private System.Windows.Forms.Button btnAccion;
         private System.Windows.Forms.Panel PanelContenido;
         private System.Windows.Forms.Label lblNombre;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtNombre;
         private System.Windows.Forms.Label lblAbreviacion;
         private System.Windows.Forms.Label lblErrorNombre;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtAbreviacion;
         private System.Windows.Forms.Label lblErrorAbreviacion;
         private System.ComponentModel.BackgroundWorker IniciarProceso;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtAbreviacion;
     }
 }

@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label16.Text" xml:space="preserve">
-    <value>Si el funcionario tiene un promedio bajo la nota minima, tendra las observaciones de nivel bajo, en cambio, si consigue una nota por encima de la minima pero inferior a la nota esperada, consigue una observacion de nivel alto*</value>
+    <value>*Si el funcionario tiene un promedio bajo la nota minima, tendra las observaciones de nivel bajo, en cambio, si consigue una nota por encima de la minima pero inferior a la nota esperada, consigue una observacion de nivel alto*</value>
   </data>
+  <metadata name="IniciarProceso.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
