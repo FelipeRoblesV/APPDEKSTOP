@@ -162,6 +162,18 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.Designer.cs">
       <DependentUpon>Controles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Controles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Controles.Designer.cs">
+      <DependentUpon>Controles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +322,9 @@
       <DependentUpon>Cargando.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.resx">
+      <DependentUpon>Controles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Controles.resx">
       <DependentUpon>Controles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Perfil.resx">

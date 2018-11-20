@@ -19,12 +19,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 {
     public partial class ListadoPrincipal : Form
     {
-        private Modulo.Listado listaFuncionario, listaFuncionario_Cursos;
-        private Modulo.Listado listaJefeFuncionario, listaJefeFuncionario_Cursos;
-        private Modulo.Listado listaPerfil;
-        private Modulo.Listado listaCargo;
-        private Modulo.Listado listaCompetencia_Perfil, listaCompetencia, listaCompetencia_Observacion;
-        private Modulo.Listado listaEvaluacion_Perfil, listarEvaluacion, listaEvaluacion_Pregunta, listaEvaluacion_Alternativa;
+        public Modulo.Listado listaFuncionario, listaFuncionario_Cursos;
+        public Modulo.Listado listaJefeFuncionario, listaJefeFuncionario_Cursos;
+        public Modulo.Listado listaPerfil;
+        public Modulo.Listado listaCargo;
+        public Modulo.Listado listaCompetencia_Perfil, listaCompetencia, listaCompetencia_Observacion;
+        public Modulo.Listado listaEvaluacion_Perfil, listarEvaluacion, listaEvaluacion_Pregunta, listaEvaluacion_Alternativa;
 
         private Cargando cargarFormulario;
 
@@ -312,6 +312,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     listaFuncionario.definirFormulario(numero, listar, estado);
                     break;
                 case 1.21:
+                    listaJefeFuncionario.definirFormulario(numero, listar, estado);
+                    break;
+                case 2.11:
+                    listaJefeFuncionario.definirFormulario(numero, listar, estado);
+                    break;
+                case 2.21:
                     listaJefeFuncionario.definirFormulario(numero, listar, estado);
                     break;
             }

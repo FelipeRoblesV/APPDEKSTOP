@@ -41,7 +41,6 @@
             this.lblErrorRut = new System.Windows.Forms.Label();
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
-            this.IniciarEstado = new System.ComponentModel.BackgroundWorker();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -213,10 +212,6 @@
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
             // 
-            // IniciarEstado
-            // 
-            this.IniciarEstado.WorkerReportsProgress = true;
-            // 
             // Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +250,5 @@
         private System.Windows.Forms.TextBox txtRutFuncionario;
         private System.Windows.Forms.Panel PanelContenido;
         private System.ComponentModel.BackgroundWorker IniciarProceso;
-        private System.ComponentModel.BackgroundWorker IniciarEstado;
     }
 }

@@ -22,6 +22,19 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
             InitializeComponent();
         }
 
+        public bool isSelected()
+        {
+            if (dt_Listar.SelectedRows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
         public void definirReporte(int numero, DataSet lista, bool estado)
         {
             switch (numero)
@@ -170,6 +183,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                            dt_Listar.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            dt_Listar.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            dt_Listar.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            dt_Listar.Columns[3].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            dt_Listar.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            dt_Listar.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            dt_Listar.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            dt_Listar.Columns[7].SortMode = DataGridViewColumnSortMode.NotSortable;
                         }
                         else
                         {
@@ -212,6 +234,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+
+                            dt_Listar.Columns[0].Visible = false;
+                            dt_Listar.Columns[1].Visible = false;
                         }
                         else
                         {
@@ -232,7 +257,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
                         }
                         else
                         {

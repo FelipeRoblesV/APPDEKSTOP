@@ -28,6 +28,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         private bool respuesta = false;
 
         private Modulo.Funcionario modulofuncionario;
+        private Modulo.JefeFuncionario moduloJefeFuncionario;
 
         private ListadoPrincipal ListarFuncionario, ListarJefeFuncionario, ListarPerfil, ListarCargo, ListarCompetencia, ListarEvaluacion;
         private ListadoReporte ListadoReporte;
@@ -103,6 +104,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
         }
 
+        public void InicializarSubFormulario()
+        {
+            btnAgregar.Visible = true;
+            btnModificar.Visible = true;
+            btnEliminar.Visible = true;
+            btnAccion1.Visible = true;
+            btnAccion2.Visible = true;
+        }
+
         private void InicializarBotones()
         {
             btnDashboard.Image = Properties.Resources.Dashboard;
@@ -134,12 +144,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         private void OcultarMenu()
         {
             panelSubMenuOculto.Visible = false;
-        }
-        private void InicializarSubMenuAccionBoton()
-        {
-            btnAgregar.Click -= null;
-            btnModificar.Click -= null;
-            btnEliminar.Click -= null;
         }
         private void InicializarSubMenu()
         {
@@ -393,11 +397,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             }
         }
 
-        private void FormularioPrincipal_Shown(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnMenuOculto_Click(object sender, EventArgs e)
         {
             BunifuFlatButton btn = sender as BunifuFlatButton;
@@ -473,28 +472,55 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         {
             switch (numero)
             {
+                case 1:
+                    InicializarSubFormulario();
+                    InicializarSubMenu();  
+                    panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    btnAgregar.Visible = false;
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
+                    btnRefrescar.Visible = false;
+                    break;
                 case 1.11:
+                    InicializarSubFormulario();
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
                     numero2 = numero;
                     break;
                 case 1.12:
-                    panelMenuDatagrid.Visible = false;
+                    panelMenuDatagrid.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    btnAgregar.Visible = false;
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
+                    btnRefrescar.Visible = false;
                     break;
                 case 1.21:
+                    InicializarSubFormulario();
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
                     numero2 = numero;
                     break;
                 case 1.22:
                     panelMenuDatagrid.Visible = false;
                     break;
                 case 2.11:
+                    InicializarSubFormulario();
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
                     numero2 = numero;
                     break;
                 case 2.21:
+                    InicializarSubFormulario();
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
                     numero2 = numero;
@@ -565,6 +591,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 1.21:
                     ListarJefeFuncionario.ActualizarFormulario(numero, lista, estado);
                     break;
+                case 2.11:
+                    ListarJefeFuncionario.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 2.21:
+                    ListarJefeFuncionario.ActualizarFormulario(numero, lista, estado);
+                    break;
             }
         }
 
@@ -588,6 +620,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     {
                         case 1.11:
                             recargarListados(this.numero2);
+                            break;
+                        case 1.21:
+                            recargarListados(numero2);
+                            break;
+                        case 1.211:
+                            recargarListados(1.211);
                             break;
                     }
 
@@ -700,6 +738,51 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             }
                             break;
 
+                    }
+                    break;
+                case 1.21:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarJefeFuncionario;
+                                ActualizarFormulario(1.21, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.21, lista, false);
+                            }
+                            break;
+                        case 3:
+                            AbrirFormulario(ListarJefeFuncionario);
+                            break;
+
+
+                    }
+                    break;
+                case 1.211:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarJefeFuncionario;
+                                ActualizarFormulario(1.21, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.21, lista, false);
+                            }
+                            break;
+
 
                     }
                     break;
@@ -716,6 +799,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
                 RecargarFormulario inicio = (RecargarFormulario)e.Argument;
                 daoFuncionario dao = new daoFuncionario();
+                daoJefeFuncionario daoJF = new daoJefeFuncionario();
                 daoPerfil daoPerfil = new daoPerfil();
 
                 switch (inicio.numero)
@@ -728,6 +812,20 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         IniciarAplicacion.ReportProgress(3);
                         break;
                     case 1.111:
+
+                        inicio.listarFuncionario = dao.listar();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = dao.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        break;
+                    case 1.21:
+                        inicio.mensaje = "Actualizando jefe funcionario";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarJefeFuncionario = daoJF.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        IniciarAplicacion.ReportProgress(3);
+                        break;
+                    case 1.211:
 
                         inicio.listarFuncionario = dao.listar();
                         IniciarAplicacion.ReportProgress(1, inicio);
@@ -759,8 +857,21 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     iniciar.numero = numero;
                     RecargarFormulario.RunWorkerAsync(iniciar);
                     break;
+                case 1.21:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 1.211:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
             }
-        }
+
+
+            }
+        
         public void TerminarProceso(double numero)
         {
             switch (numero)
@@ -770,6 +881,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     PanelCRUD.Visible = false;
                     estadoCRUD = 0;
                     break;
+                case 1.21:
+                    moduloJefeFuncionario.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 2.11:
+                    break;
+                case 2.21:
+                    break;
+
+
             }
         }
 
@@ -788,6 +910,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 IniciarProcemiento(1);
             }
 
+            MessageBox.Show(numero2.ToString() + " - " + btn.Name);
 
             switch (this.numero2)
             {
@@ -797,7 +920,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         if (estadoCRUD == 0)
                         {
                             Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
-                            btnAgregar.BackColor = Color.FromArgb(35, 42, 55);
                             moduloFuncionario.IniciarFormulario(1);
                             moduloFuncionario.PasarDatos(this);
                             AbrirModulo(moduloFuncionario);
@@ -813,23 +935,199 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     }
                     if (btn.Name == btnModificar.Name)
                     {
-                        Estado estado = new Estado();
-                        //  estado.estado(true, 1);
-                        AbrirModulo(estado);
-                        PanelCRUD.Visible = true;
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                  string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+
+                                daoFuncionario dao = new daoFuncionario();
+                                Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
+                                moduloFuncionario.PasarDatos(dao.RecuperarDatos(int.Parse(run)));
+                                moduloFuncionario.PasarDatos(this);
+                                moduloFuncionario.IniciarFormulario(2);
+                                AbrirModulo(moduloFuncionario);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.modulofuncionario = moduloFuncionario;
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+                                Cl_Funcionario funcionario = new Cl_Funcionario();
+                                funcionario.run = int.Parse(run);
+                                daoFuncionario dao = new daoFuncionario();
+
+                                if (dao.Eliminar(funcionario))
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Elimino Correctamente");
+                                    recargarListados(1.11);
+                                    mensaje.ShowDialog();
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("No elimino Correctamente");
+                                    mensaje.ShowDialog();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
                     }
 
 
                     break;
-                case 2.2:
+                case 1.21:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR Jefe Funcionario");
-                        //if (ModulojefeFuncionario == null)
-                        //{ ModulojefeFuncionario = new Modulos.ModuloJefeFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //AbrirModulo(ModulojefeFuncionario);
+                        if (estadoCRUD == 0)
+                        {
+                            Modulo.JefeFuncionario moduloJefeFuncionario = new Modulo.JefeFuncionario();
+                            moduloJefeFuncionario.IniciarFormulario(1);
+                            moduloJefeFuncionario.PasarDatos(this);
+                            AbrirModulo(moduloJefeFuncionario);
+                            PanelCRUD.Visible = true;
+                            estadoCRUD = 1;
+                            this.moduloJefeFuncionario = moduloJefeFuncionario;
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
                     }
+
+                        if (btn.Name == btnModificar.Name)
+                        {
+                            if (estadoCRUD == 0)
+                            {
+                                if (ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.SelectedRows.Count > 0)
+                                {
+                                    string rut = ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                    string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+
+                                    daoJefeFuncionario dao = new daoJefeFuncionario();
+                                    Modulo.JefeFuncionario moduloFuncionario = new Modulo.JefeFuncionario();
+                                    moduloFuncionario.PasarDatos(dao.RecuperarDatos(int.Parse(run)));
+                                    moduloFuncionario.PasarDatos(this);
+                                    moduloFuncionario.IniciarFormulario(2);
+                                    AbrirModulo(moduloFuncionario);
+                                    PanelCRUD.Visible = true;
+                                    estadoCRUD = 1;
+                                    this.moduloJefeFuncionario = moduloFuncionario;
+
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                    mensaje.ShowDialog();
+                                }
+                            }
+                        }
+
+
+                        if (btn.Name == btnEliminar.Name)
+                        {
+                            if (estadoCRUD == 0)
+                            {
+                                if (ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.SelectedRows.Count > 0)
+                                {
+                                    string rut = ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                    string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+                                    Cl_Jefe_Funcionario funcionario = new Cl_Jefe_Funcionario();
+                                    funcionario.run = int.Parse(run);
+                                    daoJefeFuncionario dao = new daoJefeFuncionario();
+
+                                    if (dao.Eliminar(funcionario))
+                                    {
+                                        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                        mensaje.cambiarMensaje("Elimino Correctamente");
+                                        recargarListados(1.21);
+                                        mensaje.ShowDialog();
+                                    }
+                                    else
+                                    {
+                                        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                        mensaje.cambiarMensaje("No elimino Correctamente");
+                                        mensaje.ShowDialog();
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                    mensaje.ShowDialog();
+                                }
+                            }
+                        }
+
+                    
+                    break;
+                case 2.11:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        MessageBox.Show("AGREGAR PERFIL");
+                        //if (ModuloFuncionario == null)
+                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
+                        //PanelCRUD.Visible = true;
+                        //ModuloFuncionario.InicializarAgregarFuncionario();
+                        //AbrirModulo(ModuloFuncionario);
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        MessageBox.Show("MODIFICAR PERFIL");
+                        //if (ModuloFuncionario == null)
+                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
+                        //PanelCRUD.Visible = true;
+                        //ModuloFuncionario.InicializarAgregarFuncionario();
+                        //AbrirModulo(ModuloFuncionario);
+                    }
+                    break;
+                case 2.21:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        MessageBox.Show("AGREGAR CURSO");
+                        //if (ModuloFuncionario == null)
+                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
+                        //PanelCRUD.Visible = true;
+                        //ModuloFuncionario.InicializarAgregarFuncionario();
+                        //AbrirModulo(ModuloFuncionario);
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        MessageBox.Show("MODIFICAR CURSO");
+                        //if (ModuloFuncionario == null)
+                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
+                        //PanelCRUD.Visible = true;
+                        //ModuloFuncionario.InicializarAgregarFuncionario();
+                        //AbrirModulo(ModuloFuncionario);
+                    }
+
                     break;
                 case 3.1:
                     if (btn.Name == btnAgregar.Name)

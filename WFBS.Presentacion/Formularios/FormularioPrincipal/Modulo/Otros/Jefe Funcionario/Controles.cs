@@ -7,36 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WFBS.Controlador;
 using WFBS.Entidades;
 
-namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcionario
+namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Jefe_Funcionario
 {
     public partial class Controles : Form
     {
         public Controles()
         {
             InitializeComponent();
-            llenarCombobox();
             txtContraseña.UseSystemPasswordChar = true;
             txtRepetirContraseña.UseSystemPasswordChar = true;
         }
-
-
-        private void llenarCombobox()
-        {
-            daoUtilidad dao = new daoUtilidad();
-
-            DataSet perfil = dao.LlenarComboboxPrincipal();
-            DataRow row = perfil.Tables[0].NewRow();
-            row[1] = 0;
-            row[0] = "<Seleccione un Perfil>";
-            perfil.Tables[0].Rows.InsertAt(row, 0);
-            cbPerfil.DisplayMember = "titulo";
-            cbPerfil.ValueMember = "id";
-            cbPerfil.DataSource = perfil.Tables[0];
-        }
-
         public void limpiarFormulario()
         {
             txtNombre.Text = String.Empty;
@@ -46,16 +28,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
             txtContraseña.Text = String.Empty;
             txtRepetirContraseña.Text = String.Empty;
             dtpFechaNacimiento.Value = DateTime.Now;
-            cbPerfil.SelectedIndex = 0;
 
         }
 
-        public void llenarFormulario(Cl_Funcionario fun)
+        public void llenarFormulario(Cl_Jefe_Funcionario fun)
         {
             txtNombre.Text = fun.nombre;
             txtApellido.Text = fun.apellido;
             txtCorreo.Text = fun.correo;
-            txtTelefono.Text =fun.telefono.ToString();
+            txtTelefono.Text = fun.telefono.ToString();
 
             if (fun.sexo == '1')
             {
@@ -66,13 +47,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
                 rbMujer.Checked = true;
             }
 
-             cbPerfil.SelectedValue = fun.perfil.id;
             dtpFechaNacimiento.Value = fun.fechaNacimiento;
         }
 
-        public Cl_Funcionario recuperarDatos()
+        public Cl_Jefe_Funcionario recuperarDatos()
         {
-            Cl_Funcionario fun = new Cl_Funcionario();
+            Cl_Jefe_Funcionario fun = new Cl_Jefe_Funcionario();
             fun.nombre = txtNombre.Text;
             fun.apellido = txtApellido.Text;
             fun.correo = txtCorreo.Text;
@@ -80,15 +60,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
             if (rbHombre.Checked)
             {
                 fun.sexo = '1';
-            }else if (rbMujer.Checked)
+            }
+            else if (rbMujer.Checked)
             {
                 fun.sexo = '0';
             }
-            fun.perfil.id = int.Parse(cbPerfil.SelectedValue.ToString());
             fun.fechaNacimiento = dtpFechaNacimiento.Value;
             fun.usuario.password = txtContraseña.Text;
             return fun;
         }
+
 
         public bool ValidarFormulario()
         {
@@ -103,10 +84,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
             }
             else
             {
-               lblErrorNombre.Text = "Ingrese datos en el campo nombre";
+                lblErrorNombre.Text = "Ingrese datos en el campo nombre";
                 lblErrorNombre.Visible = true;
             }
-            if(txtApellido.Text != String.Empty)
+            if (txtApellido.Text != String.Empty)
             {
                 contador++;
                 lblErrorApellido.Visible = false;
@@ -116,7 +97,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
                 lblErrorApellido.Text = "Ingrese datos en el campo Apellido";
                 lblErrorApellido.Visible = true;
             }
-            if(util.CarlcularEdadPersona(dtpFechaNacimiento.Value) >= 18)
+            if (util.CarlcularEdadPersona(dtpFechaNacimiento.Value) >= 18)
             {
                 contador++;
                 lblErrorFechaNacimiento.Visible = false;
@@ -126,7 +107,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
                 lblErrorFechaNacimiento.Text = "No cumple con la edad minima (18 años).";
                 lblErrorFechaNacimiento.Visible = true;
             }
-            if(rbHombre.Checked == true || rbMujer.Checked == true)
+            if (rbHombre.Checked == true || rbMujer.Checked == true)
             {
                 contador++;
                 lblErrorSexo.Visible = false;
@@ -136,7 +117,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
                 lblErrorSexo.Text = "Seleccione un sexo.";
                 lblErrorSexo.Visible = true;
             }
-            if(txtCorreo.Text != String.Empty)
+            if (txtCorreo.Text != String.Empty)
             {
                 if (util.ValidarCorreo(txtCorreo.Text))
                 {
@@ -166,9 +147,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
             }
             if (lblContraseña.Text != String.Empty)
             {
-                if(txtContraseña.Text.Length >= 6)
+                if (txtContraseña.Text.Length >= 6)
                 {
-                    if(txtContraseña.Text == txtRepetirContraseña.Text)
+                    if (txtContraseña.Text == txtRepetirContraseña.Text)
                     {
                         contador++;
                         lblErrorContraseña.Visible = false;
@@ -195,18 +176,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
                 lblErrorContraseña.Visible = true;
                 lblErrorRepetirContraseña.Visible = false;
             }
-            if (cbPerfil.SelectedIndex != 0)
-            {
-                contador++;
-                lblErrorPerfil.Visible = false;
-            }
-            else
-            {
-                lblErrorPerfil.Text = "Seleccione un perfil";
-                lblErrorPerfil.Visible = true;
-            }
 
-                if (contador == 8)
+            if (contador == 7)
             {
                 respuesta = true;
             }
@@ -217,14 +188,14 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
         {
             TextBox btn = sender as TextBox;
 
-            if(btn.Name == txtTelefono.Name)
+            if (btn.Name == txtTelefono.Name)
             {
                 if (Char.IsDigit(e.KeyChar))
                 {
                     e.Handled = false;
                 }
                 else
-                 if (Char.IsControl(e.KeyChar)) 
+                 if (Char.IsControl(e.KeyChar))
                 {
                     e.Handled = false;
                 }
@@ -234,10 +205,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
                 }
             }
         }
-
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
-            if(txtContraseña.Text.Length >= 6)
+            if (txtContraseña.Text.Length >= 6)
             {
                 lblRepetirContraseña.Visible = true;
                 txtRepetirContraseña.Visible = true;
@@ -249,5 +219,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
                 txtRepetirContraseña.Visible = false;
             }
         }
+
     }
 }

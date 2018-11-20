@@ -25,6 +25,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         private FormularioPrincipal formulario;
         private int numero = 0;
         private int estadorut = 0;
+        private Cl_Funcionario fun;
+
+
         public Funcionario()
         {
             InitializeComponent();
@@ -34,6 +37,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void PasarDatos(FormularioPrincipal form)
         {
             this.formulario = form;
+        }
+
+        public void PasarDatos(Cl_Funcionario funci)
+        {
+            this.fun = funci;
         }
 
         private void limpiarFormulario()
@@ -53,6 +61,24 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     btnAccion.Text = "Agregar Funcionario";
                     lblNombreFormulario.Text = "Agregar Funcionario";
                     controles = new Otros.Funcionario.Controles();
+                    AbrirFormulario(controles);
+                    break;
+                case 2:
+                    this.numero = numero;
+                    panelBotones.Visible = false;
+                    PanelContenido.Visible = false;
+                    btnAccion.Text = "Modificar Funcionario";
+                    lblNombreFormulario.Text = "Modificar Funcionario";
+                    controles = new Otros.Funcionario.Controles();
+                    controles.llenarFormulario(fun);
+                    txtRutFuncionario.Text = fun.run + fun.dv;
+                    lblErrorRut.Visible = false;
+                    panelSuperior.BackColor = Color.FromArgb(56, 67, 87);
+                    txtRutFuncionario.BackColor = Color.FromArgb(70, 84, 109);
+                    txtRutFuncionario.ReadOnly = true;
+                    btnVerificarFuncionario.Visible = false;
+                    panelBotones.Visible = true;
+                    PanelContenido.Visible = true;
                     AbrirFormulario(controles);
                     break;
             }
@@ -85,16 +111,33 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     {
                         if (util.validarRut(txtRutFuncionario.Text))
                         {
-                            //  btnComprobar.Visible = true;
-                            lblErrorRut.Text = String.Empty;
-                            lblErrorRut.Visible = false;
-                            PanelContenido.Visible = true;
-                            btnVerificarFuncionario.Visible = true;
-                            panelSuperior.BackColor = Color.FromArgb(73, 152, 67);
-                            txtRutFuncionario.BackColor = Color.FromArgb(73, 152, 67);
-                            txtRutFuncionario.MaxLength = txtRutFuncionario.Text.Count();
-                            panelBotones.Visible = true;
-                            estadorut = 1;
+                            daoFuncionario dao = new daoFuncionario();
+                            if (dao.ExisteRut(rut) == false)
+                            {
+                                //  btnComprobar.Visible = true;
+                                lblErrorRut.Text = String.Empty;
+                                lblErrorRut.Visible = false;
+                                PanelContenido.Visible = true;
+                                btnVerificarFuncionario.Visible = true;
+                                panelSuperior.BackColor = Color.FromArgb(73, 152, 67);
+                                txtRutFuncionario.BackColor = Color.FromArgb(73, 152, 67);
+                                txtRutFuncionario.MaxLength = txtRutFuncionario.Text.Count();
+                                panelBotones.Visible = true;
+                                estadorut = 1;
+                            }
+                            else
+                            {
+                                lblErrorRut.Text = "Rut ingresado ya existe.";
+                                lblErrorRut.Visible = true;
+                                //  btnComprobar.Visible = false;
+                                PanelContenido.Visible = false;
+                                btnVerificarFuncionario.Visible = false;
+                                panelSuperior.BackColor = Color.FromArgb(152, 75, 67);
+                                txtRutFuncionario.BackColor = Color.FromArgb(152, 75, 67);
+                                txtRutFuncionario.MaxLength = 13;
+                                panelBotones.Visible = false;
+                                estadorut = 0;
+                            }
                         }
                         else
                         {
@@ -141,6 +184,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     {
                         if (util.validarRut(txtRutFuncionario.Text))
                         {
+                        daoFuncionario dao = new daoFuncionario();
+                        if (dao.ExisteRut(rut) == false)
+                        {
                             //  btnComprobar.Visible = true;
                             lblErrorRut.Text = String.Empty;
                             lblErrorRut.Visible = false;
@@ -148,9 +194,24 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                             btnVerificarFuncionario.Visible = true;
                             panelSuperior.BackColor = Color.FromArgb(73, 152, 67);
                             txtRutFuncionario.BackColor = Color.FromArgb(73, 152, 67);
-                          txtRutFuncionario.MaxLength = txtRutFuncionario.Text.Count();
-                        panelBotones.Visible = true;
-                          estadorut = 1;
+                            txtRutFuncionario.MaxLength = txtRutFuncionario.Text.Count();
+                            panelBotones.Visible = true;
+                            estadorut = 1;
+                        }
+                        else
+                        {
+                            lblErrorRut.Text = "Rut ingresado ya existe.";
+                            lblErrorRut.Visible = true;
+                            //  btnComprobar.Visible = false;
+                            PanelContenido.Visible = false;
+                            btnVerificarFuncionario.Visible = false;
+                            panelSuperior.BackColor = Color.FromArgb(152, 75, 67);
+                            txtRutFuncionario.BackColor = Color.FromArgb(152, 75, 67);
+                            txtRutFuncionario.MaxLength = 13;
+                            panelBotones.Visible = false;
+                            estadorut = 0;
+                        }
+
                     }
                         else
                         {
@@ -246,6 +307,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         }
                     }
                     break;
+                case 2:
+
+                    if (controles.ValidarFormulario())
+                    {
+                        if (IniciarProceso.IsBusy == false)
+                        {
+                            IniciarProceso.RunWorkerAsync(controles.recuperarDatos());
+                        }
+                    }
+                    break;
             }
         }
 
@@ -253,7 +324,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         {
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
             Cl_Funcionario funcionario = (Cl_Funcionario)e.Argument;
-            bool respuesta = false;
             CargarFuncionario iniciar = new CargarFuncionario();
             switch (this.numero)
             {
@@ -268,6 +338,28 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         daoFuncionario dao = new daoFuncionario();
                         iniciar.respuesta = dao.Agregar(funcionario);
      
+
+                        IniciarAplicacion.ReportProgress(2, iniciar);
+                        System.Threading.Thread.Sleep(2500);
+                        IniciarAplicacion.ReportProgress(3, iniciar);
+
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    break;
+                case 2:
+                    iniciar.Mensaje = "Modificando Funcionario";
+                    IniciarAplicacion.ReportProgress(1, iniciar);
+
+                    try
+                    {
+                        funcionario.run = int.Parse(txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Substring(0, txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Length - 1));
+                        funcionario.dv = txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Substring(txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim().Length - 1, 1);
+                        daoFuncionario dao = new daoFuncionario();
+                        iniciar.respuesta = dao.Modificar(funcionario);
+
 
                         IniciarAplicacion.ReportProgress(2, iniciar);
                         System.Threading.Thread.Sleep(2500);
@@ -323,7 +415,42 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
                     }
                     break;
+                case 2:
+                    CargarFuncionario iniciar2 = (CargarFuncionario)e.UserState;
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+
+                            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+                            load.CambiarMensaje(iniciar2.Mensaje);
+                            formulario.AbrirModuloExterno(load);
+                            break;
+                        case 2:
+                            Estado estado = new Estado();
+                            estado.estado(iniciar2.respuesta, 2);
+                            formulario.AbrirModuloExterno(estado);
+                            break;
+                        case 3:
+                            if (iniciar2.respuesta)
+                            {
+                                formulario.recargarListados(1.111);
+                                formulario.TerminarProceso(1.11);
+                            }
+                            else
+                            {
+
+                                formulario.AbrirModuloExterno(this);
+
+                            }
+                            break;
+
+
+
+
                     }
+                    break;
+            }
             }
         
 

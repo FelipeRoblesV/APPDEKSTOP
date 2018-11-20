@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioPrincipal));
             this.panelSuperior = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.btnAccion2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnAccion1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelMenuDatagrid = new System.Windows.Forms.Panel();
+            this.btnSubAccion3 = new System.Windows.Forms.PictureBox();
             this.btnSubAccion2 = new System.Windows.Forms.PictureBox();
             this.btnSubAccion1 = new System.Windows.Forms.PictureBox();
             this.btnRefrescar = new System.Windows.Forms.PictureBox();
@@ -102,6 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).BeginInit();
             this.panelSubMenuOculto.SuspendLayout();
             this.panelMenuDatagrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSubAccion3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSubAccion2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSubAccion1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescar)).BeginInit();
@@ -625,6 +627,7 @@
             // panelMenuDatagrid
             // 
             this.panelMenuDatagrid.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
+            this.panelMenuDatagrid.Controls.Add(this.btnSubAccion3);
             this.panelMenuDatagrid.Controls.Add(this.btnSubAccion2);
             this.panelMenuDatagrid.Controls.Add(this.btnSubAccion1);
             this.panelMenuDatagrid.Controls.Add(this.btnRefrescar);
@@ -636,10 +639,24 @@
             this.panelMenuDatagrid.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelMenuDatagrid.Location = new System.Drawing.Point(0, 0);
             this.panelMenuDatagrid.Name = "panelMenuDatagrid";
-            this.panelMenuDatagrid.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.panelMenuDatagrid.Padding = new System.Windows.Forms.Padding(5);
             this.panelMenuDatagrid.Size = new System.Drawing.Size(1496, 30);
             this.panelMenuDatagrid.TabIndex = 9;
             this.panelMenuDatagrid.Visible = false;
+            // 
+            // btnSubAccion3
+            // 
+            this.btnSubAccion3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
+            this.Animacion.SetDecoration(this.btnSubAccion3, BunifuAnimatorNS.DecorationType.None);
+            this.btnSubAccion3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSubAccion3.Image = global::WFBS.Presentacion.Properties.Resources.circle_edit_line_icon_icons_com_66940;
+            this.btnSubAccion3.Location = new System.Drawing.Point(157, 5);
+            this.btnSubAccion3.Name = "btnSubAccion3";
+            this.btnSubAccion3.Padding = new System.Windows.Forms.Padding(2);
+            this.btnSubAccion3.Size = new System.Drawing.Size(30, 20);
+            this.btnSubAccion3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSubAccion3.TabIndex = 10;
+            this.btnSubAccion3.TabStop = false;
             // 
             // btnSubAccion2
             // 
@@ -650,11 +667,10 @@
             this.btnSubAccion2.Location = new System.Drawing.Point(127, 5);
             this.btnSubAccion2.Name = "btnSubAccion2";
             this.btnSubAccion2.Padding = new System.Windows.Forms.Padding(2);
-            this.btnSubAccion2.Size = new System.Drawing.Size(30, 25);
+            this.btnSubAccion2.Size = new System.Drawing.Size(30, 20);
             this.btnSubAccion2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSubAccion2.TabIndex = 9;
             this.btnSubAccion2.TabStop = false;
-            this.btnSubAccion2.Visible = false;
             this.btnSubAccion2.Click += new System.EventHandler(this.btnAccionSubMenu_Click);
             // 
             // btnSubAccion1
@@ -666,11 +682,10 @@
             this.btnSubAccion1.Location = new System.Drawing.Point(97, 5);
             this.btnSubAccion1.Name = "btnSubAccion1";
             this.btnSubAccion1.Padding = new System.Windows.Forms.Padding(2);
-            this.btnSubAccion1.Size = new System.Drawing.Size(30, 25);
+            this.btnSubAccion1.Size = new System.Drawing.Size(30, 20);
             this.btnSubAccion1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnSubAccion1.TabIndex = 8;
             this.btnSubAccion1.TabStop = false;
-            this.btnSubAccion1.Visible = false;
             this.btnSubAccion1.Click += new System.EventHandler(this.btnAccionSubMenu_Click);
             // 
             // btnRefrescar
@@ -682,7 +697,7 @@
             this.btnRefrescar.Location = new System.Drawing.Point(1431, 5);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Padding = new System.Windows.Forms.Padding(2);
-            this.btnRefrescar.Size = new System.Drawing.Size(30, 25);
+            this.btnRefrescar.Size = new System.Drawing.Size(30, 20);
             this.btnRefrescar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRefrescar.TabIndex = 7;
             this.btnRefrescar.TabStop = false;
@@ -697,7 +712,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(1461, 5);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
-            this.btnCerrar.Size = new System.Drawing.Size(30, 25);
+            this.btnCerrar.Size = new System.Drawing.Size(30, 20);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.TabStop = false;
@@ -712,7 +727,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(67, 5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(2);
-            this.btnEliminar.Size = new System.Drawing.Size(30, 25);
+            this.btnEliminar.Size = new System.Drawing.Size(30, 20);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.TabStop = false;
@@ -727,7 +742,7 @@
             this.btnModificar.Location = new System.Drawing.Point(36, 5);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Padding = new System.Windows.Forms.Padding(2);
-            this.btnModificar.Size = new System.Drawing.Size(31, 25);
+            this.btnModificar.Size = new System.Drawing.Size(31, 20);
             this.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnModificar.TabIndex = 4;
             this.btnModificar.TabStop = false;
@@ -743,7 +758,7 @@
             this.btnAgregar.Location = new System.Drawing.Point(5, 5);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Padding = new System.Windows.Forms.Padding(2);
-            this.btnAgregar.Size = new System.Drawing.Size(31, 25);
+            this.btnAgregar.Size = new System.Drawing.Size(31, 20);
             this.btnAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.TabStop = false;
@@ -859,22 +874,22 @@
             // 
             this.Animacion.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
             this.Animacion.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 1;
-            animation2.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 2F;
-            animation2.TransparencyCoeff = 0F;
-            this.Animacion.DefaultAnimation = animation2;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.Animacion.DefaultAnimation = animation1;
             this.Animacion.Interval = 5;
             this.Animacion.TimeStep = 0.6F;
             // 
@@ -900,7 +915,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioPrincipal";
             this.Text = "FormularioPrincipal";
-            this.Shown += new System.EventHandler(this.FormularioPrincipal_Shown);
             this.panelSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarFormulario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurarFormulario)).EndInit();
@@ -922,6 +936,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarSesion)).EndInit();
             this.panelSubMenuOculto.ResumeLayout(false);
             this.panelMenuDatagrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnSubAccion3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSubAccion2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSubAccion1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRefrescar)).EndInit();
@@ -989,5 +1004,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btnRestaurarFullScreen;
         private Bunifu.Framework.UI.BunifuImageButton btnFullScreen;
         private System.ComponentModel.BackgroundWorker RecargarFormulario;
+        private System.Windows.Forms.PictureBox btnSubAccion3;
     }
 }
