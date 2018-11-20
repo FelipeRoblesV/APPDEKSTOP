@@ -315,10 +315,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     listaJefeFuncionario.definirFormulario(numero, listar, estado);
                     break;
                 case 2.11:
-                    listaJefeFuncionario.definirFormulario(numero, listar, estado);
+                    listaPerfil.definirFormulario(numero, listar, estado);
                     break;
                 case 2.21:
-                    listaJefeFuncionario.definirFormulario(numero, listar, estado);
+                    listaCargo.definirFormulario(numero, listar, estado);
+                    break;
+                case 3:
+                    listaCompetencia_Perfil.definirFormulario(numero, listar, estado);
+                    break;
+                case 4:
+                    listaEvaluacion_Perfil.definirFormulario(numero, listar, estado);
                     break;
             }
             }

@@ -73,7 +73,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         }
 
 
-
+        public void ActualizarFormulario(double numero, DataSet lista, bool estado)
+        {
+            switch (numero)
+            {
+                case 5:
+                    listaReporte_Perfil.definirFormulario(numero, lista, estado);
+                    break;
+            }
+        }
 
         private void InicializarListados()
         {

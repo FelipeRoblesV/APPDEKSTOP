@@ -13,9 +13,15 @@ namespace WFBS.Pruebas
     {
         static void Main(string[] args)
         {
-            daoFuncionario dao = new daoFuncionario();
+            daoPerfil dao = new daoPerfil();
 
-           bool resp = dao.ExisteRut("193622968");
+            Cl_Perfil per = new Cl_Perfil();
+            per.id = 0;
+            per.nombre = "test";
+            per.abreviacion = "ho";
+
+           bool resp =
+                dao.Modificar(per);
 
 
             //string holi = "1234567";

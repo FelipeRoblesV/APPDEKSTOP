@@ -17,7 +17,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
     public partial class Perfil : Form
     {
         private double numeroFormulario = 2.11;
-
+        private int id = 0;
         private FormularioPrincipal formulario;
         private int numero = 0;
         private Cl_Perfil per;
@@ -70,6 +70,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         {
             txtNombre.Text = per.nombre;
             txtAbreviacion.Text = per.abreviacion;
+            id = per.id;
         }
 
 
@@ -78,7 +79,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             Cl_Perfil per = new Cl_Perfil();
             per.nombre = txtNombre.Text;
             per.abreviacion = txtAbreviacion.Text;
-          
+            per.id = this.id;
+            
             return per;
         }
 

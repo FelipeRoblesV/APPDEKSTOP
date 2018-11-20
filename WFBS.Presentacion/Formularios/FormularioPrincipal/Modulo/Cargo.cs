@@ -17,7 +17,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
     public partial class Cargo : Form
     {
         private double numeroFormulario = 2.21;
-
+        private int id;
         private FormularioPrincipal formulario;
         private int numero = 0;
         private Cl_Cargo cargo;
@@ -67,6 +67,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
         public void llenarFormulario(Cl_Cargo car)
         {
+            id = car.id;
             txtNombre.Text = car.nombre;
             txtAbreviacion.Text = car.abreviacion;
         }
@@ -77,6 +78,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             Cl_Cargo car = new Cl_Cargo();
             car.nombre = txtNombre.Text;
             car.abreviacion = txtAbreviacion.Text;
+            car.id = id;
 
             return car;
         }
@@ -150,18 +152,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         private void IniciarProceso_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
-            Cl_Perfil perfil = (Cl_Perfil)e.Argument;
+            Cl_Cargo cargo = (Cl_Cargo)e.Argument;
             CargarFuncionario iniciar = new CargarFuncionario();
             switch (this.numero)
             {
                 case 1:
-                    iniciar.Mensaje = "Agregando Perfil";
+                    iniciar.Mensaje = "Agregando Cargo";
                     IniciarAplicacion.ReportProgress(1, iniciar);
 
                     try
                     {
-                        daoPerfil dao = new daoPerfil();
-                        iniciar.respuesta = dao.Agregar(perfil);
+                        daoCargo dao = new daoCargo();
+                        iniciar.respuesta = dao.Agregar(cargo);
 
 
                         IniciarAplicacion.ReportProgress(2, iniciar);
@@ -175,13 +177,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
                     break;
                 case 2:
-                    iniciar.Mensaje = "Modificando Funcionario";
+                    iniciar.Mensaje = "Modificando Cargo";
                     IniciarAplicacion.ReportProgress(1, iniciar);
 
                     try
                     {
-                        daoPerfil dao = new daoPerfil();
-                        iniciar.respuesta = dao.Modificar(perfil);
+                        daoCargo dao = new daoCargo();
+                        iniciar.respuesta = dao.Modificar(cargo);
                         IniciarAplicacion.ReportProgress(2, iniciar);
                         System.Threading.Thread.Sleep(2500);
                         IniciarAplicacion.ReportProgress(3, iniciar);

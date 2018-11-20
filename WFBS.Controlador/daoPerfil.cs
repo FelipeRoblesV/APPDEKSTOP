@@ -94,6 +94,38 @@ namespace WFBS.Controlador
         }
 
 
+        public Cl_Perfil RecuperarDatos(int id)
+        {
+            Cl_Perfil perfil;
+            DataSet dat;
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_RECUPERAR_DATOS_PERFIL";
+                OracleCommand cmd = new OracleCommand();
+                perfil = new Cl_Perfil();
+                cmd.Parameters.Add("p_id", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("c_per", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                dat = conn.EjecutarSPListar(ref cmd, sql);
+                string resultado = string.Empty;
+                foreach (DataRow item in dat.Tables[0].Rows)
+                {
+                    perfil.id = int.Parse(item[0].ToString());
+                    perfil.nombre = item[1].ToString();
+                    perfil.abreviacion = item[2].ToString();
+
+                }
+
+                return perfil;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public bool CambiarEstadoObsoleto(Cl_Perfil pe)
         {
             bool respuesta = false;

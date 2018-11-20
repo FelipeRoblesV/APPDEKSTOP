@@ -72,6 +72,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 46;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblNombreFormulario
             // 
@@ -98,7 +99,6 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(334, 52);
             this.panelBotones.TabIndex = 131;
-            this.panelBotones.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -113,6 +113,7 @@
             this.btnLimpiar.TabIndex = 135;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAccion
             // 
@@ -127,6 +128,7 @@
             this.btnAccion.TabIndex = 134;
             this.btnAccion.Text = "Accion";
             this.btnAccion.UseVisualStyleBackColor = false;
+            this.btnAccion.Click += new System.EventHandler(this.btnAccion_Click);
             // 
             // PanelContenido
             // 

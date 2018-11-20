@@ -89,5 +89,37 @@ namespace WFBS.Controlador
                 throw new Exception("No hay datos para listar");
             }
         }
+
+        public Cl_Cargo RecuperarDatos(int id)
+        {
+            Cl_Cargo car;
+            DataSet dat;
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_RECUPERAR_CARGO";
+                OracleCommand cmd = new OracleCommand();
+                car = new Cl_Cargo();
+                cmd.Parameters.Add("C_ID", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("C_CAR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                dat = conn.EjecutarSPListar(ref cmd, sql);
+                foreach (DataRow item in dat.Tables[0].Rows)
+                {
+
+                    car.id = int.Parse(item[0].ToString()); 
+                    car.nombre = item[1].ToString();
+                    car.abreviacion = item[2].ToString();
+     
+                }
+
+                return car;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

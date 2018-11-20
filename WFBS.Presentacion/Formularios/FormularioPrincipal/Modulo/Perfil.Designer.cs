@@ -179,7 +179,6 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(334, 52);
             this.panelBotones.TabIndex = 130;
-            this.panelBotones.Visible = false;
             // 
             // btnLimpiar
             // 
