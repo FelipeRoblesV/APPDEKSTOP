@@ -13,14 +13,11 @@ namespace WFBS.Pruebas
     {
         static void Main(string[] args)
         {
-            daoObservacion dao = new daoObservacion();
-            Cl_Observacion obs = new Cl_Observacion();
-
-            obs.competencia.id = 36;
-            obs.mensaje = "asdasd";
+            double numero = 1.1;
+            decimal numero2 = Convert.ToDecimal(numero);
 
 
-            bool resp =dao.Agregar(obs);
+       //     bool resp =dao.Agregar(obs);
 
 
             //string holi = "1234567";
@@ -35,7 +32,7 @@ namespace WFBS.Pruebas
             //Console.WriteLine(persona.apellido);
 
             
-            Console.WriteLine(resp);
+            Console.WriteLine(numero2.ToString());
             Console.ReadLine();
 
 

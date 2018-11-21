@@ -38,20 +38,20 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAccion = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
-            this.lblErrorPerfil = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numNotaIndividual = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.numNotaIndividual = new System.Windows.Forms.NumericUpDown();
+            this.lblErrorAlternativa = new System.Windows.Forms.Label();
+            this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
             this.PanelContenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNotaIndividual)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaIndividual)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNotaIndividal
@@ -70,7 +70,7 @@
             this.lblAlternativa.AutoSize = true;
             this.lblAlternativa.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAlternativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblAlternativa.Location = new System.Drawing.Point(15, 72);
+            this.lblAlternativa.Location = new System.Drawing.Point(15, 55);
             this.lblAlternativa.Name = "lblAlternativa";
             this.lblAlternativa.Size = new System.Drawing.Size(165, 15);
             this.lblAlternativa.TabIndex = 46;
@@ -82,7 +82,7 @@
             this.txtAlternativa.BorderColor = System.Drawing.Color.Green;
             this.txtAlternativa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAlternativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
-            this.txtAlternativa.Location = new System.Drawing.Point(15, 90);
+            this.txtAlternativa.Location = new System.Drawing.Point(15, 73);
             this.txtAlternativa.Multiline = true;
             this.txtAlternativa.Name = "txtAlternativa";
             this.txtAlternativa.Size = new System.Drawing.Size(306, 301);
@@ -173,8 +173,7 @@
             this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
             this.PanelContenido.Controls.Add(this.panel1);
             this.PanelContenido.Controls.Add(this.numNotaIndividual);
-            this.PanelContenido.Controls.Add(this.label2);
-            this.PanelContenido.Controls.Add(this.lblErrorPerfil);
+            this.PanelContenido.Controls.Add(this.lblErrorAlternativa);
             this.PanelContenido.Controls.Add(this.txtAlternativa);
             this.PanelContenido.Controls.Add(this.lblNotaIndividal);
             this.PanelContenido.Controls.Add(this.lblAlternativa);
@@ -184,45 +183,6 @@
             this.PanelContenido.Size = new System.Drawing.Size(334, 652);
             this.PanelContenido.TabIndex = 144;
             // 
-            // lblErrorPerfil
-            // 
-            this.lblErrorPerfil.AutoSize = true;
-            this.lblErrorPerfil.Font = new System.Drawing.Font("Roboto", 9F);
-            this.lblErrorPerfil.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
-            this.lblErrorPerfil.Location = new System.Drawing.Point(12, 48);
-            this.lblErrorPerfil.Name = "lblErrorPerfil";
-            this.lblErrorPerfil.Size = new System.Drawing.Size(249, 14);
-            this.lblErrorPerfil.TabIndex = 165;
-            this.lblErrorPerfil.Text = "Texto de error para el nombre del funcionario";
-            this.lblErrorPerfil.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9F);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
-            this.label2.Location = new System.Drawing.Point(18, 394);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 14);
-            this.label2.TabIndex = 166;
-            this.label2.Text = "Texto de error para el nombre del funcionario";
-            this.label2.Visible = false;
-            // 
-            // numNotaIndividual
-            // 
-            this.numNotaIndividual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.numNotaIndividual.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numNotaIndividual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.numNotaIndividual.Location = new System.Drawing.Point(15, 24);
-            this.numNotaIndividual.Maximum = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-            this.numNotaIndividual.Name = "numNotaIndividual";
-            this.numNotaIndividual.Size = new System.Drawing.Size(306, 23);
-            this.numNotaIndividual.TabIndex = 167;
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -231,9 +191,9 @@
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(12, 558);
+            this.panel1.Location = new System.Drawing.Point(12, 526);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(312, 88);
+            this.panel1.Size = new System.Drawing.Size(312, 120);
             this.panel1.TabIndex = 172;
             // 
             // label15
@@ -278,6 +238,37 @@
             this.label12.TabIndex = 142;
             this.label12.Text = "NOTA ESPERADA:";
             // 
+            // numNotaIndividual
+            // 
+            this.numNotaIndividual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.numNotaIndividual.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numNotaIndividual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.numNotaIndividual.Location = new System.Drawing.Point(15, 24);
+            this.numNotaIndividual.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numNotaIndividual.Name = "numNotaIndividual";
+            this.numNotaIndividual.Size = new System.Drawing.Size(306, 23);
+            this.numNotaIndividual.TabIndex = 167;
+            // 
+            // lblErrorAlternativa
+            // 
+            this.lblErrorAlternativa.AutoSize = true;
+            this.lblErrorAlternativa.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorAlternativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
+            this.lblErrorAlternativa.Location = new System.Drawing.Point(18, 377);
+            this.lblErrorAlternativa.Name = "lblErrorAlternativa";
+            this.lblErrorAlternativa.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorAlternativa.TabIndex = 166;
+            this.lblErrorAlternativa.Text = "Texto de error para el nombre del funcionario";
+            this.lblErrorAlternativa.Visible = false;
+            // 
+            // IniciarProceso
+            // 
+            this.IniciarProceso.WorkerReportsProgress = true;
+            // 
             // Alternativas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,9 +286,9 @@
             this.panelBotones.ResumeLayout(false);
             this.PanelContenido.ResumeLayout(false);
             this.PanelContenido.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numNotaIndividual)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numNotaIndividual)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,13 +304,13 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnAccion;
         private System.Windows.Forms.Panel PanelContenido;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblErrorPerfil;
+        private System.Windows.Forms.Label lblErrorAlternativa;
         private System.Windows.Forms.NumericUpDown numNotaIndividual;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.ComponentModel.BackgroundWorker IniciarProceso;
     }
 }

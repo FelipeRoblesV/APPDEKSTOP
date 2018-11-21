@@ -43,8 +43,7 @@ namespace WFBS.Controlador
                 String sql = "SP_MODIFICAR_COMPETENCIA";
                 OracleCommand cmd = new OracleCommand();
                 cmd.Parameters.Add("P_ID", OracleDbType.Int32).Value = pre.id;
-                cmd.Parameters.Add("P_CUERPO", OracleDbType.Long).Value = pre.cuerpo;
-                cmd.Parameters.Add("P_CUE", OracleDbType.Int32).Value = pre.cuestionario.id;
+                cmd.Parameters.Add("P_CUERPO", OracleDbType.Clob).Value = pre.cuerpo;
                 cmd.Parameters.Add("P_COM", OracleDbType.Int32).Value = pre.competencia.id;
                 respuesta = conn.EjecutarSP(ref cmd, sql);
                 return respuesta;
