@@ -336,7 +336,7 @@
             this.txtTelefono.Font = new System.Drawing.Font("Roboto Light", 9.75F);
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtTelefono.Location = new System.Drawing.Point(22, 325);
-            this.txtTelefono.MaxLength = 13;
+            this.txtTelefono.MaxLength = 9;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(287, 23);
             this.txtTelefono.TabIndex = 158;

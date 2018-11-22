@@ -47,6 +47,7 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAccion = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.numNotaEsperada = new System.Windows.Forms.NumericUpDown();
             this.numNotaMaxima = new System.Windows.Forms.NumericUpDown();
             this.numNotaMinima = new System.Windows.Forms.NumericUpDown();
@@ -60,7 +61,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -233,6 +233,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 46;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblNombreFormulario
             // 
@@ -317,6 +318,16 @@
             this.PanelContenido.Name = "PanelContenido";
             this.PanelContenido.Size = new System.Drawing.Size(334, 652);
             this.PanelContenido.TabIndex = 142;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 191);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(310, 87);
+            this.txtDescripcion.TabIndex = 164;
             // 
             // numNotaEsperada
             // 
@@ -488,16 +499,6 @@
             this.IniciarProceso.WorkerReportsProgress = true;
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 191);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(310, 87);
-            this.txtDescripcion.TabIndex = 164;
             // 
             // Competencia
             // 

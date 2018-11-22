@@ -134,7 +134,7 @@ namespace WFBS.Controlador
                 Contexto conn = new Contexto();
                 String sql = "SP_CAMBIAR_OBSOLETO_PERFIL";
                 OracleCommand cmd = new OracleCommand();
-                cmd.Parameters.Add("P_ID", OracleDbType.Int32).Value = pe.id;
+                cmd.Parameters.Add("RUN", OracleDbType.Int32).Value = pe.id;
 
                 respuesta = conn.EjecutarSP(ref cmd, sql);
                 return respuesta;

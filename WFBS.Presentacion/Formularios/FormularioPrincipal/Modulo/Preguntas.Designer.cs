@@ -36,12 +36,12 @@
             this.btnAccion = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.lblErrorCuerpo = new System.Windows.Forms.Label();
-            this.txtPregunta = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblErrorPerfil = new System.Windows.Forms.Label();
             this.cbPerfil = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
+            this.txtPregunta = new System.Windows.Forms.TextBox();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -133,8 +133,8 @@
             // PanelContenido
             // 
             this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.PanelContenido.Controls.Add(this.lblErrorCuerpo);
             this.PanelContenido.Controls.Add(this.txtPregunta);
+            this.PanelContenido.Controls.Add(this.lblErrorCuerpo);
             this.PanelContenido.Controls.Add(this.label4);
             this.PanelContenido.Controls.Add(this.lblErrorPerfil);
             this.PanelContenido.Controls.Add(this.cbPerfil);
@@ -156,19 +156,6 @@
             this.lblErrorCuerpo.TabIndex = 167;
             this.lblErrorCuerpo.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorCuerpo.Visible = false;
-            // 
-            // txtPregunta
-            // 
-            this.txtPregunta.AutoWordSelection = true;
-            this.txtPregunta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.txtPregunta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPregunta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.txtPregunta.Location = new System.Drawing.Point(12, 120);
-            this.txtPregunta.MaxLength = 300;
-            this.txtPregunta.Name = "txtPregunta";
-            this.txtPregunta.Size = new System.Drawing.Size(310, 206);
-            this.txtPregunta.TabIndex = 166;
-            this.txtPregunta.Text = "";
             // 
             // label4
             // 
@@ -222,6 +209,16 @@
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
             // 
+            // txtPregunta
+            // 
+            this.txtPregunta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtPregunta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtPregunta.Location = new System.Drawing.Point(12, 130);
+            this.txtPregunta.Multiline = true;
+            this.txtPregunta.Name = "txtPregunta";
+            this.txtPregunta.Size = new System.Drawing.Size(310, 196);
+            this.txtPregunta.TabIndex = 168;
+            // 
             // Preguntas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,8 +252,8 @@
         private System.Windows.Forms.ComboBox cbPerfil;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblErrorCuerpo;
-        private System.Windows.Forms.RichTextBox txtPregunta;
         private System.Windows.Forms.Label label4;
         private System.ComponentModel.BackgroundWorker IniciarProceso;
+        private System.Windows.Forms.TextBox txtPregunta;
     }
 }

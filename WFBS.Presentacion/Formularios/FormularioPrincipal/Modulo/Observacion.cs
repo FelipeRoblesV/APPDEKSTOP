@@ -96,7 +96,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                 obs.is_nivel_alto ='0';
             }
             obs.id = this.idObservacion;
-            obs.competencia.id = idCompetencia;
+            obs.competencia.id = this.idCompetencia;
             return obs;
         }
 

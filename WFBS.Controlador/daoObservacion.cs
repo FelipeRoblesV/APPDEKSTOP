@@ -42,7 +42,7 @@ namespace WFBS.Controlador
                 String sql = "SP_MODIFICAR_OBSERVACION";
                 OracleCommand cmd = new OracleCommand();
                 cmd.Parameters.Add("O_ID", OracleDbType.Int32).Value = obs.id;
-                cmd.Parameters.Add("O_MENSAJE", OracleDbType.Long).Value = obs.mensaje;
+                cmd.Parameters.Add("O_MENSAJE", OracleDbType.Clob).Value = obs.mensaje;
                 cmd.Parameters.Add("O_NIV_ALT", OracleDbType.Char).Value = obs.is_nivel_alto;
                 respuesta = conn.EjecutarSP(ref cmd, sql);
                 return respuesta;

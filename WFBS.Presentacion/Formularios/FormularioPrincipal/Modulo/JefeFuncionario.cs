@@ -25,6 +25,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         private int estadorut = 0;
         private Cl_Jefe_Funcionario jefe;
 
+        private Cl_Persona persona;
+
         public JefeFuncionario()
         {
             InitializeComponent();
@@ -38,6 +40,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void PasarDatos(Cl_Jefe_Funcionario jefecito)
         {
             this.jefe = jefecito;
+        }
+
+        public void PasarDatos(Cl_Persona jefecito)
+        {
+            this.persona = jefecito;
         }
 
 
@@ -262,7 +269,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             daoWebService dao = new daoWebService();
             string rut = txtRutFuncionario.Text.Replace(".", "").Replace("-", "").Trim();
             string run = rut.Substring(0, rut.Length - 1);
-            Cl_Persona per = dao.RecuperarPersona(run);
+            CargarWebService.RunWorkerAsync(run);
 
 
 

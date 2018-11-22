@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFBS.Entidades;
+using WFBS.WebService;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Jefe_Funcionario
 {
@@ -218,6 +219,24 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Jefe_Fu
                 lblRepetirContraseña.Visible = false;
                 txtRepetirContraseña.Visible = false;
             }
+        }
+
+
+        internal void llenarFormulario(Cl_Persona inicio)
+        {
+            txtNombre.Text = inicio.nombre;
+            txtApellido.Text = inicio.apellido;
+            txtCorreo.Text = inicio.correo;
+            dtpFechaNacimiento.Value = inicio.fechaNacimiento;
+            if (inicio.sexo == '1')
+            {
+                rbHombre.Checked = true;
+            }
+            else if (inicio.sexo == '0')
+            {
+                rbMujer.Checked = false;
+            }
+            txtTelefono.Text = inicio.telefono.ToString(); ;
         }
 
     }

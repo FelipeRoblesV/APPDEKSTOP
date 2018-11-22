@@ -96,7 +96,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             pre.competencia.id = int.Parse(cbPerfil.SelectedValue.ToString());
             pre.cuestionario.id = idEvaluacion;
             pre.cuerpo = txtPregunta.Text;
-            pre.id = idPreguntas ;
+            pre.id = idPreguntas;
 
             return pre;
         }

@@ -98,7 +98,7 @@
             this.txtTelefono.Font = new System.Drawing.Font("Roboto Light", 9.75F);
             this.txtTelefono.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtTelefono.Location = new System.Drawing.Point(12, 328);
-            this.txtTelefono.MaxLength = 13;
+            this.txtTelefono.MaxLength = 9;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(287, 23);
             this.txtTelefono.TabIndex = 186;
@@ -356,7 +356,7 @@
             // bunifuSeparator1
             // 
             this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator1.LineColor = System.Drawing.Color.DimGray;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
             this.bunifuSeparator1.Location = new System.Drawing.Point(0, 388);
             this.bunifuSeparator1.Name = "bunifuSeparator1";

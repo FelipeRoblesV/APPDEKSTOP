@@ -74,7 +74,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                                 dt_Listar.DataSource = lista.Tables[0];
                                 dt_Listar.Columns[0].Visible = false;
                             }
-                            catch (Exception ex)
+                            catch (Exception)
                             {
 
                             }  
