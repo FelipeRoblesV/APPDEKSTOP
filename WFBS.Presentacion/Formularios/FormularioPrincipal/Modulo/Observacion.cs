@@ -72,6 +72,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
         public void llenarFormulario(Cl_Observacion obs)
         {
+            idObservacion = obs.id;
             txtMensaje.Text = obs.mensaje;
             if (obs.is_nivel_alto == '1')
             {
@@ -273,8 +274,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         case 3:
                             if (iniciar2.respuesta)
                             {
-                                formulario.recargarListados(3.211);
-                                formulario.TerminarProceso(3.21);
+                                formulario.recargarListados(3.21);
+                                formulario.TerminarProceso(3.2);
                             }
                             else
                             {

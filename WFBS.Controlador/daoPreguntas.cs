@@ -82,11 +82,11 @@ namespace WFBS.Controlador
             try
             {
                 Contexto conn = new Contexto();
-                String sql = "SP_RECUPERAR_COMPETENCIA";
+                String sql = "SP_RECUPERAR_DATOS_PREGUNTA";
                 OracleCommand cmd = new OracleCommand();
                 pre = new Cl_Preguntas();
-                cmd.Parameters.Add("C_ID", OracleDbType.Int32).Value = id;
-                cmd.Parameters.Add("C_COMP", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add("p_id", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("c_pre", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
                 dat = conn.EjecutarSPListar(ref cmd, sql);
                 foreach (DataRow item in dat.Tables[0].Rows)
                 {

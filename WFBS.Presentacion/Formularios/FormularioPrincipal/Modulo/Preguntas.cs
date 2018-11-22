@@ -85,7 +85,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void llenarFormulario(Cl_Preguntas pre)
         {
             idPreguntas = pre.id;
-            cbPerfil.SelectedValue = idPreguntas;
+            cbPerfil.SelectedValue = pre.competencia.id;
             txtPregunta.Text = pre.cuerpo; 
         }
 

@@ -345,7 +345,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     listaCompetencia_Perfil.definirFormulario(numero, listar, estado);
                     break;
                 case 3.1:
-                    listaCompetencia_Perfil.definirFormulario(numero, listar, estado);
+                    listaCompetencia.definirFormulario(numero, listar, estado);
                     break;
                 case 3.2:
                     listaCompetencia_Observacion.definirFormulario(numero, listar, estado);

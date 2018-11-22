@@ -52,7 +52,6 @@
             this.numNotaMinima = new System.Windows.Forms.NumericUpDown();
             this.txtSiglas = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -293,12 +293,12 @@
             // PanelContenido
             // 
             this.PanelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.PanelContenido.Controls.Add(this.txtDescripcion);
             this.PanelContenido.Controls.Add(this.numNotaEsperada);
             this.PanelContenido.Controls.Add(this.numNotaMaxima);
             this.PanelContenido.Controls.Add(this.numNotaMinima);
             this.PanelContenido.Controls.Add(this.txtSiglas);
             this.PanelContenido.Controls.Add(this.txtNombre);
-            this.PanelContenido.Controls.Add(this.txtDescripcion);
             this.PanelContenido.Controls.Add(this.panel1);
             this.PanelContenido.Controls.Add(this.lblNombre);
             this.PanelContenido.Controls.Add(this.lblErrorNombre);
@@ -405,18 +405,6 @@
             this.txtNombre.Size = new System.Drawing.Size(312, 23);
             this.txtNombre.TabIndex = 156;
             // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.AutoWordSelection = true;
-            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.txtDescripcion.Location = new System.Drawing.Point(12, 191);
-            this.txtDescripcion.MaxLength = 300;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(312, 87);
-            this.txtDescripcion.TabIndex = 144;
-            this.txtDescripcion.Text = "";
-            // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -501,6 +489,16 @@
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.txtDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtDescripcion.Location = new System.Drawing.Point(12, 191);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(310, 87);
+            this.txtDescripcion.TabIndex = 164;
+            // 
             // Competencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -554,12 +552,12 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtSiglas;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.NumericUpDown numNotaMinima;
         private System.Windows.Forms.NumericUpDown numNotaEsperada;
         private System.Windows.Forms.NumericUpDown numNotaMaxima;
         private System.ComponentModel.BackgroundWorker IniciarProceso;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }

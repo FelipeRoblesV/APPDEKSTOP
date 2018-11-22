@@ -1001,6 +1001,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 2:
                             try
                             {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
                                 DataSet lista = iniciar.listarPerfil;
                                 ActualizarFormulario(3, lista, true);
                             }
@@ -1010,7 +1022,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                                 ActualizarFormulario(3, lista, false);
                             }
                             break;
-                        case 3:
+
+                        case 4:
                             AbrirFormulario(ListarCompetencia);
                             break;
 
@@ -1024,18 +1037,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 1:
                             try
                             {
-                                DataSet lista = iniciar.listarPerfil;
-                                ActualizarFormulario(3, lista, true);
-                            }
-                            catch (Exception)
-                            {
-                                DataSet lista = null;
-                                ActualizarFormulario(3, lista, false);
-                            }
-                            break;
-                        case 2:
-                            try
-                            {
                                 DataSet lista = iniciar.listarCompetencia;
                                 ActualizarFormulario(3.1, lista, true);
                             }
@@ -1043,6 +1044,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             {
                                 DataSet lista = null;
                                 ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
                             }
                             break;
                         case 3:
@@ -1107,13 +1120,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 1:
                             try
                             {
-                                DataSet lista = iniciar.listarPerfil;
-                                ActualizarFormulario(3, lista, true);
+                                DataSet lista = iniciar.listarObservacion;
+                                ActualizarFormulario(3.2, lista, true);
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                ActualizarFormulario(3, lista, false);
+                                ActualizarFormulario(3.2, lista, false);
                             }
                             break;
                         case 2:
@@ -1131,15 +1144,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 3:
                             try
                             {
-                                DataSet lista = iniciar.listarEvaluacion;
-                                ActualizarFormulario(3.2, lista, true);
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                ActualizarFormulario(3.2, lista, false);
+                                ActualizarFormulario(3, lista, false);
                             }
                             break;
+               
+     
 
                     }
 
@@ -1320,14 +1335,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 2:
                             try
                             {
-                                DataSet lista = iniciar.listarPerfil;
-                                ActualizarFormulario(4, lista, true);
+                                DataSet lista = iniciar.listarAlternativa;
+                                ActualizarFormulario(4.3, lista, true);
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                ActualizarFormulario(4, lista, false);
+                                ActualizarFormulario(4.3, lista, false);
                             }
+      
                             break;
                         case 3:
                             try
@@ -1356,13 +1372,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 5:
                             try
                             {
-                                DataSet lista = iniciar.listarAlternativa;
-                                ActualizarFormulario(4.2, lista, true);
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                ActualizarFormulario(4.2, lista, false);
+                                ActualizarFormulario(4, lista, false);
                             }
                             break;
                         case 6:
@@ -1378,14 +1394,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 1:
                             try
                             {
-                                DataSet lista = iniciar.listarPerfil;
-                                ActualizarFormulario(4, lista, true);
+                                DataSet lista = iniciar.listarAlternativa;
+                                ActualizarFormulario(4.3, lista, true);
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                ActualizarFormulario(4, lista, false);
+                                ActualizarFormulario(4.3, lista, false);
                             }
+                    
                             break;
                         case 2:
                             try
@@ -1414,13 +1431,13 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 4:
                             try
                             {
-                                DataSet lista = iniciar.listarPregunta;
-                                ActualizarFormulario(4.3, lista, true);
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
                             }
                             catch (Exception)
                             {
                                 DataSet lista = null;
-                                ActualizarFormulario(4.3, lista, false);
+                                ActualizarFormulario(4, lista, false);
                             }
                             break;
 
@@ -1508,16 +1525,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     case 3.1:
                         inicio.mensaje = "Actualizando Competencia";
                         IniciarAplicacion.ReportProgress(1, inicio);
-                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
-                        IniciarAplicacion.ReportProgress(2, inicio);
                         inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
                         IniciarAplicacion.ReportProgress(3, inicio);
                         IniciarAplicacion.ReportProgress(4);
                         break;
                     case 3.11:
-                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
-                        IniciarAplicacion.ReportProgress(1, inicio);
                         inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
                         IniciarAplicacion.ReportProgress(2, inicio);
                         inicio.listarEvaluacion = daoCuestionario.ListarPerfil();
                         IniciarAplicacion.ReportProgress(3, inicio);
@@ -1532,11 +1549,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         IniciarAplicacion.ReportProgress(4);
                         break;
                     case 3.21:
-                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
+                        inicio.listarObservacion = daoObservacion.Listar(ListarCompetencia.Recuperarid(3));
+
                         IniciarAplicacion.ReportProgress(1, inicio);
                         inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
                         IniciarAplicacion.ReportProgress(2, inicio);
-                        inicio.listarObservacion = daoObservacion.Listar(ListarCompetencia.Recuperarid(3));
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
                         IniciarAplicacion.ReportProgress(3, inicio);
                         break;
                     case 4.1:
@@ -1578,24 +1596,26 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     case 4.3:
                         inicio.mensaje = "Actualizando Alternativas";
                         IniciarAplicacion.ReportProgress(1, inicio);
-                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+
+                        inicio.listarAlternativa = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6)); 
                         IniciarAplicacion.ReportProgress(2, inicio);
                         inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
                         IniciarAplicacion.ReportProgress(3, inicio);
                         inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
                         IniciarAplicacion.ReportProgress(4, inicio);
-                        inicio.listarPregunta = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6));
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
                         IniciarAplicacion.ReportProgress(5, inicio);
                         IniciarAplicacion.ReportProgress(6);
                         break;
                     case 4.31:
-                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        inicio.listarAlternativa = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6));
+                        
                         IniciarAplicacion.ReportProgress(1, inicio);
                         inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
                         IniciarAplicacion.ReportProgress(2, inicio);
                         inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
                         IniciarAplicacion.ReportProgress(3, inicio);
-                        inicio.listarAlternativa = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6));
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
                         IniciarAplicacion.ReportProgress(4, inicio);
                         break;
 
@@ -2614,7 +2634,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                                 {
                                     Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
                                     mensaje.cambiarMensaje("Elimino Correctamente");
-                                    recargarListados(4.2);
+                                    recargarListados(4.3);
                                     mensaje.ShowDialog();
                                 }
                                 else
