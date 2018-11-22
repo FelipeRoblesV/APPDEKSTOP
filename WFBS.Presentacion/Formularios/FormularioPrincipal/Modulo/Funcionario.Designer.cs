@@ -41,6 +41,7 @@
             this.lblErrorRut = new System.Windows.Forms.Label();
             this.PanelContenido = new System.Windows.Forms.Panel();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
+            this.CargarWebService = new System.ComponentModel.BackgroundWorker();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
@@ -212,6 +213,12 @@
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
             // 
+            // CargarWebService
+            // 
+            this.CargarWebService.WorkerReportsProgress = true;
+            this.CargarWebService.DoWork += new System.ComponentModel.DoWorkEventHandler(this.CargarWebService_DoWork);
+            this.CargarWebService.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.CargarWebService_ProgressChanged);
+            // 
             // Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,5 +257,6 @@
         private System.Windows.Forms.TextBox txtRutFuncionario;
         private System.Windows.Forms.Panel PanelContenido;
         private System.ComponentModel.BackgroundWorker IniciarProceso;
+        private System.ComponentModel.BackgroundWorker CargarWebService;
     }
 }

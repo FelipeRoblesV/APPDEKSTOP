@@ -30,7 +30,7 @@ namespace WFBS.WebService
             catch (Exception)
             {
 
-                throw new Exception("Funcionario no tiene datos disponibles.");
+                return null;
             }
         }
 

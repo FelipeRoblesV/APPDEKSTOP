@@ -48,6 +48,7 @@
             this.lblSeparacionMapa_1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMapaSitio_1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnRegresar = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -57,13 +58,13 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelMapaDeSitio.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +74,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -121,6 +121,7 @@
             this.txtBuscar.Size = new System.Drawing.Size(274, 32);
             this.txtBuscar.TabIndex = 6;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtBuscar.Visible = false;
             this.txtBuscar.OnValueChanged += new System.EventHandler(this.txtBuscar_OnValueChanged);
             this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
             // 
@@ -321,6 +322,15 @@
             this.lblMapaSitio_1.Text = "Perfil";
             this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panelContenido);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 82);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1496, 649);
+            this.panel6.TabIndex = 13;
+            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.SeaGreen;
@@ -438,15 +448,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panelContenido);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 82);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1496, 649);
-            this.panel6.TabIndex = 13;
-            // 
             // ListadoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,6 +466,7 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -474,7 +476,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

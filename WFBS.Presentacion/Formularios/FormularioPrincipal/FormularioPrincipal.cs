@@ -2125,7 +2125,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         }
                     }
 
-                    if(btn.Name == btnEliminar.Name)
+                    if (btn.Name == btnEliminar.Name)
                     {
                         if (estadoCRUD == 0)
                         {
@@ -2160,7 +2160,36 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             }
                         }
                     }
-                
+
+                    if (btn.Name == btnSubAccion1.Name)
+                    {
+                        int id = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString());
+                        Cl_Perfil perfil = new Cl_Perfil();
+                        perfil.id = id;
+                        daoPerfil dao = new daoPerfil();
+
+                        if (dao.CambiarEstadoObsoleto(perfil))
+                        {
+                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                            mensaje.cambiarMensaje("Se cambio el estado Correctamente");
+                            recargarListados(2.11);
+                            mensaje.ShowDialog();
+                        }
+                        else
+                        {
+                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                            mensaje.cambiarMensaje("No cambio el estado Correctamente");
+                            mensaje.ShowDialog();
+                        }
+
+
+                    }
+                    else
+                    {
+                        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                        mensaje.cambiarMensaje("Debe seleccionar una fila");
+                        mensaje.ShowDialog();
+                    }
                     break;
                 case 2.21:
                     if (btn.Name == btnAgregar.Name)

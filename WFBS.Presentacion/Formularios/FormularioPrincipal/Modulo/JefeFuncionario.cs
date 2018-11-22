@@ -447,10 +447,58 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
 
 
+        private void CargarWebService_DoWork(object sender, DoWorkEventArgs e)
+        {
+            BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
+            string funcionario = (string)e.Argument;
+            CargarWebService.ReportProgress(1);
+            daoWebService dao = new daoWebService();
+
+            Cl_Persona per = dao.RecuperarPersona(funcionario);
+            if (per != null)
+            {
+                CargarWebService.ReportProgress(2, per);
+            }
+            else
+            {
+                CargarWebService.ReportProgress(3);
+            }
+
+        }
+
+        private void CargarWebService_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            int porcentaje = e.ProgressPercentage;
+
+            switch (porcentaje)
+            {
+                case 1:
+                    Modulo.Otros.Cargando cargar = new Otros.Cargando();
+                    cargar.CambiarMensaje("Buscando datos");
+                    AbrirFormulario(cargar);
+                    break;
+                case 2:
+                    Cl_Persona inicio = (Cl_Persona)e.UserState;
+                    controles.llenarFormulario(inicio);
+                    AbrirFormulario(controles);
+                    break;
+                case 3:
+
+                    AbrirFormulario(controles);
+                    lblErrorRut.Text = "Funcionario sin datos previos";
+                    break;
+            }
+        }
+
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             formulario.TerminarProceso(numeroFormulario);
         }
 
+        private void panelSuperior_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
