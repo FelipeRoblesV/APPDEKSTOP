@@ -18,7 +18,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
     public partial class Evaluacion : Form
     {
         private double numeroFormulario = 4.1;
-        private int id;
+        private int idEvaluacion = 0, idPerfil = 0;
         private FormularioPrincipal formulario;
         private int numero = 0;
         private Cl_Cuestionario evaluacion;
@@ -31,13 +31,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void PasarDatos(FormularioPrincipal form)
         {
             this.formulario = form;
+            idPerfil = form.RecuperaridDataGrid(4);
+
+
         }
 
         public void limpiarFormulario()
         {
             txtNombre.Text = String.Empty;
             dtpFechaInicio.Value = DateTime.Today;
-            dtpFechaTermino.Value = DateTime.Today;
+
+            lblFechaTermino.Text = dtpFechaInicio.Value.ToLongDateString();
+            btnsPonderacion.Value = false;
             numDiasHabiles.Value = 1;
             tbPonderacion.Value = 30;
         }
@@ -57,6 +62,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     this.numero = numero;
                     btnAccion.Text = "Agregar Evaluacion";
                     lblNombreFormulario.Text = "Agregar Evaluacion";
+                    dtpFechaInicio.MinDate = DateTime.Today;
+
+                    DateTime hoy = DateTime.Today;
+                    lblFechaTermino.Text = hoy.AddDays(1).ToLongDateString() ;
+
                     break;
                 case 2:
                     this.numero = numero;
@@ -71,7 +81,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
         public void llenarFormulario(Cl_Cuestionario eva)
         {
-            id = eva.id;
+            idEvaluacion = eva.id;
             txtNombre.Text = eva.nombre;
             dtpFechaInicio.Value = eva.fecha_inicio;
             numDiasHabiles.Value = eva.dias;
@@ -85,7 +95,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             eva.fecha_inicio = dtpFechaInicio.Value;
             eva.dias = int.Parse(numDiasHabiles.Value.ToString());
             eva.ponderacion_autoevaluacion = tbPonderacion.Value;
-            eva.ponderacion_autoevaluacion = (100 - tbPonderacion.Value);
+            eva.ponderacion_evaluacion = (100 - tbPonderacion.Value);
+            eva.id = idEvaluacion;
+            eva.perfil.id = idPerfil;
             return eva;
         }
 
@@ -141,7 +153,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     break;
                 case 2:
 
-                    if (ValidarFormulario(2))
+                    // CAMBIAR A DOS CUANDO TENGA LAS VALIDACIONES
+
+                    if (ValidarFormulario(1))
                     {
                         if (IniciarProceso.IsBusy == false)
                         {
@@ -286,6 +300,30 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
 
 
+        }
+
+        private void dtpFechaInicio_ValueChanged(object sender, EventArgs e)
+        {
+            lblFechaTermino.Text = dtpFechaInicio.Value.ToLongDateString();
+        }
+
+        private void numDiasHabiles_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fecha = dtpFechaInicio.Value;
+
+            lblFechaTermino.Text = fecha.AddDays(Convert.ToDouble(numDiasHabiles.Value)).ToLongDateString() ;
+        }
+
+        private void btnsPonderacion_Click(object sender, EventArgs e)
+        {
+            if (btnsPonderacion.Value == true)
+            {
+                tbPonderacion.Enabled = true;
+            }
+            else
+            {
+                tbPonderacion.Enabled = false;
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

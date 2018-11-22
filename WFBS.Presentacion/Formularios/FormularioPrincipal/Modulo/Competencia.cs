@@ -18,10 +18,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
     {
 
         private double numeroFormulario = 3.1;
-        private int id = 0;
+        private int idCompetencia = 0, idPerfil = 0;
         private FormularioPrincipal formulario;
         private int numero = 0;
         private Cl_Competencia competencia;
+
 
         public Competencia()
         {
@@ -31,6 +32,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void PasarDatos(FormularioPrincipal form)
         {
             this.formulario = form;
+            idPerfil = form.RecuperaridDataGrid(2);
         }
 
         public void PasarDatos(Cl_Competencia comp)
@@ -44,9 +46,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             txtNombre.Text = String.Empty;
             txtSiglas.Text = String.Empty;
             txtDescripcion.Text = String.Empty;
-            numNotaEsperada.Value = 0;
-            numNotaMaxima.Value = 0;
             numNotaMinima.Value = 0;
+            //numNotaEsperada.Value = 0;
+            //numNotaMaxima.Value = 0;
+
 
         }
 
@@ -78,7 +81,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             numNotaMinima.Value = Convert.ToDecimal(com.nota_minima);
             numNotaMaxima.Value = Convert.ToDecimal(com.nota_maxima);
             numNotaEsperada.Value = Convert.ToDecimal(com.nota_esperada);
-            id = com.id;
+            idCompetencia = com.id;
         }
 
 
@@ -91,7 +94,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             com.nota_minima = Convert.ToDouble(numNotaMinima.Value);
             com.nota_maxima = Convert.ToDouble(numNotaMaxima.Value);
             com.nota_esperada = Convert.ToDouble(numNotaEsperada.Value);
-            com.id = this.id;
+            com.id = this.idCompetencia;
+            com.perfil.id = idPerfil;
 
             return com;
         }
@@ -123,6 +127,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                 lblErrorSiglas.Visible = true;
             }
 
+            if (txtDescripcion.Text != String.Empty)
+            {
+                contador++;
+                lblErrorDescripcion.Visible = false;
+            }
+            else
+            {
+                lblErrorDescripcion.Text = "Ingrese datos en el campo Descripcion";
+                lblErrorDescripcion.Visible = true;
+            }
+
             if (numNotaMaxima.Maximum != 0)
             {
                 contador++;
@@ -143,10 +158,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             {
                 lblErrorNotaMaxima.Text = "Ingrese datos en la nota Maxima";
                 lblErrorNotaMaxima.Visible = true;
+                lblErrorNotaEsperada.Text = "Ingrese datos en la nota esperada";
+                lblErrorNotaEsperada.Visible = true;
             }
 
-
-            if (contador == 3)
+            if (contador == 5)
             {
                 respuesta = true;
             }
@@ -283,8 +299,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         case 3:
                             if (iniciar.respuesta)
                             {
-                                formulario.recargarListados(3.111);
-                                formulario.TerminarProceso(3.11);
+                                formulario.recargarListados(3.11);
+                                formulario.TerminarProceso(3.1);
                             }
                             else
                             {
@@ -314,8 +330,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         case 3:
                             if (iniciar2.respuesta)
                             {
-                                formulario.recargarListados(3.111);
-                                formulario.TerminarProceso(3.11);
+                                formulario.recargarListados(3.11);
+                                formulario.TerminarProceso(3.1);
                             }
                             else
                             {
@@ -328,7 +344,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     break;
             }
         }
-
 
 
         private void btnCerrar_Click(object sender, EventArgs e)

@@ -32,6 +32,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         private Modulo.Modulos_Adicionales.CargoFuncionario moduloCargoFuncionario;
         private Modulo.Perfil moduloPerfil;
         private Modulo.Cargo moduloCargo;
+        private Modulo.Competencia moduloCompetencia;
+        private Modulo.Observacion moduloObervacion;
+        private Modulo.Evaluacion moduloEvaluacion;
+        private Modulo.Preguntas moduloPreguntas;
+        private Modulo.Alternativas moduloAlternativas;
 
         private ListadoPrincipal ListarFuncionario, ListarJefeFuncionario, ListarPerfil, ListarCargo, ListarCompetencia, ListarEvaluacion;
         private ListadoReporte ListadoReporte;
@@ -187,8 +192,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             {
                 if (estadoFuncionario == 0 && estadoCRUD == 0)
                 {
-                    IniciarProcemiento(1);
-                }
+                        IniciarProcemiento(1);
+                    }
                 else
                 {
                     SystemSounds.Hand.Play();
@@ -1114,11 +1119,56 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     PanelCRUD.Visible = false;
                     estadoCRUD = 0;
                     break;
+                case 3.1:
+                    moduloCompetencia.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 3.2:
+                    moduloObervacion.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 4.1:
+                    moduloEvaluacion.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 4.2:
+                    moduloPreguntas.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 4.3:
+                    moduloAlternativas.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
 
 
             }
         }
 
+        public int RecuperaridDataGrid(int numero)
+        {
+            switch (numero)
+            {
+                default:
+                    return 0;
+                case 2:
+                    return ListarCompetencia.Recuperarid(numero);
+                case 3:
+                    return ListarCompetencia.Recuperarid(numero);
+                case 4:
+                    return ListarEvaluacion.Recuperarid(numero);
+                case 5:
+                    return ListarEvaluacion.Recuperarid(numero);
+                case 6:
+                    return ListarEvaluacion.Recuperarid(numero);
+
+
+            }
+        }
 
         #region ACCION DE LOS BOTONES PARA EL SUBFORMULARIO
 
@@ -1474,53 +1524,435 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 3.1:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR COMPETENCIA");
-                        //if (ModuloFuncionario == null)
-                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //ModuloFuncionario.InicializarAgregarFuncionario();
-                        //AbrirModulo(ModuloFuncionario);
+                        if (estadoCRUD == 0)
+                        {
+                            Modulo.Competencia moduloCompetencia = new Modulo.Competencia();
+                            moduloCompetencia.IniciarFormulario(1);
+                            moduloCompetencia.PasarDatos(this);
+                            AbrirModulo(moduloCompetencia);
+                            PanelCRUD.Visible = true;
+                            estadoCRUD = 1;
+                            this.moduloCompetencia = moduloCompetencia;
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+
+                        MessageBox.Show(ListarCompetencia.Recuperarid(2).ToString());
                     }
-                    break;
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string idCompetencia = ListarCompetencia.listaCompetencia.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                daoCompetencia dao = new daoCompetencia();
+                                Modulo.Competencia moduloCompetencia = new Modulo.Competencia();
+                                moduloCompetencia.PasarDatos(dao.RecuperarDatos(int.Parse(idCompetencia)));
+                                moduloCompetencia.PasarDatos(this);
+                                moduloCompetencia.IniciarFormulario(2);
+                                AbrirModulo(moduloCompetencia);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloCompetencia = moduloCompetencia;
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia.dt_Listar.SelectedRows.Count > 0)
+                            {
+
+                                int id = int.Parse(ListarCompetencia.listaCompetencia.dt_Listar.CurrentRow.Cells[0].Value.ToString());
+                                Cl_Competencia competencia = new Cl_Competencia();
+                                competencia.id = id;
+                                daoCompetencia dao = new daoCompetencia();
+
+                                if (dao.Eliminar(competencia))
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Elimino Correctamente");
+                                    recargarListados(3.1);
+                                    mensaje.ShowDialog();
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("No elimino Correctamente");
+                                    mensaje.ShowDialog();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                        break;
+
                 case 3.2:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR OBSERVACION");
-                        //if (ModuloFuncionario == null)
-                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //ModuloFuncionario.InicializarAgregarFuncionario();
-                        //AbrirModulo(ModuloFuncionario);
+                        if (btn.Name == btnAgregar.Name)
+                        {
+                            if (estadoCRUD == 0)
+                            {
+                                Modulo.Observacion moduloObservacion = new Modulo.Observacion();
+                                moduloObservacion.IniciarFormulario(1);
+                                moduloObservacion.PasarDatos(this);
+                                AbrirModulo(moduloObservacion);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloObervacion = moduloObservacion;
+                            }
+                            else
+                            {
+                                SystemSounds.Hand.Play();
+                            }
+
+                            MessageBox.Show(ListarCompetencia.Recuperarid(2).ToString());
+                        }
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia_Observacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string idObservacion = ListarCompetencia.listaCompetencia_Observacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                daoObservacion dao = new daoObservacion();
+                                Modulo.Observacion moduloObservacion = new Modulo.Observacion();
+                                moduloObservacion.PasarDatos(dao.RecuperarDatos(int.Parse(idObservacion)));
+                                moduloObservacion.PasarDatos(this);
+                                moduloObservacion.IniciarFormulario(2);
+                                AbrirModulo(moduloObservacion);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloObervacion = moduloObservacion;
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia_Observacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+
+                                int id = int.Parse(ListarCompetencia.listaCompetencia_Observacion.dt_Listar.CurrentRow.Cells[0].Value.ToString());
+                                Cl_Observacion observacion = new Cl_Observacion();
+                                observacion.id = id;
+                                daoObservacion dao = new daoObservacion();
+
+                                if (dao.Eliminar(observacion))
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Elimino Correctamente");
+                                    recargarListados(3.1);
+                                    mensaje.ShowDialog();
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("No elimino Correctamente");
+                                    mensaje.ShowDialog();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
                     }
                     break;
                 case 4.1:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR EVALUACION");
+                        if (btn.Name == btnAgregar.Name)
+                        {
+                            if (estadoCRUD == 0)
+                            {
+                                Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
+                                moduloEvaluacion.IniciarFormulario(1);
+                                moduloEvaluacion.PasarDatos(this);
+                                AbrirModulo(moduloEvaluacion);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloEvaluacion = moduloEvaluacion;
+                            }
+                            else
+                            {
+                                SystemSounds.Hand.Play();
+                            }
+                        }
 
                     }
+
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listarEvaluacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string id = ListarEvaluacion.listarEvaluacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+
+                                daoCuestionario dao = new daoCuestionario();
+                                Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
+                                moduloEvaluacion.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                moduloEvaluacion.PasarDatos(this);
+                                moduloEvaluacion.IniciarFormulario(2);
+                                AbrirModulo(moduloEvaluacion);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloEvaluacion = moduloEvaluacion;
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+
+
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listarEvaluacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string id = ListarEvaluacion.listarEvaluacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                Cl_Cuestionario cuestionario = new Cl_Cuestionario();
+                                cuestionario.id = int.Parse(id);
+                                daoCuestionario dao = new daoCuestionario();
+
+                                if (dao.Eliminar(cuestionario))
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Elimino Correctamente");
+                                    recargarListados(4.1);
+                                    mensaje.ShowDialog();
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("No elimino Correctamente");
+                                    mensaje.ShowDialog();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+
+                    }
+
                     break;
                 case 4.2:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR PREGUNTAS");
-                        //if (ModuloFuncionario == null)
-                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //ModuloFuncionario.InicializarAgregarFuncionario();
-                        //AbrirModulo(ModuloFuncionario);
+                        if (btn.Name == btnAgregar.Name)
+                        {
+                            if (btn.Name == btnAgregar.Name)
+                            {
+                                if (estadoCRUD == 0)
+                                {
+                                    Modulo.Preguntas moduloPregunta = new Modulo.Preguntas();
+                                    moduloPregunta.IniciarFormulario(1);
+                                    moduloPregunta.PasarDatos(this);
+                                    AbrirModulo(moduloPregunta);
+                                    PanelCRUD.Visible = true;
+                                    estadoCRUD = 1;
+                                    this.moduloPreguntas = moduloPregunta;
+                                }
+                                else
+                                {
+                                    SystemSounds.Hand.Play();
+                                }
+                            }
+
+                        }
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string id = ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+
+                                daoPreguntas dao = new daoPreguntas();
+                                Modulo.Preguntas moduloPregunta = new Modulo.Preguntas();
+                                moduloPregunta.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                moduloPregunta.PasarDatos(this);
+                                moduloPregunta.IniciarFormulario(2);
+                                AbrirModulo(moduloPregunta);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloPreguntas = moduloPregunta;
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string id = ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                Cl_Preguntas pregunta = new Cl_Preguntas();
+                                pregunta.id = int.Parse(id);
+                                daoPreguntas dao = new daoPreguntas();
+
+                                if (dao.Eliminar(pregunta))
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Elimino Correctamente");
+                                    recargarListados(4.2);
+                                    mensaje.ShowDialog();
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("No elimino Correctamente");
+                                    mensaje.ShowDialog();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+
                     }
                     break;
                 case 4.3:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR ALTERNATIVAS");
-                        //if (ModuloFuncionario == null)
-                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //ModuloFuncionario.InicializarAgregarFuncionario();
-                        //AbrirModulo(ModuloFuncionario);
+                        if (btn.Name == btnAgregar.Name)
+                        {
+                            if (estadoCRUD == 0)
+                            {
+                                Modulo.Alternativas moduloAlternativas = new Modulo.Alternativas();
+                                moduloAlternativas.IniciarFormulario(1);
+                                moduloAlternativas.PasarDatos(this);
+                                AbrirModulo(moduloAlternativas);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloAlternativas = moduloAlternativas;
+                            }
+                            else
+                            {
+                                SystemSounds.Hand.Play();
+                            }
+                        }
+
                     }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string id = ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+
+                                daoAlternativa dao = new daoAlternativa();
+                                Modulo.Alternativas moduloAlternativa = new Modulo.Alternativas();
+                                moduloAlternativa.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                moduloAlternativa.PasarDatos(this);
+                                moduloAlternativa.IniciarFormulario(2);
+                                AbrirModulo(moduloAlternativa);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloAlternativas = moduloAlternativa;
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string id = ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                Cl_Alternativa alt = new Cl_Alternativa();
+                                alt.id = int.Parse(id);
+                                daoAlternativa dao = new daoAlternativa();
+
+                                if (dao.Eliminar(alt))
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Elimino Correctamente");
+                                    recargarListados(4.2);
+                                    mensaje.ShowDialog();
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("No elimino Correctamente");
+                                    mensaje.ShowDialog();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+
+                    }
+
                     break;
 
             }

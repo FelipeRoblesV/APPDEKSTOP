@@ -19,7 +19,7 @@ namespace WFBS.Presentacion
             Application.SetCompatibleTextRenderingDefault(false);
 
             
-            Application.Run(new Evaluacion());
+            Application.Run(new Aplicacion());
         }
     }
 }

@@ -259,7 +259,6 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(334, 52);
             this.panelBotones.TabIndex = 141;
-            this.panelBotones.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -274,6 +273,7 @@
             this.btnLimpiar.TabIndex = 135;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAccion
             // 
@@ -288,6 +288,7 @@
             this.btnAccion.TabIndex = 134;
             this.btnAccion.Text = "Accion";
             this.btnAccion.UseVisualStyleBackColor = false;
+            this.btnAccion.Click += new System.EventHandler(this.btnAccion_Click);
             // 
             // PanelContenido
             // 
@@ -335,7 +336,6 @@
             0,
             0});
             this.numNotaEsperada.Name = "numNotaEsperada";
-            this.numNotaEsperada.ReadOnly = true;
             this.numNotaEsperada.Size = new System.Drawing.Size(312, 23);
             this.numNotaEsperada.TabIndex = 163;
             // 
@@ -357,7 +357,6 @@
             0,
             0});
             this.numNotaMaxima.Name = "numNotaMaxima";
-            this.numNotaMaxima.ReadOnly = true;
             this.numNotaMaxima.Size = new System.Drawing.Size(311, 23);
             this.numNotaMaxima.TabIndex = 162;
             this.numNotaMaxima.ValueChanged += new System.EventHandler(this.numNotaMaxima_ValueChanged);
@@ -499,6 +498,8 @@
             // IniciarProceso
             // 
             this.IniciarProceso.WorkerReportsProgress = true;
+            this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
+            this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
             // 
             // Competencia
             // 

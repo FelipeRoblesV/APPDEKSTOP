@@ -33,9 +33,30 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         private CargarListaSubFormulario SubFormularioInicia;
 
         private double numero = 0, numero2 = 0;
-        private int idComp = 0, idEva = 0, rutFun = 0;
+        private int idPerfilComp = 0, idPerfilEva = 0, idEva = 0, idPre = 0, rutFun = 0, idCompetencia = 0;
 
         public FormularioPrincipal Formulario;
+
+        public int Recuperarid(int numero)
+        {
+            switch (numero)
+            {
+                default:
+                    return 0;
+                case 1:
+                    return rutFun;
+                case 2:
+                    return idPerfilComp;
+                case 3:
+                    return idCompetencia;
+                case 4:
+                    return idPerfilEva;
+                case 5:
+                    return idEva;
+                case 6:
+                    return idPre;
+            }
+        }
 
 
         public void PasarDatos(FormularioPrincipal form)
@@ -327,7 +348,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     listaEvaluacion_Perfil.definirFormulario(numero, listar, estado);
                     break;
             }
-            }
+        }
         public void DefinirFormulario(double numero, DataSet listar, bool estado)
         {
             switch (numero)
@@ -471,112 +492,116 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             BunifuCustomDataGrid btn = sender as BunifuCustomDataGrid;
             if (Formulario.estadoActualCrud() == false)
             {
-            switch (this.numero)
-            {
-                case 1.11:
-                    switch (this.numero2)
-                    {
-                        case 0:
-                            if (btn.SelectedRows.Count.Equals(1))
-                            {
-                                String rut = (btn.CurrentRow.Cells[0].Value.ToString().Replace("-", "").Trim());
-                                int run = int.Parse(rut.Substring(0, rut.Length - 1));
-                                rutFun = run;
-                                IniciarSubFormulario();
-                            }
-                            else
-                            {
+                switch (this.numero)
+                {
+                    case 1.11:
+                        switch (this.numero2)
+                        {
+                            case 0:
+                                if (btn.SelectedRows.Count.Equals(1))
+                                {
+                                    String rut = (btn.CurrentRow.Cells[0].Value.ToString().Replace("-", "").Trim());
+                                    int run = int.Parse(rut.Substring(0, rut.Length - 1));
+                                    rutFun = run;
+                                    IniciarSubFormulario();
+                                }
+                                else
+                                {
                                     SystemSounds.Hand.Play();
-                            }
-                            break;
-                    }
-                    break;
-                case 1.21:
-                    if (btn.SelectedRows.Count.Equals(1))
-                    {
-                        //    id = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
-                        MessageBox.Show("1 JEFE");
-                    }
-                    else
-                    {
-                            SystemSounds.Hand.Play();
+                                }
+                                break;
                         }
-                    break;
-                case 3:
+                        break;
+                    case 1.21:
+                        switch (this.numero2)
+                        {
+                            case 0:
+                                if (btn.SelectedRows.Count.Equals(1))
+                                {
+                                    String rut = (btn.CurrentRow.Cells[0].Value.ToString().Replace("-", "").Trim());
+                                    int run = int.Parse(rut.Substring(0, rut.Length - 1));
+                                    rutFun = run;
+                                    IniciarSubFormulario();
+                                }
+                                else
+                                {
+                                    SystemSounds.Hand.Play();
+                                }
+                                break;
+                        }
+                        break;
+                    case 3:
 
-                    switch (this.numero2)
-                    {
-                        case 0:
-                            if (btn.SelectedRows.Count.Equals(1))
-                            {
-                                idComp = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
-                                IniciarSubFormulario();
-                                MessageBox.Show("1 PERFIL COMP -" + idComp.ToString());
-                            }
-                            else
-                            {
+                        switch (this.numero2)
+                        {
+                            case 0:
+                                if (btn.SelectedRows.Count.Equals(1))
+                                {
+                                    idPerfilComp = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
+                                    IniciarSubFormulario();
+                                }
+                                else
+                                {
                                     SystemSounds.Hand.Play();
                                 }
-                            break;
-                        case 3.1:
-                            if (btn.SelectedRows.Count.Equals(1))
-                            {
-                                idComp = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
-                                IniciarSubFormulario();
-                                MessageBox.Show("1 COMPETENCIA -" + idComp.ToString());
-                            }
-                            else
-                            {
+                                break;
+                            case 3.1:
+                                if (btn.SelectedRows.Count.Equals(1))
+                                {
+                               
+                                    idCompetencia = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
+                                    IniciarSubFormulario();
+                                }
+                                else
+                                {
                                     SystemSounds.Hand.Play();
                                 }
-                            break;
-                    }
+                                break;
+                        }
 
-                    break;
-                case 4:
-                    switch (this.numero2)
-                    {
-                        case 0:
-                            if (btn.SelectedRows.Count.Equals(1))
-                            {
-                                idEva = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
-                                IniciarSubFormulario();
-                                MessageBox.Show("1 EVALUACION " + idEva.ToString());
-                            }
-                            else
-                            {
+                        break;
+                    case 4:
+                        switch (this.numero2)
+                        {
+                            case 0:
+                                if (btn.SelectedRows.Count.Equals(1))
+                                {
+                                    idPerfilEva = int.Parse(btn.CurrentRow.Cells[1].Value.ToString());
+                                    IniciarSubFormulario();
+                                }
+                                else
+                                {
                                     SystemSounds.Hand.Play();
                                 }
-                            break;
-                        case 4.1:
-                            if (btn.SelectedRows.Count.Equals(1))
-                            {
-                                idEva = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
-                                IniciarSubFormulario();
-                                MessageBox.Show("1 PREGUNTAS " + idEva.ToString());
-                            }
-                            else
-                            {
+                                break;
+                            case 4.1:
+                                if (btn.SelectedRows.Count.Equals(1))
+                                {
+                                    idEva = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
+                                    MessageBox.Show(idEva.ToString());
+                                    IniciarSubFormulario();
+                                }
+                                else
+                                {
                                     SystemSounds.Hand.Play();
                                 }
-                            break;
-                        case 4.2:
-                            if (btn.SelectedRows.Count.Equals(1))
-                            {
-                                idEva = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
-                                IniciarSubFormulario();
-                                MessageBox.Show("1 ALTERNATIVAS " + idEva.ToString());
-                            }
-                            else
-                            {
+                                break;
+                            case 4.2:
+                                if (btn.SelectedRows.Count.Equals(1))
+                                {
+                                    idPre = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
+                                    IniciarSubFormulario();
+                                }
+                                else
+                                {
                                     SystemSounds.Hand.Play();
                                 }
-                            break;
-                    }
-                    break;
+                                break;
+                        }
+                        break;
 
 
-            }
+                }
             }
         }
         public void CargarFormulario(int estado, String mensaje)
@@ -630,6 +655,35 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             break;
                     }
                     break;
+
+                case 1.21:
+                    switch (this.numero2)
+                    {
+                        case 0:
+                            iniciar.mensaje = "Verificando cursos realizados.";
+                            IniciarAplicacion.ReportProgress(1, iniciar);
+                            try
+                            {
+                                daoWebService daoWebService = new daoWebService();
+                                Cl_Persona per = new Cl_Persona();
+                                per.run = iniciar.id.ToString();
+                                List<Cl_Curso> lista = daoWebService.listarCursos(per);
+                                DataTable dt = ConvertToDataTable(lista);
+                                DataSet ds = new DataSet();
+                                ds.Tables.Add(dt);
+                                iniciar.lista = ds;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+                            catch (Exception)
+                            {
+
+                                iniciar.lista = null;
+                                IniciarAplicacion.ReportProgress(2, iniciar);
+                            }
+
+                            break;
+                    }
+                    break;
                 case 3:
 
                     switch (this.numero2)
@@ -649,7 +703,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                                 iniciar.lista = null;
                                 IniciarAplicacion.ReportProgress(2, iniciar);
                             }
-     
+
                             break;
                         case 3.1:
                             iniciar.mensaje = "Cargando Observacion";
@@ -688,7 +742,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                                 iniciar.lista = null;
                                 IniciarAplicacion.ReportProgress(2, iniciar);
                             }
-                           
+
                             break;
                         case 4.1:
                             iniciar.mensaje = "Cargando Preguntas";
@@ -741,7 +795,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             switch (porcentaje)
             {
                 case 1:
-                    CargarFormulario(1,iniciar.mensaje);
+                    CargarFormulario(1, iniciar.mensaje);
                     break;
                 case 2:
                     switch (this.numero)
@@ -774,6 +828,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             break;
                         case 3:
+                            MessageBox.Show(numero.ToString());
+                            MessageBox.Show(numero2.ToString());
+
                             switch (this.numero2)
                             {
                                 case 0:
@@ -807,57 +864,61 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
                             break;
                         case 4:
-                            try
+                            switch (this.numero2)
                             {
-                                DataSet lista = iniciar.lista;
-                                this.DefinirFormulario(4.1, lista, true);
-                                this.numero2 = 4.1;
-                            }
-                            catch (Exception)
-                            {
-                                DataSet lista = null;
-                                this.DefinirFormulario(4.1, lista, false);
-                                this.numero2 = 4.1;
-                            }
-                            break;
-                        case 4.1:
-                            try
-                            {
-                                DataSet lista = iniciar.lista;
-                                this.DefinirFormulario(4.2, lista, true);
-                                this.numero2 = 4.2;
-                            }
-                            catch (Exception)
-                            {
-                                DataSet lista = null;
-                                this.DefinirFormulario(4.2, lista, false);
-                                this.numero2 = 4.2;
-                            }
-                            break;
-                        case 4.2:
-                            try
-                            {
-                                listaEvaluacion_Alternativa = new Modulo.Listado();
-                                DataSet lista = iniciar.lista;
-                                this.DefinirFormulario(4.3, lista, true);
+                                case 0:
+                                    try
+                                    {
+                                        DataSet lista = iniciar.lista;
+                                        this.DefinirFormulario(4.1, lista, true);
+                                        this.numero2 = 4.1;
+                                    }
+                                    catch (Exception)
+                                    {
+                                        DataSet lista = null;
+                                        this.DefinirFormulario(4.1, lista, false);
+                                        this.numero2 = 4.1;
+                                    }
+                                    break;
+                                case 4.1:
+                                    try
+                                    {
+                                        DataSet lista = iniciar.lista;
+                                        this.DefinirFormulario(4.2, lista, true);
+                                        this.numero2 = 4.2;
+                                    }
+                                    catch (Exception)
+                                    {
+                                        DataSet lista = null;
+                                        this.DefinirFormulario(4.2, lista, false);
+                                        this.numero2 = 4.2;
+                                    }
+                                    break;
+                                case 4.2:
+                                    try
+                                    {
+                                        listaEvaluacion_Alternativa = new Modulo.Listado();
+                                        DataSet lista = iniciar.lista;
+                                        this.DefinirFormulario(4.3, lista, true);
 
-                                this.numero2 = 4.3;
-                            }
-                            catch (Exception)
-                            {
-                                DataSet lista = null;
-                                this.DefinirFormulario(4.3, lista, false);
-                                this.numero2 = 4.3;
+                                        this.numero2 = 4.3;
+                                    }
+                                    catch (Exception)
+                                    {
+                                        DataSet lista = null;
+                                        this.DefinirFormulario(4.3, lista, false);
+                                        this.numero2 = 4.3;
+                                    }
+                                    break;
                             }
                             break;
+
                     }
                     break;
-                        
+
+                    //    listarCompetenciaFinal = new Modulo.Listado();
             }
-
-            //    listarCompetenciaFinal = new Modulo.Listado();
         }
-
         private void IniciarSubFormulario()
         {
             SubFormularioInicia = null;
@@ -875,19 +936,43 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             }
             if (iniciarSubFormulario.IsBusy == false)
             {
-                if (numero == 1.11)
-                {
-                    SubFormularioInicia.id = rutFun;
-                }
-                if (numero == 3)
-                {
-                    SubFormularioInicia.id = idComp;
-                }
-                if (numero == 4)
-                {
-                    SubFormularioInicia.id = idEva;
-                }
 
+                switch (numero)
+                {
+                    case 1.11:
+                        SubFormularioInicia.id = rutFun;
+                        break;
+                    case 1.21:
+                        SubFormularioInicia.id = rutFun;
+                        break;
+                    case 3:
+                        switch (this.numero2)
+                        {
+                            case 0:
+                            SubFormularioInicia.id = idPerfilComp;
+                        break;
+                    case 3.1:
+                        SubFormularioInicia.id = idCompetencia;
+                        break;
+                }
+                        break;
+
+                    case 4:
+                        switch (this.numero2)
+                        {
+                            case 0:
+                                SubFormularioInicia.id = idPerfilEva;
+                                break;
+                            case 4.1:
+                                SubFormularioInicia.id = idEva;
+                                break;
+                            case 4.2:
+                                SubFormularioInicia.id = idPre;
+                                break;
+                        }
+                        break;
+
+                }
 
                 iniciarSubFormulario.RunWorkerAsync(SubFormularioInicia);
             }

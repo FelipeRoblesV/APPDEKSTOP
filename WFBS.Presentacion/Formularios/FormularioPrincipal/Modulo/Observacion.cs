@@ -17,7 +17,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
     public partial class Observacion : Form
     {
         private double numeroFormulario = 2.11;
-        private int id = 0;
+        private int idObservacion = 0, idCompetencia = 0;
         private FormularioPrincipal formulario;
         private int numero = 0;
         private Cl_Observacion observacion;
@@ -30,6 +30,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void PasarDatos(FormularioPrincipal form)
         {
             this.formulario = form;
+            idCompetencia = form.RecuperaridDataGrid(3);
+
+            MessageBox.Show(idCompetencia.ToString());
         }
 
 
@@ -43,7 +46,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         public void limpiarFormulario()
         {
             txtMensaje.Text = String.Empty;
-            chkNivel.Checked = false;
+            rbAlto.Checked = false;
+            rbBajo.Checked = false;
         }
 
 
@@ -71,11 +75,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             txtMensaje.Text = obs.mensaje;
             if (obs.is_nivel_alto == '1')
             {
-                chkNivel.Checked = true;
+                rbAlto.Checked = true;
             }
             else if (obs.is_nivel_alto == '0')
             {
-                chkNivel.Checked = false;
+                rbBajo.Checked = false;
             }
         }
 
@@ -84,16 +88,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             Cl_Observacion obs = new Cl_Observacion();
             obs.mensaje = txtMensaje.Text;
          
-            if(chkNivel.Checked)
+            if(rbAlto.Checked)
             {
                 obs.is_nivel_alto = '1';
             }
-            else 
+            else if(rbBajo.Checked) 
             {
                 obs.is_nivel_alto ='0';
             }
-            obs.id = this.id;
-
+            obs.id = this.idObservacion;
+            obs.competencia.id = idCompetencia;
             return obs;
         }
 
@@ -114,7 +118,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                 lblErrorMensaje.Visible = true;
             }
 
-            if (contador == 1)
+            if(rbAlto.Checked == true ||  rbBajo.Checked == true)
+            {
+                contador++;
+                lblErrorNivel.Visible = false;
+            }
+            else
+            {
+                lblErrorNivel.Text = "Seleccione un nivel";
+                lblErrorNivel.Visible = true;
+            }
+
+            if (contador == 2)
             {
                 respuesta = true;
             }
@@ -169,7 +184,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     try
                     {
                         daoObservacion dao = new daoObservacion();
-                 //       iniciar.respuesta = dao.Agregar(perfil);
+                       iniciar.respuesta = dao.Agregar(observacion);
 
                         IniciarAplicacion.ReportProgress(2, iniciar);
                         System.Threading.Thread.Sleep(2500);
@@ -187,8 +202,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
                     try
                     {
-                        daoPerfil dao = new daoPerfil();
-                   //     iniciar.respuesta = dao.Modificar(perfil);
+                        daoObservacion dao = new daoObservacion();
+                        iniciar.respuesta = dao.Modificar(observacion);
                         IniciarAplicacion.ReportProgress(2, iniciar);
                         System.Threading.Thread.Sleep(2500);
                         IniciarAplicacion.ReportProgress(3, iniciar);
@@ -228,7 +243,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                             if (iniciar.respuesta)
                             {
                                 formulario.recargarListados(3.211);
-                                formulario.TerminarProceso(3.21);
+                                formulario.TerminarProceso(3.2);
                             }
                             else
                             {

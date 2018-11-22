@@ -112,6 +112,7 @@
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 46;
             this.btnCerrar.TabStop = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lblNombreFormulario
             // 
@@ -138,7 +139,6 @@
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(334, 52);
             this.panelBotones.TabIndex = 143;
-            this.panelBotones.Visible = false;
             // 
             // btnLimpiar
             // 
@@ -153,6 +153,7 @@
             this.btnLimpiar.TabIndex = 135;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAccion
             // 
@@ -167,6 +168,7 @@
             this.btnAccion.TabIndex = 134;
             this.btnAccion.Text = "Accion";
             this.btnAccion.UseVisualStyleBackColor = false;
+            this.btnAccion.Click += new System.EventHandler(this.btnAccion_Click);
             // 
             // PanelContenido
             // 
@@ -241,8 +243,14 @@
             // numNotaIndividual
             // 
             this.numNotaIndividual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.numNotaIndividual.DecimalPlaces = 1;
             this.numNotaIndividual.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numNotaIndividual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.numNotaIndividual.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             this.numNotaIndividual.Location = new System.Drawing.Point(15, 24);
             this.numNotaIndividual.Maximum = new decimal(new int[] {
             30,
@@ -268,6 +276,8 @@
             // IniciarProceso
             // 
             this.IniciarProceso.WorkerReportsProgress = true;
+            this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
+            this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
             // 
             // Alternativas
             // 

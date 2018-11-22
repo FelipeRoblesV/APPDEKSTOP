@@ -79,6 +79,38 @@ namespace WFBS.Controlador
         }
 
 
+        public Cl_Cuestionario RecuperarDatos(int id)
+        {
+            Cl_Cuestionario cuestionario;
+            DataSet dat;
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_RECUPERAR_DATOS_EVALUACION";
+                OracleCommand cmd = new OracleCommand();
+                cuestionario = new Cl_Cuestionario();
+                cmd.Parameters.Add("C_ID", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("C_CUE", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                dat = conn.EjecutarSPListar(ref cmd, sql);
+                string resultado = string.Empty;
+                foreach (DataRow item in dat.Tables[0].Rows)
+                {
+                    cuestionario.id = int.Parse(item[0].ToString());
+                    cuestionario.nombre = item[1].ToString();
+                    cuestionario.fecha_inicio = Convert.ToDateTime(item[2].ToString());
+                    cuestionario.dias = int.Parse(item[3].ToString());
+                    cuestionario.ponderacion_autoevaluacion = int.Parse(item[4].ToString());
+                }
+                return cuestionario;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
         public DataSet ListarPerfil()
         {
             DataSet resultado = new DataSet();

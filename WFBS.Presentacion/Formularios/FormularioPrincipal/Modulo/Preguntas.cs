@@ -36,17 +36,19 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             DataSet perfil = dao.llenarComboboxCompetenciasDelPerfil(idPerfil);
             DataRow row = perfil.Tables[0].NewRow();
             row[1] = 0;
-            row[0] = "<Seleccione un Perfil>";
+            row[0] = "<Seleccione una competencia>";
             perfil.Tables[0].Rows.InsertAt(row, 0);
-            cbPerfil.DisplayMember = "titulo";
-            cbPerfil.ValueMember = "id";
+            cbPerfil.DisplayMember = "Titulo";
+            cbPerfil.ValueMember = "ID";
             cbPerfil.DataSource = perfil.Tables[0];
         }
 
         public void PasarDatos(FormularioPrincipal form)
         {
             this.formulario = form;
-
+            idPerfil = form.RecuperaridDataGrid(4);
+            idEvaluacion = form.RecuperaridDataGrid(5);
+            llenarCombobox();
         }
 
         public void PasarDatos(Cl_Preguntas pre)
@@ -54,11 +56,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             this.preguntas = pre;
         }
 
-        public void PasarDatos(int id, int id2)
-        {
-            this.idPerfil = id;
-            this.idEvaluacion = id2;
-        }
 
         public void limpiarFormulario()
         {
@@ -98,6 +95,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             Cl_Preguntas pre = new Cl_Preguntas();
             pre.competencia.id = int.Parse(cbPerfil.SelectedValue.ToString());
             pre.cuestionario.id = idEvaluacion;
+            pre.cuerpo = txtPregunta.Text;
             pre.id = idPreguntas ;
 
             return pre;

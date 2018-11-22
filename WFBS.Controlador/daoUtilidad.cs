@@ -49,6 +49,27 @@ namespace WFBS.Controlador
             }
         }
 
+
+        public DataSet llenarMaximoMinimoNota(int id)
+        {
+            DataSet resultado = new DataSet();
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_RECUPERAR_NIVEL";
+                OracleCommand cmd = new OracleCommand();
+                cmd.Parameters.Add("P_ID", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("C_NIV", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                resultado = conn.EjecutarSPListar(ref cmd, sql);
+                return resultado;
+            }
+            catch (Exception)
+            {
+                throw new Exception("No hay datos para listar");
+            }
+        }
+
+
         public DataSet LlenarComboboxJefeSinPerfil()
         {
             DataSet resultado = new DataSet();

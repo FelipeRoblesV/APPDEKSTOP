@@ -9,7 +9,7 @@ using WFBS.Entidades;
 
 namespace WFBS.Controlador
 {
-   public class daoObservacion
+    public class daoObservacion
     {
 
         public bool Agregar(Cl_Observacion obs)
@@ -54,6 +54,25 @@ namespace WFBS.Controlador
             }
         }
 
+        public bool Eliminar(Cl_Observacion obs)
+        {
+            bool respuesta = false;
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_ELIMINAR_OBSERVACION";
+                OracleCommand cmd = new OracleCommand();
+                cmd.Parameters.Add("O_ID", OracleDbType.Int32).Value = obs.id;
+                respuesta = conn.EjecutarSP(ref cmd, sql);
+                return respuesta;
+            }
+            catch (Exception)
+            {
+                return respuesta;
+                throw new Exception("No elimino la observacion correctamente.");
+            }
+        }
+
         public DataSet Listar(int id)
         {
             DataSet resultado = new DataSet();
@@ -73,5 +92,35 @@ namespace WFBS.Controlador
                 throw new Exception("No hay nada en la lista");
             }
         }
+
+        public Cl_Observacion RecuperarDatos(int id)
+        {
+            Cl_Observacion observacion;
+            DataSet dat;
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_RECUPERAR_DATOS_OBSERVACION";
+                OracleCommand cmd = new OracleCommand();
+                observacion = new Cl_Observacion();
+                cmd.Parameters.Add("O_ID", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("C_OBS", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                dat = conn.EjecutarSPListar(ref cmd, sql);
+                string resultado = string.Empty;
+                foreach (DataRow item in dat.Tables[0].Rows)
+                {
+                    observacion.id = int.Parse(item[0].ToString());
+                    observacion.mensaje = item[1].ToString();
+                    observacion.is_nivel_alto = Convert.ToChar(item[2].ToString());
+                }
+                return observacion;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

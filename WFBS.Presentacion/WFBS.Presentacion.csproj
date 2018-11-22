@@ -267,12 +267,6 @@
     <Compile Include="Ventanas\Cerrar.Designer.cs">
       <DependentUpon>Cerrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Eliminar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ventanas\Eliminar.Designer.cs">
-      <DependentUpon>Eliminar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Ventanas\Mensaje.cs">
       <SubType>Form</SubType>
     </Compile>

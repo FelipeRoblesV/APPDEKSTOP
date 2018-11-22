@@ -97,5 +97,35 @@ namespace WFBS.Controlador
             }
         }
 
+
+        public Cl_Alternativa RecuperarDatos(int id)
+        {
+            Cl_Alternativa alt;
+            DataSet dat;
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_RECUPERAR_DATOS_ALTERNATIVA";
+                OracleCommand cmd = new OracleCommand();
+                alt = new Cl_Alternativa();
+                cmd.Parameters.Add("A_ID", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("C_ALT", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                dat = conn.EjecutarSPListar(ref cmd, sql);
+                foreach (DataRow item in dat.Tables[0].Rows)
+                {
+                    alt.id = int.Parse(item[0].ToString());
+                    alt.nota = Convert.ToDouble(item[1].ToString());
+                    alt.cuerpo = item[2].ToString();
+
+                }
+                return alt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
     }
 }

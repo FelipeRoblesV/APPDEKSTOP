@@ -75,6 +75,37 @@ namespace WFBS.Controlador
         }
 
 
+        public Cl_Preguntas RecuperarDatos(int id)
+        {
+            Cl_Preguntas pre;
+            DataSet dat;
+            try
+            {
+                Contexto conn = new Contexto();
+                String sql = "SP_RECUPERAR_COMPETENCIA";
+                OracleCommand cmd = new OracleCommand();
+                pre = new Cl_Preguntas();
+                cmd.Parameters.Add("C_ID", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("C_COMP", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+                dat = conn.EjecutarSPListar(ref cmd, sql);
+                foreach (DataRow item in dat.Tables[0].Rows)
+                {
+                    pre.id = int.Parse(item[0].ToString());
+                    pre.competencia.id = int.Parse(item[1].ToString());
+                    pre.cuerpo = item[2].ToString();
+
+                }
+                return pre;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+
+
 
         public DataSet Listar(int id)
         {
@@ -84,7 +115,7 @@ namespace WFBS.Controlador
                 Contexto conn = new Contexto();
                 String sql = "SP_LISTAR_PREGUNTAS_DK";
                 OracleCommand cmd = new OracleCommand();
-                cmd.Parameters.Add("(pre_ID", OracleDbType.Int32).Value = id;
+                cmd.Parameters.Add("pre_ID", OracleDbType.Int32).Value = id;
                 cmd.Parameters.Add("c_pre", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
                 resultado = conn.EjecutarSPListar(ref cmd, sql);
                 return resultado;
