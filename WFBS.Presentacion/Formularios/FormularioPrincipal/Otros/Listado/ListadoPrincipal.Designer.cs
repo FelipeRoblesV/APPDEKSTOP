@@ -48,7 +48,6 @@
             this.lblSeparacionMapa_1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMapaSitio_1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.btnRegresar = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -58,13 +57,13 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelMapaDeSitio.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -74,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -127,9 +127,9 @@
             // lblDescripcion
             // 
             this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 16.25F);
+            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 12.25F);
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(439, 10);
+            this.lblDescripcion.Location = new System.Drawing.Point(251, 10);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(567, 32);
             this.lblDescripcion.TabIndex = 5;
@@ -143,7 +143,7 @@
             this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(429, 10);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(241, 10);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
@@ -154,14 +154,14 @@
             // lblTitulo
             // 
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 20F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblTitulo.Location = new System.Drawing.Point(30, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(399, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(211, 32);
             this.lblTitulo.TabIndex = 2;
-            this.lblTitulo.Text = "Titulo del Formulario";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTitulo.Text = "Cursos del Funcionario";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelContenido
             // 
@@ -321,15 +321,6 @@
             this.lblMapaSitio_1.Text = "Perfil";
             this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panelContenido);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 82);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1496, 649);
-            this.panel6.TabIndex = 13;
-            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.SeaGreen;
@@ -447,6 +438,15 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panelContenido);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 82);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1496, 649);
+            this.panel6.TabIndex = 13;
+            // 
             // ListadoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +465,6 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -475,6 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

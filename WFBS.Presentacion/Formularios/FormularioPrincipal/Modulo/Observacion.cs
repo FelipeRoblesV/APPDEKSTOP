@@ -31,8 +31,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         {
             this.formulario = form;
             idCompetencia = form.RecuperaridDataGrid(3);
-
-            MessageBox.Show(idCompetencia.ToString());
         }
 
 

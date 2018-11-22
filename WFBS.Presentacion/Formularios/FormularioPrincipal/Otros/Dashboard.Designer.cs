@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -45,18 +45,13 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.lblTotalCompetencia = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
             this.lblTotalAlternativa = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.lblTotalPreguntas = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lblTotalEvaluacion = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
@@ -66,10 +61,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblTotalPerfil = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblTotalJefeFuncionario = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTotaFuncionario = new System.Windows.Forms.Label();
@@ -77,31 +68,40 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Actualizacion_Formulario = new System.Windows.Forms.Timer(this.components);
-            this.IniciarDashboard = new System.ComponentModel.BackgroundWorker();
             this.lblMensaje = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.dt_Listar = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.Actualizacion_Formulario = new System.Windows.Forms.Timer(this.components);
+            this.IniciarDashboard = new System.ComponentModel.BackgroundWorker();
+            this.lblTotalEvaluacion = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblTotalJefeFuncionario = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_Listar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -179,7 +179,7 @@
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Roboto", 19F);
             this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblFecha.Location = new System.Drawing.Point(1082, 56);
+            this.lblFecha.Location = new System.Drawing.Point(1014, 56);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(389, 32);
             this.lblFecha.TabIndex = 6;
@@ -191,7 +191,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Roboto Medium", 36F, System.Drawing.FontStyle.Bold);
             this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblHora.Location = new System.Drawing.Point(1163, 3);
+            this.lblHora.Location = new System.Drawing.Point(1092, 3);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(221, 58);
             this.lblHora.TabIndex = 5;
@@ -219,9 +219,9 @@
             this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.panel12.Controls.Add(this.pictureBox8);
             this.panel12.Controls.Add(this.label16);
             this.panel12.Controls.Add(this.lblTotalCompetencia);
-            this.panel12.Controls.Add(this.pictureBox8);
             this.panel12.Location = new System.Drawing.Point(1295, 12);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(169, 56);
@@ -247,24 +247,14 @@
             this.lblTotalCompetencia.TabIndex = 1;
             this.lblTotalCompetencia.Text = "1000";
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
-            this.pictureBox8.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(62, 50);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            // 
             // panel11
             // 
             this.panel11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.panel11.Controls.Add(this.pictureBox7);
             this.panel11.Controls.Add(this.label14);
             this.panel11.Controls.Add(this.lblTotalAlternativa);
-            this.panel11.Controls.Add(this.pictureBox7);
             this.panel11.Location = new System.Drawing.Point(1120, 12);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(169, 56);
@@ -290,24 +280,14 @@
             this.lblTotalAlternativa.TabIndex = 1;
             this.lblTotalAlternativa.Text = "1000";
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
-            this.pictureBox7.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(62, 50);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 0;
-            this.pictureBox7.TabStop = false;
-            // 
             // panel10
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.panel10.Controls.Add(this.pictureBox6);
             this.panel10.Controls.Add(this.label12);
             this.panel10.Controls.Add(this.lblTotalPreguntas);
-            this.panel10.Controls.Add(this.pictureBox6);
             this.panel10.Location = new System.Drawing.Point(945, 12);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(169, 56);
@@ -333,16 +313,6 @@
             this.lblTotalPreguntas.TabIndex = 1;
             this.lblTotalPreguntas.Text = "1000";
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(62, 50);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            // 
             // panel9
             // 
             this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -356,29 +326,9 @@
             this.panel9.Size = new System.Drawing.Size(169, 56);
             this.panel9.TabIndex = 18;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(71, 34);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 15);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Evaluacion";
-            // 
-            // lblTotalEvaluacion
-            // 
-            this.lblTotalEvaluacion.AutoSize = true;
-            this.lblTotalEvaluacion.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalEvaluacion.Location = new System.Drawing.Point(71, 12);
-            this.lblTotalEvaluacion.Name = "lblTotalEvaluacion";
-            this.lblTotalEvaluacion.Size = new System.Drawing.Size(49, 19);
-            this.lblTotalEvaluacion.TabIndex = 1;
-            this.lblTotalEvaluacion.Text = "1000";
-            // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
+            this.pictureBox5.Image = global::WFBS.Presentacion.Properties.Resources.Evaluacion;
             this.pictureBox5.Location = new System.Drawing.Point(3, 3);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(62, 50);
@@ -472,49 +422,6 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.lblTotalJefeFuncionario);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Location = new System.Drawing.Point(200, 12);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(176, 56);
-            this.panel6.TabIndex = 17;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(71, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Jefe Funcionario";
-            // 
-            // lblTotalJefeFuncionario
-            // 
-            this.lblTotalJefeFuncionario.AutoSize = true;
-            this.lblTotalJefeFuncionario.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalJefeFuncionario.Location = new System.Drawing.Point(70, 12);
-            this.lblTotalJefeFuncionario.Name = "lblTotalJefeFuncionario";
-            this.lblTotalJefeFuncionario.Size = new System.Drawing.Size(49, 19);
-            this.lblTotalJefeFuncionario.TabIndex = 1;
-            this.lblTotalJefeFuncionario.Text = "1000";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(62, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
@@ -564,7 +471,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 89);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(25, 0, 25, 0);
-            this.panel4.Size = new System.Drawing.Size(1496, 34);
+            this.panel4.Size = new System.Drawing.Size(1496, 46);
             this.panel4.TabIndex = 14;
             // 
             // label1
@@ -574,7 +481,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.label1.Location = new System.Drawing.Point(25, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(498, 34);
+            this.label1.Size = new System.Drawing.Size(498, 46);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ultimas 10 personas que realizaron la evaluación";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -585,11 +492,91 @@
             this.panel2.Controls.Add(this.lblMensaje);
             this.panel2.Controls.Add(this.dt_Listar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 123);
+            this.panel2.Location = new System.Drawing.Point(0, 135);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(25, 15, 25, 25);
-            this.panel2.Size = new System.Drawing.Size(1496, 399);
+            this.panel2.Size = new System.Drawing.Size(1496, 387);
             this.panel2.TabIndex = 15;
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMensaje.Font = new System.Drawing.Font("Roboto Light", 25F);
+            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
+            this.lblMensaje.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblMensaje.Location = new System.Drawing.Point(427, 141);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(643, 104);
+            this.lblMensaje.TabIndex = 38;
+            this.lblMensaje.Text = "No se encuentran datos.";
+            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMensaje.Visible = false;
+            // 
+            // dt_Listar
+            // 
+            this.dt_Listar.AllowUserToAddRows = false;
+            this.dt_Listar.AllowUserToDeleteRows = false;
+            this.dt_Listar.AllowUserToResizeColumns = false;
+            this.dt_Listar.AllowUserToResizeRows = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto Light", 12F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dt_Listar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dt_Listar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dt_Listar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dt_Listar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
+            this.dt_Listar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dt_Listar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dt_Listar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dt_Listar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dt_Listar.Cursor = System.Windows.Forms.Cursors.Hand;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(199)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto Light", 12F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dt_Listar.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dt_Listar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dt_Listar.DoubleBuffered = true;
+            this.dt_Listar.EnableHeadersVisualStyles = false;
+            this.dt_Listar.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
+            this.dt_Listar.HeaderForeColor = System.Drawing.Color.White;
+            this.dt_Listar.Location = new System.Drawing.Point(25, 15);
+            this.dt_Listar.MultiSelect = false;
+            this.dt_Listar.Name = "dt_Listar";
+            this.dt_Listar.ReadOnly = true;
+            this.dt_Listar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(199)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto Light", 14F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dt_Listar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(199)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dt_Listar.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dt_Listar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dt_Listar.ShowCellErrors = false;
+            this.dt_Listar.ShowCellToolTips = false;
+            this.dt_Listar.ShowEditingIcon = false;
+            this.dt_Listar.ShowRowErrors = false;
+            this.dt_Listar.Size = new System.Drawing.Size(1446, 347);
+            this.dt_Listar.StandardTab = true;
+            this.dt_Listar.TabIndex = 39;
             // 
             // Actualizacion_Formulario
             // 
@@ -603,85 +590,98 @@
             this.IniciarDashboard.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarDashboard_ProgressChanged);
             this.IniciarDashboard.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.IniciarDashboard_RunWorkerCompleted);
             // 
-            // lblMensaje
+            // lblTotalEvaluacion
             // 
-            this.lblMensaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMensaje.Font = new System.Drawing.Font("Roboto Light", 25F);
-            this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(216)))), ((int)(((byte)(165)))));
-            this.lblMensaje.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblMensaje.Location = new System.Drawing.Point(427, 141);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(643, 116);
-            this.lblMensaje.TabIndex = 38;
-            this.lblMensaje.Text = "No se encuentran datos.";
-            this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblMensaje.Visible = false;
+            this.lblTotalEvaluacion.AutoSize = true;
+            this.lblTotalEvaluacion.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalEvaluacion.Location = new System.Drawing.Point(71, 12);
+            this.lblTotalEvaluacion.Name = "lblTotalEvaluacion";
+            this.lblTotalEvaluacion.Size = new System.Drawing.Size(49, 19);
+            this.lblTotalEvaluacion.TabIndex = 1;
+            this.lblTotalEvaluacion.Text = "1000";
             // 
-            // dt_Listar
+            // label10
             // 
-            this.dt_Listar.AllowUserToAddRows = false;
-            this.dt_Listar.AllowUserToDeleteRows = false;
-            this.dt_Listar.AllowUserToResizeColumns = false;
-            this.dt_Listar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(236)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto Light", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_Listar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dt_Listar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dt_Listar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            this.dt_Listar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
-            this.dt_Listar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dt_Listar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_Listar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dt_Listar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dt_Listar.Cursor = System.Windows.Forms.Cursors.Hand;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(199)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto Light", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(18)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_Listar.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dt_Listar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dt_Listar.DoubleBuffered = true;
-            this.dt_Listar.EnableHeadersVisualStyles = false;
-            this.dt_Listar.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
-            this.dt_Listar.HeaderForeColor = System.Drawing.Color.White;
-            this.dt_Listar.Location = new System.Drawing.Point(25, 15);
-            this.dt_Listar.MultiSelect = false;
-            this.dt_Listar.Name = "dt_Listar";
-            this.dt_Listar.ReadOnly = true;
-            this.dt_Listar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(199)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto Light", 14F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_Listar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(199)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_Listar.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dt_Listar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dt_Listar.ShowCellErrors = false;
-            this.dt_Listar.ShowCellToolTips = false;
-            this.dt_Listar.ShowEditingIcon = false;
-            this.dt_Listar.ShowRowErrors = false;
-            this.dt_Listar.Size = new System.Drawing.Size(1446, 359);
-            this.dt_Listar.StandardTab = true;
-            this.dt_Listar.TabIndex = 39;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(71, 34);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 15);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Evaluacion";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::WFBS.Presentacion.Properties.Resources.Funcionario;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(62, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
+            // lblTotalJefeFuncionario
+            // 
+            this.lblTotalJefeFuncionario.AutoSize = true;
+            this.lblTotalJefeFuncionario.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalJefeFuncionario.Location = new System.Drawing.Point(70, 12);
+            this.lblTotalJefeFuncionario.Name = "lblTotalJefeFuncionario";
+            this.lblTotalJefeFuncionario.Size = new System.Drawing.Size(49, 19);
+            this.lblTotalJefeFuncionario.TabIndex = 1;
+            this.lblTotalJefeFuncionario.Text = "1000";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(71, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Jefe Funcionario";
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.lblTotalJefeFuncionario);
+            this.panel6.Controls.Add(this.pictureBox2);
+            this.panel6.Location = new System.Drawing.Point(200, 12);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(176, 56);
+            this.panel6.TabIndex = 17;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::WFBS.Presentacion.Properties.Resources.Evaluacion;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(62, 50);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 3;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::WFBS.Presentacion.Properties.Resources.Evaluacion;
+            this.pictureBox7.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(62, 50);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 3;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::WFBS.Presentacion.Properties.Resources.Competencia;
+            this.pictureBox8.Location = new System.Drawing.Point(2, 3);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(62, 50);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 3;
+            this.pictureBox8.TabStop = false;
             // 
             // Dashboard
             // 
@@ -700,13 +700,10 @@
             this.panel1.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -716,15 +713,18 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dt_Listar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -741,18 +741,13 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label lblTotalCompetencia;
-        private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblTotalAlternativa;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblTotalPreguntas;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label lblTotalEvaluacion;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label8;
@@ -762,10 +757,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblTotalPerfil;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblTotalJefeFuncionario;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblTotaFuncionario;
@@ -778,5 +769,14 @@
         private System.ComponentModel.BackgroundWorker IniciarDashboard;
         private Bunifu.Framework.UI.BunifuCustomLabel lblMensaje;
         public Bunifu.Framework.UI.BunifuCustomDataGrid dt_Listar;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblTotalEvaluacion;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTotalJefeFuncionario;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

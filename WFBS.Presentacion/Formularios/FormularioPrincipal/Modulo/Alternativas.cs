@@ -95,7 +95,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         {
             Cl_Alternativa alt = new Cl_Alternativa();
             alt.nota = Convert.ToDouble(numNotaIndividual.Text);
-            MessageBox.Show(alt.nota.ToString());
             alt.cuerpo = txtAlternativa.Text;
             alt.id = idAlternativa;
             alt.pregunta.id = idPregunta;

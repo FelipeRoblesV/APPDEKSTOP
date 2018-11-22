@@ -81,21 +81,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     AbrirFormulario(listaFuncionario);
                     break;
                 case 1.21:
-                    MessageBox.Show(this.numero.ToString());
                     InicializarMapaSitio();
                     this.numero = numero;
                     this.numero2 = 0;
                     AbrirFormulario(listaJefeFuncionario);
                     break;
                 case 3:
-                    MessageBox.Show(this.numero.ToString());
                     InicializarMapaSitio();
                     this.numero = numero;
                     this.numero2 = 0;
                     AbrirFormulario(listaCompetencia_Perfil);
                     break;
                 case 4:
-                    MessageBox.Show(this.numero.ToString());
                     InicializarMapaSitio();
                     this.numero = numero;
                     this.numero2 = 0;
@@ -273,54 +270,66 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             switch (numero)
             {
                 case 1.11:
-                    lblTitulo.Text = "Formulario Funcionario";
+                    
+                    lblTitulo.Text = "Funcionario";
+                    lblDescripcion.Visible = false;
                     break;
                 case 1.12:
-                    lblTitulo.Text = "Formulario Funcionario(CURSO)";
+                    lblTitulo.Text = "Cursos del Funcionario";
+                    lblDescripcion.Text = "Aqui podras ver los cursos que a realizado el funcionario";
                     break;
 
                 case 1.21:
-                    lblTitulo.Text = "Formulario Jefe Funcionario";
+                    lblTitulo.Text = "Jefe Funcionario";
+                    lblDescripcion.Visible = false;
                     break;
                 case 1.22:
-                    lblTitulo.Text = "Formulario Jefe Funcionario(CURSO)";
+                    lblTitulo.Text = "Cursos del Jefe";
+                    lblDescripcion.Text = "Aqui podras ver los cursos que a realizado el funcionario";
                     break;
                 case 2.11:
-                    lblTitulo.Text = "Formulario Perfil";
+                    lblTitulo.Text = "Perfil";
+                    lblDescripcion.Visible = false;
                     break;
                 case 2.21:
-                    lblTitulo.Text = "Formulario Cargo";
+                    lblTitulo.Text = "Cargo";
+                    lblDescripcion.Visible = false;
                     break;
                 case 3:
                     InicializarMapaSitio();
-                    lblTitulo.Text = "Formulario PERFIL(COMPETENCIA)";
-                    lblDescripcion.Text = "Seleccione el perfil de la competencia";
+                    lblTitulo.Text = "Perfil";
+                    lblDescripcion.Text = "Seleccione el perfil de la competencia.";
 
                     break;
                 case 3.1:
-                    lblTitulo.Text = "Formulario COMPETENCIA(COMPETENCIA)";
+                    lblTitulo.Text = "Competencia";
+                    lblDescripcion.Visible = false;
                     DefinirMapaDeSitio(numero);
                     break;
                 case 3.2:
-                    lblTitulo.Text = "Formulario OBSERVACION(COMPETENCIA)";
+                    lblTitulo.Text = "Observacion";
+                    lblDescripcion.Visible = false;
                     DefinirMapaDeSitio(numero);
                     break;
                 case 4:
                     InicializarMapaSitio();
-                    lblTitulo.Text = "Formulario PERFIL(EVALUACION)";
-                    lblDescripcion.Text = "Seleccione el perfil de la evaluacion";
+                    lblTitulo.Text = "Perfil ";
+                    lblDescripcion.Text = "Seleccione el perfil de la evaluacion.";
                     break;
                 case 4.1:
                     DefinirMapaDeSitio(numero);
-                    lblTitulo.Text = "Formulario EVALUACION(EVALUACION)";
+                    lblTitulo.Text = "Evaluacion";
+                    lblDescripcion.Visible = false;
                     break;
                 case 4.2:
                     DefinirMapaDeSitio(numero);
-                    lblTitulo.Text = "Formulario PREGUNTA(EVALUACION)";
+                    lblTitulo.Text = "Preguntas";
+                    lblDescripcion.Visible = false;
                     break;
                 case 4.3:
                     DefinirMapaDeSitio(numero);
-                    lblTitulo.Text = "Formulario PREGUNTA(ALTERNATIVA)";
+                    lblTitulo.Text = "Alternativas";
+                    lblDescripcion.Visible = false;
                     break;
             }
         }
@@ -593,7 +602,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                                 if (btn.SelectedRows.Count.Equals(1))
                                 {
                                     idEva = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
-                                    MessageBox.Show(idEva.ToString());
                                     IniciarSubFormulario();
                                 }
                                 else
@@ -843,9 +851,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             }
                             break;
                         case 3:
-                            MessageBox.Show(numero.ToString());
-                            MessageBox.Show(numero2.ToString());
-
                             switch (this.numero2)
                             {
                                 case 0:

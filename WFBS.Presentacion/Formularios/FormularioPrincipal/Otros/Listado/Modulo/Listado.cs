@@ -77,7 +77,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             catch (Exception ex)
                             {
 
-                                MessageBox.Show(ex.Message);
                             }  
                         }
                         else
@@ -283,6 +282,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
+                            dt_Listar.Columns[1].Visible = false;
                         }
                         else
                         {
@@ -305,6 +306,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
                         }
                         else
                         {
@@ -325,6 +327,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
                         }
                         else
                         {
@@ -345,6 +348,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
+                            dt_Listar.Columns[1].Visible = false;
                         }
                         else
                         {
@@ -367,6 +372,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
                         }
                         else
                         {
@@ -389,6 +395,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
                         }
                         else
                         {
@@ -411,6 +418,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            dt_Listar.Columns[0].Visible = false;
                         }
                         else
                         {

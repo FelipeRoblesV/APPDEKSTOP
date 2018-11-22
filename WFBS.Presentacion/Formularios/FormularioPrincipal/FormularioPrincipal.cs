@@ -519,7 +519,14 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     break;
                 case 1.22:
                     InicializarSubFormulario();
-                    panelMenuDatagrid.Visible = false;
+                    panelMenuDatagrid.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    btnAgregar.Visible = false;
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
+                    btnRefrescar.Visible = false;
                     break;
                 case 2.11:
                     InicializarSubFormulario();
@@ -540,6 +547,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 3.1:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
                     OcultarMenu();
 
                     numero2 = numero;
@@ -547,6 +557,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 3.2:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
                     OcultarMenu();
 
                     numero2 = numero;
@@ -554,6 +567,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 4.1:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
                     OcultarMenu();
 
                     numero2 = numero;
@@ -561,6 +577,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 4.2:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
                     OcultarMenu();
 
                     numero2 = numero;
@@ -568,6 +587,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 4.3:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
                     OcultarMenu();
 
                     numero2 = numero;
@@ -648,8 +670,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(numero.ToString() + " || " + numero2.ToString());
-
             switch (this.numero)
             {
 
@@ -1835,8 +1855,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 IniciarProcemiento(1);
             }
 
-            MessageBox.Show(numero2.ToString() + " - " + btn.Name);
-
             switch (this.numero2)
             {
                 case 1.11:
@@ -2087,7 +2105,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
                             {
                                 string id = ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString();
-                                MessageBox.Show(id);
                                 daoPerfil dao = new daoPerfil();
                                 Modulo.Perfil moduloPerfil = new Modulo.Perfil();
                                 moduloPerfil.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
@@ -2170,7 +2187,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             if (ListarCargo.listaCargo.dt_Listar.SelectedRows.Count > 0)
                             {
                                 string id = ListarCargo.listaCargo.dt_Listar.CurrentRow.Cells[0].Value.ToString();
-                                MessageBox.Show(id);
                                 daoCargo dao = new daoCargo();
                                 Modulo.Cargo moduloCargo = new Modulo.Cargo();
                                 moduloCargo.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
@@ -2242,7 +2258,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             SystemSounds.Hand.Play();
                         }
 
-                        MessageBox.Show(ListarCompetencia.Recuperarid(2).ToString());
                     }
                     if (btn.Name == btnModificar.Name)
                     {
@@ -2328,7 +2343,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                                 SystemSounds.Hand.Play();
                             }
 
-                            MessageBox.Show(ListarCompetencia.Recuperarid(2).ToString());
                         }
                     }
                     if (btn.Name == btnModificar.Name)
