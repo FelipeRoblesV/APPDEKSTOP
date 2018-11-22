@@ -19,8 +19,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Clases
         public DataSet listarCompetencia { get; set; }
         public DataSet listarEvaluacion { get; set; }
         public DataSet listarReporte { get; set; }
-
+        public DataSet listarObservacion { get; set; }
+        public DataSet listarPregunta { get; set; }
+        public DataSet listarAlternativa { get; set; }
         public RecargarFormulario()
+
         {
 
         }

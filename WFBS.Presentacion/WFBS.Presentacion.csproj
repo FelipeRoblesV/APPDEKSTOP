@@ -556,6 +556,9 @@
     <None Include="Resources\icons8-búsqueda-32.png" />
     <None Include="Resources\icons8-búsqueda-32%281%29.png" />
     <None Include="Resources\icons8-búsqueda-32%285%29.png" />
+    <None Include="Resources\icons8-cerrar-ventana-24%284%29.png" />
+    <None Include="Resources\icons8-cerrar-ventana-24%285%29.png" />
+    <None Include="Resources\icons8-cerrar-ventana-24%286%29.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
   <ItemGroup />

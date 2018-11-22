@@ -16,7 +16,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 {
     public partial class Observacion : Form
     {
-        private double numeroFormulario = 2.11;
+        private double numeroFormulario = 3.2;
         private int idObservacion = 0, idCompetencia = 0;
         private FormularioPrincipal formulario;
         private int numero = 0;
@@ -242,7 +242,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         case 3:
                             if (iniciar.respuesta)
                             {
-                                formulario.recargarListados(3.211);
+                                formulario.recargarListados(3.21);
                                 formulario.TerminarProceso(3.2);
                             }
                             else

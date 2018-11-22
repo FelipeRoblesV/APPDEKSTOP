@@ -246,8 +246,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     InicializarMapaSitio();
                     panelMapaDeSitio.Visible = true;
                     lblSeparacionMapa_3.Visible = true;
-                    lblMapaSitio_3.Visible = true;
-                    lblMapaSitio_3.Text = "Alternativa";
+                    lblMapaSitio_4.Visible = true;
+                    lblMapaSitio_4.Text = "Alternativa";
                     lblSeparacionMapa_2.Visible = true;
                     lblMapaSitio_3.Visible = true;
                     lblMapaSitio_3.Text = "Preguntas";
@@ -344,8 +344,23 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                 case 3:
                     listaCompetencia_Perfil.definirFormulario(numero, listar, estado);
                     break;
+                case 3.1:
+                    listaCompetencia_Perfil.definirFormulario(numero, listar, estado);
+                    break;
+                case 3.2:
+                    listaCompetencia_Observacion.definirFormulario(numero, listar, estado);
+                    break;
                 case 4:
                     listaEvaluacion_Perfil.definirFormulario(numero, listar, estado);
+                    break;
+                case 4.1:
+                    listarEvaluacion.definirFormulario(numero, listar, estado);
+                    break;
+                case 4.2:
+                    listaEvaluacion_Pregunta.definirFormulario(numero, listar, estado);
+                    break;
+                case 4.3:
+                    listaEvaluacion_Alternativa.definirFormulario(numero, listar, estado);
                     break;
             }
         }

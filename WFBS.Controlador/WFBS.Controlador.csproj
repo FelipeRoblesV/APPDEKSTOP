@@ -52,6 +52,7 @@
     <Compile Include="daoCuestionario.cs" />
     <Compile Include="daoDashboard.cs" />
     <Compile Include="daoFuncionario.cs" />
+    <Compile Include="daoFuncionarioCargo.cs" />
     <Compile Include="daoJefeFuncionario.cs" />
     <Compile Include="daoObservacion.cs" />
     <Compile Include="daoPerfil.cs" />

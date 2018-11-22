@@ -540,7 +540,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 3.1:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
-                    InicializarBotones();
                     OcultarMenu();
 
                     numero2 = numero;
@@ -548,7 +547,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 3.2:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
-                    InicializarBotones();
                     OcultarMenu();
 
                     numero2 = numero;
@@ -556,7 +554,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 4.1:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
-                    InicializarBotones();
                     OcultarMenu();
 
                     numero2 = numero;
@@ -564,7 +561,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 4.2:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
-                    InicializarBotones();
                     OcultarMenu();
 
                     numero2 = numero;
@@ -572,7 +568,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 4.3:
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
-                    InicializarBotones();
                     OcultarMenu();
 
                     numero2 = numero;
@@ -617,7 +612,22 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 3:
                     ListarCompetencia.ActualizarFormulario(numero, lista, estado);
                     break;
+                case 3.1:
+                    ListarCompetencia.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 3.2:
+                    ListarCompetencia.ActualizarFormulario(numero, lista, estado);
+                    break;
                 case 4:
+                    ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 4.1:
+                    ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 4.2:
+                    ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 4.3:
                     ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
                     break;
                 case 5:
@@ -638,8 +648,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(numero.ToString() + " || " + numero2.ToString());
 
-            MessageBox.Show(this.numero.ToString() + " !!  " + this.numero2.ToString());
             switch (this.numero)
             {
 
@@ -657,13 +667,38 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 2:
                     switch (this.numero2)
                     {
-                        case 1.211:
-                            recargarListados(1.211);
+                        case 1:
+                            recargarListados(this.numero);
                             break;
                         case 2.11:
                             recargarListados(this.numero2);
                             break;
                         case 2.21:
+                            recargarListados(this.numero2);
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (this.numero2)
+                    {
+                        case 3.1:
+                            recargarListados(this.numero2);
+                            break;
+                        case 3.2:
+                            recargarListados(this.numero2);
+                            break;
+                    }
+                    break;
+                        case 4:
+                    switch (this.numero2)
+                    {
+                        case 4.1:
+                            recargarListados(this.numero2);
+                            break;
+                        case 4.2:
+                            recargarListados(this.numero2);
+                            break;
+                        case 4.3:
                             recargarListados(this.numero2);
                             break;
                     }
@@ -804,8 +839,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         case 3:
                             AbrirFormulario(ListarJefeFuncionario);
                             break;
-
-
                     }
                     break;
                 case 1.211:
@@ -956,6 +989,444 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
                     }
                     break;
+
+                case 3.1:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
+                            }
+                            break;
+                        case 3:
+                            AbrirFormulario(ListarCompetencia);
+                            break;
+
+
+                    }
+                    break;
+
+                case 3.11:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+
+                    }
+
+                    break;
+                case 3.2:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarObservacion;
+                                ActualizarFormulario(3.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.2, lista, false);
+                            }
+                            break;
+                        case 4:
+                            AbrirFormulario(ListarCompetencia);
+                            break;
+
+
+                    }
+                    break;
+
+                case 3.21:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(3.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.2, lista, false);
+                            }
+                            break;
+
+                    }
+
+
+
+                    break;
+                case 4.1:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 4:
+                            AbrirFormulario(ListarEvaluacion);
+                            break;
+
+
+                    }
+                    break;
+                case 4.11:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+
+                    }
+                    break;
+                case 4.2:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 4:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+                        case 5:
+                            AbrirFormulario(ListarEvaluacion);
+                            break;
+
+
+                    }
+                    break;
+                case 4.21:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+
+                    }
+                    break;
+
+                case 4.3:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 4:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+                        case 5:
+                            try
+                            {
+                                DataSet lista = iniciar.listarAlternativa;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+                        case 6:
+                            AbrirFormulario(ListarEvaluacion);
+                            break;
+
+
+                    }
+                    break;
+                case 4.31:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+                        case 4:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.3, lista, false);
+                            }
+                            break;
+
+                    }
+                    break;
+
             }
 
         }
@@ -975,6 +1446,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 daoCompetencia daoCompetencia = new daoCompetencia();
                 daoCargo daoCargo = new daoCargo();
                 daoReporte daoReporte = new daoReporte();
+                daoObservacion daoObservacion = new daoObservacion();
+                daoPreguntas daoPreguntas = new daoPreguntas();
+                daoAlternativa daoAlternativa = new daoAlternativa();
 
                 switch (inicio.numero)
                 {
@@ -998,7 +1472,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         break;
                     case 1.211:
 
-                        inicio.listarFuncionario = dao.listar();
+                        inicio.listarJefeFuncionario = daoJF.listar();
                         IniciarAplicacion.ReportProgress(1, inicio);
                         inicio.listarPerfil = dao.listar();
                         IniciarAplicacion.ReportProgress(2, inicio);
@@ -1031,6 +1505,101 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         inicio.listarCargo = daoCargo.listar();
                         IniciarAplicacion.ReportProgress(1, inicio);
                         break;
+                    case 3.1:
+                        inicio.mensaje = "Actualizando Competencia";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        IniciarAplicacion.ReportProgress(4);
+                        break;
+                    case 3.11:
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        break;
+                    case 3.2:
+                        inicio.mensaje = "Actualizando Observaciones";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarObservacion = daoObservacion.Listar(ListarCompetencia.Recuperarid(3));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        IniciarAplicacion.ReportProgress(4);
+                        break;
+                    case 3.21:
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarObservacion = daoObservacion.Listar(ListarCompetencia.Recuperarid(3));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        break;
+                    case 4.1:
+                        inicio.mensaje = "Actualizando Evaluaciones";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        IniciarAplicacion.ReportProgress(4);
+                        break;
+                    case 4.11:
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+
+                        break;
+                    case 4.2:
+                        inicio.mensaje = "Actualizando Preguntas";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(4, inicio);
+                        IniciarAplicacion.ReportProgress(5);
+                        break;
+                    case 4.21:
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        break;
+
+                    case 4.3:
+                        inicio.mensaje = "Actualizando Alternativas";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(4, inicio);
+                        inicio.listarPregunta = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6));
+                        IniciarAplicacion.ReportProgress(5, inicio);
+                        IniciarAplicacion.ReportProgress(6);
+                        break;
+                    case 4.31:
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        inicio.listarAlternativa = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6));
+                        IniciarAplicacion.ReportProgress(4, inicio);
+                        break;
+
+
                 }
             }
             catch (Exception)
@@ -1086,6 +1655,56 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     iniciar.numero = numero;
                     RecargarFormulario.RunWorkerAsync(iniciar);
                     break;
+                case 3.1:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 3.11:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 3.2:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 3.21:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.1:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.11:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.2:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.21:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.3:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.31:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
             }
         }
 
@@ -1096,6 +1715,11 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             {
                 case 1.11:
                     modulofuncionario.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 1.12:
+                    moduloCargoFuncionario.Close();
                     PanelCRUD.Visible = false;
                     estadoCRUD = 0;
                     break;
@@ -1155,6 +1779,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             {
                 default:
                     return 0;
+                case 1:
+                    return ListarFuncionario.Recuperarid(numero);
+
                 case 2:
                     return ListarCompetencia.Recuperarid(numero);
                 case 3:
@@ -1165,10 +1792,14 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     return ListarEvaluacion.Recuperarid(numero);
                 case 6:
                     return ListarEvaluacion.Recuperarid(numero);
+                case 7:
+                    return ListarJefeFuncionario.Recuperarid(1);
 
 
             }
         }
+
+
 
         #region ACCION DE LOS BOTONES PARA EL SUBFORMULARIO
 
@@ -1271,6 +1902,32 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             }
                         }
                     }
+                    if (btn.Name == btnSubAccion1.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+
+                                Modulo.Modulos_Adicionales.CargoFuncionario modulocargoFuncionario = new Modulo.Modulos_Adicionales.CargoFuncionario();
+                                modulocargoFuncionario.pasarDatos(this);
+                                modulocargoFuncionario.pasarDatos(int.Parse(run));
+                                AbrirModulo(modulocargoFuncionario);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloCargoFuncionario = modulocargoFuncionario;
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
                     break;
                 case 1.21:
                     if (btn.Name == btnAgregar.Name)
@@ -1357,7 +2014,32 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             }
                         }
                     }
+                    if (btn.Name == btnSubAccion1.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                string rut = ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
 
+                                Modulo.Modulos_Adicionales.CargoFuncionario modulocargoFuncionario = new Modulo.Modulos_Adicionales.CargoFuncionario();
+                                modulocargoFuncionario.pasarDatos(this);
+                                modulocargoFuncionario.pasarDatos(int.Parse(run));
+                                AbrirModulo(modulocargoFuncionario);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloCargoFuncionario = modulocargoFuncionario;
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
 
                     break;
                 case 2.11:
@@ -1441,6 +2123,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             }
                         }
                     }
+                
                     break;
                 case 2.21:
                     if (btn.Name == btnAgregar.Name)

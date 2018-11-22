@@ -46,6 +46,7 @@
     <Compile Include="Cl_Cuestionario.cs" />
     <Compile Include="Cl_Cargo.cs" />
     <Compile Include="Cl_Funcionario.cs" />
+    <Compile Include="Cl_Funcionario_Cargo.cs" />
     <Compile Include="Cl_Jefe_Funcionario.cs" />
     <Compile Include="Cl_JefePerfil.cs" />
     <Compile Include="Cl_Observacion.cs" />
