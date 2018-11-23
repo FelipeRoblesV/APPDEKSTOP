@@ -131,7 +131,6 @@
             this.dt_Listar.Size = new System.Drawing.Size(1456, 539);
             this.dt_Listar.StandardTab = true;
             this.dt_Listar.TabIndex = 38;
-            this.dt_Listar.DataSourceChanged += new System.EventHandler(this.dt_Listar_DataSourceChanged);
             // 
             // Listado
             // 

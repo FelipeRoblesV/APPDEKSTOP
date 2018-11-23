@@ -492,44 +492,44 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
         public void ExportarExcel()
         {
-            try
-            {
+            //try
+            //{
 
-                SaveFileDialog fichero = new SaveFileDialog();
-                fichero.Filter = "Excel (*.xls)|*.xls";
-                fichero.FileName = "ArchivoExportado";
-                if (fichero.ShowDialog() == DialogResult.OK)
-                {
-                    Microsoft.Office.Interop.Excel.Application aplicacion;
-                    Microsoft.Office.Interop.Excel.Workbook libros_trabajo;
-                    Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
+            //    SaveFileDialog fichero = new SaveFileDialog();
+            //    fichero.Filter = "Excel (*.xls)|*.xls";
+            //    fichero.FileName = "ArchivoExportado";
+            //    if (fichero.ShowDialog() == DialogResult.OK)
+            //    {
+            //        Microsoft.Office.Interop.Excel.Application aplicacion;
+            //        Microsoft.Office.Interop.Excel.Workbook libros_trabajo;
+            //        Microsoft.Office.Interop.Excel.Worksheet hoja_trabajo;
 
-                    aplicacion = new Microsoft.Office.Interop.Excel.Application();
-                    libros_trabajo = aplicacion.Workbooks.Add();
-                    hoja_trabajo =
-                        (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
+            //        aplicacion = new Microsoft.Office.Interop.Excel.Application();
+            //        libros_trabajo = aplicacion.Workbooks.Add();
+            //        hoja_trabajo =
+            //            (Microsoft.Office.Interop.Excel.Worksheet)libros_trabajo.Worksheets.get_Item(1);
 
-                    //Recorremos el DataGridView rellenando la hoja de trabajo
-                    for (int i = 0; i < listaReporte.dt_Listar.Rows.Count - 1; i++)
-                    {
-                        for (int j = 0; j < listaReporte.dt_Listar.Columns.Count; j++)
-                        {
-                            if ((listaReporte.dt_Listar.Rows[i].Cells[j].Value == null) == false)
-                            {
-                                hoja_trabajo.Cells[i + 1, j + 1] = listaReporte.dt_Listar.Rows[i].Cells[j].Value.ToString();
-                            }
-                        }
-                    }
-                    libros_trabajo.SaveAs(fichero.FileName,
-                        Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
-                    libros_trabajo.Close(true);
-                    aplicacion.Quit();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString());
-            }
+            //        //Recorremos el DataGridView rellenando la hoja de trabajo
+            //        for (int i = 0; i < listaReporte.dt_Listar.Rows.Count - 1; i++)
+            //        {
+            //            for (int j = 0; j < listaReporte.dt_Listar.Columns.Count; j++)
+            //            {
+            //                if ((listaReporte.dt_Listar.Rows[i].Cells[j].Value == null) == false)
+            //                {
+            //                    hoja_trabajo.Cells[i + 1, j + 1] = listaReporte.dt_Listar.Rows[i].Cells[j].Value.ToString();
+            //                }
+            //            }
+            //        }
+            //        libros_trabajo.SaveAs(fichero.FileName,
+            //            Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookNormal);
+            //        libros_trabajo.Close(true);
+            //        aplicacion.Quit();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error al exportar la informacion debido a: " + ex.ToString());
+            //}
 
         }
         #endregion

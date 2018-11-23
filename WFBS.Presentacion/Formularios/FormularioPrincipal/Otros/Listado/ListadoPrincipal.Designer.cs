@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListadoPrincipal));
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
             this.txtBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -48,6 +47,7 @@
             this.lblSeparacionMapa_1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMapaSitio_1 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.btnRegresar = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -57,13 +57,13 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelMapaDeSitio.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -194,7 +193,7 @@
             this.panelMapaDeSitio.Location = new System.Drawing.Point(0, 52);
             this.panelMapaDeSitio.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.panelMapaDeSitio.Name = "panelMapaDeSitio";
-            this.panelMapaDeSitio.Padding = new System.Windows.Forms.Padding(10, 5, 0, 0);
+            this.panelMapaDeSitio.Padding = new System.Windows.Forms.Padding(10, 5, 15, 0);
             this.panelMapaDeSitio.Size = new System.Drawing.Size(1496, 30);
             this.panelMapaDeSitio.TabIndex = 12;
             this.panelMapaDeSitio.Visible = false;
@@ -254,6 +253,7 @@
             this.lblMapaSitio_3.TabIndex = 20;
             this.lblMapaSitio_3.Text = "Observacion";
             this.lblMapaSitio_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMapaSitio_3.Click += new System.EventHandler(this.lblMapaSitio_3_Click);
             // 
             // lblSeparacionMapa_2
             // 
@@ -288,6 +288,7 @@
             this.lblMapaSitio_2.TabIndex = 18;
             this.lblMapaSitio_2.Text = "Competencia";
             this.lblMapaSitio_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMapaSitio_2.Click += new System.EventHandler(this.lblMapaSitio_2_Click);
             // 
             // lblSeparacionMapa_1
             // 
@@ -321,20 +322,32 @@
             this.lblMapaSitio_1.TabIndex = 11;
             this.lblMapaSitio_1.Text = "Perfil";
             this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMapaSitio_1.Click += new System.EventHandler(this.lblMapaSitio_1_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panelContenido);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 82);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1496, 649);
+            this.panel6.TabIndex = 13;
             // 
             // btnRegresar
             // 
-            this.btnRegresar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
             this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("btnRegresar.Image")));
+            this.btnRegresar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_flecha_izquierda_larga_64_1_;
             this.btnRegresar.ImageActive = null;
-            this.btnRegresar.Location = new System.Drawing.Point(1414, 5);
+            this.btnRegresar.Location = new System.Drawing.Point(1395, 5);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(82, 25);
+            this.btnRegresar.Padding = new System.Windows.Forms.Padding(2);
+            this.btnRegresar.Size = new System.Drawing.Size(86, 25);
             this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRegresar.TabIndex = 15;
             this.btnRegresar.TabStop = false;
-            this.btnRegresar.Zoom = 10;
+            this.btnRegresar.Zoom = 0;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // pictureBox3
             // 
@@ -366,7 +379,7 @@
             // 
             this.btnRefrescar.BackColor = System.Drawing.Color.Yellow;
             this.btnRefrescar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRefrescar.Location = new System.Drawing.Point(1496, 5);
+            this.btnRefrescar.Location = new System.Drawing.Point(1481, 5);
             this.btnRefrescar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
@@ -379,7 +392,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Location = new System.Drawing.Point(1496, 5);
+            this.btnCerrar.Location = new System.Drawing.Point(1481, 5);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
@@ -439,15 +452,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panelContenido);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 82);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1496, 649);
-            this.panel6.TabIndex = 13;
-            // 
             // ListadoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,6 +470,7 @@
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -475,7 +480,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

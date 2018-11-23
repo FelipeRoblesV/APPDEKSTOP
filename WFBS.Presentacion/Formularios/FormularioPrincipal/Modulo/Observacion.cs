@@ -219,11 +219,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         private void IniciarProceso_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int porcentaje = e.ProgressPercentage;
+            CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
 
             switch (this.numero)
             {
                 case 1:
-                    CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
+       
                     switch (porcentaje)
                     {
 
@@ -254,23 +255,22 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     }
                     break;
                 case 2:
-                    CargarFuncionario iniciar2 = (CargarFuncionario)e.UserState;
                     switch (porcentaje)
                     {
 
                         case 1:
 
                             Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
-                            load.CambiarMensaje(iniciar2.Mensaje);
+                            load.CambiarMensaje(iniciar.Mensaje);
                             formulario.AbrirModuloExterno(load);
                             break;
                         case 2:
                             Estado estado = new Estado();
-                            estado.estado(iniciar2.respuesta, 2);
+                            estado.estado(iniciar.respuesta, 2);
                             formulario.AbrirModuloExterno(estado);
                             break;
                         case 3:
-                            if (iniciar2.respuesta)
+                            if (iniciar.respuesta)
                             {
                                 formulario.recargarListados(3.21);
                                 formulario.TerminarProceso(3.2);

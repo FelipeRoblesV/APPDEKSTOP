@@ -74,28 +74,31 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             switch (numero)
             {
                 case 1.11:
-                    MessageBox.Show(this.numero.ToString());
                     InicializarMapaSitio();
                     this.numero = numero;
                     this.numero2 = 0;
+                    DefinirModulo(numero);
                     AbrirFormulario(listaFuncionario);
                     break;
                 case 1.21:
                     InicializarMapaSitio();
                     this.numero = numero;
                     this.numero2 = 0;
+                    DefinirModulo(numero);
                     AbrirFormulario(listaJefeFuncionario);
                     break;
                 case 3:
                     InicializarMapaSitio();
                     this.numero = numero;
                     this.numero2 = 0;
+                    DefinirModulo(numero);
                     AbrirFormulario(listaCompetencia_Perfil);
                     break;
                 case 4:
                     InicializarMapaSitio();
                     this.numero = numero;
                     this.numero2 = 0;
+                    DefinirModulo(numero);
                     AbrirFormulario(listaEvaluacion_Perfil);
                     break;
             }
@@ -187,7 +190,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     lblSeparacionMapa_1.Visible = true;
                     lblMapaSitio_1.Visible = true;
                     lblMapaSitio_1.Text = "Perfil";
-
+                    btnRegresar.Visible = true ;
                     lblSeparacionMapa_1.ForeColor = Color.Gray;
                     lblMapaSitio_1.ForeColor = Color.Gray;
                     break;
@@ -203,7 +206,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     lblSeparacionMapa_1.Visible = true;
                     lblMapaSitio_1.Visible = true;
                     lblMapaSitio_1.Text = "Perfil";
-
+                    btnRegresar.Visible = true;
                     lblSeparacionMapa_1.ForeColor = Color.Gray;
                     lblSeparacionMapa_2.ForeColor = Color.Gray;
                     lblMapaSitio_1.ForeColor = Color.Gray;
@@ -217,7 +220,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     lblSeparacionMapa_1.Visible = true;
                     lblMapaSitio_1.Visible = true;
                     lblMapaSitio_1.Text = "Perfil";
-
+                    btnRegresar.Visible = true;
                     lblSeparacionMapa_1.ForeColor = Color.Gray;
                     lblMapaSitio_1.ForeColor = Color.Gray;
                     break;
@@ -233,7 +236,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     lblSeparacionMapa_1.Visible = true;
                     lblMapaSitio_1.Visible = true;
                     lblMapaSitio_1.Text = "Perfil";
-
+                    btnRegresar.Visible = true;
                     lblSeparacionMapa_1.ForeColor = Color.Gray;
                     lblSeparacionMapa_2.ForeColor = Color.Gray;
                     lblMapaSitio_1.ForeColor = Color.Gray;
@@ -255,7 +258,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     lblSeparacionMapa_1.Visible = true;
                     lblMapaSitio_1.Visible = true;
                     lblMapaSitio_1.Text = "Perfil";
-
+                    btnRegresar.Visible = true;
                     lblSeparacionMapa_1.ForeColor = Color.Gray;
                     lblSeparacionMapa_2.ForeColor = Color.Gray;
                     lblMapaSitio_1.ForeColor = Color.Gray;
@@ -270,7 +273,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             switch (numero)
             {
                 case 1.11:
-                    
+
                     lblTitulo.Text = "Funcionario";
                     lblDescripcion.Visible = false;
                     break;
@@ -299,6 +302,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     InicializarMapaSitio();
                     lblTitulo.Text = "Perfil";
                     lblDescripcion.Text = "Seleccione el perfil de la competencia.";
+                    lblDescripcion.Visible = true;
 
                     break;
                 case 3.1:
@@ -315,6 +319,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     InicializarMapaSitio();
                     lblTitulo.Text = "Perfil ";
                     lblDescripcion.Text = "Seleccione el perfil de la evaluacion.";
+                    lblDescripcion.Visible = true;
                     break;
                 case 4.1:
                     DefinirMapaDeSitio(numero);
@@ -330,6 +335,135 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     DefinirMapaDeSitio(numero);
                     lblTitulo.Text = "Alternativas";
                     lblDescripcion.Visible = false;
+                    break;
+            }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+
+            switch (this.numero)
+            {
+                case 3:
+                    switch (this.numero2)
+                    {
+                       case  3.1:
+                            RestablecerNumero(3);
+                            break;
+                        case 3.2:
+                            CargarFormulario(2, String.Empty);
+                            this.numero2 = 3.1;
+                            DefinirModulo(3.1);
+                            Formulario.GenerarControlesSubFormulario(3.1);
+                            AbrirFormulario(listaCompetencia);
+                            DefinirMapaDeSitio(3.1);
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (this.numero2)
+                    {
+                        case 4.1:
+                            RestablecerNumero(4);
+                            break;
+                        case 4.2:
+                            CargarFormulario(2, String.Empty);
+                            this.numero2 = 4.1;
+                            DefinirModulo(4.1);
+                            Formulario.GenerarControlesSubFormulario(4.1);
+                            AbrirFormulario(listaEvaluacion_Perfil);
+                            DefinirMapaDeSitio(4.1);
+                            break;
+                        case 4.3:
+                            CargarFormulario(2, String.Empty);
+                            this.numero2 = 4.2;
+                            DefinirModulo(4.2);
+                            Formulario.GenerarControlesSubFormulario(4.2);
+                            AbrirFormulario(listarEvaluacion);
+                            DefinirMapaDeSitio(4.2);
+                            break;
+                    }
+                    break;
+            }
+        }
+
+        private void lblMapaSitio_3_Click(object sender, EventArgs e)
+        {
+
+            switch (this.numero)
+            {
+
+                        case 4:
+                    switch (this.numero2)
+                    {
+                        case 4.3:
+                            CargarFormulario(2, String.Empty);
+                            this.numero2 = 4.2;
+                            DefinirModulo(4.2);
+                            Formulario.GenerarControlesSubFormulario(4.2);
+                            AbrirFormulario(listarEvaluacion);
+                            DefinirMapaDeSitio(4.2);
+                            break;
+
+                    }
+                    break;
+            }
+        }
+
+        private void lblMapaSitio_2_Click(object sender, EventArgs e)
+        {
+            switch (this.numero)
+            {
+                case 3:
+                    switch (this.numero2)
+                    {
+                        case 3.2:
+                            CargarFormulario(2, String.Empty);
+                            this.numero2 = 3.1;
+                            DefinirModulo(numero);
+                            Formulario.GenerarControlesSubFormulario(3.1);
+                            AbrirFormulario(listaCompetencia);
+                            DefinirMapaDeSitio(3.1);
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (this.numero2)
+                    {
+                        case 4.2:
+                            CargarFormulario(2, String.Empty);
+                            this.numero2 = 4.1;
+                            DefinirModulo(4.1);
+                            Formulario.GenerarControlesSubFormulario(4.1);
+                            AbrirFormulario(listaEvaluacion_Perfil);
+                            DefinirMapaDeSitio(4.1);
+                            break;
+
+                    }
+                    break;
+            }
+        }
+
+        private void lblMapaSitio_1_Click(object sender, EventArgs e)
+        {
+            switch (this.numero)
+            {
+                case 3:
+                    switch (this.numero2)
+                    {
+                        case 3.1:
+                            RestablecerNumero(3);
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (this.numero2)
+                    {
+                        case 4.1:
+                            RestablecerNumero(4);
+                            break;
+
+                    }
                     break;
             }
         }
@@ -513,6 +647,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
         private void dt_Listar_DoubleClick(object sender, EventArgs e)
         {
+
+
             BunifuCustomDataGrid btn = sender as BunifuCustomDataGrid;
             if (Formulario.estadoActualCrud() == false)
             {
@@ -572,7 +708,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             case 3.1:
                                 if (btn.SelectedRows.Count.Equals(1))
                                 {
-                               
+
                                     idCompetencia = int.Parse(btn.CurrentRow.Cells[0].Value.ToString());
                                     IniciarSubFormulario();
                                 }
@@ -969,12 +1105,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                         switch (this.numero2)
                         {
                             case 0:
-                            SubFormularioInicia.id = idPerfilComp;
-                        break;
-                    case 3.1:
-                        SubFormularioInicia.id = idCompetencia;
-                        break;
-                }
+                                SubFormularioInicia.id = idPerfilComp;
+                                break;
+                            case 3.1:
+                                SubFormularioInicia.id = idCompetencia;
+                                break;
+                        }
                         break;
 
                     case 4:

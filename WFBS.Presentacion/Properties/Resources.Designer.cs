@@ -463,6 +463,16 @@ namespace WFBS.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_flecha_izquierda_larga_64_1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-flecha-izquierda-larga-64(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Instagram {
             get {
                 object obj = ResourceManager.GetObject("Instagram", resourceCulture);
@@ -536,6 +546,16 @@ namespace WFBS.Presentacion.Properties {
         internal static System.Drawing.Bitmap Perfil_Active {
             get {
                 object obj = ResourceManager.GetObject("Perfil_Active", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap previous {
+            get {
+                object obj = ResourceManager.GetObject("previous", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,6 +45,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                         }
@@ -71,6 +73,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         {
                             try
                             {
+                                dt_Listar.Visible = true;
+                                lblMensaje.Visible = false;
                                 dt_Listar.DataSource = lista.Tables[0];
                                 dt_Listar.Columns[0].Visible = false;
                             }
@@ -100,6 +104,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                         }
                         else
@@ -132,6 +138,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if(lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             this.numero = numero;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -182,6 +190,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                             dt_Listar.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -212,6 +222,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                         }
                         else
@@ -233,6 +245,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
 
                             dt_Listar.Columns[0].Visible = false;
@@ -257,7 +271,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
-
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                         }
@@ -281,6 +296,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                             dt_Listar.Columns[1].Visible = false;
@@ -305,6 +322,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                         }
@@ -326,6 +345,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                         }
@@ -371,6 +392,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                         }
@@ -394,6 +417,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                         }
@@ -417,6 +442,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                     {
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
+                            dt_Listar.Visible = true;
+                            lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                         }
@@ -438,29 +465,5 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
             }
         }
 
-
-        private void dt_Listar_DataSourceChanged(object sender, EventArgs e)
-        {
-            //switch (this.numero)
-            //{
-            //    case 1.11:
-            //        foreach (DataGridViewRow row in dt_Listar.Rows)
-            //        {
-            //            string rut = row.Cells[0].Value.ToString().Replace("-", "").Trim();
-            //            string run = rut.Substring(0, rut.Length - 1);
-
-            //            Cl_Persona per = new Cl_Persona();
-            //            per.run = run;
-            //            daoWebService dao = new daoWebService();
-
-            //            if (dao.ValidarCursos(per) == false)
-            //            {
-            //                row.Visible = false;
-            //            }
-
-            //        }
-            //        break;
-            //}
-        }
     }
 }

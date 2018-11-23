@@ -1570,7 +1570,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         break;
                     case 3.21:
                         inicio.listarObservacion = daoObservacion.Listar(ListarCompetencia.Recuperarid(3));
-
                         IniciarAplicacion.ReportProgress(1, inicio);
                         inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
                         IniciarAplicacion.ReportProgress(2, inicio);
