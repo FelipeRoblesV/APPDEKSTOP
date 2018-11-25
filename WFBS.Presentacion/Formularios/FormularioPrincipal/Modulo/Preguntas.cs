@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,7 +96,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             Cl_Preguntas pre = new Cl_Preguntas();
             pre.competencia.id = int.Parse(cbPerfil.SelectedValue.ToString());
             pre.cuestionario.id = idEvaluacion;
-            pre.cuerpo = txtPregunta.Text;
+
+            string pregunta = txtPregunta.Text.ToLower();
+            pre.cuerpo = CultureInfo.InvariantCulture.TextInfo.ToTitleCase(pregunta);
             pre.id = idPreguntas;
 
             return pre;

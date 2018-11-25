@@ -433,6 +433,36 @@ namespace WFBS.Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_cambiar_filled_50_3_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cambiar-filled-50(3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cambiar_filled_50_4_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cambiar-filled-50(4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cambiar_filled_50_5_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cambiar-filled-50(5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_cerrar_ventana_24_4_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-cerrar-ventana-24(4)", resourceCulture);
@@ -466,6 +496,16 @@ namespace WFBS.Presentacion.Properties {
         internal static System.Drawing.Bitmap icons8_flecha_izquierda_larga_64_1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-flecha-izquierda-larga-64(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sincronización_de_conexión_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sincronización-de-conexión-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{042CDAA5-5600-40AD-B575-5C5758635984}</ProjectGuid>
+    <ProjectGuid>{157AB26C-4FB0-469D-8569-7C0BFF42A800}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WFBS.Controlador</RootNamespace>
-    <AssemblyName>WFBS.Controlador</AssemblyName>
+    <RootNamespace>WFBS.Intercambio</RootNamespace>
+    <AssemblyName>WFBS.Intercambio</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,12 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.18.3, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
-      <HintPath>..\packages\Oracle.ManagedDataAccess.18.3.0\lib\net40\Oracle.ManagedDataAccess.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,32 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contexto.cs" />
-    <Compile Include="daoAlternativa.cs" />
-    <Compile Include="daoCargo.cs" />
-    <Compile Include="daoCompetencia.cs" />
-    <Compile Include="daoCuestionario.cs" />
-    <Compile Include="daoDashboard.cs" />
-    <Compile Include="daoFuncionario.cs" />
-    <Compile Include="daoFuncionarioCargo.cs" />
-    <Compile Include="daoJefeFuncionario.cs" />
-    <Compile Include="daoJefePerfil.cs" />
-    <Compile Include="daoObservacion.cs" />
-    <Compile Include="daoPerfil.cs" />
-    <Compile Include="daoPreguntas.cs" />
-    <Compile Include="daoReporte.cs" />
-    <Compile Include="daoUsuario.cs" />
-    <Compile Include="daoUtilidad.cs" />
+    <Compile Include="CerrarFormulario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WFBS.Entidades\WFBS.Entidades.csproj">
-      <Project>{ad686d3d-5f74-4fbb-91bb-b547279ddc70}</Project>
-      <Name>WFBS.Entidades</Name>
+    <ProjectReference Include="..\WFBS.Controlador\WFBS.Controlador.csproj">
+      <Project>{042cdaa5-5600-40ad-b575-5c5758635984}</Project>
+      <Name>WFBS.Controlador</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WFBS.Presentacion\WFBS.Presentacion.csproj">
+      <Project>{10c72bab-32cc-4eb2-b37b-f263bb14159f}</Project>
+      <Name>WFBS.Presentacion</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

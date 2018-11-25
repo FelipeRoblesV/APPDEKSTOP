@@ -13,6 +13,7 @@ using WFBS.Entidades;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Clases;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros;
+using WFBS.Presentacion.Ventanas;
 using WFBS.WebService;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
@@ -245,7 +246,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             {
                 if(e.KeyChar == (char)Keys.Back)
                 {
-                    if (formulario.recibirMensajeFuncionario())
+                    if (formulario.recibirMensaje(1))
                     {
                         controles.limpiarFormulario();
                         e.Handled = false;
@@ -449,12 +450,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     break;
             }
             }
-        
+
 
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            formulario.TerminarProceso(numeroFormulario);
+            if (formulario.recibirMensaje(2))
+            {
+                formulario.TerminarProceso(numeroFormulario);
+            }
         }
 
         private void CargarWebService_DoWork(object sender, DoWorkEventArgs e)

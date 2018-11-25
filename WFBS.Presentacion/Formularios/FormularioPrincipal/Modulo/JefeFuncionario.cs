@@ -248,7 +248,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             {
                 if (e.KeyChar == (char)Keys.Back)
                 {
-                    if (formulario.recibirMensajeFuncionario())
+                    if (formulario.recibirMensaje(1))
                     {
                         controles.limpiarFormulario();
                         e.Handled = false;

@@ -19,7 +19,7 @@ namespace WFBS.Presentacion.Ventanas
         private Login login;
         private Formularios.FormularioPrincipal.FormularioPrincipal formularioPrincipal;
         private Aplicacion app;
-        private bool CambiarRut = false;
+        private bool CambiarRut = false, cerrarFormulario = false, eliminar = false;
         public Cerrar()
         {
             InitializeComponent();
@@ -70,6 +70,18 @@ namespace WFBS.Presentacion.Ventanas
                 case 4:
                     this.estado = numero;
                     lblMensaje.Text = "¿Esta Seguro que quiere borrar rut ingresado, si lo realiza se podria perder la informacion ingresada";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+                case 5:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que desea salir del modulo?";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+                case 6:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que desea Eliminar?";
                     btn_Accion1.ButtonText = "Aceptar";
                     btn_Accion2.ButtonText = "Cancelar";
                     break;
@@ -132,6 +144,32 @@ namespace WFBS.Presentacion.Ventanas
                         this.Close();
                     }
                     break;
+                case 5:
+                    if (btn_Accion1.Name == btn.Name)
+                    {
+
+                        cerrarFormulario = true;
+                        this.Close();
+                    }
+                    if (btn_Accion2.Name == btn.Name)
+                    {
+                        cerrarFormulario = false;
+                        this.Close();
+                    }
+                    break;
+                case 6:
+                    if (btn_Accion1.Name == btn.Name)
+                    {
+
+                        eliminar = true;
+                        this.Close();
+                    }
+                    if (btn_Accion2.Name == btn.Name)
+                    {
+                        eliminar = false;
+                        this.Close();
+                    }
+                    break;
             }
         }
 
@@ -141,6 +179,12 @@ namespace WFBS.Presentacion.Ventanas
             {
                 case 4:
                     formularioPrincipal.IngresarRespuesta(CambiarRut);
+                    break;
+                case 5:
+                    formularioPrincipal.IngresarRespuesta(cerrarFormulario);
+                    break;
+                case 6:
+                    formularioPrincipal.IngresarRespuesta(eliminar);
                     break;
             }
         }

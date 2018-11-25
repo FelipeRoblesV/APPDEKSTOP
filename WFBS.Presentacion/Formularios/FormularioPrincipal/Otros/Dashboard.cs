@@ -14,6 +14,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros
 {
     public partial class Dashboard : Form
     {
+        private int estado = 0;
         private FormularioPrincipal form;
         public Dashboard()
         {
@@ -44,21 +45,24 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
             CargarDashboard iniciar = (CargarDashboard)e.Argument;
 
-            iniciar.mensaje = "Iniciando Dashboard";
-            IniciarAplicacion.ReportProgress(1, iniciar);
+                iniciar.mensaje = "Iniciando Dashboard";
+                IniciarAplicacion.ReportProgress(1, iniciar);
 
-            daoDashboard dao = new daoDashboard();
-            iniciar.totalFuncionario = dao.TotalFuncionario();
-            iniciar.totalJefeFuncionario = dao.totalJefeFuncionario();
-            iniciar.totalCargo = dao.totalCargo();
-            iniciar.totalPerfil = dao.totalPerfil();
-            iniciar.totalPreguntas = dao.totalPreguntas();
-            iniciar.totalAlternativas = dao.totalAlternativas();
-            iniciar.totalCompetencia = dao.totalCompetencia();
-            iniciar.totalEvaluacion = dao.totalEvaluacion();
-            iniciar.listaDashboard = dao.listar();
-            IniciarAplicacion.ReportProgress(2, iniciar);
-        }
+                daoDashboard dao = new daoDashboard();
+                iniciar.totalFuncionario = dao.TotalFuncionario();
+                iniciar.totalJefeFuncionario = dao.totalJefeFuncionario();
+                iniciar.totalCargo = dao.totalCargo();
+                iniciar.totalPerfil = dao.totalPerfil();
+                iniciar.totalPreguntas = dao.totalPreguntas();
+                iniciar.totalAlternativas = dao.totalAlternativas();
+                iniciar.totalCompetencia = dao.totalCompetencia();
+                iniciar.totalEvaluacion = dao.totalEvaluacion();
+                iniciar.listaDashboard = dao.listar();
+                IniciarAplicacion.ReportProgress(2, iniciar);
+            }
+
+
+        
 
         private void IniciarDashboard_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
@@ -71,41 +75,51 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros
                     form.CargandoFormulario(iniciar.mensaje);
                     break;
                 case 2:
-                    lblTotaFuncionario.Text = iniciar.totalFuncionario.ToString();
-                    lblTotalJefeFuncionario.Text = iniciar.totalJefeFuncionario.ToString();
-                    lblTotalCargo.Text = iniciar.totalCargo.ToString();
-                    lblTotalPerfil.Text = iniciar.totalPerfil.ToString();
-                    lblTotalPreguntas.Text = iniciar.totalPreguntas.ToString();
-                    lblTotalAlternativa.Text = iniciar.totalAlternativas.ToString();
-                    lblTotalCompetencia.Text = iniciar.totalCompetencia.ToString();
-                    lblTotalEvaluacion.Text = iniciar.totalEvaluacion.ToString();
-                    if(iniciar.listaDashboard != null)
+                    try
                     {
-                        if(iniciar.listaDashboard.Tables[0].Rows.Count >= 1)
+                        lblTotaFuncionario.Text = iniciar.totalFuncionario.ToString();
+                        lblTotalJefeFuncionario.Text = iniciar.totalJefeFuncionario.ToString();
+                        lblTotalPerfil.Text = iniciar.totalPerfil.ToString();
+                        lblTotalPreguntas.Text = iniciar.totalPreguntas.ToString();
+                        lblTotalAlternativa.Text = iniciar.totalAlternativas.ToString();
+                        lblTotalCompetencia.Text = iniciar.totalCompetencia.ToString();
+                        lblTotalEvaluacion.Text = iniciar.totalEvaluacion.ToString();
+                        if (iniciar.listaDashboard != null)
                         {
-                            dt_Listar.DataSource = iniciar.listaDashboard.Tables[0];
-                            dt_Listar.Visible = true;
+                            if (iniciar.listaDashboard.Tables[0].Rows.Count >= 1)
+                            {
+                                dt_Listar.DataSource = iniciar.listaDashboard.Tables[0];
+                                dt_Listar.Visible = true;
 
+                            }
+                            else
+                            {
+                                dt_Listar.Visible = false;
+                                lblMensaje.Visible = true;
+                            }
                         }
                         else
                         {
                             dt_Listar.Visible = false;
                             lblMensaje.Visible = true;
                         }
+                        lblUsuario.Text = Properties.Settings.Default.UsuarioConectado;
                     }
-                    else
+                    catch (Exception)
                     {
-                        dt_Listar.Visible = false;
-                        lblMensaje.Visible = true;
+                        this.estado = 1;
+                        form.ErrorConexion();
                     }
-                    lblUsuario.Text = Properties.Settings.Default.UsuarioConectado;
                     break;
             }
         }
 
         private void IniciarDashboard_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            form.TerminarDashboard();
+            if(estado == 0)
+            {
+                form.TerminarDashboard();
+            }
         }
     }
 }

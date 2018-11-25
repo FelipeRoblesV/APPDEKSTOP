@@ -68,7 +68,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcion
             }
 
              cbPerfil.SelectedValue = fun.perfil.id;
-            dtpFechaNacimiento.Value = fun.fechaNacimiento;
+            dtpFechaNacimiento.Value = fun.fechaNacimiento.Date;
         }
 
         public Cl_Funcionario recuperarDatos()

@@ -570,6 +570,10 @@
     <None Include="Resources\icons8-cerrar-ventana-24%286%29.png" />
     <None Include="Resources\previous.png" />
     <None Include="Resources\icons8-flecha-izquierda-larga-64%281%29.png" />
+    <None Include="Resources\icons8-cambiar-filled-50%283%29.png" />
+    <None Include="Resources\icons8-cambiar-filled-50%284%29.png" />
+    <None Include="Resources\icons8-cambiar-filled-50%285%29.png" />
+    <None Include="Resources\icons8-sincronización-de-conexión-64.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
   <ItemGroup />

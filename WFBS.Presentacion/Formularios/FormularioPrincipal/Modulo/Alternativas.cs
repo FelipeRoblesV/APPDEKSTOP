@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,12 +91,21 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             txtAlternativa.Text = alt.cuerpo;
         }
 
-
+        public static string FirstCharToUpper(string input)
+        {
+            switch (input)
+            {
+                case null: throw new ArgumentNullException(nameof(input));
+                case "": throw new ArgumentException($"{nameof(input)} cannot be empty", nameof(input));
+                default: return input.First().ToString().ToUpper() + input.Substring(1);
+            }
+        }
         public Cl_Alternativa recuperarDatos()
         {
             Cl_Alternativa alt = new Cl_Alternativa();
             alt.nota = Convert.ToDouble(numNotaIndividual.Text);
-            alt.cuerpo = txtAlternativa.Text;
+            string alternativa = txtAlternativa.Text.ToLower();
+            alt.cuerpo = FirstCharToUpper(alternativa);
             alt.id = idAlternativa;
             alt.pregunta.id = idPregunta;
             return alt;

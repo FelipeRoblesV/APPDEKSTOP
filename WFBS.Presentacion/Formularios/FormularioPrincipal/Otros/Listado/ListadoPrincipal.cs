@@ -175,13 +175,56 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
             lblSeparacionMapa_3.Visible = false;
             btnRegresar.Visible = false;
 
-
+            panel2.Size = new Size(91, 25);
+            lblMapaSitio_1.Size = new Size(91, 25);
         }
 
         private void DefinirMapaDeSitio(double numero)
         {
             switch (numero)
             {
+                case 1.11:
+                    InicializarMapaSitio();
+                    panel2.Size = new Size(121, 25);
+                    lblMapaSitio_1.Size = new Size(121, 25);
+                    panelMapaDeSitio.Visible = true;
+                    lblMapaSitio_1.Text = "Funcionario";
+                    lblMapaSitio_1.Visible = true;
+                    lblSeparacionMapa_1.Visible = true;
+                    lblSeparacionMapa_1.ForeColor = Color.Gray;
+                    lblMapaSitio_1.ForeColor = Color.Gray;
+                    break;
+                case 1.12:
+                    InicializarMapaSitio();
+                    panelMapaDeSitio.Visible = true;
+                    lblMapaSitio_2.Visible = true;
+                    lblMapaSitio_2.Text = "Curso";
+                    lblMapaSitio_1.Text = "Funcionario";
+                    lblMapaSitio_1.Visible = true;
+                    lblSeparacionMapa_1.Visible = true;
+                    lblSeparacionMapa_1.ForeColor = Color.Gray;
+                    lblMapaSitio_1.ForeColor = Color.Gray;
+                    break;
+                case 1.21:
+                    InicializarMapaSitio();
+                    panelMapaDeSitio.Visible = true;
+                    lblMapaSitio_1.Text = "Jefe Funcionario";
+                    lblMapaSitio_1.Visible = true;
+                    lblSeparacionMapa_1.Visible = true;
+                    lblSeparacionMapa_1.ForeColor = Color.Gray;
+                    lblMapaSitio_1.ForeColor = Color.Gray;
+                    break;
+                case 1.22:
+                    InicializarMapaSitio();
+                    panelMapaDeSitio.Visible = true;
+                    lblMapaSitio_2.Visible = true;
+                    lblMapaSitio_2.Text = "Curso";
+                    lblMapaSitio_1.Text = "Jefe Funcionario";
+                    lblMapaSitio_1.Visible = true;
+                    lblSeparacionMapa_1.Visible = true;
+                    lblSeparacionMapa_1.ForeColor = Color.Gray;
+                    lblMapaSitio_1.ForeColor = Color.Gray;
+                    break;
                 case 3.1:
                     InicializarMapaSitio();
                     panelMapaDeSitio.Visible = true;
@@ -276,19 +319,23 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
 
                     lblTitulo.Text = "Funcionario";
                     lblDescripcion.Visible = false;
+                    DefinirMapaDeSitio(numero);
                     break;
                 case 1.12:
                     lblTitulo.Text = "Cursos del Funcionario";
                     lblDescripcion.Text = "Aqui podras ver los cursos que a realizado el funcionario";
+                    DefinirMapaDeSitio(numero);
                     break;
 
                 case 1.21:
                     lblTitulo.Text = "Jefe Funcionario";
                     lblDescripcion.Visible = false;
+                    DefinirMapaDeSitio(numero);
                     break;
                 case 1.22:
                     lblTitulo.Text = "Cursos del Jefe";
                     lblDescripcion.Text = "Aqui podras ver los cursos que a realizado el funcionario";
+                    DefinirMapaDeSitio(numero);
                     break;
                 case 2.11:
                     lblTitulo.Text = "Perfil";
@@ -303,6 +350,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     lblTitulo.Text = "Perfil";
                     lblDescripcion.Text = "Seleccione el perfil de la competencia.";
                     lblDescripcion.Visible = true;
+                    DefinirMapaDeSitio(numero);
 
                     break;
                 case 3.1:
@@ -320,6 +368,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                     lblTitulo.Text = "Perfil ";
                     lblDescripcion.Text = "Seleccione el perfil de la evaluacion.";
                     lblDescripcion.Visible = true;
+                    DefinirMapaDeSitio(numero);
                     break;
                 case 4.1:
                     DefinirMapaDeSitio(numero);

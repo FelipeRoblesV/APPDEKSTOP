@@ -197,6 +197,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 120);
             this.panel1.TabIndex = 172;
+            this.panel1.Visible = false;
             // 
             // label15
             // 

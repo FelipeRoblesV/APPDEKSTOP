@@ -41,37 +41,37 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAccion = new System.Windows.Forms.Button();
             this.PanelContenido = new System.Windows.Forms.Panel();
+            this.btnsPonderacion = new Bunifu.Framework.UI.BunifuSwitch();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pbAutoevaluacion = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pbEvaluacion = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblFechaTermino = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pbEvaluacion = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pbAutoevaluacion = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.numDiasHabiles = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.lblErrorNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.tbPonderacion = new System.Windows.Forms.TrackBar();
             this.IniciarProceso = new System.ComponentModel.BackgroundWorker();
-            this.lblFechaTermino = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnsPonderacion = new Bunifu.Framework.UI.BunifuSwitch();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.panelBotones.SuspendLayout();
             this.PanelContenido.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiasHabiles)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPonderacion)).BeginInit();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
@@ -236,6 +236,126 @@
             this.PanelContenido.Size = new System.Drawing.Size(334, 652);
             this.PanelContenido.TabIndex = 125;
             // 
+            // btnsPonderacion
+            // 
+            this.btnsPonderacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.btnsPonderacion.BorderRadius = 1;
+            this.btnsPonderacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnsPonderacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnsPonderacion.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.btnsPonderacion.Location = new System.Drawing.Point(263, 254);
+            this.btnsPonderacion.Name = "btnsPonderacion";
+            this.btnsPonderacion.Oncolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.btnsPonderacion.Onoffcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
+            this.btnsPonderacion.Size = new System.Drawing.Size(51, 19);
+            this.btnsPonderacion.TabIndex = 175;
+            this.btnsPonderacion.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.btnsPonderacion.Value = false;
+            this.btnsPonderacion.Click += new System.EventHandler(this.btnsPonderacion_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.panel3.Controls.Add(this.pbAutoevaluacion);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.pbEvaluacion);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(10, 357);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(304, 195);
+            this.panel3.TabIndex = 174;
+            // 
+            // pbAutoevaluacion
+            // 
+            this.pbAutoevaluacion.animated = false;
+            this.pbAutoevaluacion.animationIterval = 5;
+            this.pbAutoevaluacion.animationSpeed = 300;
+            this.pbAutoevaluacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.pbAutoevaluacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAutoevaluacion.BackgroundImage")));
+            this.pbAutoevaluacion.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.pbAutoevaluacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.pbAutoevaluacion.LabelVisible = true;
+            this.pbAutoevaluacion.LineProgressThickness = 4;
+            this.pbAutoevaluacion.LineThickness = 5;
+            this.pbAutoevaluacion.Location = new System.Drawing.Point(11, 4);
+            this.pbAutoevaluacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbAutoevaluacion.MaxValue = 100;
+            this.pbAutoevaluacion.Name = "pbAutoevaluacion";
+            this.pbAutoevaluacion.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.pbAutoevaluacion.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.pbAutoevaluacion.Size = new System.Drawing.Size(90, 90);
+            this.pbAutoevaluacion.TabIndex = 165;
+            this.pbAutoevaluacion.Value = 30;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Roboto", 14F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label10.Location = new System.Drawing.Point(149, 49);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(145, 23);
+            this.label10.TabIndex = 166;
+            this.label10.Text = "Auto-Evaluacion";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 14F);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label4.Location = new System.Drawing.Point(122, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 23);
+            this.label4.TabIndex = 167;
+            this.label4.Text = "Ponderacion";
+            // 
+            // pbEvaluacion
+            // 
+            this.pbEvaluacion.animated = false;
+            this.pbEvaluacion.animationIterval = 5;
+            this.pbEvaluacion.animationSpeed = 300;
+            this.pbEvaluacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
+            this.pbEvaluacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEvaluacion.BackgroundImage")));
+            this.pbEvaluacion.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.pbEvaluacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.pbEvaluacion.LabelVisible = true;
+            this.pbEvaluacion.LineProgressThickness = 4;
+            this.pbEvaluacion.LineThickness = 5;
+            this.pbEvaluacion.Location = new System.Drawing.Point(11, 102);
+            this.pbEvaluacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.pbEvaluacion.MaxValue = 100;
+            this.pbEvaluacion.Name = "pbEvaluacion";
+            this.pbEvaluacion.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.pbEvaluacion.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.pbEvaluacion.Size = new System.Drawing.Size(90, 90);
+            this.pbEvaluacion.TabIndex = 168;
+            this.pbEvaluacion.Value = 70;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 14F);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label5.Location = new System.Drawing.Point(132, 130);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 23);
+            this.label5.TabIndex = 170;
+            this.label5.Text = "Ponderacion";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 14F);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.label6.Location = new System.Drawing.Point(179, 153);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 23);
+            this.label6.TabIndex = 169;
+            this.label6.Text = "Evaluacion";
+            // 
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -246,6 +366,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(302, 54);
             this.panel2.TabIndex = 172;
+            // 
+            // lblFechaTermino
+            // 
+            this.lblFechaTermino.AutoSize = true;
+            this.lblFechaTermino.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaTermino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.lblFechaTermino.Location = new System.Drawing.Point(32, 25);
+            this.lblFechaTermino.Name = "lblFechaTermino";
+            this.lblFechaTermino.Size = new System.Drawing.Size(173, 18);
+            this.lblFechaTermino.TabIndex = 143;
+            this.lblFechaTermino.Text = "Fecha Termino Esperada";
             // 
             // label16
             // 
@@ -270,6 +401,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(304, 88);
             this.panel1.TabIndex = 171;
+            this.panel1.Visible = false;
             // 
             // label15
             // 
@@ -312,94 +444,6 @@
             this.label12.Size = new System.Drawing.Size(105, 14);
             this.label12.TabIndex = 142;
             this.label12.Text = "NOTA ESPERADA:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 14F);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label5.Location = new System.Drawing.Point(132, 130);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 23);
-            this.label5.TabIndex = 170;
-            this.label5.Text = "Ponderacion";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Roboto", 14F);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label6.Location = new System.Drawing.Point(179, 153);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 23);
-            this.label6.TabIndex = 169;
-            this.label6.Text = "Evaluacion";
-            // 
-            // pbEvaluacion
-            // 
-            this.pbEvaluacion.animated = false;
-            this.pbEvaluacion.animationIterval = 5;
-            this.pbEvaluacion.animationSpeed = 300;
-            this.pbEvaluacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.pbEvaluacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbEvaluacion.BackgroundImage")));
-            this.pbEvaluacion.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
-            this.pbEvaluacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.pbEvaluacion.LabelVisible = true;
-            this.pbEvaluacion.LineProgressThickness = 4;
-            this.pbEvaluacion.LineThickness = 5;
-            this.pbEvaluacion.Location = new System.Drawing.Point(11, 102);
-            this.pbEvaluacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.pbEvaluacion.MaxValue = 100;
-            this.pbEvaluacion.Name = "pbEvaluacion";
-            this.pbEvaluacion.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.pbEvaluacion.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.pbEvaluacion.Size = new System.Drawing.Size(90, 90);
-            this.pbEvaluacion.TabIndex = 168;
-            this.pbEvaluacion.Value = 70;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 14F);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label4.Location = new System.Drawing.Point(122, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 23);
-            this.label4.TabIndex = 167;
-            this.label4.Text = "Ponderacion";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Roboto", 14F);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.label10.Location = new System.Drawing.Point(149, 49);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 23);
-            this.label10.TabIndex = 166;
-            this.label10.Text = "Auto-Evaluacion";
-            // 
-            // pbAutoevaluacion
-            // 
-            this.pbAutoevaluacion.animated = false;
-            this.pbAutoevaluacion.animationIterval = 5;
-            this.pbAutoevaluacion.animationSpeed = 300;
-            this.pbAutoevaluacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.pbAutoevaluacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAutoevaluacion.BackgroundImage")));
-            this.pbAutoevaluacion.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
-            this.pbAutoevaluacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.pbAutoevaluacion.LabelVisible = true;
-            this.pbAutoevaluacion.LineProgressThickness = 4;
-            this.pbAutoevaluacion.LineThickness = 5;
-            this.pbAutoevaluacion.Location = new System.Drawing.Point(11, 4);
-            this.pbAutoevaluacion.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.pbAutoevaluacion.MaxValue = 100;
-            this.pbAutoevaluacion.Name = "pbAutoevaluacion";
-            this.pbAutoevaluacion.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.pbAutoevaluacion.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.pbAutoevaluacion.Size = new System.Drawing.Size(90, 90);
-            this.pbAutoevaluacion.TabIndex = 165;
-            this.pbAutoevaluacion.Value = 30;
             // 
             // numDiasHabiles
             // 
@@ -480,49 +524,6 @@
             this.IniciarProceso.DoWork += new System.ComponentModel.DoWorkEventHandler(this.IniciarProceso_DoWork);
             this.IniciarProceso.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.IniciarProceso_ProgressChanged);
             // 
-            // lblFechaTermino
-            // 
-            this.lblFechaTermino.AutoSize = true;
-            this.lblFechaTermino.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaTermino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.lblFechaTermino.Location = new System.Drawing.Point(32, 25);
-            this.lblFechaTermino.Name = "lblFechaTermino";
-            this.lblFechaTermino.Size = new System.Drawing.Size(173, 18);
-            this.lblFechaTermino.TabIndex = 143;
-            this.lblFechaTermino.Text = "Fecha Termino Esperada";
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.panel3.Controls.Add(this.pbAutoevaluacion);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.pbEvaluacion);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(10, 357);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(304, 195);
-            this.panel3.TabIndex = 174;
-            // 
-            // btnsPonderacion
-            // 
-            this.btnsPonderacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
-            this.btnsPonderacion.BorderRadius = 1;
-            this.btnsPonderacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnsPonderacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnsPonderacion.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.btnsPonderacion.Location = new System.Drawing.Point(263, 254);
-            this.btnsPonderacion.Name = "btnsPonderacion";
-            this.btnsPonderacion.Oncolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
-            this.btnsPonderacion.Onoffcolor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
-            this.btnsPonderacion.Size = new System.Drawing.Size(51, 19);
-            this.btnsPonderacion.TabIndex = 175;
-            this.btnsPonderacion.Textcolor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
-            this.btnsPonderacion.Value = false;
-            this.btnsPonderacion.Click += new System.EventHandler(this.btnsPonderacion_Click);
-            // 
             // Evaluacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -540,14 +541,14 @@
             this.panelBotones.ResumeLayout(false);
             this.PanelContenido.ResumeLayout(false);
             this.PanelContenido.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDiasHabiles)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbPonderacion)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }

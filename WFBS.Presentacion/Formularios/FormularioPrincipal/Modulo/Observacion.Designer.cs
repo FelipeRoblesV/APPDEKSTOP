@@ -262,6 +262,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(312, 127);
             this.panel1.TabIndex = 149;
+            this.panel1.Visible = false;
             // 
             // IniciarProceso
             // 

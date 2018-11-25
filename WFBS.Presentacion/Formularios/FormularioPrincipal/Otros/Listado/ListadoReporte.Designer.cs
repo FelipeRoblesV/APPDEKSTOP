@@ -58,7 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
             this.panel1.Controls.Add(this.lblDescripcion);
             this.panel1.Controls.Add(this.bunifuSeparator1);
             this.panel1.Controls.Add(this.lblTitulo);
@@ -111,7 +111,7 @@
             // 
             // panelBotones
             // 
-            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(71)))), ((int)(((byte)(104)))));
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
             this.panelBotones.Controls.Add(this.btnExportarExcel);
             this.panelBotones.Controls.Add(this.btnImportarPDF);
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -126,7 +126,7 @@
             // btnExportarExcel
             // 
             this.btnExportarExcel.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
+            this.btnExportarExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
             this.btnExportarExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExportarExcel.BorderRadius = 2;
             this.btnExportarExcel.ButtonText = "Importar a EXCEL";
@@ -147,8 +147,8 @@
             this.btnExportarExcel.IsTab = false;
             this.btnExportarExcel.Location = new System.Drawing.Point(255, 5);
             this.btnExportarExcel.Name = "btnExportarExcel";
-            this.btnExportarExcel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnExportarExcel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnExportarExcel.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
+            this.btnExportarExcel.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.btnExportarExcel.OnHoverTextColor = System.Drawing.Color.White;
             this.btnExportarExcel.selected = false;
             this.btnExportarExcel.Size = new System.Drawing.Size(225, 45);
@@ -162,7 +162,7 @@
             // btnImportarPDF
             // 
             this.btnImportarPDF.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnImportarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
+            this.btnImportarPDF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
             this.btnImportarPDF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnImportarPDF.BorderRadius = 2;
             this.btnImportarPDF.ButtonText = "Importar a PDF";
@@ -183,8 +183,8 @@
             this.btnImportarPDF.IsTab = false;
             this.btnImportarPDF.Location = new System.Drawing.Point(30, 5);
             this.btnImportarPDF.Name = "btnImportarPDF";
-            this.btnImportarPDF.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
-            this.btnImportarPDF.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnImportarPDF.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
+            this.btnImportarPDF.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.btnImportarPDF.OnHoverTextColor = System.Drawing.Color.White;
             this.btnImportarPDF.selected = false;
             this.btnImportarPDF.Size = new System.Drawing.Size(225, 45);
@@ -197,7 +197,7 @@
             // 
             // panelMapaSitio
             // 
-            this.panelMapaSitio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(41)))), ((int)(((byte)(60)))));
+            this.panelMapaSitio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
             this.panelMapaSitio.Controls.Add(this.panel5);
             this.panelMapaSitio.Controls.Add(this.panel4);
             this.panelMapaSitio.Controls.Add(this.panel3);
@@ -316,7 +316,7 @@
             // 
             // panelContenido
             // 
-            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(110)))), ((int)(((byte)(139)))));
+            this.panelContenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(126)))), ((int)(((byte)(152)))));
             this.panelContenido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenido.Location = new System.Drawing.Point(0, 82);
             this.panelContenido.Name = "panelContenido";

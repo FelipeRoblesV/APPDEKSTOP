@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
-            this.txtBuscar = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -47,7 +47,6 @@
             this.lblSeparacionMapa_1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMapaSitio_1 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.btnRegresar = new Bunifu.Framework.UI.BunifuImageButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -57,13 +56,13 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnModificar = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelMapaDeSitio.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,12 +92,11 @@
             // 
             // lblError
             // 
-            this.lblError.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblError.Font = new System.Drawing.Font("Roboto Light", 14.25F);
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblError.Location = new System.Drawing.Point(901, 10);
+            this.lblError.Location = new System.Drawing.Point(905, 11);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(291, 32);
+            this.lblError.Size = new System.Drawing.Size(250, 22);
             this.lblError.TabIndex = 7;
             this.lblError.Text = "Descripcion del Formulario";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -105,24 +104,15 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.txtBuscar.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(99)))), ((int)(((byte)(113)))));
-            this.txtBuscar.BorderThickness = 3;
-            this.txtBuscar.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
             this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Right;
             this.txtBuscar.Font = new System.Drawing.Font("Roboto Light", 9.75F);
-            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(210)))), ((int)(((byte)(217)))));
-            this.txtBuscar.isPassword = false;
-            this.txtBuscar.Location = new System.Drawing.Point(1192, 10);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
+            this.txtBuscar.Location = new System.Drawing.Point(1161, 10);
+            this.txtBuscar.MaxLength = 60;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(274, 32);
-            this.txtBuscar.TabIndex = 6;
-            this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtBuscar.Visible = false;
-            this.txtBuscar.OnValueChanged += new System.EventHandler(this.txtBuscar_OnValueChanged);
-            this.txtBuscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyDown);
+            this.txtBuscar.Size = new System.Drawing.Size(305, 23);
+            this.txtBuscar.TabIndex = 158;
             // 
             // lblDescripcion
             // 
@@ -324,25 +314,16 @@
             this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblMapaSitio_1.Click += new System.EventHandler(this.lblMapaSitio_1_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panelContenido);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 82);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1496, 649);
-            this.panel6.TabIndex = 13;
-            // 
             // btnRegresar
             // 
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(168)))), ((int)(((byte)(68)))));
             this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnRegresar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_flecha_izquierda_larga_64_1_;
             this.btnRegresar.ImageActive = null;
-            this.btnRegresar.Location = new System.Drawing.Point(1395, 5);
+            this.btnRegresar.Location = new System.Drawing.Point(1413, 5);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Padding = new System.Windows.Forms.Padding(2);
-            this.btnRegresar.Size = new System.Drawing.Size(86, 25);
+            this.btnRegresar.Size = new System.Drawing.Size(68, 25);
             this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRegresar.TabIndex = 15;
             this.btnRegresar.TabStop = false;
@@ -452,6 +433,15 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panelContenido);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 82);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1496, 649);
+            this.panel6.TabIndex = 13;
+            // 
             // ListadoPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,12 +455,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ListadoPrincipal";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panelMapaDeSitio.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnRegresar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -480,6 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnModificar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -487,7 +478,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblError;
-        private Bunifu.Framework.UI.BunifuMetroTextbox txtBuscar;
         private System.Windows.Forms.Label lblDescripcion;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private System.Windows.Forms.Label lblTitulo;
@@ -514,5 +504,6 @@
         private System.Windows.Forms.PictureBox btnModificar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox txtBuscar;
     }
 }

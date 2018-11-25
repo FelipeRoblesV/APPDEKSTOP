@@ -17,13 +17,14 @@ using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Ayuda;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado;
+using WFBS.Presentacion.Ventanas;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 {
     public partial class FormularioPrincipal : Form
     {
 
-
+        private ToolTip tt = null, tt2 = null;
         #region DEFINIR PARAMETROS
         private bool respuesta = false;
 
@@ -53,18 +54,43 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
             AbrirFormulario(logo);
+            InicializarToolTip(0);
         }
 
-        public bool recibirMensajeFuncionario()
+        public bool recibirMensaje(int numero)
         {
             Ventanas.Cerrar ventana = new Ventanas.Cerrar();
-            ventana.iniciarFormulario(4);
-            ventana.PasarDatos(this);
-            ventana.ShowDialog();
-            return respuesta;
+            switch (numero)
+            {
+                case 1:
+                    ventana.iniciarFormulario(4);
+                    ventana.PasarDatos(this);
+                    ventana.ShowDialog();
+                    return respuesta;
+                case 2:
+                    ventana.iniciarFormulario(5);
+                    ventana.PasarDatos(this);
+                    ventana.ShowDialog();
+                    return respuesta;
+                case 3:
+                    ventana.iniciarFormulario(6);
+                    ventana.PasarDatos(this);
+                    ventana.ShowDialog();
+                    return respuesta;
+
+            }
+            return false;
+
         }
 
+
+
+
         public void IngresarRespuesta(bool resp)
+        {
+            this.respuesta = resp;
+        }
+        public void respuestaCerrarModulo(bool resp)
         {
             this.respuesta = resp;
         }
@@ -91,13 +117,26 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         }
 
         #region INICIALIZAR FORMULARIO
-        private void InicializarToolTip(int numero)
+        private void InicializarToolTip(double numero)
         {
+            if (tt2 == null)
+            {
+                tt = new ToolTip();
+                tt.InitialDelay = 0;
+                tt.UseAnimation = true;
+            }
+
+            if (tt2 == null)
+            {
+                tt2 = new ToolTip();
+                tt2.InitialDelay = 0;
+                tt2.UseAnimation = true;
+            }
+
+
             switch (numero)
             {
                 case 0:
-                    ToolTip tt = new ToolTip();
-                    tt.InitialDelay = 0;
                     tt.SetToolTip(this.btnDashboard, "DASHBOARD");
                     tt.SetToolTip(this.btnFuncionario, "FUNCIONARIO");
                     tt.SetToolTip(this.btnPerfil, "PERFIL");
@@ -108,6 +147,53 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     tt.SetToolTip(this.btnAyuda, "AYUDA");
                     tt.SetToolTip(this.btnCerrarSesion, "CERRAR SESION");
                     break;
+                case 1.11:
+
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Funcionario");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Funcionario");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Funcionario");
+                    tt2.SetToolTip(this.btnSubAccion1, "Agregar/Eliminar Cargos del funcionario");
+                    break;
+                case 1.21:
+
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Jefe Funcionario");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Jefe Funcionario");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Jefe Funcionario");
+                    tt2.SetToolTip(this.btnSubAccion1, "Agregar/Eliminar Cargos del Jefe Funcionario");
+                    break;
+                case 2.11:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Perfil");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Perfil");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Perfil");
+                    tt2.SetToolTip(this.btnSubAccion2, "Cambiar estado obsoleto del Perfil");
+                    tt2.SetToolTip(this.btnSubAccion3, "Agregar/Eliminar Jefe al perfil");
+                    break;
+                case 3.1:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Competencia");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Competencia");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Competencia");
+                    break;
+                case 3.2:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Observacion");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Observacion");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Observacion");
+                    break;
+                case 4.1:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Evaluacion");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Evaluacion");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Evaluacion");
+                    break;
+                case 4.2:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Pregunta");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Pregunta");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Pregunta");
+                    break;
+                case 4.3:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Alternativa");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Alternativa");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Alternativa");
+                    break;
+
             }
 
         }
@@ -491,14 +577,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     btnRefrescar.Visible = false;
                     break;
                 case 1.11:
+
                     InicializarSubFormulario();
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
                     numero2 = numero;
                     break;
                 case 1.12:
+
                     InicializarSubFormulario();
                     panelMenuDatagrid.Visible = true;
                     btnSubAccion3.Visible = false;
@@ -512,6 +601,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 1.21:
                     InicializarSubFormulario();
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
@@ -531,13 +621,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 case 2.11:
                     InicializarSubFormulario();
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
-                    btnSubAccion3.Visible = false;
+                    btnSubAccion1.Visible = false;
                     numero2 = numero;
                     break;
                 case 2.21:
                     InicializarSubFormulario();
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
@@ -546,6 +638,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     break;
                 case 3.1:
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
@@ -556,6 +649,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     break;
                 case 3.2:
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
@@ -566,6 +660,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     break;
                 case 4.1:
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
@@ -576,6 +671,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     break;
                 case 4.2:
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
@@ -586,6 +682,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     break;
                 case 4.3:
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
                     btnSubAccion3.Visible = false;
                     btnSubAccion2.Visible = false;
@@ -1838,6 +1935,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             }
         }
 
+        public void ErrorConexion()
+        {
+            app.Controles(1);
+        }
 
 
         #region ACCION DE LOS BOTONES PARA EL SUBFORMULARIO
@@ -1879,28 +1980,40 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     {
                         if (estadoCRUD == 0)
                         {
-                            if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            Contexto con = new Contexto();
+
+                            if (con.Conectar())
                             {
-                                string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
-                                string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+                                if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                                {
+                                    string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                    string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
 
-                                daoFuncionario dao = new daoFuncionario();
-                                Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
-                                moduloFuncionario.PasarDatos(dao.RecuperarDatos(int.Parse(run)));
-                                moduloFuncionario.PasarDatos(this);
-                                moduloFuncionario.IniciarFormulario(2);
-                                AbrirModulo(moduloFuncionario);
-                                PanelCRUD.Visible = true;
-                                estadoCRUD = 1;
-                                this.modulofuncionario = moduloFuncionario;
+                                    daoFuncionario dao = new daoFuncionario();
+                                    Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
+                                    moduloFuncionario.PasarDatos(dao.RecuperarDatos(int.Parse(run)));
+                                    moduloFuncionario.PasarDatos(this);
+                                    moduloFuncionario.IniciarFormulario(2);
+                                    AbrirModulo(moduloFuncionario);
+                                    PanelCRUD.Visible = true;
+                                    estadoCRUD = 1;
+                                    this.modulofuncionario = moduloFuncionario;
 
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                    mensaje.ShowDialog();
+                                    MessageBox.Show("hola");
+                                }
                             }
                             else
                             {
-                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
-                                mensaje.cambiarMensaje("Debe seleccionar una fila");
-                                mensaje.ShowDialog();
+                                ErrorConexion();
                             }
+
+                
                         }
                     }
                     if (btn.Name == btnEliminar.Name)
@@ -2160,35 +2273,74 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         }
                     }
 
-                    //if (btn.Name == btnSubAccion1.Name)
-                    //{
-                    //    int id = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString());
-                    //    Cl_Perfil perfil = new Cl_Perfil();
-                    //    perfil.id = id;
-                    //    daoPerfil dao = new daoPerfil();
+                    if (btn.Name == btnSubAccion2.Name)
+                    {
+                        int id = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString());
+                        Cl_Perfil perfil = new Cl_Perfil();
+                        perfil.id = id;
+                        daoPerfil dao = new daoPerfil();
+                        if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
+                        {
+                            if (dao.CambiarEstadoObsoleto(perfil))
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Se cambio el estado Correctamente");
+                                recargarListados(2.11);
+                                mensaje.ShowDialog();
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("No cambio el estado Correctamente");
+                                mensaje.ShowDialog();
+                            }
+                        }
 
-                    //    if (dao.CambiarEstadoObsoleto(perfil))
-                    //    {
-                    //        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
-                    //        mensaje.cambiarMensaje("Se cambio el estado Correctamente");
-                    //        recargarListados(2.11);
-                    //        mensaje.ShowDialog();
-                    //    }
-                    //    else
-                    //    {
-                    //        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
-                    //        mensaje.cambiarMensaje("No cambio el estado Correctamente");
-                    //        mensaje.ShowDialog();
-                    //    }
+                        else
+                        {
+                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                            mensaje.cambiarMensaje("Debe seleccionar una fila");
+                            mensaje.ShowDialog();
+                        }
 
+                        }
 
-                    //}
-                    //else
-                    //{
-                    //    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
-                    //    mensaje.cambiarMensaje("Debe seleccionar una fila");
-                    //    mensaje.ShowDialog();
-                    //}
+                    if (btn.Name == btnSubAccion3.Name)
+                    {
+                        if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
+                        {
+                            int run = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[0].Value.ToString());
+                            int id = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString());
+                            daoJefePerfil dao = new daoJefePerfil();
+                            Cl_JefePerfil jefe = new Cl_JefePerfil();
+                            jefe.perfil.id = id;
+
+                            if(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[0].Value.ToString() == "0")
+                            {
+                                AgregarJefe modulo = new AgregarJefe();
+                                modulo.pasarDatos(jefe);
+                                modulo.ShowDialog();
+                                recargarListados(2.11);
+                            }
+                            else
+                            {
+                                jefe.funcionario.run = run;
+                                dao.Eliminar(jefe);
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Jefe se elimino correctamente.");
+                                mensaje.ShowDialog();
+                                recargarListados(2.11);
+                            }
+
+                        }
+                        else
+                        {
+                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                            mensaje.cambiarMensaje("Debe seleccionar una fila");
+                            mensaje.ShowDialog();
+                        }
+                    }
+
 
                     break;
                 case 2.21:

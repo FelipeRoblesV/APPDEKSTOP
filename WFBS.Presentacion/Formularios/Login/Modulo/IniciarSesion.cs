@@ -91,6 +91,8 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             try
             {
 
+
+
                 if (respuesta)
                 {
                     if (chkRecuerdame.Checked == true)
@@ -105,9 +107,8 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                         Properties.Settings.Default.ChkRecordarUsuario = false;
                         Properties.Settings.Default.Save();
                     }
-
-
                     IniciarAplicacion();
+
 
 
                 }
@@ -115,6 +116,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 {
                     login.VerificacionIncorrecta();
                 }
+
             }
             catch (Exception ex)
             {
@@ -177,7 +179,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private void iniciarAplicacion_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             IniciarAplicacion iniciar = (IniciarAplicacion)e.UserState;
-            
+
 
             int numero = e.ProgressPercentage;
 
@@ -265,34 +267,28 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                     formulario.DefinirAplicacion(0);
                     break;
             }
+
         }
 
         private void iniciarAplicacion_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            try
+            if (chkRecuerdame.Checked == true)
             {
-                if (chkRecuerdame.Checked == true)
-                {
-                    Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
-                    Properties.Settings.Default.ChkRecordarUsuario = true;
-                    Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
-                    Properties.Settings.Default.Save();
-                }
-                else
-                {
-                    Properties.Settings.Default.RecordarUsuario = String.Empty;
-                    Properties.Settings.Default.ChkRecordarUsuario = false;
-                    Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
-                    Properties.Settings.Default.Save();
-                }
-                app.iniciarAplicacion(2);
+                Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
+                Properties.Settings.Default.ChkRecordarUsuario = true;
+                Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
+                Properties.Settings.Default.Save();
             }
-            catch (Exception)
+            else
             {
-
-                throw;
+                Properties.Settings.Default.RecordarUsuario = String.Empty;
+                Properties.Settings.Default.ChkRecordarUsuario = false;
+                Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
+                Properties.Settings.Default.Save();
             }
+            app.iniciarAplicacion(2);
         }
+
 
         private void iniciarAplicacion_DoWork(object sender, DoWorkEventArgs e)
         {
