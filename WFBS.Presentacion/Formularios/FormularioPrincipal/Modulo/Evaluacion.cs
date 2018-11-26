@@ -178,6 +178,18 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                         }
                     }
                     break;
+                case 3:
+
+                    // CAMBIAR A DOS CUANDO TENGA LAS VALIDACIONES
+
+                    if (ValidarFormulario(1))
+                    {
+                        if (IniciarProceso.IsBusy == false)
+                        {
+                            IniciarProceso.RunWorkerAsync(recuperarDatos());
+                        }
+                    }
+                    break;
             }
         }
 
@@ -395,7 +407,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            formulario.TerminarProceso(numeroFormulario);
+            if (formulario.recibirMensaje(2))
+            {
+                formulario.TerminarProceso(numeroFormulario);
+            }
         }
     }
 }

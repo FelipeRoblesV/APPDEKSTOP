@@ -94,7 +94,7 @@
             // 
             this.lblError.Font = new System.Drawing.Font("Roboto Light", 14.25F);
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblError.Location = new System.Drawing.Point(905, 11);
+            this.lblError.Location = new System.Drawing.Point(905, 13);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(250, 22);
             this.lblError.TabIndex = 7;
@@ -106,20 +106,20 @@
             // 
             this.txtBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
             this.txtBuscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.txtBuscar.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtBuscar.Font = new System.Drawing.Font("Roboto Light", 14F);
             this.txtBuscar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtBuscar.Location = new System.Drawing.Point(1161, 10);
             this.txtBuscar.MaxLength = 60;
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(305, 23);
+            this.txtBuscar.Size = new System.Drawing.Size(305, 30);
             this.txtBuscar.TabIndex = 158;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 12.25F);
+            this.lblDescripcion.Font = new System.Drawing.Font("Roboto Light", 14F);
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(251, 10);
+            this.lblDescripcion.Location = new System.Drawing.Point(280, 10);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(567, 32);
             this.lblDescripcion.TabIndex = 5;
@@ -133,7 +133,7 @@
             this.bunifuSeparator1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.bunifuSeparator1.LineThickness = 1;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(241, 10);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(270, 10);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.bunifuSeparator1.Size = new System.Drawing.Size(10, 32);
@@ -144,11 +144,11 @@
             // lblTitulo
             // 
             this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblTitulo.Location = new System.Drawing.Point(30, 10);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(211, 32);
+            this.lblTitulo.Size = new System.Drawing.Size(240, 32);
             this.lblTitulo.TabIndex = 2;
             this.lblTitulo.Text = "Cursos del Funcionario";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,7 +160,7 @@
             this.panelContenido.Location = new System.Drawing.Point(0, 0);
             this.panelContenido.Margin = new System.Windows.Forms.Padding(30);
             this.panelContenido.Name = "panelContenido";
-            this.panelContenido.Size = new System.Drawing.Size(1496, 649);
+            this.panelContenido.Size = new System.Drawing.Size(1496, 642);
             this.panelContenido.TabIndex = 11;
             // 
             // panelMapaDeSitio
@@ -183,8 +183,8 @@
             this.panelMapaDeSitio.Location = new System.Drawing.Point(0, 52);
             this.panelMapaDeSitio.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.panelMapaDeSitio.Name = "panelMapaDeSitio";
-            this.panelMapaDeSitio.Padding = new System.Windows.Forms.Padding(10, 5, 15, 0);
-            this.panelMapaDeSitio.Size = new System.Drawing.Size(1496, 30);
+            this.panelMapaDeSitio.Padding = new System.Windows.Forms.Padding(10, 5, 15, 5);
+            this.panelMapaDeSitio.Size = new System.Drawing.Size(1496, 37);
             this.panelMapaDeSitio.TabIndex = 12;
             this.panelMapaDeSitio.Visible = false;
             // 
@@ -193,19 +193,19 @@
             this.panel5.Controls.Add(this.lblMapaSitio_4);
             this.panel5.Controls.Add(this.lblSeparacionMapa_3);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel5.Location = new System.Drawing.Point(429, 5);
+            this.panel5.Location = new System.Drawing.Point(464, 5);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(162, 25);
+            this.panel5.Size = new System.Drawing.Size(162, 27);
             this.panel5.TabIndex = 22;
             // 
             // lblMapaSitio_4
             // 
             this.lblMapaSitio_4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblMapaSitio_4.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_4.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblMapaSitio_4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_4.Location = new System.Drawing.Point(19, 0);
             this.lblMapaSitio_4.Name = "lblMapaSitio_4";
-            this.lblMapaSitio_4.Size = new System.Drawing.Size(135, 25);
+            this.lblMapaSitio_4.Size = new System.Drawing.Size(135, 27);
             this.lblMapaSitio_4.TabIndex = 20;
             this.lblMapaSitio_4.Text = "Alternativa";
             this.lblMapaSitio_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,7 +217,7 @@
             this.lblSeparacionMapa_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblSeparacionMapa_3.Location = new System.Drawing.Point(0, 0);
             this.lblSeparacionMapa_3.Name = "lblSeparacionMapa_3";
-            this.lblSeparacionMapa_3.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacionMapa_3.Size = new System.Drawing.Size(19, 27);
             this.lblSeparacionMapa_3.TabIndex = 19;
             this.lblSeparacionMapa_3.Text = "\\";
             this.lblSeparacionMapa_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,19 +227,19 @@
             this.panel4.Controls.Add(this.lblMapaSitio_3);
             this.panel4.Controls.Add(this.lblSeparacionMapa_2);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(265, 5);
+            this.panel4.Location = new System.Drawing.Point(278, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(164, 25);
+            this.panel4.Size = new System.Drawing.Size(186, 27);
             this.panel4.TabIndex = 21;
             // 
             // lblMapaSitio_3
             // 
             this.lblMapaSitio_3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblMapaSitio_3.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_3.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblMapaSitio_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_3.Location = new System.Drawing.Point(19, 0);
             this.lblMapaSitio_3.Name = "lblMapaSitio_3";
-            this.lblMapaSitio_3.Size = new System.Drawing.Size(145, 25);
+            this.lblMapaSitio_3.Size = new System.Drawing.Size(167, 27);
             this.lblMapaSitio_3.TabIndex = 20;
             this.lblMapaSitio_3.Text = "Observacion";
             this.lblMapaSitio_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -252,7 +252,7 @@
             this.lblSeparacionMapa_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblSeparacionMapa_2.Location = new System.Drawing.Point(0, 0);
             this.lblSeparacionMapa_2.Name = "lblSeparacionMapa_2";
-            this.lblSeparacionMapa_2.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacionMapa_2.Size = new System.Drawing.Size(19, 27);
             this.lblSeparacionMapa_2.TabIndex = 19;
             this.lblSeparacionMapa_2.Text = "\\";
             this.lblSeparacionMapa_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -264,17 +264,17 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(99, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(166, 25);
+            this.panel3.Size = new System.Drawing.Size(179, 27);
             this.panel3.TabIndex = 20;
             // 
             // lblMapaSitio_2
             // 
             this.lblMapaSitio_2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblMapaSitio_2.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_2.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblMapaSitio_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_2.Location = new System.Drawing.Point(19, 0);
             this.lblMapaSitio_2.Name = "lblMapaSitio_2";
-            this.lblMapaSitio_2.Size = new System.Drawing.Size(152, 25);
+            this.lblMapaSitio_2.Size = new System.Drawing.Size(166, 27);
             this.lblMapaSitio_2.TabIndex = 18;
             this.lblMapaSitio_2.Text = "Competencia";
             this.lblMapaSitio_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -287,7 +287,7 @@
             this.lblSeparacionMapa_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblSeparacionMapa_1.Location = new System.Drawing.Point(0, 0);
             this.lblSeparacionMapa_1.Name = "lblSeparacionMapa_1";
-            this.lblSeparacionMapa_1.Size = new System.Drawing.Size(19, 25);
+            this.lblSeparacionMapa_1.Size = new System.Drawing.Size(19, 27);
             this.lblSeparacionMapa_1.TabIndex = 17;
             this.lblSeparacionMapa_1.Text = "\\";
             this.lblSeparacionMapa_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,17 +298,17 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(10, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(89, 25);
+            this.panel2.Size = new System.Drawing.Size(89, 27);
             this.panel2.TabIndex = 19;
             // 
             // lblMapaSitio_1
             // 
             this.lblMapaSitio_1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblMapaSitio_1.Font = new System.Drawing.Font("Roboto", 15F, System.Drawing.FontStyle.Bold);
+            this.lblMapaSitio_1.Font = new System.Drawing.Font("Roboto", 18F, System.Drawing.FontStyle.Bold);
             this.lblMapaSitio_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMapaSitio_1.Location = new System.Drawing.Point(0, 0);
             this.lblMapaSitio_1.Name = "lblMapaSitio_1";
-            this.lblMapaSitio_1.Size = new System.Drawing.Size(91, 25);
+            this.lblMapaSitio_1.Size = new System.Drawing.Size(91, 27);
             this.lblMapaSitio_1.TabIndex = 11;
             this.lblMapaSitio_1.Text = "Perfil";
             this.lblMapaSitio_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -316,14 +316,15 @@
             // 
             // btnRegresar
             // 
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(168)))), ((int)(((byte)(68)))));
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
+            this.btnRegresar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRegresar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_flecha_izquierda_larga_64_1_;
+            this.btnRegresar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_izquierda_círculo_96;
             this.btnRegresar.ImageActive = null;
             this.btnRegresar.Location = new System.Drawing.Point(1413, 5);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Padding = new System.Windows.Forms.Padding(2);
-            this.btnRegresar.Size = new System.Drawing.Size(68, 25);
+            this.btnRegresar.Size = new System.Drawing.Size(68, 27);
             this.btnRegresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRegresar.TabIndex = 15;
             this.btnRegresar.TabStop = false;
@@ -338,7 +339,7 @@
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox3.Size = new System.Drawing.Size(0, 25);
+            this.pictureBox3.Size = new System.Drawing.Size(0, 27);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 9;
             this.pictureBox3.TabStop = false;
@@ -351,7 +352,7 @@
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox2.Size = new System.Drawing.Size(0, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(0, 27);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
@@ -364,7 +365,7 @@
             this.btnRefrescar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnRefrescar.Name = "btnRefrescar";
             this.btnRefrescar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnRefrescar.Size = new System.Drawing.Size(0, 25);
+            this.btnRefrescar.Size = new System.Drawing.Size(0, 27);
             this.btnRefrescar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnRefrescar.TabIndex = 7;
             this.btnRefrescar.TabStop = false;
@@ -377,7 +378,7 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnCerrar.Size = new System.Drawing.Size(0, 25);
+            this.btnCerrar.Size = new System.Drawing.Size(0, 27);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.TabStop = false;
@@ -402,7 +403,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnEliminar.Size = new System.Drawing.Size(0, 25);
+            this.btnEliminar.Size = new System.Drawing.Size(0, 27);
             this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.TabStop = false;
@@ -415,7 +416,7 @@
             this.btnModificar.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.btnModificar.Size = new System.Drawing.Size(0, 25);
+            this.btnModificar.Size = new System.Drawing.Size(0, 27);
             this.btnModificar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnModificar.TabIndex = 4;
             this.btnModificar.TabStop = false;
@@ -428,7 +429,7 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 3, 0, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.pictureBox1.Size = new System.Drawing.Size(0, 25);
+            this.pictureBox1.Size = new System.Drawing.Size(0, 27);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -437,9 +438,9 @@
             // 
             this.panel6.Controls.Add(this.panelContenido);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 82);
+            this.panel6.Location = new System.Drawing.Point(0, 89);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1496, 649);
+            this.panel6.Size = new System.Drawing.Size(1496, 642);
             this.panel6.TabIndex = 13;
             // 
             // ListadoPrincipal

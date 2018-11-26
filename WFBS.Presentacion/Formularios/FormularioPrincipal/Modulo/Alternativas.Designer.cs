@@ -57,22 +57,22 @@
             // lblNotaIndividal
             // 
             this.lblNotaIndividal.AutoSize = true;
-            this.lblNotaIndividal.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotaIndividal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblNotaIndividal.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.lblNotaIndividal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(102)))));
             this.lblNotaIndividal.Location = new System.Drawing.Point(12, 6);
             this.lblNotaIndividal.Name = "lblNotaIndividal";
-            this.lblNotaIndividal.Size = new System.Drawing.Size(217, 15);
+            this.lblNotaIndividal.Size = new System.Drawing.Size(270, 19);
             this.lblNotaIndividal.TabIndex = 44;
             this.lblNotaIndividal.Text = "Nota Individual de la alternativa";
             // 
             // lblAlternativa
             // 
             this.lblAlternativa.AutoSize = true;
-            this.lblAlternativa.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAlternativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
+            this.lblAlternativa.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.lblAlternativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(102)))));
             this.lblAlternativa.Location = new System.Drawing.Point(15, 55);
             this.lblAlternativa.Name = "lblAlternativa";
-            this.lblAlternativa.Size = new System.Drawing.Size(165, 15);
+            this.lblAlternativa.Size = new System.Drawing.Size(205, 19);
             this.lblAlternativa.TabIndex = 46;
             this.lblAlternativa.Text = "Cuerpo de la alternativa";
             // 
@@ -81,6 +81,7 @@
             this.txtAlternativa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
             this.txtAlternativa.BorderColor = System.Drawing.Color.Green;
             this.txtAlternativa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAlternativa.Font = new System.Drawing.Font("Roboto Light", 12F);
             this.txtAlternativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
             this.txtAlternativa.Location = new System.Drawing.Point(15, 73);
             this.txtAlternativa.Multiline = true;
@@ -104,7 +105,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_block_icon_icons_com_66946;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cerrar_ventana_48;
             this.btnCerrar.Location = new System.Drawing.Point(303, 1);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
@@ -118,7 +119,7 @@
             // 
             this.lblNombreFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.lblNombreFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 13F, System.Drawing.FontStyle.Bold);
             this.lblNombreFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblNombreFormulario.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblNombreFormulario.Location = new System.Drawing.Point(45, 1);
@@ -145,7 +146,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(223, 6);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -160,7 +161,7 @@
             this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
             this.btnAccion.FlatAppearance.BorderSize = 0;
             this.btnAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccion.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAccion.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnAccion.ForeColor = System.Drawing.Color.White;
             this.btnAccion.Location = new System.Drawing.Point(21, 6);
             this.btnAccion.Name = "btnAccion";
@@ -245,7 +246,7 @@
             // 
             this.numNotaIndividual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
             this.numNotaIndividual.DecimalPlaces = 1;
-            this.numNotaIndividual.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numNotaIndividual.Font = new System.Drawing.Font("Roboto Light", 12F);
             this.numNotaIndividual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.numNotaIndividual.Increment = new decimal(new int[] {
             1,
@@ -259,17 +260,17 @@
             0,
             0});
             this.numNotaIndividual.Name = "numNotaIndividual";
-            this.numNotaIndividual.Size = new System.Drawing.Size(306, 23);
+            this.numNotaIndividual.Size = new System.Drawing.Size(306, 27);
             this.numNotaIndividual.TabIndex = 167;
             // 
             // lblErrorAlternativa
             // 
             this.lblErrorAlternativa.AutoSize = true;
-            this.lblErrorAlternativa.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorAlternativa.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblErrorAlternativa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
             this.lblErrorAlternativa.Location = new System.Drawing.Point(18, 377);
             this.lblErrorAlternativa.Name = "lblErrorAlternativa";
-            this.lblErrorAlternativa.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorAlternativa.Size = new System.Drawing.Size(309, 18);
             this.lblErrorAlternativa.TabIndex = 166;
             this.lblErrorAlternativa.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorAlternativa.Visible = false;

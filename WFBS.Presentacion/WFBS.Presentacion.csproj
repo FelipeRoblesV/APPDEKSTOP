@@ -566,6 +566,8 @@
     <None Include="Resources\icons8-cambiar-filled-50%284%29.png" />
     <None Include="Resources\icons8-cambiar-filled-50%285%29.png" />
     <None Include="Resources\icons8-sincronización-de-conexión-64.png" />
+    <None Include="Resources\icons8-cerrar-ventana-48.png" />
+    <None Include="Resources\icons8-izquierda-círculo-96.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
   <ItemGroup />

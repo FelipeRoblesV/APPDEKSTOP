@@ -20,7 +20,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+        //    this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
         }
 
         public bool isSelected()
@@ -142,7 +142,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             this.numero = numero;
                             dt_Listar.DataSource = lista.Tables[0];
-                            dt_Listar.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                             dt_Listar.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;
@@ -192,7 +191,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             dt_Listar.Visible = true;
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
-                            dt_Listar.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                             dt_Listar.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[1].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[2].SortMode = DataGridViewColumnSortMode.NotSortable;

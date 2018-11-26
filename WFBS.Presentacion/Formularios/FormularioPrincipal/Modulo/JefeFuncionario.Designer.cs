@@ -65,7 +65,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cerrar_ventana_24_6_;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cerrar_ventana_48;
             this.btnCerrar.Location = new System.Drawing.Point(303, 1);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
@@ -79,7 +79,7 @@
             // 
             this.lblNombreFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.lblNombreFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 13F, System.Drawing.FontStyle.Bold);
             this.lblNombreFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblNombreFormulario.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblNombreFormulario.Location = new System.Drawing.Point(45, 1);
@@ -107,12 +107,12 @@
             // txtRutFuncionario
             // 
             this.txtRutFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.txtRutFuncionario.Font = new System.Drawing.Font("Roboto Light", 9.75F);
+            this.txtRutFuncionario.Font = new System.Drawing.Font("Roboto Light", 12F);
             this.txtRutFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtRutFuncionario.Location = new System.Drawing.Point(21, 30);
             this.txtRutFuncionario.MaxLength = 13;
             this.txtRutFuncionario.Name = "txtRutFuncionario";
-            this.txtRutFuncionario.Size = new System.Drawing.Size(256, 23);
+            this.txtRutFuncionario.Size = new System.Drawing.Size(256, 27);
             this.txtRutFuncionario.TabIndex = 40;
             this.txtRutFuncionario.TextChanged += new System.EventHandler(this.txtRutFuncionario_TextChanged);
             this.txtRutFuncionario.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGeneral_KeyDown);
@@ -136,22 +136,22 @@
             // 
             // lblRutFuncionario
             // 
-            this.lblRutFuncionario.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold);
+            this.lblRutFuncionario.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.lblRutFuncionario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(102)))));
             this.lblRutFuncionario.Location = new System.Drawing.Point(17, 13);
             this.lblRutFuncionario.Name = "lblRutFuncionario";
             this.lblRutFuncionario.Size = new System.Drawing.Size(250, 20);
             this.lblRutFuncionario.TabIndex = 37;
-            this.lblRutFuncionario.Text = "Rut del funcionario";
+            this.lblRutFuncionario.Text = "Rut del jefe funcionario";
             // 
             // lblErrorRut
             // 
             this.lblErrorRut.AutoSize = true;
-            this.lblErrorRut.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorRut.Font = new System.Drawing.Font("Roboto Light", 11F);
             this.lblErrorRut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(83)))), ((int)(((byte)(66)))));
             this.lblErrorRut.Location = new System.Drawing.Point(17, 56);
             this.lblErrorRut.Name = "lblErrorRut";
-            this.lblErrorRut.Size = new System.Drawing.Size(258, 15);
+            this.lblErrorRut.Size = new System.Drawing.Size(300, 18);
             this.lblErrorRut.TabIndex = 33;
             this.lblErrorRut.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorRut.Visible = false;

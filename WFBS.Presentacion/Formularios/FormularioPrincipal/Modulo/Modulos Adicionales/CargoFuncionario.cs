@@ -140,7 +140,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Modulos_Adici
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            formulario.TerminarProceso(1.12);
+            if (formulario.recibirMensaje(2))
+            {
+                formulario.TerminarProceso(1.12);
+            }
         }
 
     }

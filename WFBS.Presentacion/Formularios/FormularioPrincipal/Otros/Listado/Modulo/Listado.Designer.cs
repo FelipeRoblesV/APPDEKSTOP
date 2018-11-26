@@ -72,7 +72,6 @@
             // 
             this.dt_Listar.AllowUserToAddRows = false;
             this.dt_Listar.AllowUserToDeleteRows = false;
-            this.dt_Listar.AllowUserToResizeColumns = false;
             this.dt_Listar.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(222)))), ((int)(((byte)(229)))));
@@ -86,8 +85,8 @@
             this.dt_Listar.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dt_Listar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
             this.dt_Listar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dt_Listar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dt_Listar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dt_Listar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
+            this.dt_Listar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto Medium", 18F, System.Drawing.FontStyle.Bold);
@@ -115,7 +114,7 @@
             this.dt_Listar.MultiSelect = false;
             this.dt_Listar.Name = "dt_Listar";
             this.dt_Listar.ReadOnly = true;
-            this.dt_Listar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dt_Listar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(142)))), ((int)(((byte)(165)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
@@ -123,7 +122,8 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dt_Listar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dt_Listar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dt_Listar.RowHeadersWidth = 20;
+            this.dt_Listar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(190)))), ((int)(((byte)(203)))));
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 16F);
@@ -133,7 +133,6 @@
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dt_Listar.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dt_Listar.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dt_Listar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dt_Listar.ShowCellErrors = false;
             this.dt_Listar.ShowCellToolTips = false;
             this.dt_Listar.ShowEditingIcon = false;

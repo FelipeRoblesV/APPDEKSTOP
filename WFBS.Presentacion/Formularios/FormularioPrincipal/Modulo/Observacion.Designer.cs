@@ -56,23 +56,23 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.lblNombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(102)))));
             this.lblNombre.Location = new System.Drawing.Point(12, 9);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(150, 15);
+            this.lblNombre.Size = new System.Drawing.Size(184, 19);
             this.lblNombre.TabIndex = 55;
             this.lblNombre.Text = "Mensaje Observacion";
             // 
             // lblRecuerdame
             // 
             this.lblRecuerdame.AutoSize = true;
-            this.lblRecuerdame.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblRecuerdame.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.lblRecuerdame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(206)))), ((int)(((byte)(102)))));
             this.lblRecuerdame.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.lblRecuerdame.Location = new System.Drawing.Point(12, 192);
             this.lblRecuerdame.Name = "lblRecuerdame";
-            this.lblRecuerdame.Size = new System.Drawing.Size(127, 15);
+            this.lblRecuerdame.Size = new System.Drawing.Size(156, 19);
             this.lblRecuerdame.TabIndex = 66;
             this.lblRecuerdame.Text = "Nivel Observacion";
             // 
@@ -103,7 +103,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_block_icon_icons_com_66946;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cerrar_ventana_48;
             this.btnCerrar.Location = new System.Drawing.Point(303, 1);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
@@ -117,7 +117,7 @@
             // 
             this.lblNombreFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.lblNombreFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 13F, System.Drawing.FontStyle.Bold);
             this.lblNombreFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblNombreFormulario.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblNombreFormulario.Location = new System.Drawing.Point(45, 1);
@@ -144,7 +144,7 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
             this.btnLimpiar.FlatAppearance.BorderSize = 0;
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnLimpiar.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(223, 6);
             this.btnLimpiar.Name = "btnLimpiar";
@@ -159,7 +159,7 @@
             this.btnAccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(92)))), ((int)(((byte)(119)))));
             this.btnAccion.FlatAppearance.BorderSize = 0;
             this.btnAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAccion.Font = new System.Drawing.Font("Roboto Medium", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnAccion.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.btnAccion.ForeColor = System.Drawing.Color.White;
             this.btnAccion.Location = new System.Drawing.Point(21, 6);
             this.btnAccion.Name = "btnAccion";
@@ -189,6 +189,7 @@
             // txtMensaje
             // 
             this.txtMensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.txtMensaje.Font = new System.Drawing.Font("Roboto Light", 12F);
             this.txtMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(217)))), ((int)(((byte)(136)))));
             this.txtMensaje.Location = new System.Drawing.Point(12, 27);
             this.txtMensaje.MaxLength = 1000;
@@ -200,11 +201,11 @@
             // lblErrorMensaje
             // 
             this.lblErrorMensaje.AutoSize = true;
-            this.lblErrorMensaje.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorMensaje.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblErrorMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
             this.lblErrorMensaje.Location = new System.Drawing.Point(9, 161);
             this.lblErrorMensaje.Name = "lblErrorMensaje";
-            this.lblErrorMensaje.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorMensaje.Size = new System.Drawing.Size(309, 18);
             this.lblErrorMensaje.TabIndex = 154;
             this.lblErrorMensaje.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorMensaje.Visible = false;
@@ -212,11 +213,11 @@
             // lblErrorNivel
             // 
             this.lblErrorNivel.AutoSize = true;
-            this.lblErrorNivel.Font = new System.Drawing.Font("Roboto", 9F);
+            this.lblErrorNivel.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblErrorNivel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(63)))), ((int)(((byte)(44)))));
             this.lblErrorNivel.Location = new System.Drawing.Point(12, 239);
             this.lblErrorNivel.Name = "lblErrorNivel";
-            this.lblErrorNivel.Size = new System.Drawing.Size(249, 14);
+            this.lblErrorNivel.Size = new System.Drawing.Size(309, 18);
             this.lblErrorNivel.TabIndex = 153;
             this.lblErrorNivel.Text = "Texto de error para el nombre del funcionario";
             this.lblErrorNivel.Visible = false;

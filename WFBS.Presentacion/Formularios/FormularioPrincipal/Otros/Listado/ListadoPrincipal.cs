@@ -33,7 +33,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         private CargarListaSubFormulario SubFormularioInicia;
 
         private double numero = 0, numero2 = 0;
-        private int idPerfilComp = 0, idPerfilEva = 0, idEva = 0, idPre = 0, rutFun = 0, idCompetencia = 0;
+        public int idPerfilComp = 0, idPerfilEva = 0, idEva = 0, idPre = 0, rutFun = 0, idCompetencia = 0;
 
         public FormularioPrincipal Formulario;
 
@@ -420,7 +420,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             this.numero2 = 4.1;
                             DefinirModulo(4.1);
                             Formulario.GenerarControlesSubFormulario(4.1);
-                            AbrirFormulario(listaEvaluacion_Perfil);
+                            AbrirFormulario(listarEvaluacion);
                             DefinirMapaDeSitio(4.1);
                             break;
                         case 4.3:
@@ -428,7 +428,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
                             this.numero2 = 4.2;
                             DefinirModulo(4.2);
                             Formulario.GenerarControlesSubFormulario(4.2);
-                            AbrirFormulario(listarEvaluacion);
+                            AbrirFormulario(listaEvaluacion_Pregunta);
                             DefinirMapaDeSitio(4.2);
                             break;
                     }

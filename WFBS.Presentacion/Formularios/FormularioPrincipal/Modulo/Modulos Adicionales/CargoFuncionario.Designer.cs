@@ -48,11 +48,11 @@
             // 
             this.lbCargoIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
             this.lbCargoIn.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbCargoIn.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbCargoIn.Font = new System.Drawing.Font("Roboto", 14F);
             this.lbCargoIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
             this.lbCargoIn.FormattingEnabled = true;
             this.lbCargoIn.HorizontalScrollbar = true;
-            this.lbCargoIn.ItemHeight = 18;
+            this.lbCargoIn.ItemHeight = 23;
             this.lbCargoIn.Items.AddRange(new object[] {
             "EJEMPLO 1",
             "EJEMPLO 2",
@@ -65,18 +65,18 @@
             "EJEMPLO 9"});
             this.lbCargoIn.Location = new System.Drawing.Point(12, 48);
             this.lbCargoIn.Name = "lbCargoIn";
-            this.lbCargoIn.Size = new System.Drawing.Size(310, 306);
+            this.lbCargoIn.Size = new System.Drawing.Size(310, 299);
             this.lbCargoIn.TabIndex = 52;
             // 
             // lbCargoOut
             // 
             this.lbCargoOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(76)))), ((int)(((byte)(98)))));
             this.lbCargoOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbCargoOut.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lbCargoOut.Font = new System.Drawing.Font("Roboto", 14F);
             this.lbCargoOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(230)))), ((int)(((byte)(192)))));
             this.lbCargoOut.FormattingEnabled = true;
             this.lbCargoOut.HorizontalScrollbar = true;
-            this.lbCargoOut.ItemHeight = 18;
+            this.lbCargoOut.ItemHeight = 23;
             this.lbCargoOut.Items.AddRange(new object[] {
             "EJEMPLO 1",
             "EJEMPLO 2",
@@ -89,7 +89,7 @@
             "EJEMPLO 9"});
             this.lbCargoOut.Location = new System.Drawing.Point(12, 393);
             this.lbCargoOut.Name = "lbCargoOut";
-            this.lbCargoOut.Size = new System.Drawing.Size(310, 324);
+            this.lbCargoOut.Size = new System.Drawing.Size(310, 322);
             this.lbCargoOut.TabIndex = 53;
             // 
             // btnAgregar
@@ -136,7 +136,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_block_icon_icons_com_66946;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cerrar_ventana_48;
             this.btnCerrar.Location = new System.Drawing.Point(303, 1);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
@@ -150,7 +150,7 @@
             // 
             this.lblNombreFormulario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.lblNombreFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 10F, System.Drawing.FontStyle.Bold);
+            this.lblNombreFormulario.Font = new System.Drawing.Font("Roboto Medium", 13F, System.Drawing.FontStyle.Bold);
             this.lblNombreFormulario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblNombreFormulario.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.lblNombreFormulario.Location = new System.Drawing.Point(45, 1);
@@ -169,22 +169,22 @@
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 30);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 28);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(155, 15);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(189, 19);
             this.bunifuCustomLabel1.TabIndex = 140;
             this.bunifuCustomLabel1.Text = "Cargos Seleccionados";
             // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Roboto Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(9, 375);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(8, 371);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(136, 15);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(165, 19);
             this.bunifuCustomLabel2.TabIndex = 141;
             this.bunifuCustomLabel2.Text = "Cargos Disponibles";
             // 

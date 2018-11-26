@@ -289,7 +289,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            formulario.TerminarProceso(numeroFormulario);
+            if (formulario.recibirMensaje(2))
+            {
+                formulario.TerminarProceso(numeroFormulario);
+            }
         }
     }
 }
