@@ -173,7 +173,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         {
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
             Cl_Observacion observacion = (Cl_Observacion)e.Argument;
-            CargarFuncionario iniciar = new CargarFuncionario();
+            CargarFormulario iniciar = new CargarFormulario();
             switch (this.numero)
             {
                 case 1:
@@ -219,7 +219,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         private void IniciarProceso_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             int porcentaje = e.ProgressPercentage;
-            CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
+            CargarFormulario iniciar = (CargarFormulario)e.UserState;
 
             switch (this.numero)
             {

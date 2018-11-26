@@ -2005,7 +2005,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                                     Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
                                     mensaje.cambiarMensaje("Debe seleccionar una fila");
                                     mensaje.ShowDialog();
-                                    MessageBox.Show("hola");
                                 }
                             }
                             else
@@ -2281,19 +2280,32 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         daoPerfil dao = new daoPerfil();
                         if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
                         {
-                            if (dao.CambiarEstadoObsoleto(perfil))
+                            daoUtilidad dao2 = new daoUtilidad();
+                            if (dao2.recuperarPerfilConPerfil(perfil) == false)
                             {
-                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
-                                mensaje.cambiarMensaje("Se cambio el estado Correctamente");
-                                recargarListados(2.11);
-                                mensaje.ShowDialog();
+                                if (dao.CambiarEstadoObsoleto(perfil))
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Se cambio el estado Correctamente");
+                                    recargarListados(2.11);
+                                    mensaje.ShowDialog();
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("No cambio el estado Correctamente");
+                                    mensaje.ShowDialog();
+                                }
+
                             }
                             else
                             {
                                 Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
-                                mensaje.cambiarMensaje("No cambio el estado Correctamente");
+                                mensaje.cambiarMensaje("Perfil no puede eliminar al jefe porque aun tiene evaluaciones pendientes");
                                 mensaje.ShowDialog();
+
                             }
+                
                         }
 
                         else
@@ -2324,12 +2336,25 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                             }
                             else
                             {
-                                jefe.funcionario.run = run;
-                                dao.Eliminar(jefe);
-                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
-                                mensaje.cambiarMensaje("Jefe se elimino correctamente.");
-                                mensaje.ShowDialog();
-                                recargarListados(2.11);
+                                daoUtilidad dao2 = new daoUtilidad();
+                                Cl_Perfil perfil = new Cl_Perfil();
+                                perfil.id = jefe.perfil.id;
+                                if (dao2.recuperarPerfilConPerfil(perfil) == false)
+                                {
+                                    jefe.funcionario.run = run;
+                                    dao.Eliminar(jefe);
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Jefe se elimino correctamente.");
+                                    mensaje.ShowDialog();
+                                    recargarListados(2.11);
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Perfil no puede eliminar al jefe porque aun tiene evaluaciones pendientes");
+                                    mensaje.ShowDialog();
+                                }
+
                             }
 
                         }
@@ -2532,6 +2557,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         {
                             if (ListarCompetencia.listaCompetencia_Observacion.dt_Listar.SelectedRows.Count > 0)
                             {
+                                
                                 string idObservacion = ListarCompetencia.listaCompetencia_Observacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
                                 daoObservacion dao = new daoObservacion();
                                 Modulo.Observacion moduloObservacion = new Modulo.Observacion();
@@ -2615,17 +2641,38 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                         {
                             if (ListarEvaluacion.listarEvaluacion.dt_Listar.SelectedRows.Count > 0)
                             {
+
                                 string id = ListarEvaluacion.listarEvaluacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
 
-                                daoCuestionario dao = new daoCuestionario();
-                                Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
-                                moduloEvaluacion.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
-                                moduloEvaluacion.PasarDatos(this);
-                                moduloEvaluacion.IniciarFormulario(2);
-                                AbrirModulo(moduloEvaluacion);
-                                PanelCRUD.Visible = true;
-                                estadoCRUD = 1;
-                                this.moduloEvaluacion = moduloEvaluacion;
+                                daoUtilidad dao2 = new daoUtilidad();
+                                Cl_Cuestionario eva = new Cl_Cuestionario();
+
+                                eva.id = int.Parse(id);
+                                if (dao2.recuperarFechaInicio(eva) == false)
+                                {
+                                    daoCuestionario dao = new daoCuestionario();
+                                    Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
+                                    moduloEvaluacion.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                    moduloEvaluacion.PasarDatos(this);
+                                    moduloEvaluacion.IniciarFormulario(2);
+                                    AbrirModulo(moduloEvaluacion);
+                                    PanelCRUD.Visible = true;
+                                    estadoCRUD = 1;
+                                    this.moduloEvaluacion = moduloEvaluacion;
+                                }
+                                else
+                                {
+                                    daoCuestionario dao = new daoCuestionario();
+                                    Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
+                                    moduloEvaluacion.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                    moduloEvaluacion.PasarDatos(this);
+                                    moduloEvaluacion.IniciarFormulario(3);
+                                    AbrirModulo(moduloEvaluacion);
+                                    PanelCRUD.Visible = true;
+                                    estadoCRUD = 1;
+                                    this.moduloEvaluacion = moduloEvaluacion;
+                                }
+
 
                             }
                             else

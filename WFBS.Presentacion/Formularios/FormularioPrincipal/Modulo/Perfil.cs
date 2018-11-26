@@ -154,7 +154,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         {
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
             Cl_Perfil perfil = (Cl_Perfil)e.Argument;
-            CargarFuncionario iniciar = new CargarFuncionario();
+            CargarFormulario iniciar = new CargarFormulario();
             switch (this.numero)
             {
                 case 1:
@@ -205,7 +205,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             switch (this.numero)
             {
                 case 1:
-                    CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
+                    CargarFormulario iniciar = (CargarFormulario)e.UserState;
                     switch (porcentaje)
                     {
 
@@ -240,7 +240,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     }
                     break;
                 case 2:
-                    CargarFuncionario iniciar2 = (CargarFuncionario)e.UserState;
+                    CargarFormulario iniciar2 = (CargarFormulario)e.UserState;
                     switch (porcentaje)
                     {
 

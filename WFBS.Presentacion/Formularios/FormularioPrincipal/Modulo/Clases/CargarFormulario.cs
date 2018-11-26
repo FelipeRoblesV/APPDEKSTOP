@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Clases
 {
-    class CargarPerfil
+    public class CargarFormulario
     {
+        public string Mensaje { get; set; }
+        public bool respuesta { get; set; }
+
+        public CargarFormulario()
+        {
+                
+        }
     }
 }

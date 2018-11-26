@@ -74,10 +74,25 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     lblNombreFormulario.Text = "Modificar Evaluacion";
                     llenarFormulario(evaluacion);
                     break;
+                case 3:
+                    this.numero = numero;
+                    btnAccion.Text = "Modificar Evaluacion";
+                    lblNombreFormulario.Text = "Modificar Evaluacion";
+                    bloquearFormulario();
+                    llenarFormulario(evaluacion);
+                    break;
             }
 
         }
 
+        private void bloquearFormulario()
+        {
+            numDiasHabiles.Minimum = evaluacion.dias;
+            dtpFechaInicio.Enabled = false;
+            txtNombre.ReadOnly = true;
+            btnsPonderacion.Enabled = false;
+
+        }
 
         public void llenarFormulario(Cl_Cuestionario eva)
         {
@@ -185,7 +200,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
         {
             BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
             Cl_Cuestionario evaluacion = (Cl_Cuestionario)e.Argument;
-            CargarFuncionario iniciar = new CargarFuncionario();
+            CargarFormulario iniciar = new CargarFormulario();
             switch (this.numero)
             {
                 case 1:
@@ -205,6 +220,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     }
                     catch (Exception)
                     {
+                        formulario.ErrorConexion();
                     }
 
                     break;
@@ -223,6 +239,26 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     }
                     catch (Exception)
                     {
+                        formulario.ErrorConexion();
+                    }
+
+                    break;
+                case 3:
+                    iniciar.Mensaje = "Modificando Evaluacion";
+                    IniciarAplicacion.ReportProgress(1, iniciar);
+
+                    try
+                    {
+                        daoCuestionario dao = new daoCuestionario();
+                        iniciar.respuesta = dao.Modificar(evaluacion);
+                        IniciarAplicacion.ReportProgress(2, iniciar);
+                        System.Threading.Thread.Sleep(2500);
+                        IniciarAplicacion.ReportProgress(3, iniciar);
+
+                    }
+                    catch (Exception)
+                    {
+                        formulario.ErrorConexion();
                     }
 
                     break;
@@ -236,7 +272,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
             switch (this.numero)
             {
                 case 1:
-                    CargarFuncionario iniciar = (CargarFuncionario)e.UserState;
+                    CargarFormulario iniciar = (CargarFormulario)e.UserState;
                     switch (porcentaje)
                     {
                         case 1:
@@ -266,7 +302,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                     }
                     break;
                 case 2:
-                    CargarFuncionario iniciar2 = (CargarFuncionario)e.UserState;
+                    CargarFormulario iniciar2 = (CargarFormulario)e.UserState;
                     switch (porcentaje)
                     {
 
@@ -283,6 +319,37 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo
                             break;
                         case 3:
                             if (iniciar2.respuesta)
+                            {
+                                formulario.recargarListados(4.11);
+                                formulario.TerminarProceso(4.1);
+                            }
+                            else
+                            {
+
+                                formulario.AbrirModuloExterno(this);
+
+                            }
+                            break;
+                    }
+                    break;
+                case 3:
+                    CargarFormulario iniciar3 = (CargarFormulario)e.UserState;
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+
+                            Modulo.Otros.Cargando load = new Modulo.Otros.Cargando();
+                            load.CambiarMensaje(iniciar3.Mensaje);
+                            formulario.AbrirModuloExterno(load);
+                            break;
+                        case 2:
+                            Estado estado = new Estado();
+                            estado.estado(iniciar3.respuesta, 2);
+                            formulario.AbrirModuloExterno(estado);
+                            break;
+                        case 3:
+                            if (iniciar3.respuesta)
                             {
                                 formulario.recargarListados(4.11);
                                 formulario.TerminarProceso(4.1);
