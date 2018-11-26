@@ -134,7 +134,7 @@
             this.btnExportarExcel.DisabledColor = System.Drawing.Color.Gray;
             this.btnExportarExcel.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnExportarExcel.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnExportarExcel.Iconimage = global::WFBS.Presentacion.Properties.Resources._1485481269_37_78645;
+            this.btnExportarExcel.Iconimage = global::WFBS.Presentacion.Properties.Resources.archivoExcel;
             this.btnExportarExcel.Iconimage_right = null;
             this.btnExportarExcel.Iconimage_right_Selected = null;
             this.btnExportarExcel.Iconimage_Selected = null;
@@ -170,7 +170,7 @@
             this.btnImportarPDF.DisabledColor = System.Drawing.Color.Gray;
             this.btnImportarPDF.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnImportarPDF.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnImportarPDF.Iconimage = global::WFBS.Presentacion.Properties.Resources._1485481179_20_78631;
+            this.btnImportarPDF.Iconimage = global::WFBS.Presentacion.Properties.Resources.ArchivoPdf;
             this.btnImportarPDF.Iconimage_right = null;
             this.btnImportarPDF.Iconimage_right_Selected = null;
             this.btnImportarPDF.Iconimage_Selected = null;

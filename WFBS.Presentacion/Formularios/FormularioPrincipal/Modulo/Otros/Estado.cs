@@ -24,12 +24,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros
                 case 1:
                     panelEstado.BackColor = Color.FromArgb(73, 152, 67);
                     lblMensaje.Text = "Se agrego correctamente.";
-                    imagenEstado.Image = Properties.Resources.estado_correcto;
+                    imagenEstado.Image = Properties.Resources.Correcto;
                     break;
                 case 2:
                     panelEstado.BackColor = Color.FromArgb(73, 152, 67);
                     lblMensaje.Text = "Se Modifico correctamente.";
-                    imagenEstado.Image = Properties.Resources.estado_correcto;
+                    imagenEstado.Image = Properties.Resources.Incorrecto;
 
                     break;
             }
@@ -42,12 +42,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros
                 case 1:
                     panelEstado.BackColor = Color.FromArgb(237, 83, 66);
                     lblMensaje.Text = "No se agrego correctamente.";
-                    imagenEstado.Image = Properties.Resources.estado_incorrecto;
+                    imagenEstado.Image = Properties.Resources.Correcto;
                     break;
                 case 2:
                     panelEstado.BackColor = Color.FromArgb(237, 83, 66);
                     lblMensaje.Text = "No se modifico correctamente.";
-                    imagenEstado.Image = Properties.Resources.estado_incorrecto;
+                    imagenEstado.Image = Properties.Resources.Incorrecto;
 
                     break;
             }

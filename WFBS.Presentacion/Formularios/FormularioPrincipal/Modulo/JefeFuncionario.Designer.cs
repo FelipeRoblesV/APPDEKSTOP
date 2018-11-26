@@ -65,7 +65,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cerrar_ventana_48;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.CerrarModulo;
             this.btnCerrar.Location = new System.Drawing.Point(303, 1);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
@@ -122,7 +122,7 @@
             // 
             this.btnVerificarFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(125)))), ((int)(((byte)(55)))));
             this.btnVerificarFuncionario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerificarFuncionario.Image = global::WFBS.Presentacion.Properties.Resources.icons8_búsqueda_32_5_;
+            this.btnVerificarFuncionario.Image = global::WFBS.Presentacion.Properties.Resources.buscar3;
             this.btnVerificarFuncionario.ImageActive = null;
             this.btnVerificarFuncionario.Location = new System.Drawing.Point(280, 30);
             this.btnVerificarFuncionario.Name = "btnVerificarFuncionario";

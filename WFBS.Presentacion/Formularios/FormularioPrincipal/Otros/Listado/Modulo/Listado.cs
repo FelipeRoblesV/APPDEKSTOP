@@ -20,7 +20,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-        //    this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
         }
 
         public bool isSelected()
@@ -49,6 +49,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -77,6 +78,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                                 lblMensaje.Visible = false;
                                 dt_Listar.DataSource = lista.Tables[0];
                                 dt_Listar.Columns[0].Visible = false;
+                                this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                             }
                             catch (Exception)
                             {
@@ -107,6 +109,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             dt_Listar.Visible = true;
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -149,6 +152,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             dt_Listar.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -172,6 +176,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                         if (lista.Tables[0].Rows.Count >= 1)
                         {
                             dt_Listar.DataSource = lista.Tables[0];
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
 
                     }
@@ -198,6 +203,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             dt_Listar.Columns[4].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[5].SortMode = DataGridViewColumnSortMode.NotSortable;
                             dt_Listar.Columns[6].SortMode = DataGridViewColumnSortMode.NotSortable;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -221,6 +227,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             dt_Listar.Visible = true;
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -271,6 +278,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -297,6 +305,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                             dt_Listar.Columns[1].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -322,6 +331,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -345,6 +355,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -367,6 +378,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
                             dt_Listar.Columns[1].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -392,6 +404,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -417,6 +430,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
+                            this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {
@@ -442,6 +456,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado.Modulo
                             lblMensaje.Visible = false;
                             dt_Listar.DataSource = lista.Tables[0];
                             dt_Listar.Columns[0].Visible = false;
+                             this.dt_Listar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
                         }
                         else
                         {

@@ -95,7 +95,7 @@
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.btnAgregar.Image = global::WFBS.Presentacion.Properties.Resources.flecha_hacia_arriba;
+            this.btnAgregar.Image = global::WFBS.Presentacion.Properties.Resources.FechaArriba;
             this.btnAgregar.ImageActive = null;
             this.btnAgregar.Location = new System.Drawing.Point(263, 362);
             this.btnAgregar.Name = "btnAgregar";
@@ -109,7 +109,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
-            this.btnEliminar.Image = global::WFBS.Presentacion.Properties.Resources.flecha_hacia_abajo;
+            this.btnEliminar.Image = global::WFBS.Presentacion.Properties.Resources.FlechaAbajo;
             this.btnEliminar.ImageActive = null;
             this.btnEliminar.Location = new System.Drawing.Point(204, 362);
             this.btnEliminar.Name = "btnEliminar";
@@ -136,7 +136,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(65)))));
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cerrar_ventana_48;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.CerrarModulo;
             this.btnCerrar.Location = new System.Drawing.Point(303, 1);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);

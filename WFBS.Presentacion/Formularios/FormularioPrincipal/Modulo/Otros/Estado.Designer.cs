@@ -47,11 +47,11 @@
             // 
             // lblMensaje
             // 
-            this.lblMensaje.Font = new System.Drawing.Font("Roboto", 16F);
+            this.lblMensaje.Font = new System.Drawing.Font("Roboto", 22F);
             this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
             this.lblMensaje.Location = new System.Drawing.Point(17, 456);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(298, 66);
+            this.lblMensaje.Size = new System.Drawing.Size(298, 108);
             this.lblMensaje.TabIndex = 1;
             this.lblMensaje.Text = "Agregado Incorrectamente";
             this.lblMensaje.TextAlign = System.Drawing.ContentAlignment.TopCenter;

@@ -92,11 +92,12 @@
             // 
             // lblError
             // 
+            this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblError.Font = new System.Drawing.Font("Roboto Light", 14.25F);
             this.lblError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(196)))), ((int)(((byte)(68)))));
-            this.lblError.Location = new System.Drawing.Point(905, 13);
+            this.lblError.Location = new System.Drawing.Point(697, 13);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(250, 22);
+            this.lblError.Size = new System.Drawing.Size(458, 22);
             this.lblError.TabIndex = 7;
             this.lblError.Text = "Descripcion del Formulario";
             this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -113,6 +114,7 @@
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(305, 30);
             this.txtBuscar.TabIndex = 158;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_OnValueChanged);
             // 
             // lblDescripcion
             // 
@@ -319,7 +321,7 @@
             this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(94)))), ((int)(((byte)(126)))));
             this.btnRegresar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.btnRegresar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnRegresar.Image = global::WFBS.Presentacion.Properties.Resources.icons8_izquierda_círculo_96;
+            this.btnRegresar.Image = global::WFBS.Presentacion.Properties.Resources.Atras;
             this.btnRegresar.ImageActive = null;
             this.btnRegresar.Location = new System.Drawing.Point(1413, 5);
             this.btnRegresar.Name = "btnRegresar";

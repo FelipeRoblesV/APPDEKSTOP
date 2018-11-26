@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="icons8-búsqueda-32(5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buscar3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-búsqueda-32(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refresh_arrows_14418" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -130,10 +130,7 @@
   <data name="logotipoWallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logotipoWallpaper.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-flecha-izquierda-larga-64(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-flecha-izquierda-larga-64(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icons8-cambiar-filled-50(5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="CambiarJefe" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cambiar-filled-50(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FullScreen_active" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -145,7 +142,7 @@
   <data name="Dashboard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dashboard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flat-style-circle-undo_icon-icons.com_66949" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Volver" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flat-style-circle-undo_icon-icons.com_66949.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="RestoreFP" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -160,7 +157,7 @@
   <data name="Perfil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Perfil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-sincronización-de-conexión-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Cambiar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-sincronización-de-conexión-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dashboard_Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -172,22 +169,22 @@
   <data name="Background_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flecha-hacia-arriba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FechaArriba" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flecha-hacia-arriba.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="estado_incorrecto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cara-triste.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cerrar-ventana-24(4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Cerrar7" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cerrar-ventana-24(4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flat-style-circle-save_icon-icons.com_66942" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="CambiarCargo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flat-style-circle-save_icon-icons.com_66942.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LogotipoFondo_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LogotipoFondo-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flat-style-circle-block_icon-icons.com_66946" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Cerrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flat-style-circle-block_icon-icons.com_66946.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MaximeFP" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -196,19 +193,19 @@
   <data name="CerrarFP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CerrarFP2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1485481179-20_78631" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ArchivoPdf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1485481179-20_78631.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Evaluacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Evaluacion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cambiar-filled-50(4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="cambiarJefe2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cambiar-filled-50(4).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="estado_correcto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cara-sonriendo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cerrar-ventana-24(6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Cerrar5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cerrar-ventana-24(6).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Twitter" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -220,7 +217,7 @@
   <data name="Evaluacion_Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Evaluacion-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-búsqueda-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buscar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-búsqueda-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Instagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -232,40 +229,40 @@
   <data name="logotipoLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logotipoLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cerrar-ventana-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="CerrarModulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cerrar-ventana-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MinimizeFP" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MinimizeFP.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flat-style-circle-edit_icon-icons.com_66939" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flat-style-circle-edit_icon-icons.com_66939.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FullScreen (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="full_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FullScreen (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Competencia_Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Competencia-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flecha-hacia-abajo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FlechaAbajo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flecha-hacia-abajo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cambiar-filled-50(3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="hola" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cambiar-filled-50(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Funcionario_Active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Funcionario-Active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1485481269-37_78645" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="archivoExcel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1485481269-37_78645.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Reporte" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reporte.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cerrar-ventana-24(5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Cerrar6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-cerrar-ventana-24(5).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flat-style-circle-add_icon-icons.com_66944" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flat-style-circle-add_icon-icons.com_66944.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -280,28 +277,34 @@
   <data name="previous" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\previous.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fullscreen(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="full_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fullscreen(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WFBS(14)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Logotipo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\WFBS(14).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-búsqueda-32(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buscar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-búsqueda-32(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Background-2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="circle-edit-line_icon-icons.com_66940" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Modificar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\circle-edit-line_icon-icons.com_66940.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="flat-style-circle-remove_icon-icons.com_66948" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flat-style-circle-remove_icon-icons.com_66948.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-izquierda-círculo-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Atras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-izquierda-círculo-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Correcto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-marca-de-verificación-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Incorrecto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-error-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

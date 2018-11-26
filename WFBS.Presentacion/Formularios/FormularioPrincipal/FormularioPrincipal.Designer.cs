@@ -484,7 +484,7 @@
             this.btnFullScreen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(30)))), ((int)(((byte)(44)))));
             this.Animacion.SetDecoration(this.btnFullScreen, BunifuAnimatorNS.DecorationType.None);
             this.btnFullScreen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnFullScreen.Image = global::WFBS.Presentacion.Properties.Resources.FullScreen__2_;
+            this.btnFullScreen.Image = global::WFBS.Presentacion.Properties.Resources.full_1;
             this.btnFullScreen.ImageActive = null;
             this.btnFullScreen.Location = new System.Drawing.Point(5, 5);
             this.btnFullScreen.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
@@ -569,7 +569,7 @@
             this.btnSubAccion3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnSubAccion3, BunifuAnimatorNS.DecorationType.None);
             this.btnSubAccion3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSubAccion3.Image = global::WFBS.Presentacion.Properties.Resources.icons8_cambiar_filled_50_5_;
+            this.btnSubAccion3.Image = global::WFBS.Presentacion.Properties.Resources.CambiarJefe;
             this.btnSubAccion3.Location = new System.Drawing.Point(170, 5);
             this.btnSubAccion3.Name = "btnSubAccion3";
             this.btnSubAccion3.Padding = new System.Windows.Forms.Padding(2);
@@ -584,7 +584,7 @@
             this.btnSubAccion2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnSubAccion2, BunifuAnimatorNS.DecorationType.None);
             this.btnSubAccion2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSubAccion2.Image = global::WFBS.Presentacion.Properties.Resources.icons8_sincronización_de_conexión_64;
+            this.btnSubAccion2.Image = global::WFBS.Presentacion.Properties.Resources.Cambiar;
             this.btnSubAccion2.Location = new System.Drawing.Point(140, 5);
             this.btnSubAccion2.Name = "btnSubAccion2";
             this.btnSubAccion2.Padding = new System.Windows.Forms.Padding(2);
@@ -599,7 +599,7 @@
             this.btnSubAccion1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnSubAccion1, BunifuAnimatorNS.DecorationType.None);
             this.btnSubAccion1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSubAccion1.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_save_icon_icons_com_66942;
+            this.btnSubAccion1.Image = global::WFBS.Presentacion.Properties.Resources.CambiarCargo;
             this.btnSubAccion1.Location = new System.Drawing.Point(110, 5);
             this.btnSubAccion1.Name = "btnSubAccion1";
             this.btnSubAccion1.Padding = new System.Windows.Forms.Padding(2);
@@ -629,7 +629,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnCerrar, BunifuAnimatorNS.DecorationType.None);
             this.btnCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_block_icon_icons_com_66946;
+            this.btnCerrar.Image = global::WFBS.Presentacion.Properties.Resources.Cerrar;
             this.btnCerrar.Location = new System.Drawing.Point(1446, 5);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Padding = new System.Windows.Forms.Padding(2);
@@ -644,7 +644,7 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnEliminar, BunifuAnimatorNS.DecorationType.None);
             this.btnEliminar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnEliminar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_remove_icon_icons_com_66948;
+            this.btnEliminar.Image = global::WFBS.Presentacion.Properties.Resources.Eliminar;
             this.btnEliminar.Location = new System.Drawing.Point(80, 5);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Padding = new System.Windows.Forms.Padding(2);
@@ -659,7 +659,7 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnModificar, BunifuAnimatorNS.DecorationType.None);
             this.btnModificar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnModificar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_edit_icon_icons_com_66939;
+            this.btnModificar.Image = global::WFBS.Presentacion.Properties.Resources.Editar;
             this.btnModificar.Location = new System.Drawing.Point(50, 5);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Padding = new System.Windows.Forms.Padding(2);
@@ -674,7 +674,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(78)))), ((int)(((byte)(114)))));
             this.Animacion.SetDecoration(this.btnAgregar, BunifuAnimatorNS.DecorationType.None);
             this.btnAgregar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAgregar.Image = global::WFBS.Presentacion.Properties.Resources.flat_style_circle_add_icon_icons_com_66944;
+            this.btnAgregar.Image = global::WFBS.Presentacion.Properties.Resources.Agregar;
             this.btnAgregar.InitialImage = null;
             this.btnAgregar.Location = new System.Drawing.Point(20, 5);
             this.btnAgregar.Name = "btnAgregar";

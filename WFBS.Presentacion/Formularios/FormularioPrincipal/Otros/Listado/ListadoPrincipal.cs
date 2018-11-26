@@ -698,7 +698,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         {
 
 
-            BunifuCustomDataGrid btn = sender as BunifuCustomDataGrid;
+            DataGridView btn = sender as DataGridView;
             if (Formulario.estadoActualCrud() == false)
             {
                 switch (this.numero)
@@ -1223,101 +1223,47 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         #region BUSCAR | FILTRAR FORMULARIO
         private void txtBuscar_OnValueChanged(object sender, EventArgs e)
         {
-
+        //    MessageBox.Show(this.numero.ToString() + ' ' + this.numero2.ToString());
             switch (this.numero)
             {
-                case 1:
-                    int numeroInterno = 0;
-                    foreach (DataGridViewRow row in listaFuncionario.dt_Listar.Rows)
+                case 1.11:
+                    switch (this.numero2)
                     {
-                        string resultadoRut = row.Cells[0].Value.ToString().ToLower();
-                        string resultadorut2 = (row.Cells[0].Value.ToString().ToLower()).Replace("-", "");
-                        string resultadorut3 = (row.Cells[0].Value.ToString().ToLower()).Remove(resultadoRut.Length - 2);
-                        string resultadoNombre = row.Cells[1].Value.ToString().ToLower();
-                        string resultadoApellido = row.Cells[2].Value.ToString().ToLower();
-                        string resultadoSexo = row.Cells[3].Value.ToString().ToLower();
-                        string resultadoRutJefe = row.Cells[7].Value.ToString().ToLower();
-                        string resultadoNombreJefe = row.Cells[8].Value.ToString().ToLower();
-                        string resultadoPerfil = row.Cells[9].Value.ToString().ToLower();
-
-
-                        string texto = txtBuscar.Text.ToLower();
-
-                        if (resultadoNombre == texto)
-                        {
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = true;
-                            lblError.Text = "Nombre del Funcionario.";
-                            lblError.Visible = true;
-                            numeroInterno = 1;
-                        }
-                        else if (resultadoRut == texto || resultadorut2 == texto || resultadorut3 == texto)
-                        {
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = true;
-                            lblError.Text = "Rut Del Funcionario";
-                            lblError.Visible = true;
-                            numeroInterno = 1;
-                        }
-                        else if (resultadoApellido == texto)
-                        {
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = true;
-                            lblError.Text = "Apellido del Funcionario.";
-                            lblError.Visible = true;
-                            numeroInterno = 1;
-                        }
-                        else if (resultadoSexo == texto)
-                        {
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = true;
-                            lblError.Text = "Sexo del Funcionario.";
-                            lblError.Visible = true;
-                            numeroInterno = 1;
-                        }
-                        else if (resultadoRutJefe == texto)
-                        {
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = true;
-                            lblError.Text = "rut del jefe de perfil";
-                            lblError.Visible = true;
-                            numeroInterno = 1;
-                        }
-                        else if (resultadoNombreJefe == texto)
-                        {
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = true;
-                            lblError.Text = "Nombre del Jefe de Perfil";
-                            lblError.Visible = true;
-                            numeroInterno = 1;
-                        }
-                        else if (resultadoPerfil == texto)
-                        {
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = true;
-                            lblError.Text = "Perfil del funcionario";
-                            lblError.Visible = true;
-                            numeroInterno = 1;
-                        }
-                        else
-                        {
-                            row.DataGridView.CurrentCell = null;
-                            CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
-                            cm.SuspendBinding();
-                            row.Visible = false;
-                            if (numeroInterno == 0)
+                        case 0:
+                            int numeroInterno = 0;
+                            foreach (DataGridViewRow row in listaFuncionario.dt_Listar.Rows)
                             {
-                                lblError.Text = "No hay Resultados de busqueda.";
+                                string resultadoRut = row.Cells[0].Value.ToString().ToLower();
+                                string resultadorut2 = (row.Cells[0].Value.ToString().ToLower()).Replace("-", "");
+                                string resultadorut3 = (row.Cells[0].Value.ToString().ToLower()).Remove(resultadoRut.Length - 2);
+ 
+
+                                string texto = txtBuscar.Text.ToLower();
+
+
+                                if (resultadoRut == texto || resultadorut2 == texto || resultadorut3 == texto)
+                                {
+                                    CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                                    cm.SuspendBinding();
+                                    row.Visible = true;
+                                    lblError.Text = "Rut Del Funcionario";
+                                    lblError.Visible = true;
+                                    numeroInterno = 1;
+                                }
+                                else
+                                {
+                                    row.DataGridView.CurrentCell = null;
+                                    CurrencyManager cm = (CurrencyManager)BindingContext[listaFuncionario.dt_Listar.DataSource];
+                                    cm.SuspendBinding();
+                                    row.Visible = false;
+                                    if (numeroInterno == 0)
+                                    {
+                                        lblError.Text = "No hay Resultados de busqueda.";
+                                    }
+                                    lblError.Visible = true;
+                                }
                             }
-                            lblError.Visible = true;
-                        }
+                            break;
                     }
                     break;
 
@@ -1374,15 +1320,23 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado
         #region ABRIR FORMULARIO
         private void AbrirFormulario(object formHijo)
         {
-            if (this.panelContenido.Controls.Count > 0)
-                this.panelContenido.Controls.RemoveAt(0);
-            Form fh = formHijo as Form;
-            fh.TopLevel = false;
-            fh.FormBorderStyle = FormBorderStyle.None;
-            fh.Dock = DockStyle.Fill;
-            this.panelContenido.Controls.Add(fh);
-            this.panelContenido.Tag = fh;
-            fh.Show();
+            try
+            {
+                if (this.panelContenido.Controls.Count > 0)
+                    this.panelContenido.Controls.RemoveAt(0);
+                Form fh = formHijo as Form;
+                fh.TopLevel = false;
+                fh.FormBorderStyle = FormBorderStyle.None;
+                fh.Dock = DockStyle.Fill;
+                this.panelContenido.Controls.Add(fh);
+                this.panelContenido.Tag = fh;
+                fh.Show();
+            }
+            catch (InvalidOperationException)
+            {
+
+            }
+
         }
         #endregion
     }
