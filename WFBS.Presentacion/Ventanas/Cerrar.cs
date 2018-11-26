@@ -8,50 +8,85 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Bunifu.Framework.UI;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo;
 using WFBS.Presentacion.Formularios.Login;
 
 namespace WFBS.Presentacion.Ventanas
 {
     public partial class Cerrar : Form
-    { 
-
+    {
         private int estado = 0;
         private Login login;
         private Formularios.FormularioPrincipal.FormularioPrincipal formularioPrincipal;
         private Aplicacion app;
+        private bool CambiarRut = false, cerrarFormulario = false, eliminar = false;
         public Cerrar()
         {
             InitializeComponent();
         }
 
-        public void ventanaCerrarLogin(Login login)
+        #region PASAR DATOS
+
+        public void PasarDatos(Login login)
         {
             this.login = login;
-            lblMensaje.Text = "¿Esta Seguro que quiere cerrar ahora?";
-            btn_Accion1.ButtonText = "Aceptar";
-            btn_Accion2.ButtonText = "Cancelar";
-            estado = 1;
         }
 
-
-        public void ventanaCerrarFormularioPrincipal(Formularios.FormularioPrincipal.FormularioPrincipal Formulario)
+        public void PasarDatos(Formularios.FormularioPrincipal.FormularioPrincipal Formulario)
         {
             this.formularioPrincipal = Formulario;
-            lblMensaje.Text = "¿Esta Seguro que quiere cerrar ahora?";
-            btn_Accion1.ButtonText = "Aceptar";
-            btn_Accion2.ButtonText = "Cancelar";
-            estado = 2;
         }
 
-        public void ventanaCerrarSesion(Aplicacion aplication)
+        public void PasarDatos(Aplicacion aplication)
         {
             this.app = aplication;
-            lblMensaje.Text = "¿Esta Seguro que quiere cerrar Sesion ahora?";
-            btn_Accion1.ButtonText = "Aceptar";
-            btn_Accion2.ButtonText = "Cancelar";
-            estado = 3;
         }
 
+        #endregion
+
+
+        public void iniciarFormulario(int numero)
+        {
+            switch (numero)
+            {
+                case 1:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que quiere cerrar ahora?";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+                case 2:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que quiere cerrar ahora?";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+                case 3:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que quiere cerrar ahora?";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+                case 4:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que quiere borrar rut ingresado, si lo realiza se podria perder la informacion ingresada";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+                case 5:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que desea salir del modulo?";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+                case 6:
+                    this.estado = numero;
+                    lblMensaje.Text = "¿Esta Seguro que desea Eliminar?";
+                    btn_Accion1.ButtonText = "Aceptar";
+                    btn_Accion2.ButtonText = "Cancelar";
+                    break;
+            }
+        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -78,7 +113,7 @@ namespace WFBS.Presentacion.Ventanas
                 case 2:
                     if (btn_Accion1.Name == btn.Name)
                     {
-                        formularioPrincipal.CerrarFormulario();
+                        Application.Exit();
                     }
                     if (btn_Accion2.Name == btn.Name)
                     {
@@ -95,6 +130,61 @@ namespace WFBS.Presentacion.Ventanas
                     {
                         this.Close();
                     }
+                    break;
+                case 4:
+                    if (btn_Accion1.Name == btn.Name)
+                    {
+
+                        CambiarRut = true;
+                        this.Close();
+                    }
+                    if (btn_Accion2.Name == btn.Name)
+                    {
+                        CambiarRut = false;
+                        this.Close();
+                    }
+                    break;
+                case 5:
+                    if (btn_Accion1.Name == btn.Name)
+                    {
+
+                        cerrarFormulario = true;
+                        this.Close();
+                    }
+                    if (btn_Accion2.Name == btn.Name)
+                    {
+                        cerrarFormulario = false;
+                        this.Close();
+                    }
+                    break;
+                case 6:
+                    if (btn_Accion1.Name == btn.Name)
+                    {
+
+                        eliminar = true;
+                        this.Close();
+                    }
+                    if (btn_Accion2.Name == btn.Name)
+                    {
+                        eliminar = false;
+                        this.Close();
+                    }
+                    break;
+            }
+        }
+
+        private void Cerrar_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            switch (estado)
+            {
+                case 4:
+                    formularioPrincipal.IngresarRespuesta(CambiarRut);
+                    break;
+                case 5:
+                    formularioPrincipal.IngresarRespuesta(cerrarFormulario);
+                    break;
+                case 6:
+                    formularioPrincipal.IngresarRespuesta(eliminar);
                     break;
             }
         }

@@ -14,6 +14,9 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo.Clases
         public DataSet listarJefeFuncionario { get; set; }
         public DataSet listarPerfil { get; set; }
         public DataSet listarCargo { get; set; }
+        public DataSet listarCompetencia { get; set; }
+        public DataSet listarEvaluacion { get; set; }
+        public DataSet listarReporte { get; set; }
 
         public IniciarAplicacion()
         {

@@ -17,8 +17,13 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private int numero = 0;
         private int numeroLocal = 0;
         private int estado = 0;
+        private int estadoFinal = 1;
 
-
+        public void Cerrar()
+        {
+            estadoFinal = 0;
+            this.Close();
+        }
 
         public Imagenes()
         {
@@ -118,30 +123,35 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
 
             try
             {
-                for (int i = this.numero; i < 5; i++)
+                if(estadoFinal == 1)
                 {
-                    switch (i)
+                    for (int i = this.numero; i < 5; i++)
                     {
-                        case 1:
-                            this.numeroLocal = i;
-                            System.Threading.Thread.Sleep(15000);
-                            break;
-                        case 2:
-                            this.numeroLocal = i;
-                            System.Threading.Thread.Sleep(15000);
-                            break;
-                        case 3:
-                            this.numeroLocal = i;
-                            System.Threading.Thread.Sleep(15000);
-                            break;
-                        case 4:
-                            this.numeroLocal = i;
-                            System.Threading.Thread.Sleep(15000);
-                            break;
+                        switch (i)
+                        {
+                            case 1:
+                                this.numeroLocal = i;
+                                System.Threading.Thread.Sleep(15000);
+                                break;
+                            case 2:
+                                this.numeroLocal = i;
+                                System.Threading.Thread.Sleep(15000);
+                                break;
+                            case 3:
+                                this.numeroLocal = i;
+                                System.Threading.Thread.Sleep(15000);
+                                break;
+                            case 4:
+                                this.numeroLocal = i;
+                                System.Threading.Thread.Sleep(15000);
+                                break;
+      
+                        }
+                        IniciarAplicacion.ReportProgress((i + 1));
 
                     }
 
-                    IniciarAplicacion.ReportProgress((i + 1));
+         
                 }
             }
             catch (Exception)

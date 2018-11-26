@@ -74,5 +74,33 @@ namespace WFBS.Entidades
             }
         }
         #endregion
+
+        #region CALCULAR EDAD
+        public int CarlcularEdadPersona(DateTime pFechaNacimientoPersona)
+        {
+            int resultado = 0;
+            int anioNacimiento = pFechaNacimientoPersona.Year;
+            int anioActual = DateTime.Today.Year;
+
+            int aniosDiferencia = anioActual - anioNacimiento;
+
+            DateTime fechaNacimientoCalculo = new DateTime(DateTime.Today.Year, pFechaNacimientoPersona.Month, pFechaNacimientoPersona.Day);
+
+            TimeSpan diasFechaNacimiento = new DateTime(DateTime.Today.Year, 1, 1).Subtract(fechaNacimientoCalculo);
+            TimeSpan diasFechaActual = new DateTime(DateTime.Today.Year, 1, 1).Subtract(DateTime.Today);
+
+            if (Math.Abs(diasFechaNacimiento.Days) >= Math.Abs(diasFechaActual.Days))
+            {
+                resultado = aniosDiferencia;
+            }
+            else
+            {
+                resultado = (aniosDiferencia - 1);
+            }
+
+            return resultado;
+        }
+
+        #endregion
     }
 }

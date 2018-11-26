@@ -46,5 +46,17 @@ namespace WFBS.Presentacion.Properties {
                 this["ChkRecordarUsuario"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UsuarioConectado {
+            get {
+                return ((string)(this["UsuarioConectado"]));
+            }
+            set {
+                this["UsuarioConectado"] = value;
+            }
+        }
     }
 }

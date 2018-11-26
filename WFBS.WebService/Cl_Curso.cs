@@ -11,12 +11,14 @@ namespace WFBS.WebService
         public string nombre { get; set; }
         public string sigla { get; set; }
         public string instituto { get; set; }
+        public DateTime fecha { get; set; }
 
-        public Cl_Curso(string nombre, string sigla, string instituto)
+        public Cl_Curso(string nombre, string sigla, string instituto, DateTime fecha)
         {
             this.nombre = nombre;
             this.sigla = sigla;
             this.instituto = instituto;
+            this.fecha = fecha;
         }
 
         public Cl_Curso()

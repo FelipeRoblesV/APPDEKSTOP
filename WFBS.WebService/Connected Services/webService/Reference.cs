@@ -32,6 +32,15 @@ namespace WFBS.WebService.webService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://ws.modelo/MainWS/Recuperar_PersonaRequest", ReplyAction="http://ws.modelo/MainWS/Recuperar_PersonaResponse")]
         System.Threading.Tasks.Task<WFBS.WebService.webService.Recuperar_PersonaResponse> Recuperar_PersonaAsync(WFBS.WebService.webService.Recuperar_PersonaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.modelo/MainWS/Validar_CursosRequest", ReplyAction="http://ws.modelo/MainWS/Validar_CursosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        WFBS.WebService.webService.Validar_CursosResponse Validar_Cursos(WFBS.WebService.webService.Validar_CursosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://ws.modelo/MainWS/Validar_CursosRequest", ReplyAction="http://ws.modelo/MainWS/Validar_CursosResponse")]
+        System.Threading.Tasks.Task<WFBS.WebService.webService.Validar_CursosResponse> Validar_CursosAsync(WFBS.WebService.webService.Validar_CursosRequest request);
     }
     
     /// <remarks/>
@@ -352,6 +361,42 @@ namespace WFBS.WebService.webService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Validar_Cursos", WrapperNamespace="http://ws.modelo/", IsWrapped=true)]
+    public partial class Validar_CursosRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.modelo/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string p_run;
+        
+        public Validar_CursosRequest() {
+        }
+        
+        public Validar_CursosRequest(string p_run) {
+            this.p_run = p_run;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="Validar_CursosResponse", WrapperNamespace="http://ws.modelo/", IsWrapped=true)]
+    public partial class Validar_CursosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://ws.modelo/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public bool @return;
+        
+        public Validar_CursosResponse() {
+        }
+        
+        public Validar_CursosResponse(bool @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface MainWSChannel : WFBS.WebService.webService.MainWS, System.ServiceModel.IClientChannel {
     }
@@ -423,6 +468,29 @@ namespace WFBS.WebService.webService {
             WFBS.WebService.webService.Recuperar_PersonaRequest inValue = new WFBS.WebService.webService.Recuperar_PersonaRequest();
             inValue.p_run = p_run;
             return ((WFBS.WebService.webService.MainWS)(this)).Recuperar_PersonaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WFBS.WebService.webService.Validar_CursosResponse WFBS.WebService.webService.MainWS.Validar_Cursos(WFBS.WebService.webService.Validar_CursosRequest request) {
+            return base.Channel.Validar_Cursos(request);
+        }
+        
+        public bool Validar_Cursos(string p_run) {
+            WFBS.WebService.webService.Validar_CursosRequest inValue = new WFBS.WebService.webService.Validar_CursosRequest();
+            inValue.p_run = p_run;
+            WFBS.WebService.webService.Validar_CursosResponse retVal = ((WFBS.WebService.webService.MainWS)(this)).Validar_Cursos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WFBS.WebService.webService.Validar_CursosResponse> WFBS.WebService.webService.MainWS.Validar_CursosAsync(WFBS.WebService.webService.Validar_CursosRequest request) {
+            return base.Channel.Validar_CursosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WFBS.WebService.webService.Validar_CursosResponse> Validar_CursosAsync(string p_run) {
+            WFBS.WebService.webService.Validar_CursosRequest inValue = new WFBS.WebService.webService.Validar_CursosRequest();
+            inValue.p_run = p_run;
+            return ((WFBS.WebService.webService.MainWS)(this)).Validar_CursosAsync(inValue);
         }
     }
 }

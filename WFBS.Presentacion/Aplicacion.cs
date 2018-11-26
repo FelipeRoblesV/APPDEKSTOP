@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFBS.Controlador;
 using WFBS.Presentacion.Formularios.FormularioPrincipal;
 using WFBS.Presentacion.Formularios.Login;
+using WFBS.Presentacion.Ventanas;
 
 namespace WFBS.Presentacion
 {
@@ -21,7 +23,6 @@ namespace WFBS.Presentacion
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
-            iniciarAplicacion(1);
         }
 
         public void iniciarAplicacion(int numero)
@@ -33,11 +34,20 @@ namespace WFBS.Presentacion
                     {
                         formularioPrincipal.Close();
                     }
-                    login = new Login();
-                    login.pasarDatos(this);
-                    login.IniciarLogin(1);
-                    this.MaximumSize = new Size(1596, 896);
-                    AbrirPanel(login);
+                    Contexto con = new Contexto();
+                    if (con.Conectar())
+                    {
+                        login = new Login();
+                        login.pasarDatos(this);
+                        login.IniciarLogin(1);
+                        this.MaximumSize = new Size(1596, 896);
+                        AbrirPanel(login);
+                    }
+                    else
+                    {
+                        Controles(1);
+                    }
+
                     break;
                 case 2:
                     formularioPrincipal = login.recuperarDatos();
@@ -76,7 +86,11 @@ namespace WFBS.Presentacion
             switch (numero)
             {
                 case 1:
-                    MessageBox.Show("CERRAR");
+                    Mensaje ventana = new Mensaje();
+                    ventana.cambiarMensaje("Aplicacion no tiene conexion con el servidor.");
+                    ventana.ShowDialog();
+                    Application.Exit();
+
                     break;
                 case 2:
                     this.WindowState = FormWindowState.Minimized;
@@ -142,6 +156,12 @@ namespace WFBS.Presentacion
             }
             base.WndProc(ref msj);
         }
+
+        private void Aplicacion_Load(object sender, EventArgs e)
+        {
+            iniciarAplicacion(1);
+        }
+
         //----------------DIBUJAR RECTANGULO / EXCLUIR ESQUINA PANEL 
         protected override void OnSizeChanged(EventArgs e)
         {

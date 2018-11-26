@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WFBS.Presentacion.Ventanas
+namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcionario
 {
-    public partial class Eliminar : Form
+    public partial class Cargando : Form
     {
-        public Eliminar()
+        public Cargando()
         {
             InitializeComponent();
         }

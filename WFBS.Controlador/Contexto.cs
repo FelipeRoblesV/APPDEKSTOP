@@ -52,6 +52,7 @@ namespace WFBS.Controlador
                 // Liberamos su memoria.
                 conn.Dispose();
                 return true;
+
             }
             catch (Exception ex)
             {
@@ -94,7 +95,7 @@ namespace WFBS.Controlador
         {
             Dispose(false);
         }
-        private bool Conectar()
+        public bool Conectar()
         {
             bool ok = false;
 

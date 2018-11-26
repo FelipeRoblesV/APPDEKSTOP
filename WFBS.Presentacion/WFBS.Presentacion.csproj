@@ -39,6 +39,12 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\references\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -64,8 +70,11 @@
     <Compile Include="Formularios\FormularioPrincipal\Cargando.Designer.cs">
       <DependentUpon>Cargando.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Clases\CargarDashboard.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Clases\CargarListaSubFormulario.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Clases\CargarReporte.cs" />
+    <Compile Include="Formularios\FormularioPrincipal\Clases\RecargarFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +93,7 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Cargo.Designer.cs">
       <DependentUpon>Cargo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Clases\CargarFormulario.cs" />
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Competencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +118,12 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\JefeFuncionario.Designer.cs">
       <DependentUpon>JefeFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Modulos Adicionales\CargoFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Modulos Adicionales\CargoFuncionario.Designer.cs">
+      <DependentUpon>CargoFuncionario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Observacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,17 +136,35 @@
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Cargando.Designer.cs">
       <DependentUpon>Cargando.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormularioPrincipal\Modulo\CargoFuncionario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\FormularioPrincipal\Modulo\CargoFuncionario.Designer.cs">
-      <DependentUpon>CargoFuncionario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.Designer.cs">
       <DependentUpon>Estado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.Designer.cs">
+      <DependentUpon>Controles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Cargando.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Cargando.Designer.cs">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Controles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Controles.Designer.cs">
+      <DependentUpon>Controles.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Modulo\Perfil.cs">
       <SubType>Form</SubType>
@@ -180,6 +214,12 @@
     <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Listado.Designer.cs">
       <DependentUpon>Listado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\ListadoR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\ListadoR.Designer.cs">
+      <DependentUpon>ListadoR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormularioPrincipal\Otros\Logotipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,17 +253,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ventanas\AgregarJefe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventanas\AgregarJefe.Designer.cs">
+      <DependentUpon>AgregarJefe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\Cerrar.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventanas\Cerrar.Designer.cs">
       <DependentUpon>Cerrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventanas\Eliminar.cs">
+    <Compile Include="Ventanas\Mensaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventanas\Eliminar.Designer.cs">
-      <DependentUpon>Eliminar.cs</DependentUpon>
+    <Compile Include="Ventanas\Mensaje.Designer.cs">
+      <DependentUpon>Mensaje.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Aplicacion.resx">
       <DependentUpon>Aplicacion.cs</DependentUpon>
@@ -233,6 +279,51 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\FormularioPrincipal.resx">
       <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Alternativas.resx">
+      <DependentUpon>Alternativas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Cargo.resx">
+      <DependentUpon>Cargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Competencia.resx">
+      <DependentUpon>Competencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Evaluacion.resx">
+      <DependentUpon>Evaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Funcionario.resx">
+      <DependentUpon>Funcionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\JefeFuncionario.resx">
+      <DependentUpon>JefeFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Modulos Adicionales\CargoFuncionario.resx">
+      <DependentUpon>CargoFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Observacion.resx">
+      <DependentUpon>Observacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Cargando.resx">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Estado.resx">
+      <DependentUpon>Estado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Cargando.resx">
+      <DependentUpon>Cargando.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Funcionario\Controles.resx">
+      <DependentUpon>Controles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Otros\Jefe Funcionario\Controles.resx">
+      <DependentUpon>Controles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Perfil.resx">
+      <DependentUpon>Perfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Modulo\Preguntas.resx">
+      <DependentUpon>Preguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Ayuda\Ayuda.resx">
       <DependentUpon>Ayuda.cs</DependentUpon>
@@ -251,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\Listado.resx">
       <DependentUpon>Listado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Listado\Modulo\ListadoR.resx">
+      <DependentUpon>ListadoR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormularioPrincipal\Otros\Logotipo.resx">
       <DependentUpon>Logotipo.cs</DependentUpon>
@@ -277,9 +371,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Ventanas\AgregarJefe.resx">
+      <DependentUpon>AgregarJefe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventanas\Cerrar.resx">
       <DependentUpon>Cerrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventanas\Mensaje.resx">
+      <DependentUpon>Mensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -305,6 +406,10 @@
     <ProjectReference Include="..\WFBS.Logger\WFBS.Logger.csproj">
       <Project>{0b493275-d477-4238-a851-f07d9154addc}</Project>
       <Name>WFBS.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WFBS.WebService\WFBS.WebService.csproj">
+      <Project>{54d3bf76-30de-4913-8ef1-6ebe12fc19e7}</Project>
+      <Name>WFBS.WebService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -434,7 +539,37 @@
     <None Include="Resources\FullScreen_active1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\cara-triste.png" />
+    <None Include="Resources\cara-sonriendo.png" />
+    <None Include="Resources\1485481179-20_78631.png" />
+    <None Include="Resources\1485481269-37_78645.png" />
+    <None Include="Resources\flat-style-circle-add_icon-icons.com_66944.png" />
+    <None Include="Resources\flat-style-circle-edit_icon-icons.com_66939.png" />
+    <None Include="Resources\flat-style-circle-remove_icon-icons.com_66948.png" />
+    <None Include="Resources\flat-style-circle-save_icon-icons.com_66942.png" />
+    <None Include="Resources\circle-edit-line_icon-icons.com_66940.png" />
+    <None Include="Resources\flat-style-circle-block_icon-icons.com_66946.png" />
+    <None Include="Resources\flat-style-circle-undo_icon-icons.com_66949.png" />
+    <None Include="Resources\refresh_arrows_14418.png" />
+    <None Include="Resources\flecha-hacia-abajo.png" />
+    <None Include="Resources\flecha-hacia-arriba.png" />
+    <None Include="Resources\WFBS%2814%29.png" />
+    <None Include="Resources\icons8-búsqueda-32.png" />
+    <None Include="Resources\icons8-búsqueda-32%281%29.png" />
+    <None Include="Resources\icons8-búsqueda-32%285%29.png" />
+    <None Include="Resources\icons8-cerrar-ventana-24%284%29.png" />
+    <None Include="Resources\icons8-cerrar-ventana-24%285%29.png" />
+    <None Include="Resources\icons8-cerrar-ventana-24%286%29.png" />
+    <None Include="Resources\previous.png" />
+    <None Include="Resources\icons8-flecha-izquierda-larga-64%281%29.png" />
+    <None Include="Resources\icons8-cambiar-filled-50%283%29.png" />
+    <None Include="Resources\icons8-cambiar-filled-50%284%29.png" />
+    <None Include="Resources\icons8-cambiar-filled-50%285%29.png" />
+    <None Include="Resources\icons8-sincronización-de-conexión-64.png" />
+    <None Include="Resources\icons8-cerrar-ventana-48.png" />
+    <None Include="Resources\icons8-izquierda-círculo-96.png" />
     <Content Include="WFBS%2813%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

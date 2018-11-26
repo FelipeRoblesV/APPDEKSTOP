@@ -49,9 +49,11 @@ namespace WFBS.Presentacion.Formularios.Login
                     }
                     break;
                 case 3:
-                    preloader.Close();
-                    Imagenes.Close();
-                    IniciarSesion.Close();
+                    preloader.Dispose();
+                    Imagenes.cambiarEstado();
+                    Imagenes.Cerrar();
+                    IniciarSesion.Dispose();
+                    this.Dispose();
 
                     break;
             }
@@ -88,7 +90,9 @@ namespace WFBS.Presentacion.Formularios.Login
             if (btn.Name == btnCerrarFormulario.Name)
             {
                 Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
-                cerrar.ventanaCerrarLogin(this);
+                cerrar.PasarDatos(this);
+                cerrar.iniciarFormulario(1);
+
                 cerrar.ShowDialog();
             }
             if (btn.Name == btnMinimizarFormulario.Name)

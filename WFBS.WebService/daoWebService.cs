@@ -10,14 +10,14 @@ namespace WFBS.WebService
     public class daoWebService
     {
 
-        public Cl_Persona RecuperarPersona(Cl_Persona per)
+        public Cl_Persona RecuperarPersona(string run)
         {
             try
             {
                 webService.MainWSClient WS = new webService.MainWSClient();
                 webService.clPersona persona = new webService.clPersona();
                 Cl_Persona personaFinal = new Cl_Persona();
-                persona = WS.Recuperar_Persona(per.run);
+                persona = WS.Recuperar_Persona(run);
                 personaFinal.run = persona.run;
                 personaFinal.dv = Convert.ToChar(persona.dv);
                 personaFinal.nombre = persona.nombre;
@@ -30,7 +30,7 @@ namespace WFBS.WebService
             catch (Exception)
             {
 
-                throw new Exception("Funcionario no tiene datos disponibles.");
+                return null;
             }
         }
 
@@ -49,6 +49,7 @@ namespace WFBS.WebService
                     curso2.nombre = item.nombre;
                     curso2.sigla = item.siglas;
                     curso2.instituto = item.institucion;
+                    curso2.fecha = item.fecha;
                     listar.Add(curso2);
                 }
                 return listar;
@@ -58,6 +59,23 @@ namespace WFBS.WebService
             {
 
                 throw new Exception("Funcionario no tiene a cursado ningun curso.");
+            }
+        }
+
+        public bool ValidarCursos(Cl_Persona per)
+        {
+            try
+            {
+                webService.MainWSClient WS = new webService.MainWSClient();
+                bool respuesta = WS.Validar_Cursos(per.run);
+                return respuesta;
+
+
+            }
+            catch (Exception)
+            {
+
+                return false;
             }
         }
 

@@ -17,6 +17,12 @@
   <message name="Recuperar_PersonaResponse">
     <part name="parameters" element="tns:Recuperar_PersonaResponse" />
   </message>
+  <message name="Validar_Cursos">
+    <part name="parameters" element="tns:Validar_Cursos" />
+  </message>
+  <message name="Validar_CursosResponse">
+    <part name="parameters" element="tns:Validar_CursosResponse" />
+  </message>
   <portType name="MainWS">
     <operation name="Listar_Curso">
       <input wsam:Action="http://ws.modelo/MainWS/Listar_CursoRequest" message="tns:Listar_Curso" />
@@ -25,6 +31,10 @@
     <operation name="Recuperar_Persona">
       <input wsam:Action="http://ws.modelo/MainWS/Recuperar_PersonaRequest" message="tns:Recuperar_Persona" />
       <output wsam:Action="http://ws.modelo/MainWS/Recuperar_PersonaResponse" message="tns:Recuperar_PersonaResponse" />
+    </operation>
+    <operation name="Validar_Cursos">
+      <input wsam:Action="http://ws.modelo/MainWS/Validar_CursosRequest" message="tns:Validar_Cursos" />
+      <output wsam:Action="http://ws.modelo/MainWS/Validar_CursosResponse" message="tns:Validar_CursosResponse" />
     </operation>
   </portType>
   <binding name="MainWSPortBinding" type="tns:MainWS">
@@ -39,6 +49,15 @@
       </output>
     </operation>
     <operation name="Recuperar_Persona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="Validar_Cursos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -1,6 +1,6 @@
-﻿namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros
+﻿namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Funcionario
 {
-    partial class CargoFuncionario
+    partial class Cargando
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Cargando
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CargoFuncionario";
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(84)))), ((int)(((byte)(109)))));
+            this.ClientSize = new System.Drawing.Size(334, 575);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "Cargando";
+            this.Text = "Cargando";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

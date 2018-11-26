@@ -25,7 +25,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private daoUsuario dao;
         private Aplicacion app;
         private Login login;
-        private int numero = 0, numero2 = 0;
+        private double numero = 0;
 
         public IniciarSesion()
         {
@@ -91,6 +91,8 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
             try
             {
 
+
+
                 if (respuesta)
                 {
                     if (chkRecuerdame.Checked == true)
@@ -105,9 +107,8 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                         Properties.Settings.Default.ChkRecordarUsuario = false;
                         Properties.Settings.Default.Save();
                     }
-
-
                     IniciarAplicacion();
+
 
 
                 }
@@ -115,6 +116,7 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
                 {
                     login.VerificacionIncorrecta();
                 }
+
             }
             catch (Exception ex)
             {
@@ -177,183 +179,144 @@ namespace WFBS.Presentacion.Formularios.Login.Modulo
         private void iniciarAplicacion_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             IniciarAplicacion iniciar = (IniciarAplicacion)e.UserState;
-            login.VerificacionCorrecta(iniciar.mensaje);
 
-            if (formulario == null)
-            {
-                formulario = new FormularioPrincipal.FormularioPrincipal();
-            }
 
-            switch (this.numero2)
+            int numero = e.ProgressPercentage;
+
+            switch (numero)
             {
                 case 1:
+                    login.VerificacionCorrecta(iniciar.mensaje);
+                    break;
+                case 2:
+                    if (formulario == null)
+                    {
+                        formulario = new FormularioPrincipal.FormularioPrincipal();
+                    }
                     try
                     {
                         DataSet lista = iniciar.listarFuncionario;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(1.11, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(1.11, lista, false);
                     }
-                    break;
-                case 2:
                     try
                     {
                         DataSet lista = iniciar.listarJefeFuncionario;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(1.21, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(1.21, lista, false);
                     }
-                    break;
-                case 3:
                     try
                     {
                         DataSet lista = iniciar.listarPerfil;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(2.11, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(2.11, lista, false);
                     }
-                    break;
-                case 4:
                     try
                     {
                         DataSet lista = iniciar.listarCargo;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        formulario.DefinirFormulario(2.21, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(2.21, lista, false);
                     }
-                    break;
-                case 5:
                     try
                     {
-                        DataSet lista = iniciar.listarPerfil;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        DataSet lista = iniciar.listarCompetencia;
+                        formulario.DefinirFormulario(3, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(3, lista, false);
                     }
-                    break;
-                case 6:
                     try
                     {
-                        DataSet lista = iniciar.listarPerfil;
-                        formulario.DefinirFormulario(this.numero2, lista, true);
+                        DataSet lista = iniciar.listarEvaluacion;
+                        formulario.DefinirFormulario(4, lista, true);
                     }
                     catch (Exception)
                     {
                         DataSet lista = null;
-                        formulario.DefinirFormulario(this.numero2, lista, false);
+                        formulario.DefinirFormulario(4, lista, false);
                     }
+                    try
+                    {
+                        DataSet lista = iniciar.listarReporte;
+                        formulario.DefinirFormulario(5, lista, true);
+                    }
+                    catch (Exception)
+                    {
+                        DataSet lista = null;
+                        formulario.DefinirFormulario(5, lista, false);
+                    }
+
+                    formulario.DefinirAplicacion(0);
                     break;
-                    //case 7:
-                    //    //formulario.DefinirFormulario(this.numero2, iniciar.listarPerfil);
-                    //    break;
-                    case 8:
-                       formulario.DefinirAplicacion(1);
-                        break;
             }
+
         }
 
         private void iniciarAplicacion_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            try
+            if (chkRecuerdame.Checked == true)
             {
-                if (chkRecuerdame.Checked == true)
-                {
-                    Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
-                    Properties.Settings.Default.ChkRecordarUsuario = true;
-                    Properties.Settings.Default.Save();
-                }
-                else
-                {
-                    Properties.Settings.Default.RecordarUsuario = String.Empty;
-                    Properties.Settings.Default.ChkRecordarUsuario = false;
-                    Properties.Settings.Default.Save();
-                }
-                app.iniciarAplicacion(2);
-
+                Properties.Settings.Default.RecordarUsuario = txtUsuario.Text;
+                Properties.Settings.Default.ChkRecordarUsuario = true;
+                Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
+                Properties.Settings.Default.Save();
             }
-            catch (Exception)
+            else
             {
-
-                throw;
+                Properties.Settings.Default.RecordarUsuario = String.Empty;
+                Properties.Settings.Default.ChkRecordarUsuario = false;
+                Properties.Settings.Default.UsuarioConectado = txtUsuario.Text;
+                Properties.Settings.Default.Save();
             }
+            app.iniciarAplicacion(2);
         }
+
 
         private void iniciarAplicacion_DoWork(object sender, DoWorkEventArgs e)
         {
             try
             {
-
                 BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
                 IniciarAplicacion iniciar = (IniciarAplicacion)e.Argument;
-                for (int i = 0; i < 9; i++)
-                {
-                    switch (i)
-                    {
-                        case 1:
-                            iniciar.mensaje = "Cargando Funcionario";
-                            daoFuncionario daoFun = new daoFuncionario();
-                            iniciar.listarFuncionario = daoFun.listar();
-                            this.numero2 = i;
-                            break;
 
-                        case 2:
-                            iniciar.mensaje = "Cargando Jefe Funcionario";
-                            daoJefeFuncionario daoJefeFuncionario = new daoJefeFuncionario();
-                            iniciar.listarJefeFuncionario = daoJefeFuncionario.listar();
-                            this.numero2 = i;
-                            break;
-                        case 3:
-                            iniciar.mensaje = "Cargando Perfil";
-                            daoPerfil daoPerfil = new daoPerfil();
-                            iniciar.listarPerfil = daoPerfil.listar();
-                            this.numero2 = i;
-                            break;
-                        case 4:
-                            iniciar.mensaje = "Cargando Cargo";
-                            daoCargo daoCargo = new daoCargo();
-                            iniciar.listarCargo = daoCargo.listar();
-                             System.Threading.Thread.Sleep(1000);
-                            this.numero2 = i;
-                            break;
-                        case 5:
-                            iniciar.mensaje = "Cargando Competencia";
-                               System.Threading.Thread.Sleep(2000);
-                            this.numero2 = i;
-                            break;
-                        case 6:
-                            iniciar.mensaje = "Cargando Evaluacion";
-                               System.Threading.Thread.Sleep(2000);
-                            this.numero2 = i;
-                            break;
-                        case 7:
-                            iniciar.mensaje = "Cargando Reporte";
-                               System.Threading.Thread.Sleep(2000);
-                            this.numero2 = i;
-                            break;
-                        case 8:
-                            iniciar.mensaje = "Iniciando Aplicacion";
-                                System.Threading.Thread.Sleep(2000);
-                            this.numero2 = i;
-                            break;
-                    }
-                    IniciarAplicacion.ReportProgress((i + 1), iniciar);
 
-                }
+                iniciar.mensaje = "Iniciando Aplicacion";
+                IniciarAplicacion.ReportProgress(1, iniciar);
+                daoFuncionario daoFun = new daoFuncionario();
+                daoJefeFuncionario daoJefeFuncionario = new daoJefeFuncionario();
+                daoPerfil daoPerfil = new daoPerfil();
+                daoCargo daoCargo = new daoCargo();
+                daoCompetencia daoCompetencia = new daoCompetencia();
+                daoCuestionario daoEvaluacion = new daoCuestionario();
+                daoReporte daoReporte = new daoReporte();
+
+
+                iniciar.listarFuncionario = daoFun.listar();
+                iniciar.listarJefeFuncionario = daoJefeFuncionario.listar();
+                iniciar.listarPerfil = daoPerfil.listar();
+                iniciar.listarCargo = daoCargo.listar();
+                iniciar.listarCompetencia = daoCompetencia.ListarPerfil();
+                iniciar.listarEvaluacion = daoEvaluacion.ListarPerfil();
+                iniciar.listarReporte = daoReporte.listarPerfil();
+                IniciarAplicacion.ReportProgress(2, iniciar);
             }
             catch (Exception)
             {

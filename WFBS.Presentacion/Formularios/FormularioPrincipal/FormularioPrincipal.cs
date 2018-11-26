@@ -5,48 +5,207 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFBS.Controlador;
+using WFBS.Entidades;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Clases;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo;
+using WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Ayuda;
 using WFBS.Presentacion.Formularios.FormularioPrincipal.Otros.Listado;
+using WFBS.Presentacion.Ventanas;
 
 namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 {
     public partial class FormularioPrincipal : Form
     {
 
+        private ToolTip tt = null, tt2 = null;
         #region DEFINIR PARAMETROS
-        private ListadoPrincipal ListarFuncionario, ListarJefeFuncionario, ListarPerfil, ListarCargo,ListarCompetencia, ListarEvaluacion;
+        private bool respuesta = false;
+
+        private Modulo.Funcionario modulofuncionario;
+        private Modulo.JefeFuncionario moduloJefeFuncionario;
+        private Modulo.Modulos_Adicionales.CargoFuncionario moduloCargoFuncionario;
+        private Modulo.Perfil moduloPerfil;
+        private Modulo.Cargo moduloCargo;
+        private Modulo.Competencia moduloCompetencia;
+        private Modulo.Observacion moduloObervacion;
+        private Modulo.Evaluacion moduloEvaluacion;
+        private Modulo.Preguntas moduloPreguntas;
+        private Modulo.Alternativas moduloAlternativas;
+
+        private ListadoPrincipal ListarFuncionario, ListarJefeFuncionario, ListarPerfil, ListarCargo, ListarCompetencia, ListarEvaluacion;
         private ListadoReporte ListadoReporte;
         private Aplicacion app;
         private Dashboard dashboard;
         private Logotipo logo = new Logotipo();
-        private int numero = 0, estadoMR = 0;
-        private double numero2 = 0;
-        private int estadoDashboard = 0, estadoFuncionario = 0, estadoPerfil = 0, estadoCompetencia = 0, estadoEvaluacion = 0, estadoReporte = 0;
+        private int estadoMR = 0;
+        private double numero = 0, numero2 = 0, numeroCRUD = 0;
+        private int estadoDashboard = 0, estadoFuncionario = 0, estadoPerfil = 0, estadoCompetencia = 0, estadoEvaluacion = 0, estadoReporte = 0, estadoCRUD = 0;
         #endregion
 
         public FormularioPrincipal()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
             InitializeComponent();
+            AbrirFormulario(logo);
+            InicializarToolTip(0);
         }
-        #region INICIALIZAR FORMULARIO
-        private void InicializarToolTip()
-        {
-            ToolTip tt = new ToolTip();
-            tt.InitialDelay = 0;
-            tt.SetToolTip(this.btnDashboard, "DASHBOARD");
-            tt.SetToolTip(this.btnFuncionario, "FUNCIONARIO");
-            tt.SetToolTip(this.btnPerfil, "PERFIL");
-            tt.SetToolTip(this.btnCompetencia, "COMPETENCIA");
-            tt.SetToolTip(this.btnEvaluacion, "EVALUACION");
-            tt.SetToolTip(this.btnReporte, "REPORTE");
 
-            tt.SetToolTip(this.btnAyuda, "AYUDA");
-            tt.SetToolTip(this.btnCerrarSesion, "CERRAR SESION");
+        public bool recibirMensaje(int numero)
+        {
+            Ventanas.Cerrar ventana = new Ventanas.Cerrar();
+            switch (numero)
+            {
+                case 1:
+                    ventana.iniciarFormulario(4);
+                    ventana.PasarDatos(this);
+                    ventana.ShowDialog();
+                    return respuesta;
+                case 2:
+                    ventana.iniciarFormulario(5);
+                    ventana.PasarDatos(this);
+                    ventana.ShowDialog();
+                    return respuesta;
+                case 3:
+                    ventana.iniciarFormulario(6);
+                    ventana.PasarDatos(this);
+                    ventana.ShowDialog();
+                    return respuesta;
+
+            }
+            return false;
+
+        }
+
+
+
+
+        public void IngresarRespuesta(bool resp)
+        {
+            this.respuesta = resp;
+        }
+        public void respuestaCerrarModulo(bool resp)
+        {
+            this.respuesta = resp;
+        }
+
+        public bool estadoActualCrud()
+        {
+            bool resultado = false;
+            if (estadoCRUD == 0)
+            {
+                resultado = false;
+            }
+            else
+            {
+                resultado = true;
+            }
+            return resultado;
+        }
+
+        public void CargandoFormulario(string mensaje)
+        {
+            Cargando cargar = new Cargando();
+            cargar.CambiarMensaje(mensaje);
+            AbrirFormulario(cargar);
+        }
+
+        #region INICIALIZAR FORMULARIO
+        private void InicializarToolTip(double numero)
+        {
+            if (tt2 == null)
+            {
+                tt = new ToolTip();
+                tt.InitialDelay = 0;
+                tt.UseAnimation = true;
+            }
+
+            if (tt2 == null)
+            {
+                tt2 = new ToolTip();
+                tt2.InitialDelay = 0;
+                tt2.UseAnimation = true;
+            }
+
+
+            switch (numero)
+            {
+                case 0:
+                    tt.SetToolTip(this.btnDashboard, "DASHBOARD");
+                    tt.SetToolTip(this.btnPerfil, "FUNCIONARIO");
+                    tt.SetToolTip(this.btnFuncionario, "PERFIL");
+                    tt.SetToolTip(this.btnCompetencia, "COMPETENCIA");
+                    tt.SetToolTip(this.btnEvaluacion, "EVALUACION");
+                    tt.SetToolTip(this.btnReporte, "REPORTE");
+
+                    tt.SetToolTip(this.btnAyuda, "AYUDA");
+                    tt.SetToolTip(this.btnCerrarSesion, "CERRAR SESION");
+                    break;
+                case 1.11:
+
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Funcionario");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Funcionario");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Funcionario");
+                    tt2.SetToolTip(this.btnSubAccion1, "Agregar/Eliminar Cargos del funcionario");
+                    break;
+                case 1.21:
+
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Jefe Funcionario");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Jefe Funcionario");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Jefe Funcionario");
+                    tt2.SetToolTip(this.btnSubAccion1, "Agregar/Eliminar Cargos del Jefe Funcionario");
+                    break;
+                case 2.11:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Perfil");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Perfil");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Perfil");
+                    tt2.SetToolTip(this.btnSubAccion2, "Cambiar estado obsoleto del Perfil");
+                    tt2.SetToolTip(this.btnSubAccion3, "Agregar/Eliminar Jefe al perfil");
+                    break;
+                case 3.1:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Competencia");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Competencia");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Competencia");
+                    break;
+                case 3.2:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Observacion");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Observacion");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Observacion");
+                    break;
+                case 4.1:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Evaluacion");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Evaluacion");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Evaluacion");
+                    break;
+                case 4.2:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Pregunta");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Pregunta");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Pregunta");
+                    break;
+                case 4.3:
+                    tt2.SetToolTip(this.btnAgregar, "Agregar Alternativa");
+                    tt2.SetToolTip(this.btnEliminar, "Eliminar Alternativa");
+                    tt2.SetToolTip(this.btnModificar, "Modificar Alternativa");
+                    break;
+
+            }
+
+        }
+
+        public void InicializarSubFormulario()
+        {
+            btnAgregar.Visible = true;
+            btnModificar.Visible = true;
+            btnEliminar.Visible = true;
+            btnSubAccion1.Visible = true;
+            btnSubAccion2.Visible = true;
+            btnSubAccion3.Visible = true;
         }
 
         private void InicializarBotones()
@@ -62,16 +221,16 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         {
             //botones <MINI>
             SidePanelDashboardMini.BackColor = Color.FromArgb(19, 27, 39);
-            SidePanelFuncionarioMini.BackColor = Color.FromArgb(19, 27, 39);
             SidePanelPerfilMini.BackColor = Color.FromArgb(19, 27, 39);
+            SidePanelFuncionarioMini.BackColor = Color.FromArgb(19, 27, 39);
             SidePanelCompetenciaMini.BackColor = Color.FromArgb(19, 27, 39);
             SidePanelEvaluacionMini.BackColor = Color.FromArgb(19, 27, 39);
             SidePanelReporteMini.BackColor = Color.FromArgb(19, 27, 39);
         }
         private void InicializarMenuOculto()
         {
-            btnAccion2.Enabled = false;
             btnAccion1.Enabled = false;
+            btnAccion2.Enabled = false;
             btnAccion1.Click -= null;
             btnAccion2.Click -= null;
 
@@ -80,12 +239,6 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         private void OcultarMenu()
         {
             panelSubMenuOculto.Visible = false;
-        }
-        private void InicializarSubMenuAccionBoton()
-        {
-            btnAgregar.Click -= null;
-            btnModificar.Click -= null;
-            btnEliminar.Click -= null;
         }
         private void InicializarSubMenu()
         {
@@ -114,47 +267,68 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
 
             if (btn.Name == btnDashboard.Name)
             {
-                if(estadoDashboard == 0)
+                if (estadoDashboard == 0 && estadoCRUD == 0)
                 {
-                    IniciarProcemiento(1);
+                    IniciarDashboard();
                 }
 
 
-            }
-            if (btn.Name == btnFuncionario.Name)
-            {
-                if (estadoFuncionario == 0)
-                {
-                    IniciarProcemiento(2);
-                }
             }
             if (btn.Name == btnPerfil.Name)
             {
-                if (estadoPerfil == 0)
+                if (estadoFuncionario == 0 && estadoCRUD == 0)
                 {
-                    IniciarProcemiento(3);
+                    IniciarProcemiento(1);
+
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
+                }
+            }
+            if (btn.Name == btnFuncionario.Name)
+            {
+                if (estadoPerfil == 0 && estadoCRUD == 0)
+                {
+                    IniciarProcemiento(2);
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
                 }
             }
             if (btn.Name == btnCompetencia.Name)
             {
-                if (estadoCompetencia == 0)
+                if (estadoCompetencia == 0 && estadoCRUD == 0)
                 {
-                    IniciarProcemiento(4);
+                    IniciarProcemiento(3);
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
                 }
             }
             if (btn.Name == btnEvaluacion.Name)
             {
-                if (estadoEvaluacion == 0)
+                if (estadoEvaluacion == 0 && estadoCRUD == 0)
                 {
-                    IniciarProcemiento(5);
+                    IniciarProcemiento(4);
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
                 }
 
             }
             if (btn.Name == btnReporte.Name)
             {
-                if (estadoReporte == 0)
+                if (estadoReporte == 0 && estadoCRUD == 0)
                 {
-                    IniciarProcemiento(6);
+                    IniciarProcemiento(5);
+                }
+                else
+                {
+                    SystemSounds.Hand.Play();
                 }
 
             }
@@ -170,24 +344,55 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         }
 
 
+        public void IniciarDashboard()
+        {
+            inicializarEstado();
+            InicializarBotones();
+            OcultarMenu();
+            InicializarSideMenu();
+            PanelCRUD.Visible = false;
+            panelMenuDatagrid.Visible = false;
+            this.btnDashboard.Image = Properties.Resources.Dashboard_Active;
+            this.SidePanelDashboardMini.BackColor = Color.FromArgb(125, 62, 55);
+            estadoCRUD = 1;
+            dashboard.IniciarAplicacion();
+        }
 
-        private void IniciarProcemiento(int numero)
+        public void TerminarDashboard()
+        {
+            AbrirFormulario(dashboard);
+            estadoDashboard = 1;
+            estadoCRUD = 0;
+            this.numero = 0;
+        }
+
+
+        private void IniciarProcemiento(double numero)
         {
             switch (numero)
             {
-                case 1:
+                case 0:
                     inicializarEstado();
                     InicializarBotones();
                     OcultarMenu();
                     InicializarSideMenu();
                     PanelCRUD.Visible = false;
                     panelMenuDatagrid.Visible = false;
-                    this.btnDashboard.Image = Properties.Resources.Dashboard_Active;
-                    this.SidePanelDashboardMini.BackColor = Color.FromArgb(125, 62, 55);
+                    AbrirFormulario(logo);
+                    break;
+                case 1:
+                    inicializarEstado();
+                    InicializarBotones();
+                    InicializarMenuOculto();
+                    InicializarSideMenu();
+                    PanelCRUD.Visible = false;
+                    panelMenuDatagrid.Visible = false;
+                    this.btnPerfil.Image = Properties.Resources.Perfil_Active;
+                    this.SidePanelPerfilMini.BackColor = Color.FromArgb(125, 62, 55);
+                    GenerarControlesPrincipales(numero);
+                    AbrirFormulario(logo);
+                    estadoFuncionario = 1;
 
-                    AbrirFormulario(dashboard);
-                    estadoDashboard = 1;
-                    
                     this.numero = numero;
                     break;
                 case 2:
@@ -201,27 +406,12 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     this.SidePanelFuncionarioMini.BackColor = Color.FromArgb(125, 62, 55);
                     GenerarControlesPrincipales(numero);
                     AbrirFormulario(logo);
-                    estadoFuncionario = 1;
-                    
-                    this.numero = numero;
-                    break;
-                case 3:
-                    inicializarEstado();
-                    InicializarBotones();
-                    InicializarMenuOculto();
-                    InicializarSideMenu();
-                    PanelCRUD.Visible = false;
-                    panelMenuDatagrid.Visible = false;
-                    this.btnPerfil.Image = Properties.Resources.Perfil_Active;
-                    this.SidePanelPerfilMini.BackColor = Color.FromArgb(125, 62, 55);
-                    GenerarControlesPrincipales(numero);
-                    AbrirFormulario(logo);
                     estadoPerfil = 1;
 
                     this.numero = numero;
 
                     break;
-                case 4:
+                case 3:
                     inicializarEstado();
                     InicializarBotones();
                     OcultarMenu();
@@ -230,11 +420,32 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     panelMenuDatagrid.Visible = false;
                     this.btnCompetencia.Image = Properties.Resources.Competencia_Active;
                     this.SidePanelCompetenciaMini.BackColor = Color.FromArgb(125, 62, 55);
-                    GenerarControlesSubFormulario(4.1);
+                    if (ListarCompetencia.isActive())
+                    {
+                        ListarCompetencia.RestablecerNumero(numero);
+                    }
+
                     AbrirFormulario(ListarCompetencia);
 
                     estadoCompetencia = 1;
 
+                    this.numero = numero;
+                    break;
+                case 4:
+                    inicializarEstado();
+                    InicializarBotones();
+                    OcultarMenu();
+                    InicializarSideMenu();
+                    PanelCRUD.Visible = false;
+                    panelMenuDatagrid.Visible = false;
+                    this.btnEvaluacion.Image = Properties.Resources.Evaluacion_Active;
+                    this.SidePanelEvaluacionMini.BackColor = Color.FromArgb(125, 62, 55);
+                    if (ListarEvaluacion.isActive())
+                    {
+                        ListarEvaluacion.RestablecerNumero(numero);
+                    }
+                    AbrirFormulario(ListarEvaluacion);
+                    estadoEvaluacion = 1;
                     this.numero = numero;
                     break;
                 case 5:
@@ -244,30 +455,20 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     InicializarSideMenu();
                     PanelCRUD.Visible = false;
                     panelMenuDatagrid.Visible = false;
-                    this.btnEvaluacion.Image = Properties.Resources.Evaluacion_Active;
-                    this.SidePanelEvaluacionMini.BackColor = Color.FromArgb(125, 62, 55);
-                    AbrirFormulario(ListarEvaluacion);
-                    GenerarControlesSubFormulario(5.1);
-                    estadoEvaluacion = 1;
-                    this.numero = numero;
-                    break;
-                case 6:
-                    inicializarEstado();
-                    InicializarBotones();
-                    OcultarMenu();
-                    InicializarSideMenu();
-                    PanelCRUD.Visible = false;
-                    panelMenuDatagrid.Visible = false;
                     this.btnReporte.Image = Properties.Resources.Reporte_Active;
                     this.SidePanelReporteMini.BackColor = Color.FromArgb(125, 62, 55);
-                    AbrirFormulario(logo);
+                    if (ListadoReporte.isActive())
+                    {
+                        ListadoReporte.RestablecerNumero(1);
+                    }
+                    AbrirFormulario(ListadoReporte);
                     estadoReporte = 1;
                     this.numero = numero;
                     break;
             }
         }
 
-        private void GenerarControlesPrincipales(int numero)
+        private void GenerarControlesPrincipales(double numero)
         {
             switch (numero)
             {
@@ -280,7 +481,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     btnAccion1.Enabled = true;
                     btnAccion2.Enabled = true;
                     break;
-                case 3:
+                case 1:
                     panelSubMenuOculto.Visible = true;
                     btnAccion1.Text = "Perfil";
                     btnAccion2.Text = "Cargo";
@@ -289,11 +490,8 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                     btnAccion1.Enabled = true;
                     btnAccion2.Enabled = true;
                     break;
-                case 6:
-                    break;
             }
         }
-
 
         private void btnMenuOculto_Click(object sender, EventArgs e)
         {
@@ -302,75 +500,196 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             switch (this.numero)
             {
                 case 2:
-                    if (btn.Name == btnAccion1.Name)
+                    if (btn.Name == btnAccion1.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = false;
                         btnAccion2.Enabled = true;
                         PanelCRUD.Visible = false;
-                        AbrirFormulario(ListarFuncionario);
-                        GenerarControlesSubFormulario(2.1);
+                        if (ListarFuncionario.isActive())
+                        {
+                            ListarFuncionario.RestablecerNumero(1.11);
+                            AbrirFormulario(ListarFuncionario);
+                        }
+                        else
+                        {
+                            AbrirFormulario(ListarFuncionario);
+                        }
+                        GenerarControlesSubFormulario(1.11);
 
                     }
-                    if (btn.Name == btnAccion2.Name)
+
+                    if (btn.Name == btnAccion2.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = true;
                         btnAccion2.Enabled = false;
                         PanelCRUD.Visible = false;
 
+                        if (ListarJefeFuncionario.isActive())
+                        {
+                            ListarJefeFuncionario.RestablecerNumero(1.21);
+                            AbrirFormulario(ListarJefeFuncionario);
+                        }
+                        else
+                        {
+                            AbrirFormulario(ListarJefeFuncionario);
+                        }
 
-                        AbrirFormulario(ListarJefeFuncionario);
-                        GenerarControlesSubFormulario(2.2);
+                        GenerarControlesSubFormulario(1.21);
                     }
+
                     break;
-                case 3:
-                    if (btn.Name == btnAccion1.Name)
+                case 1:
+                    if (btn.Name == btnAccion1.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = false;
                         btnAccion2.Enabled = true;
                         PanelCRUD.Visible = false;
                         AbrirFormulario(ListarPerfil);
-                        GenerarControlesSubFormulario(3.1);
+                        GenerarControlesSubFormulario(2.11);
                     }
-                    if (btn.Name == btnAccion2.Name)
+
+                    if (btn.Name == btnAccion2.Name && estadoCRUD == 0)
                     {
                         btnAccion1.Enabled = true;
                         btnAccion2.Enabled = false;
                         PanelCRUD.Visible = false;
                         AbrirFormulario(ListarCargo);
-                        GenerarControlesSubFormulario(3.2);
+                        GenerarControlesSubFormulario(2.21);
                     }
+
                     break;
             }
         }
 
-        private void GenerarControlesSubFormulario(double numero)
+        public void GenerarControlesSubFormulario(double numero)
         {
             switch (numero)
             {
-                case 2.1:
+                case 1:
+                    InicializarSubFormulario();
                     InicializarSubMenu();
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    btnAgregar.Visible = false;
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
+                    btnRefrescar.Visible = false;
+                    break;
+                case 1.11:
+
+                    InicializarSubFormulario();
+                    InicializarSubMenu();
+                    InicializarToolTip(numero);
+                    panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
                     numero2 = numero;
                     break;
-                case 2.2:
+                case 1.12:
+
+                    InicializarSubFormulario();
+                    panelMenuDatagrid.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    btnAgregar.Visible = false;
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
+                    btnRefrescar.Visible = false;
+                    break;
+                case 1.21:
+                    InicializarSubFormulario();
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    numero2 = numero;
+                    break;
+                case 1.22:
+                    InicializarSubFormulario();
+                    panelMenuDatagrid.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    btnAgregar.Visible = false;
+                    btnEliminar.Visible = false;
+                    btnModificar.Visible = false;
+                    btnRefrescar.Visible = false;
+                    break;
+                case 2.11:
+                    InicializarSubFormulario();
+                    InicializarSubMenu();
+                    InicializarToolTip(numero);
+                    panelSubMenuOculto.Visible = true;
+                    btnSubAccion1.Visible = false;
+                    numero2 = numero;
+                    break;
+                case 2.21:
+                    InicializarSubFormulario();
+                    InicializarSubMenu();
+                    InicializarToolTip(numero);
+                    panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
                     numero2 = numero;
                     break;
                 case 3.1:
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    OcultarMenu();
+
                     numero2 = numero;
                     break;
                 case 3.2:
                     InicializarSubMenu();
+                    InicializarToolTip(numero);
                     panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    OcultarMenu();
+
+                    numero2 = numero;
+                    break;
+                case 4.1:
+                    InicializarSubMenu();
+                    InicializarToolTip(numero);
+                    panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    OcultarMenu();
+
                     numero2 = numero;
                     break;
                 case 4.2:
+                    InicializarSubMenu();
+                    InicializarToolTip(numero);
+                    panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    OcultarMenu();
+
                     numero2 = numero;
                     break;
-                case 5.2:
+                case 4.3:
+                    InicializarSubMenu();
+                    InicializarToolTip(numero);
+                    panelSubMenuOculto.Visible = true;
+                    btnSubAccion3.Visible = false;
+                    btnSubAccion2.Visible = false;
+                    btnSubAccion1.Visible = false;
+                    OcultarMenu();
+
                     numero2 = numero;
                     break;
             }
@@ -387,50 +706,1242 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         {
             switch (numero)
             {
-                case 1:
+                case 0:
                     dashboard = new Dashboard();
+                    dashboard.pasarDatos(this);
                     break;
             }
         }
 
-        public void DefinirFormulario(int numero, DataSet lista, bool estado)
+        public void ActualizarFormulario(double numero, DataSet lista, bool estado)
         {
             switch (numero)
             {
-                case 1:
-                    ListarFuncionario = new ListadoPrincipal();
-                    ListarFuncionario.DefinirFormulario(numero,lista,estado);
-                    //ListarFuncionario.DefinirModulo(1);
+                case 1.11:
+                    ListarFuncionario.ActualizarFormulario(numero, lista, estado);
                     break;
-               case 2:
-                    ListarJefeFuncionario = new ListadoPrincipal();
-                    ListarJefeFuncionario.DefinirFormulario(numero, lista,estado);
+                case 1.21:
+                    ListarJefeFuncionario.ActualizarFormulario(numero, lista, estado);
                     break;
-                     case 3:
-                        ListarPerfil = new ListadoPrincipal();
-                         ListarPerfil.DefinirFormulario(numero, lista,estado);
-                         break;
-                     case 4:
-                         ListarCargo = new ListadoPrincipal();
-                        ListarCargo.DefinirFormulario(numero, lista,estado);
-                         break;
+                case 2.11:
+                    ListarPerfil.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 2.21:
+                    ListarCargo.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 3:
+                    ListarCompetencia.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 3.1:
+                    ListarCompetencia.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 3.2:
+                    ListarCompetencia.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 4:
+                    ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 4.1:
+                    ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 4.2:
+                    ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
+                    break;
+                case 4.3:
+                    ListarEvaluacion.ActualizarFormulario(numero, lista, estado);
+                    break;
                 case 5:
-                    ListarCompetencia = new ListadoPrincipal();
-                    ListarCompetencia.DefinirFormulario(numero, lista,estado);
-
+                    ListadoReporte.ActualizarFormulario(numero, lista, estado);
                     break;
-                case 6:
-                    ListarEvaluacion = new ListadoPrincipal();
-                    ListarEvaluacion.DefinirFormulario(numero, lista,estado);
-                    break;
-                //case 7:
-                //    ListadoReporte = new ListadoReporte();
-                //    //     ListadoReporte.DefinirFormulario(numero, lista);
-                //    break;
             }
         }
 
+        private void RecargarFormulario_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            numeroCRUD = 0;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            IniciarProcemiento(0);
+        }
+
+        private void btnRefrescar_Click(object sender, EventArgs e)
+        {
+            switch (this.numero)
+            {
+
+                case 1:
+                    switch (this.numero2)
+                    {
+                        case 1.11:
+                            recargarListados(this.numero2);
+                            break;
+                        case 1.21:
+                            recargarListados(numero2);
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (this.numero2)
+                    {
+                        case 1:
+                            recargarListados(this.numero);
+                            break;
+                        case 2.11:
+                            recargarListados(this.numero2);
+                            break;
+                        case 2.21:
+                            recargarListados(this.numero2);
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (this.numero2)
+                    {
+                        case 3.1:
+                            recargarListados(this.numero2);
+                            break;
+                        case 3.2:
+                            recargarListados(this.numero2);
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (this.numero2)
+                    {
+                        case 4.1:
+                            recargarListados(this.numero2);
+                            break;
+                        case 4.2:
+                            recargarListados(this.numero2);
+                            break;
+                        case 4.3:
+                            recargarListados(this.numero2);
+                            break;
+                    }
+                    break;
+            }
+
+
+        }
+
+
+        public void DefinirFormulario(double numero, DataSet lista, bool estado)
+        {
+            switch (numero)
+            {
+                case 1.11:
+                    ListarFuncionario = new ListadoPrincipal();
+                    ListarFuncionario.DefinirFormulario(numero, lista, estado);
+                    ListarFuncionario.PasarDatos(this);
+                    break;
+                case 1.21:
+                    ListarJefeFuncionario = new ListadoPrincipal();
+                    ListarJefeFuncionario.DefinirFormulario(numero, lista, estado);
+                    ListarJefeFuncionario.PasarDatos(this);
+                    break;
+                case 2.11:
+                    ListarPerfil = new ListadoPrincipal();
+                    ListarPerfil.DefinirFormulario(numero, lista, estado);
+                    ListarPerfil.PasarDatos(this);
+                    break;
+                case 2.21:
+                    ListarCargo = new ListadoPrincipal();
+                    ListarCargo.DefinirFormulario(numero, lista, estado);
+                    ListarCargo.PasarDatos(this);
+                    break;
+                case 3:
+                    ListarCompetencia = new ListadoPrincipal();
+                    ListarCompetencia.DefinirFormulario(numero, lista, estado);
+                    ListarCompetencia.PasarDatos(this);
+
+                    break;
+                case 4:
+                    ListarEvaluacion = new ListadoPrincipal();
+                    ListarEvaluacion.DefinirFormulario(numero, lista, estado);
+                    ListarEvaluacion.PasarDatos(this);
+                    break;
+                case 5:
+                    ListadoReporte = new ListadoReporte();
+                    ListadoReporte.DefinirFormulario(1, lista, estado);
+                    break;
+            }
+        }
+
+
+
+        private void RecargarFormulario_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            RecargarFormulario iniciar = (RecargarFormulario)e.UserState;
+            int porcentaje = e.ProgressPercentage;
+
+            switch (numeroCRUD)
+            {
+                case 1.11:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarFuncionario;
+                                ActualizarFormulario(1.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.11, lista, false);
+                            }
+                            break;
+
+                        case 3:
+                            AbrirFormulario(ListarFuncionario);
+                            break;
+                    }
+                    break;
+                case 1.111:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarFuncionario;
+                                ActualizarFormulario(1.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.11, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(2.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(2.11, lista, false);
+                            }
+                            break;
+
+                    }
+                    break;
+                case 1.21:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarJefeFuncionario;
+                                ActualizarFormulario(1.21, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.21, lista, false);
+                            }
+                            break;
+                        case 3:
+                            AbrirFormulario(ListarJefeFuncionario);
+                            break;
+                    }
+                    break;
+                case 1.211:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarJefeFuncionario;
+                                ActualizarFormulario(1.21, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(1.21, lista, false);
+                            }
+                            break;
+
+
+                    }
+                    break;
+                case 2.11:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(2.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(2.11, lista, false);
+                            }
+                            break;
+                        case 3:
+                            AbrirFormulario(ListarPerfil);
+                            break;
+
+
+                    }
+                    break;
+                case 2.111:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(2.11, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(2.11, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 4:
+                            try
+                            {
+                                DataSet lista = iniciar.listarReporte;
+                                ActualizarFormulario(5, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(5, lista, false);
+                            }
+                            break;
+                    }
+
+                    break;
+                case 2.21:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCargo;
+                                ActualizarFormulario(2.21, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(2.21, lista, false);
+                            }
+                            break;
+                        case 3:
+                            AbrirFormulario(ListarCargo);
+                            break;
+
+
+                    }
+                    break;
+
+                case 2.211:
+                    switch (porcentaje)
+                    {
+
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCargo;
+                                ActualizarFormulario(2.21, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(2.21, lista, false);
+                            }
+                            break;
+
+
+                    }
+                    break;
+
+                case 3.1:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
+                            }
+                            break;
+
+                        case 4:
+                            AbrirFormulario(ListarCompetencia);
+                            break;
+
+
+                    }
+                    break;
+
+                case 3.11:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+
+                    }
+
+                    break;
+                case 3.2:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarObservacion;
+                                ActualizarFormulario(3.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.2, lista, false);
+                            }
+                            break;
+                        case 4:
+                            AbrirFormulario(ListarCompetencia);
+                            break;
+
+
+                    }
+                    break;
+
+                case 3.21:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarObservacion;
+                                ActualizarFormulario(3.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.2, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarCompetencia;
+                                ActualizarFormulario(3.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(3, lista, false);
+                            }
+                            break;
+
+
+
+                    }
+
+
+
+                    break;
+                case 4.1:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 4:
+                            AbrirFormulario(ListarEvaluacion);
+                            break;
+
+
+                    }
+                    break;
+                case 4.11:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+
+                    }
+                    break;
+                case 4.2:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 4:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+                        case 5:
+                            AbrirFormulario(ListarEvaluacion);
+                            break;
+
+
+                    }
+                    break;
+                case 4.21:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+
+                    }
+                    break;
+
+                case 4.3:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            Cargando cargar = new Cargando();
+                            cargar.CambiarMensaje(iniciar.mensaje);
+                            AbrirFormulario(cargar);
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarAlternativa;
+                                ActualizarFormulario(4.3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.3, lista, false);
+                            }
+
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 4:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+                        case 5:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+                        case 6:
+                            AbrirFormulario(ListarEvaluacion);
+                            break;
+
+
+                    }
+                    break;
+                case 4.31:
+                    switch (porcentaje)
+                    {
+                        case 1:
+                            try
+                            {
+                                DataSet lista = iniciar.listarAlternativa;
+                                ActualizarFormulario(4.3, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.3, lista, false);
+                            }
+
+                            break;
+                        case 2:
+                            try
+                            {
+                                DataSet lista = iniciar.listarEvaluacion;
+                                ActualizarFormulario(4.1, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.1, lista, false);
+                            }
+                            break;
+                        case 3:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPregunta;
+                                ActualizarFormulario(4.2, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4.2, lista, false);
+                            }
+                            break;
+                        case 4:
+                            try
+                            {
+                                DataSet lista = iniciar.listarPerfil;
+                                ActualizarFormulario(4, lista, true);
+                            }
+                            catch (Exception)
+                            {
+                                DataSet lista = null;
+                                ActualizarFormulario(4, lista, false);
+                            }
+                            break;
+
+                    }
+                    break;
+
+            }
+
+        }
+
+
+
+        private void RecargarFormulario_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                BackgroundWorker IniciarAplicacion = sender as BackgroundWorker;
+                RecargarFormulario inicio = (RecargarFormulario)e.Argument;
+                daoFuncionario dao = new daoFuncionario();
+                daoJefeFuncionario daoJF = new daoJefeFuncionario();
+                daoPerfil daoPerfil = new daoPerfil();
+                daoCuestionario daoCuestionario = new daoCuestionario();
+                daoCompetencia daoCompetencia = new daoCompetencia();
+                daoCargo daoCargo = new daoCargo();
+                daoReporte daoReporte = new daoReporte();
+                daoObservacion daoObservacion = new daoObservacion();
+                daoPreguntas daoPreguntas = new daoPreguntas();
+                daoAlternativa daoAlternativa = new daoAlternativa();
+
+                switch (inicio.numero)
+                {
+                    case 1.11:
+                        inicio.mensaje = "Actualizando Funcionario";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarFuncionario = dao.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        IniciarAplicacion.ReportProgress(3);
+                        break;
+                    case 1.111:
+                        inicio.listarFuncionario = dao.listar();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        break;
+                    case 1.21:
+                        inicio.mensaje = "Actualizando jefe funcionario";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarJefeFuncionario = daoJF.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        IniciarAplicacion.ReportProgress(3);
+                        break;
+                    case 1.211:
+
+                        inicio.listarJefeFuncionario = daoJF.listar();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = dao.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        break;
+                    case 2.11:
+                        inicio.mensaje = "Actualizando Perfil";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoPerfil.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        IniciarAplicacion.ReportProgress(3);
+                        break;
+                    case 2.111:
+                        inicio.listarPerfil = daoPerfil.listar();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCompetencia = daoCompetencia.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        inicio.listarReporte = daoReporte.listarPerfil();
+                        IniciarAplicacion.ReportProgress(4, inicio);
+                        break;
+                    case 2.21:
+                        inicio.mensaje = "Actualizando Cargo";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCargo = daoCargo.listar();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        IniciarAplicacion.ReportProgress(3);
+                        break;
+                    case 2.211:
+                        inicio.listarCargo = daoCargo.listar();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        break;
+                    case 3.1:
+                        inicio.mensaje = "Actualizando Competencia";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        IniciarAplicacion.ReportProgress(4);
+                        break;
+                    case 3.11:
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        break;
+                    case 3.2:
+                        inicio.mensaje = "Actualizando Observaciones";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarObservacion = daoObservacion.Listar(ListarCompetencia.Recuperarid(3));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        IniciarAplicacion.ReportProgress(4);
+                        break;
+                    case 3.21:
+                        inicio.listarObservacion = daoObservacion.Listar(ListarCompetencia.Recuperarid(3));
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarCompetencia = daoCompetencia.Listar(ListarCompetencia.Recuperarid(2));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarPerfil = daoCompetencia.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        break;
+                    case 4.1:
+                        inicio.mensaje = "Actualizando Evaluaciones";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        IniciarAplicacion.ReportProgress(4);
+                        break;
+                    case 4.11:
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+
+                        break;
+                    case 4.2:
+                        inicio.mensaje = "Actualizando Preguntas";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(4, inicio);
+                        IniciarAplicacion.ReportProgress(5);
+                        break;
+                    case 4.21:
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        break;
+
+                    case 4.3:
+                        inicio.mensaje = "Actualizando Alternativas";
+                        IniciarAplicacion.ReportProgress(1, inicio);
+
+                        inicio.listarAlternativa = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(4, inicio);
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(5, inicio);
+                        IniciarAplicacion.ReportProgress(6);
+                        break;
+                    case 4.31:
+                        inicio.listarAlternativa = daoAlternativa.Listar(ListarEvaluacion.Recuperarid(6));
+
+                        IniciarAplicacion.ReportProgress(1, inicio);
+                        inicio.listarEvaluacion = daoCuestionario.Listar(ListarEvaluacion.Recuperarid(4));
+                        IniciarAplicacion.ReportProgress(2, inicio);
+                        inicio.listarPregunta = daoPreguntas.Listar(ListarEvaluacion.Recuperarid(5));
+                        IniciarAplicacion.ReportProgress(3, inicio);
+                        inicio.listarPerfil = daoCuestionario.ListarPerfil();
+                        IniciarAplicacion.ReportProgress(4, inicio);
+                        break;
+
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         #endregion
+
+        public void recargarListados(double numero)
+        {
+            RecargarFormulario iniciar = new RecargarFormulario();
+            switch (numero)
+            {
+                case 1.11:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 1.111:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 1.21:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 1.211:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 2.11:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 2.111:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 2.21:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 2.211:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 3.1:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 3.11:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 3.2:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 3.21:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.1:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.11:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.2:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.21:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.3:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+                case 4.31:
+                    numeroCRUD = numero;
+                    iniciar.numero = numero;
+                    RecargarFormulario.RunWorkerAsync(iniciar);
+                    break;
+            }
+        }
+
+
+        public void TerminarProceso(double numero)
+        {
+            switch (numero)
+            {
+                case 1.11:
+                    modulofuncionario.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 1.12:
+                    moduloCargoFuncionario.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 1.21:
+                    moduloJefeFuncionario.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 1.3:
+                    moduloCargoFuncionario.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 2.11:
+                    moduloPerfil.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 2.21:
+                    moduloCargo.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 3.1:
+                    moduloCompetencia.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 3.2:
+                    moduloObervacion.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 4.1:
+                    moduloEvaluacion.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 4.2:
+                    moduloPreguntas.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+                case 4.3:
+                    moduloAlternativas.Close();
+                    PanelCRUD.Visible = false;
+                    estadoCRUD = 0;
+                    break;
+
+
+            }
+        }
+
+        public int RecuperaridDataGrid(int numero)
+        {
+            switch (numero)
+            {
+                default:
+                    return 0;
+                case 1:
+                    return ListarFuncionario.Recuperarid(numero);
+
+                case 2:
+                    return ListarCompetencia.Recuperarid(numero);
+                case 3:
+                    return ListarCompetencia.Recuperarid(numero);
+                case 4:
+                    return ListarEvaluacion.Recuperarid(numero);
+                case 5:
+                    return ListarEvaluacion.Recuperarid(numero);
+                case 6:
+                    return ListarEvaluacion.Recuperarid(numero);
+                case 7:
+                    return ListarJefeFuncionario.Recuperarid(1);
+
+
+            }
+        }
+
+        public void ErrorConexion()
+        {
+            app.Controles(1);
+        }
+
+
         #region ACCION DE LOS BOTONES PARA EL SUBFORMULARIO
 
         private void btnAccionSubMenu_Click(object sender, EventArgs e)
@@ -445,32 +1956,1541 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 IniciarProcemiento(1);
             }
 
-
-
             switch (this.numero2)
             {
-                case 2.1:
+                case 1.11:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        MessageBox.Show("AGREGAR");
-                        //if (ModuloFuncionario == null)
-                        //{ ModuloFuncionario = new Modulos.ModuloFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //ModuloFuncionario.InicializarAgregarFuncionario();
-                        //AbrirModulo(ModuloFuncionario);
+                        if (estadoCRUD == 0)
+                        {
+                            Contexto con = new Contexto();
+                            if (con.Conectar())
+                            {
+                                Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
+                                moduloFuncionario.IniciarFormulario(1);
+                                moduloFuncionario.PasarDatos(this);
+                                AbrirModulo(moduloFuncionario);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.modulofuncionario = moduloFuncionario;
+                                con.Desconectar();
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            Contexto con = new Contexto();
+
+                            if (con.Conectar())
+                            {
+                                if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                                {
+                                    try
+                                    {
+                                        string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+
+                                        daoFuncionario dao = new daoFuncionario();
+                                        Modulo.Funcionario moduloFuncionario = new Modulo.Funcionario();
+                                        moduloFuncionario.PasarDatos(dao.RecuperarDatos(int.Parse(run)));
+                                        moduloFuncionario.PasarDatos(this);
+                                        moduloFuncionario.IniciarFormulario(2);
+                                        AbrirModulo(moduloFuncionario);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.modulofuncionario = moduloFuncionario;
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                    mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                    mensaje.ShowDialog();
+                                }
+                                con.Desconectar();
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+
+
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+                                        Cl_Funcionario funcionario = new Cl_Funcionario();
+                                        funcionario.run = int.Parse(run);
+                                        daoFuncionario dao = new daoFuncionario();
+
+                                        if (recibirMensaje(3))
+                                        {
+                                            if (dao.Eliminar(funcionario))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Elimino Correctamente");
+                                                recargarListados(1.11);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No elimino Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+
+
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+
+                    }
+
+                    if (btn.Name == btnSubAccion1.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarFuncionario.listaFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+
+                                Contexto con = new Contexto();
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string rut = ListarFuncionario.listaFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+
+                                        Modulo.Modulos_Adicionales.CargoFuncionario modulocargoFuncionario = new Modulo.Modulos_Adicionales.CargoFuncionario();
+                                        modulocargoFuncionario.pasarDatos(this);
+                                        modulocargoFuncionario.pasarDatos(int.Parse(run));
+                                        AbrirModulo(modulocargoFuncionario);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloCargoFuncionario = modulocargoFuncionario;
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    break;
+                case 1.21:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            Contexto con = new Contexto();
+                            if (con.Conectar())
+                            {
+                                Modulo.JefeFuncionario moduloJefeFuncionario = new Modulo.JefeFuncionario();
+                                moduloJefeFuncionario.IniciarFormulario(1);
+                                moduloJefeFuncionario.PasarDatos(this);
+                                AbrirModulo(moduloJefeFuncionario);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloJefeFuncionario = moduloJefeFuncionario;
+                                con.Desconectar();
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+                    }
+
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string rut = ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+
+                                        daoJefeFuncionario dao = new daoJefeFuncionario();
+                                        Modulo.JefeFuncionario moduloFuncionario = new Modulo.JefeFuncionario();
+                                        moduloFuncionario.PasarDatos(dao.RecuperarDatos(int.Parse(run)));
+                                        moduloFuncionario.PasarDatos(this);
+                                        moduloFuncionario.IniciarFormulario(2);
+                                        AbrirModulo(moduloFuncionario);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloJefeFuncionario = moduloFuncionario;
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+
+
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string rut = ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+                                        Cl_Jefe_Funcionario funcionario = new Cl_Jefe_Funcionario();
+                                        funcionario.run = int.Parse(run);
+                                        daoJefeFuncionario dao = new daoJefeFuncionario();
+                                        if (recibirMensaje(3))
+                                        {
+                                            if (dao.Eliminar(funcionario))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Elimino Correctamente");
+                                                recargarListados(1.21);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No elimino Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnSubAccion1.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string rut = ListarJefeFuncionario.listaJefeFuncionario.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        string run = rut.Replace(".", "").Replace("-", "").Trim().Substring(0, rut.Replace(".", "").Replace("-", "").Trim().Length - 1);
+
+                                        Modulo.Modulos_Adicionales.CargoFuncionario modulocargoFuncionario = new Modulo.Modulos_Adicionales.CargoFuncionario();
+                                        modulocargoFuncionario.pasarDatos(this);
+                                        modulocargoFuncionario.pasarDatos(int.Parse(run));
+                                        AbrirModulo(modulocargoFuncionario);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloCargoFuncionario = modulocargoFuncionario;
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+
+                    break;
+                case 2.11:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            Contexto con = new Contexto();
+                            if (con.Conectar())
+                            {
+
+                                Modulo.Perfil moduloPerfil = new Modulo.Perfil();
+                                moduloPerfil.IniciarFormulario(1);
+                                moduloPerfil.PasarDatos(this);
+                                AbrirModulo(moduloPerfil);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloPerfil = moduloPerfil;
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+                            con.Desconectar();
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+
+                            if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string id = ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString();
+                                        daoPerfil dao = new daoPerfil();
+                                        Modulo.Perfil moduloPerfil = new Modulo.Perfil();
+                                        moduloPerfil.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                        moduloPerfil.PasarDatos(this);
+                                        moduloPerfil.IniciarFormulario(2);
+                                        AbrirModulo(moduloPerfil);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloPerfil = moduloPerfil;
+                                    }
+                                    catch (Exception)
+                                    {
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+
+                                    try
+                                    {
+                                        int id = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString());
+                                        Cl_Perfil perfil = new Cl_Perfil();
+                                        perfil.id = id;
+                                        daoPerfil dao = new daoPerfil();
+                                        if (recibirMensaje(3))
+                                        {
+                                            if (dao.Eliminar(perfil))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Elimino Correctamente");
+                                                recargarListados(2.11);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No elimino Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+
+                    if (btn.Name == btnSubAccion2.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        int id = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString());
+                                        Cl_Perfil perfil = new Cl_Perfil();
+                                        perfil.id = id;
+                                        daoPerfil dao = new daoPerfil();
+
+                                        daoUtilidad dao2 = new daoUtilidad();
+                                        if (dao2.recuperarPerfilConPerfil(perfil) == false)
+                                        {
+                                            if (dao.CambiarEstadoObsoleto(perfil))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Se cambio el estado Correctamente");
+                                                recargarListados(2.11);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No cambio el estado Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                            mensaje.cambiarMensaje("Perfil no puede eliminar al jefe porque aun tiene evaluaciones pendientes");
+                                            mensaje.ShowDialog();
+
+                                        }
+
+
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+
+                        }
+                    }
+
+                    if (btn.Name == btnSubAccion3.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarPerfil.listaPerfil.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+
+                                    try
+                                    {
+                                        int run = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[0].Value.ToString());
+                                        int id = int.Parse(ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[1].Value.ToString());
+                                        daoJefePerfil dao = new daoJefePerfil();
+                                        Cl_JefePerfil jefe = new Cl_JefePerfil();
+                                        jefe.perfil.id = id;
+
+                                        if (ListarPerfil.listaPerfil.dt_Listar.CurrentRow.Cells[0].Value.ToString() == "0")
+                                        {
+                                            AgregarJefe modulo = new AgregarJefe();
+                                            modulo.pasarDatos(jefe);
+                                            modulo.ShowDialog();
+                                            recargarListados(2.11);
+                                        }
+                                        else
+                                        {
+                                            daoUtilidad dao2 = new daoUtilidad();
+                                            Cl_Perfil perfil = new Cl_Perfil();
+                                            perfil.id = jefe.perfil.id;
+                                            if (dao2.recuperarPerfilConPerfil(perfil) == false)
+                                            {
+                                                jefe.funcionario.run = run;
+                                                dao.Eliminar(jefe);
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Jefe se elimino correctamente.");
+                                                mensaje.ShowDialog();
+                                                recargarListados(2.11);
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Perfil no puede eliminar al jefe porque aun tiene evaluaciones pendientes");
+                                                mensaje.ShowDialog();
+                                            }
+
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
                     }
 
 
                     break;
-                case 2.2:
+                case 2.21:
                     if (btn.Name == btnAgregar.Name)
                     {
-                        //if (ModulojefeFuncionario == null)
-                        //{ ModulojefeFuncionario = new Modulos.ModuloJefeFuncionario(); }
-                        //PanelCRUD.Visible = true;
-                        //AbrirModulo(ModulojefeFuncionario);
+                        if (estadoCRUD == 0)
+                        {
+                            Contexto con = new Contexto();
+
+                            if (con.Conectar())
+                            {
+
+                                Modulo.Cargo moduloCargo = new Modulo.Cargo();
+                                moduloCargo.IniciarFormulario(1);
+                                moduloCargo.PasarDatos(this);
+                                AbrirModulo(moduloCargo);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloCargo = moduloCargo;
+                                con.Desconectar();
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCargo.listaCargo.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string id = ListarCargo.listaCargo.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        daoCargo dao = new daoCargo();
+                                        Modulo.Cargo moduloCargo = new Modulo.Cargo();
+                                        moduloCargo.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                        moduloCargo.PasarDatos(this);
+                                        moduloCargo.IniciarFormulario(2);
+                                        AbrirModulo(moduloCargo);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloCargo = moduloCargo;
+                                    }
+                                    catch (Exception)
+                                    {
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCargo.listaCargo.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        int id = int.Parse(ListarCargo.listaCargo.dt_Listar.CurrentRow.Cells[0].Value.ToString());
+                                        Cl_Cargo cargo = new Cl_Cargo();
+                                        cargo.id = id;
+                                        daoCargo dao = new daoCargo();
+                                        if (recibirMensaje(3))
+                                        {
+                                            if (dao.Eliminar(cargo))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Elimino Correctamente");
+                                                recargarListados(2.21);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No elimino Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+
+                    break;
+                case 3.1:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            Contexto con = new Contexto();
+
+                            if (con.Conectar())
+                            {
+
+                                Modulo.Competencia moduloCompetencia = new Modulo.Competencia();
+                                moduloCompetencia.IniciarFormulario(1);
+                                moduloCompetencia.PasarDatos(this);
+                                AbrirModulo(moduloCompetencia);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloCompetencia = moduloCompetencia;
+                                con.Desconectar();
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string idCompetencia = ListarCompetencia.listaCompetencia.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        daoCompetencia dao = new daoCompetencia();
+                                        Modulo.Competencia moduloCompetencia = new Modulo.Competencia();
+                                        moduloCompetencia.PasarDatos(dao.RecuperarDatos(int.Parse(idCompetencia)));
+                                        moduloCompetencia.PasarDatos(this);
+                                        moduloCompetencia.IniciarFormulario(2);
+                                        AbrirModulo(moduloCompetencia);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloCompetencia = moduloCompetencia;
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        int id = int.Parse(ListarCompetencia.listaCompetencia.dt_Listar.CurrentRow.Cells[0].Value.ToString());
+                                        Cl_Competencia competencia = new Cl_Competencia();
+                                        competencia.id = id;
+                                        daoCompetencia dao = new daoCompetencia();
+
+                                        if (recibirMensaje(3))
+                                        {
+                                            if (dao.Eliminar(competencia))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Elimino Correctamente");
+                                                recargarListados(3.1);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No elimino Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
                     }
                     break;
+
+                case 3.2:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+
+                        if (estadoCRUD == 0)
+                        {
+
+                            Contexto con = new Contexto();
+                            if (con.Conectar())
+                            {
+                                Modulo.Observacion moduloObservacion = new Modulo.Observacion();
+                                moduloObservacion.IniciarFormulario(1);
+                                moduloObservacion.PasarDatos(this);
+                                AbrirModulo(moduloObservacion);
+                                PanelCRUD.Visible = true;
+                                estadoCRUD = 1;
+                                this.moduloObervacion = moduloObservacion;
+                                con.Desconectar();
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+                        }
+
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+
+                    }
+
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia_Observacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+
+                                Contexto con = new Contexto();
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string idObservacion = ListarCompetencia.listaCompetencia_Observacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        daoObservacion dao = new daoObservacion();
+                                        Modulo.Observacion moduloObservacion = new Modulo.Observacion();
+                                        moduloObservacion.PasarDatos(dao.RecuperarDatos(int.Parse(idObservacion)));
+                                        moduloObservacion.PasarDatos(this);
+                                        moduloObservacion.IniciarFormulario(2);
+                                        AbrirModulo(moduloObservacion);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloObervacion = moduloObservacion;
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarCompetencia.listaCompetencia_Observacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        int id = int.Parse(ListarCompetencia.listaCompetencia_Observacion.dt_Listar.CurrentRow.Cells[0].Value.ToString());
+                                        Cl_Observacion observacion = new Cl_Observacion();
+                                        observacion.id = id;
+                                        daoObservacion dao = new daoObservacion();
+                                        if (recibirMensaje(3))
+                                        {
+                                            if (dao.Eliminar(observacion))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Elimino Correctamente");
+                                                recargarListados(3.1);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No elimino Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+
+                        }
+                    }
+                    break;
+                case 4.1:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        if (btn.Name == btnAgregar.Name)
+                        {
+                            if (estadoCRUD == 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
+                                    moduloEvaluacion.IniciarFormulario(1);
+                                    moduloEvaluacion.PasarDatos(this);
+                                    AbrirModulo(moduloEvaluacion);
+                                    PanelCRUD.Visible = true;
+                                    estadoCRUD = 1;
+                                    this.moduloEvaluacion = moduloEvaluacion;
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                SystemSounds.Hand.Play();
+                            }
+                        }
+
+                    }
+
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listarEvaluacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string id = ListarEvaluacion.listarEvaluacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+
+                                        daoUtilidad dao2 = new daoUtilidad();
+                                        Cl_Cuestionario eva = new Cl_Cuestionario();
+
+                                        eva.id = int.Parse(id);
+                                        if (dao2.recuperarFechaInicio(eva) == false)
+                                        {
+                                            daoCuestionario dao = new daoCuestionario();
+                                            Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
+                                            moduloEvaluacion.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                            moduloEvaluacion.PasarDatos(this);
+                                            moduloEvaluacion.IniciarFormulario(2);
+                                            AbrirModulo(moduloEvaluacion);
+                                            PanelCRUD.Visible = true;
+                                            estadoCRUD = 1;
+                                            this.moduloEvaluacion = moduloEvaluacion;
+                                        }
+                                        else
+                                        {
+                                            daoCuestionario dao = new daoCuestionario();
+                                            Modulo.Evaluacion moduloEvaluacion = new Modulo.Evaluacion();
+                                            moduloEvaluacion.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                            moduloEvaluacion.PasarDatos(this);
+                                            moduloEvaluacion.IniciarFormulario(3);
+                                            AbrirModulo(moduloEvaluacion);
+                                            PanelCRUD.Visible = true;
+                                            estadoCRUD = 1;
+                                            this.moduloEvaluacion = moduloEvaluacion;
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+
+
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listarEvaluacion.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        string id = ListarEvaluacion.listarEvaluacion.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                        Cl_Cuestionario cuestionario = new Cl_Cuestionario();
+                                        cuestionario.id = int.Parse(id);
+                                        daoCuestionario dao = new daoCuestionario();
+                                        if (recibirMensaje(3))
+                                        {
+                                            if (dao.Eliminar(cuestionario))
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("Elimino Correctamente");
+                                                recargarListados(4.1);
+                                                mensaje.ShowDialog();
+                                            }
+                                            else
+                                            {
+                                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                mensaje.cambiarMensaje("No elimino Correctamente");
+                                                mensaje.ShowDialog();
+                                            }
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+                                        ErrorConexion();
+
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+
+                    }
+
+                    break;
+                case 4.2:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            Contexto con = new Contexto();
+
+                            if (con.Conectar())
+                            {
+                                try
+                                {
+                                    int id = ListarEvaluacion.idEva;
+                                    daoUtilidad dao = new daoUtilidad();
+                                    Cl_Cuestionario eva = new Cl_Cuestionario();
+                                    eva.id = id;
+
+                                    if (dao.recuperarFechaInicio(eva) == false)
+                                    {
+                                        Modulo.Preguntas moduloPregunta = new Modulo.Preguntas();
+                                        moduloPregunta.IniciarFormulario(1);
+                                        moduloPregunta.PasarDatos(this);
+                                        AbrirModulo(moduloPregunta);
+                                        PanelCRUD.Visible = true;
+                                        estadoCRUD = 1;
+                                        this.moduloPreguntas = moduloPregunta;
+                                    }
+                                    else
+                                    {
+                                        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                        mensaje.cambiarMensaje("La evaluacion ya se encuentra en curso.");
+                                        mensaje.ShowDialog();
+
+                                    }
+                                }
+                                catch (Exception)
+                                {
+
+                                    ErrorConexion();
+                                }
+                                con.Desconectar();
+
+                            }
+                            else
+                            {
+                                ErrorConexion();
+                            }
+                        }
+                        else
+                        {
+                            SystemSounds.Hand.Play();
+                        }
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        int id2 = ListarEvaluacion.idEva;
+                                        daoUtilidad dao2 = new daoUtilidad();
+                                        Cl_Cuestionario eva = new Cl_Cuestionario();
+                                        eva.id = id2;
+
+                                        if (dao2.recuperarFechaInicio(eva) == false)
+                                        {
+
+                                            string id = ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+
+                                            daoPreguntas dao = new daoPreguntas();
+                                            Modulo.Preguntas moduloPregunta = new Modulo.Preguntas();
+                                            moduloPregunta.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                            moduloPregunta.PasarDatos(this);
+                                            moduloPregunta.IniciarFormulario(2);
+                                            AbrirModulo(moduloPregunta);
+                                            PanelCRUD.Visible = true;
+                                            estadoCRUD = 1;
+                                            this.moduloPreguntas = moduloPregunta;
+                                        }
+                                        else
+                                        {
+                                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                            mensaje.cambiarMensaje("La evaluacion ya se encuentra en curso.");
+                                            mensaje.ShowDialog();
+                                        }
+                                        con.Desconectar();
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        int id2 = ListarEvaluacion.idEva;
+                                        daoUtilidad dao2 = new daoUtilidad();
+                                        Cl_Cuestionario eva = new Cl_Cuestionario();
+                                        eva.id = id2;
+
+                                        if (dao2.recuperarFechaInicio(eva) == false)
+                                        {
+                                            string id = ListarEvaluacion.listaEvaluacion_Pregunta.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                            Cl_Preguntas pregunta = new Cl_Preguntas();
+                                            pregunta.id = int.Parse(id);
+                                            daoPreguntas dao = new daoPreguntas();
+                                            if (recibirMensaje(3))
+                                            {
+                                                if (dao.Eliminar(pregunta))
+                                                {
+                                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                    mensaje.cambiarMensaje("Elimino Correctamente");
+                                                    recargarListados(4.2);
+                                                    mensaje.ShowDialog();
+                                                }
+                                                else
+                                                {
+                                                    Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                                    mensaje.cambiarMensaje("No elimino Correctamente");
+                                                    mensaje.ShowDialog();
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                            mensaje.cambiarMensaje("La evaluacion ya se encuentra en curso.");
+                                            mensaje.ShowDialog();
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+
+                    }
+                    break;
+                case 4.3:
+                    if (btn.Name == btnAgregar.Name)
+                    {
+                        if (btn.Name == btnAgregar.Name)
+                        {
+                            if (estadoCRUD == 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    int id2 = ListarEvaluacion.idEva;
+                                    daoUtilidad dao2 = new daoUtilidad();
+                                    Cl_Cuestionario eva = new Cl_Cuestionario();
+                                    eva.id = id2;
+
+                                    if (dao2.recuperarFechaInicio(eva) == false)
+                                    {
+                                        if (ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.Rows.Count < 5)
+                                        {
+                                            Modulo.Alternativas moduloAlternativas = new Modulo.Alternativas();
+                                            moduloAlternativas.IniciarFormulario(1);
+                                            moduloAlternativas.PasarDatos(this);
+                                            AbrirModulo(moduloAlternativas);
+                                            PanelCRUD.Visible = true;
+                                            estadoCRUD = 1;
+                                            this.moduloAlternativas = moduloAlternativas;
+                                            con.Desconectar();
+                                        }
+                                        else
+                                        {
+                                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                            mensaje.cambiarMensaje("El maximo de alternativas son 5.");
+                                            mensaje.ShowDialog();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                        mensaje.cambiarMensaje("La evaluacion ya se encuentra en curso.");
+                                        mensaje.ShowDialog();
+                                    }
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                SystemSounds.Hand.Play();
+                            }
+                        }
+
+                    }
+                    if (btn.Name == btnModificar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.SelectedRows.Count > 0)
+                            { Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    try
+                                    {
+                                        int id2 = ListarEvaluacion.idEva;
+                                        daoUtilidad dao2 = new daoUtilidad();
+                                        Cl_Cuestionario eva = new Cl_Cuestionario();
+                                        eva.id = id2;
+
+
+                                        if (dao2.recuperarFechaInicio(eva) == false)
+                                        {
+                                            string id = ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+
+                                            daoAlternativa dao = new daoAlternativa();
+                                            Modulo.Alternativas moduloAlternativa = new Modulo.Alternativas();
+                                            moduloAlternativa.PasarDatos(dao.RecuperarDatos(int.Parse(id)));
+                                            moduloAlternativa.PasarDatos(this);
+                                            moduloAlternativa.IniciarFormulario(2);
+                                            AbrirModulo(moduloAlternativa);
+                                            PanelCRUD.Visible = true;
+                                            estadoCRUD = 1;
+                                            this.moduloAlternativas = moduloAlternativa;
+                                        }
+                                        else
+                                        {
+                                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                            mensaje.cambiarMensaje("La evaluacion ya se encuentra en curso.");
+                                            mensaje.ShowDialog();
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+
+                                        ErrorConexion();
+                                    }
+                                    con.Desconectar();
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+                    }
+                    if (btn.Name == btnEliminar.Name)
+                    {
+                        if (estadoCRUD == 0)
+                        {
+                            if (ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.SelectedRows.Count > 0)
+                            {
+                                Contexto con = new Contexto();
+
+                                if (con.Conectar())
+                                {
+                                    string id = ListarEvaluacion.listaEvaluacion_Alternativa.dt_Listar.CurrentRow.Cells[0].Value.ToString();
+                                    Cl_Alternativa alt = new Cl_Alternativa();
+                                    alt.id = int.Parse(id);
+                                    daoAlternativa dao = new daoAlternativa();
+                                    if (recibirMensaje(3))
+                                    {
+                                        if (dao.Eliminar(alt))
+                                        {
+                                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                            mensaje.cambiarMensaje("Elimino Correctamente");
+                                            recargarListados(4.3);
+                                            mensaje.ShowDialog();
+                                        }
+                                        else
+                                        {
+                                            Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                            mensaje.cambiarMensaje("No elimino Correctamente");
+                                            mensaje.ShowDialog();
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                        mensaje.cambiarMensaje("La evaluacion ya se encuentra en curso.");
+                                        mensaje.ShowDialog();
+                                    }
+
+                                }
+                                else
+                                {
+                                    ErrorConexion();
+                                }
+                            }
+                            else
+                            {
+                                Ventanas.Mensaje mensaje = new Ventanas.Mensaje();
+                                mensaje.cambiarMensaje("Debe seleccionar una fila");
+                                mensaje.ShowDialog();
+                            }
+                        }
+
+                    }
+
+                    break;
+
             }
         }
         #endregion
@@ -485,10 +3505,15 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         {
             BunifuImageButton btn = sender as BunifuImageButton;
 
-            if(btn.Name == btnCerrarSesion.Name)
+            if (btn.Name == btnCerrarSesion.Name)
             {
+
+                SystemSounds.Exclamation.Play();
+
                 Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
-                cerrar.ventanaCerrarSesion(app);
+
+                cerrar.PasarDatos(app);
+                cerrar.iniciarFormulario(3);
                 cerrar.ShowDialog();
 
             }
@@ -508,7 +3533,9 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
                 {
                     btnRestaurarFormulario.Visible = false;
                     estadoMR = 1;
-                }else if (btnMaximizarFormulario.Visible == true){
+                }
+                else if (btnMaximizarFormulario.Visible == true)
+                {
                     btnMaximizarFormulario.Visible = false;
                     estadoMR = 2;
                 }
@@ -521,16 +3548,17 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             {
                 btnRestaurarFullScreen.Visible = false;
                 btnFullScreen.Visible = true;
-                if(estadoMR == 1)
+                if (estadoMR == 1)
                 {
                     btnRestaurarFormulario.Visible = true;
-                }else if (estadoMR == 2)
+                }
+                else if (estadoMR == 2)
                 {
                     btnMaximizarFormulario.Visible = true;
                 }
                 estadoMR = 0;
-                
-                
+
+
                 app.Controles(7);
 
             }
@@ -545,7 +3573,7 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
             if (btn.Name == btn_cerrarFormulario.Name)
             {
                 Ventanas.Cerrar cerrar = new Ventanas.Cerrar();
-                cerrar.ventanaCerrarFormularioPrincipal(this);
+                cerrar.iniciarFormulario(2);
                 cerrar.ShowDialog();
             }
             if (btn.Name == btnMinimizarFormulario.Name)
@@ -579,6 +3607,10 @@ namespace WFBS.Presentacion.Formularios.FormularioPrincipal
         }
 
 
+        public void AbrirModuloExterno(object formHijo)
+        {
+            AbrirModulo(formHijo);
+        }
 
         #region METODOS ABRIR FORMULARIO
 

@@ -4,6 +4,18 @@
   <xs:element name="Listar_CursoResponse" type="tns:Listar_CursoResponse" />
   <xs:element name="Recuperar_Persona" type="tns:Recuperar_Persona" />
   <xs:element name="Recuperar_PersonaResponse" type="tns:Recuperar_PersonaResponse" />
+  <xs:element name="Validar_Cursos" type="tns:Validar_Cursos" />
+  <xs:element name="Validar_CursosResponse" type="tns:Validar_CursosResponse" />
+  <xs:complexType name="Validar_Cursos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="p_run" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Validar_CursosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="Listar_Curso">
     <xs:sequence>
       <xs:element minOccurs="0" name="p_run" type="xs:string" />

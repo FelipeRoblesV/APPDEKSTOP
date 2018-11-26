@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros
+namespace WFBS.Presentacion.Formularios.FormularioPrincipal.Modulo.Otros.Jefe_Funcionario
 {
-    public partial class CargoFuncionario : Form
+    public partial class Cargando : Form
     {
-        public CargoFuncionario()
+        public Cargando()
         {
             InitializeComponent();
         }
